@@ -27,8 +27,6 @@ function load_files() {
     wp_enqueue_script('jquery');
     wp_enqueue_script('popper');
     wp_enqueue_script('bootstrap');
-    
-
 }
 
 add_action('wp_enqueue_scripts', 'load_files');

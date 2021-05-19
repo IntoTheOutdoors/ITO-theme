@@ -12,3 +12,4 @@
     <title>Into The Outdoors</title>
     <?php wp_head(); ?>
 </head>
+<body>

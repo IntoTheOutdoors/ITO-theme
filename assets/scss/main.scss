@@ -1,7 +1,6 @@
-body {
-    background-color: white;
-}
-
-h1 {
-    color: black;
-}
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./variables";
+@import "./mixins";
+@import "./header.scss";
+@import "./front-page.scss";
+@import "./footer.scss";
