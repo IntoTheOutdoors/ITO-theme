@@ -46,3 +46,27 @@
         }
     }
 }
+
+.featured {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 60px 0;
+    
+    h4 {
+        color: $primary;
+        text-transform: uppercase;
+        font-family: $font-one;
+        margin-bottom: 40px;
+    }
+
+    &-video {
+        
+        video {
+            width: 600px !important;
+            height: 360px;
+            object-fit: cover;
+            overflow: hidden;
+        }
+    }
+}

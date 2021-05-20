@@ -16,11 +16,27 @@
     </section>
 
     <!-- FEATURED EPISODES -->
-    <section class="featured container">
+    <section class="featured">
         <div class="container row">
         <div class="featured-video col-6">
             <h4>Featured Episode</h4>
-            <video src="./assets/videos/featured-video.mp4" controls loop></video>
+            <?php 
+                $posts = get_posts([
+                    'posts_per_page' => 1,
+                    'post_type' => 'topics'
+                ]);    
+
+                
+                if($posts):
+                    foreach($posts as $post):
+                        $video = get_field('full_episode', $post->ID);
+                        pre_print_r($video);
+                        
+                    endforeach;
+                endif;
+            ?>
+                    
+                <!-- <video src="./assets/videos/featured-video.mp4" controls loop></video> -->
         </div>
         <div class="curriculums col-6">
             <h4>Latest curriculum videos & lesson plans</h4>
@@ -54,7 +70,7 @@
         </section>
       </section>
               <!-- MEDIA LOGOS AND APP DOWNLOADS -->
-        <section class="media">
+        <!-- <section class="media">
           <div class="media-logos">
             <img src="./assets/images/media-logos/media-logo-fire.png" alt="fire tv">
             <img src="./assets/images/media-logos/media-logo-apple.png" alt="apple tv">
@@ -76,7 +92,7 @@
             <img src="./assets/images/media-logos/media-logo-appstore.png" alt="apple appstore">
             <img src="./assets/images/media-logos/media-logo-googleplay.png" alt="google play">
           </div>
-        </section>
+        </section> -->
 
 
       <!-- PARTNERS -->
