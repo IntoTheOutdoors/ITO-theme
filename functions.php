@@ -52,6 +52,8 @@ function theme_setup() {
         'primary' => __('Primary Menu', 'ito-theme'),
         'secondary' => __('Secondary Menu', 'ito-theme')
     ]);
+
+    add_theme_support( 'custom-logo');
 }
 
 

@@ -10,7 +10,7 @@
                 sustainable stewards of Planet Earth.
                 </p>
                 
-                <a herf="#" class="btn btn-primary">Learn Now</a>
+                <a href="<?php echo get_permalink( get_page_by_path( 'episodes-lessons')); ?>" class="btn btn-primary">Learn Now</a>
             </div>
         </div>
     </section>
