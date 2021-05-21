@@ -8,33 +8,36 @@
 
     <!-- Title, Keywords and Descriptions -->
     <title><?php wp_title(); ?></title>
-    <?php ito_meta_keywords(); ?>
-    <?php ito_meta_keywords(); ?>
-    
     <?php wp_head(); ?>
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-expand-md navbar-light bg-light" role="navigation">
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="https://storage.googleapis.com/coverr-main/mp4/Mt_Baker.mp4" type="video/mp4">
+    </video>
+    <nav class="navbar navbar-expand-md navbar-light bg-transparent" role="navigation">
         <div class="container">
+            <div class="logo">
+                <a class="navbar-brand" href="<?php bloginfo( "url" ) ?>">
+                    <?php the_custom_logo(); ?>
+                </a>
+            </div>
             <!-- Brand and toggle get grouped for better mobile display -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'your-theme-slug' ); ?>">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ito-theme' ); ?>">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <a class="navbar-brand" href="#">Navbar</a>
                 <?php
-                wp_nav_menu( array(
-                    'theme_location'    => 'primary',
-                    'depth'             => 2,
-                    'container'         => 'div',
-                    'container_class'   => 'collapse navbar-collapse',
-                    'container_id'      => 'bs-example-navbar-collapse-1',
-                    'menu_class'        => 'nav navbar-nav',
-                    'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
-                    'walker'            => new WP_Bootstrap_Navwalker(),
+                    wp_nav_menu( array(
+                        'theme_location'    => 'primary',
+                        'depth'             => 2,
+                        'container'         => 'div',
+                        'container_class'   => 'collapse navbar-collapse justify-content-end',
+                        'container_id'      => 'navbarSupportedContent',
+                        'menu_class'        => 'nav navbar-nav',
+                        'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+                        'walker'            => new WP_Bootstrap_Navwalker(),
                     ) );
-                    ?>
+                ?>
         </div>
     </nav>
     </header>
-    <body>

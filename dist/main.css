@@ -10828,10 +10828,130 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
-body {
-  background: #1a5458 !important;
+.btn {
+  padding: 20px 80px;
+  border-radius: 30px;
+  text-transform: uppercase;
+}
+.btn-primary {
+  background-color: #f48822;
+  border: none;
+}
+.btn-primary:hover, .btn-primary:active {
+  background-color: #f48822;
+  filter: brightness(97%);
 }
 
-h1, .h1 {
-  color: #f48822;
+header {
+  position: relative;
+  background-color: black;
+  height: 100vh;
+  min-height: 25rem;
+  width: 100%;
+  overflow: hidden;
+}
+
+header video {
+  filter: brightness(80%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: 0;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+header .container {
+  position: relative;
+  z-index: 2;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+.nav-item {
+  padding: 0 20px;
+}
+.nav-item a {
+  color: #fff !important;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.jumbotron-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 200px;
+  display: flex;
+  justify-content: flex-start;
+}
+.jumbotron-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.jumbotron-content h1, .jumbotron-content .h1 {
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.jumbotron-content h2, .jumbotron-content .h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  align-self: flex-start;
+}
+.jumbotron-content p {
+  width: 540px;
+  font-family: "Roboto Slab", serif;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  align-self: flex-start;
+}
+.jumbotron-content a {
+  margin-top: 20px;
+}
+
+.featured {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 60px 0;
+}
+.featured h4, .featured .h4 {
+  color: #1a5458;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin-bottom: 40px;
+}
+.featured-video video {
+  width: 600px !important;
+  height: 360px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
 }
