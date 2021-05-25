@@ -21,19 +21,26 @@
         <div class="featured-video col-6">
             <h4>Featured Episode</h4>
             <?php 
-                $posts = get_posts([
-                    'posts_per_page' => 1,
-                    'post_type' => 'topics'
-                ]);    
+                $args = [
+                  'post_type' => 'topics',
+                  'posts_per_page' => 1,
+                ];
 
+                $query = new WP_Query($args);
                 
-                if($posts):
-                    foreach($posts as $post):
-                        $video = get_field('full_episode', $post->ID);
-                        pre_print_r($video);
-                        
-                    endforeach;
-                endif;
+                
+                while($query->have_posts()): $query->the_post();
+                $featured_posts = get_field('full_episode');
+                
+                foreach($featured_posts as $featured_post):
+                  echo get_the_title($featured_post->ID);
+                  echo get_field('youtube_video', $featured_post->ID);
+                endforeach;
+                ?>
+                <h3><?php the_title(); ?> </h3>
+                
+                <?php endwhile; wp_reset_query();
+
             ?>
                     
                 <!-- <video src="./assets/videos/featured-video.mp4" controls loop></video> -->
