@@ -11028,6 +11028,7 @@ header .overlay {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: #1E3433;
   padding: 60px 0;
 }
 .media-logos {

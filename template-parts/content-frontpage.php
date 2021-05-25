@@ -88,22 +88,27 @@
       <section class="media">
         <div class="media-logos">
           <?php 
-            // query custom post type 'partners'
+            // query custom post type 'shows'
             $args = [
               'post_type' => 'shows',
               'posts_per_page' => -1,
+              'order' => 'ASC'
             ];
             $query = new WP_Query($args);
             
           while($query->have_posts()): $query->the_post();
             $logos = get_field('show_logo'); 
-            
             $image = wp_get_attachment_image_src($logos['ID'], $size="thumbnail", $icon=false, []);
             ?>
             <img src="<?php echo $image[0] ?>" alt="">
             
           <?php endwhile; wp_reset_query();
           ?>
+        </div>
+        <div class="media-text">
+            <h4>We are now available on a variety of streaming channels and platforms!</h4>
+        </div>
+        <div class="media-downloads">
         </div>
       </section>
       
