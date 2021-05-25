@@ -7,7 +7,12 @@ mix
   .sass("assets/scss/main.scss", "dist")
   .setPublicPath("dist")
   .browserSync({
-    files: ["*.php", "assets/scss/*.scss", "assets/js/*.js"],
+    files: [
+      "*.php", 
+      "template-parts/*.php", 
+      "assets/scss/*.scss", 
+      "assets/js/*.js"
+    ],
     proxy: "ito.watch", // We need to use a proxy instead of the built-in server because WordPress has to do some server-side rendering for the theme to work
     host: "ito.watch",
     watchOptions: {

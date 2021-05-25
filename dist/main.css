@@ -10936,18 +10936,115 @@ header .overlay {
   justify-content: center;
   margin: 60px 0;
 }
+.featured a {
+  text-decoration: none;
+  color: #1a5458;
+}
 .featured h4, .featured .h4 {
   color: #1a5458;
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
-  margin-bottom: 40px;
+  margin-top: 30px;
+  margin-bottom: 60px;
+  text-decoration: none;
 }
-.featured-video video {
-  width: 600px !important;
-  height: 360px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  overflow: hidden;
+.featured-video {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.featured-video .embed-container {
+  width: 100%;
+  height: 400px;
+}
+.featured-video .embed-container iframe,
+.featured-video .embed-container object,
+.featured-video .embed-container embed {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.featured h5, .featured .h5 {
+  margin-top: 30px;
+}
+.featured h5:hover, .featured .h5:hover, .featured h5:active, .featured .h5:active {
+  color: #f48822;
+}
+
+.curriculums .embed-container {
+  width: 200px !important;
+  height: 120px;
+}
+.curriculums .embed-container iframe,
+.curriculums .embed-container object,
+.curriculums .embed-container embed {
+  position: relative;
+  width: 200px;
+  height: 100%;
+}
+.curriculums .curriculum {
+  display: flex;
+  margin: 20px 0;
+}
+.curriculums .curriculum h6, .curriculums .curriculum .h6 {
+  padding-left: 20px;
+}
+.curriculums .curriculum a:active, .curriculums .curriculum a:hover {
+  color: #f48822;
+}
+
+.family {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  margin-top: 80px;
+}
+
+.signup {
+  margin-top: 120px;
+}
+.signup-text {
+  display: flex;
+  flex-direction: column;
+  width: 800px;
+}
+.signup-text h3, .signup-text .h3 {
+  font-size: 50px;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+  color: #1a5458;
+}
+.signup-text p {
+  font-size: 30px;
+  text-align: center;
+}
+.signup-text a {
+  width: 300px;
+  align-self: center;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 60px 0;
+}
+.media-logos {
+  align-items: center;
+}
+.media-logos img {
+  padding: 0 20px;
+}
+.media-text {
+  margin-top: 20px;
+}
+.media-text h4, .media-text .h4 {
+  padding-top: 40px;
+  color: #fff;
+}
+.media-downloads {
+  margin-top: 20px;
 }
 
 body {

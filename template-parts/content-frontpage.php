@@ -18,7 +18,7 @@
     <!-- FEATURED EPISODES -->
     <section class="featured">
         <div class="container row">
-        <div class="featured-video col-6">
+        <div class="col-7">
             <h4>Featured Episode</h4>
             <?php 
                 $args = [
@@ -31,129 +31,81 @@
                 
                 while($query->have_posts()): $query->the_post();
                 $featured_posts = get_field('full_episode');
-                
-                foreach($featured_posts as $featured_post):
-                  echo get_the_title($featured_post->ID);
-                  echo get_field('youtube_video', $featured_post->ID);
-                endforeach;
                 ?>
-                <h3><?php the_title(); ?> </h3>
-                
-                <?php endwhile; wp_reset_query();
-
-            ?>
-                    
+                <div class="embed-container">
+                <?php
+                  foreach($featured_posts as $featured_post):
+                    echo get_field('youtube_video', $featured_post->ID);
+                  endforeach;
+                ?>
+                </div>
+                <a href="<?php the_permalink(); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
+    
                 <!-- <video src="./assets/videos/featured-video.mp4" controls loop></video> -->
         </div>
-        <div class="curriculums col-6">
+        <div class="curriculums col-5">
             <h4>Latest curriculum videos & lesson plans</h4>
-            <div class="curriculums-text">
-            <img src="./assets/images/curriculum-one.jpg" alt="">
-            <h6>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.
-            </h6>
+            
+            <?php 
+              $curriculums = get_field('curriculum_videos');
+              foreach($curriculums as $curriculum): ?>
+                <div class="curriculum">
+                  <div class="embed-container">
+                    <?php echo get_field('youtube_video', $curriculum->ID); ?>
+                  </div>
+                  <div class="curriculum-text">
+                    <h6><a href="<?php the_permalink(); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h6>
+                  </div>
+                </div>
+                
+                <?php
+              endforeach;
+            ?>
             </div>
-            <div class="curriculums-text">
-            <img src="./assets/images/curriculum-one.jpg" alt="">
-            <h6>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sed.
-            </h6>
-            </div>
+            
+            <?php endwhile; wp_reset_query(); ?>
         </div>
         </div>
     </section>
 
       <!-- FAMILY BACKGROUND SVG -->
-      <section class="family">
-            <!-- SIGNUP (CALL TO ACTION) -->
+      <?php 
+        $image = wp_get_attachment_image_src(10757, $size="thumbnail", $icon=false, []);
+      ?>
+      <section class="family" style="background: url(<?php echo $image[0]; ?>) no-repeat; background-position: bottom; width: 100%; height: 565px; margin: 0 auto;">
+        <!-- SIGNUP (CALL TO ACTION) -->
         <section class="signup container">
           <div class="signup-text">
             <h3>Join the Adventure!</h3>
             <p>Join our email list to be the first to get the lasts news, 
               new episode notifications, and exclusive contests 
               conveniently in your inbox!</p>
-            <a href="" class="primary-button">signup</a>
+            <a href="" class="btn btn-primary">signup</a>
           </div>
         </section>
       </section>
-              <!-- MEDIA LOGOS AND APP DOWNLOADS -->
-        <!-- <section class="media">
-          <div class="media-logos">
-            <img src="./assets/images/media-logos/media-logo-fire.png" alt="fire tv">
-            <img src="./assets/images/media-logos/media-logo-apple.png" alt="apple tv">
-            <img src="./assets/images/media-logos/media-logo-roku.png" alt="roku">
-            <img src="./assets/images/media-logos/media-logo-smart.png" alt="smart tv">
-            <img src="./assets/images/media-logos/media-logo-chromecast.png" alt="chromecast">
-            <img src="./assets/images/media-logos/media-logo-fubo.png" alt="fubo">
-            <img src="./assets/images/media-logos/media-logo-nbc.png" alt="nbc">
-            <img src="./assets/images/media-logos/media-logo-sling.png" alt="sling">
-            <img src="./assets/images/media-logos/media-logo-at&t.png" alt="at&t">
-            <img src="./assets/images/media-logos/media-logo-youtube.png" alt="youtube">
-            <img src="./assets/images/media-logos/media-logo-hulu.png" alt="hulu">
-            <img src="./assets/images/media-logos/media-logo-cbs.png" alt="cbs">
-          </div>
-          <div class="media-text">
-            <h4>We are now available on a variety of streaming channels and platforms!</h4>
-          </div>
-          <div class="media-downloads">
-            <img src="./assets/images/media-logos/media-logo-appstore.png" alt="apple appstore">
-            <img src="./assets/images/media-logos/media-logo-googleplay.png" alt="google play">
-          </div>
-        </section> -->
 
-
-      <!-- PARTNERS -->
-      <!-- https://codepen.io/studiojvla/pen/qVbQqW -->
-      <div class="slider">
-        <div class="slide-track">
-          <div class="slide">
-            <img src="./assets/images/partners/discoverboat.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/faf.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/glfc.png" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/nmma.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/nms.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/nmsf.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/onyx.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/pfbc.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/rbff.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/scif.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/sdgfp.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/tso.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/uscgboating.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/usda.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/wgfd.jpg" height="100" width="250" alt="" />
-          </div>
-          <div class="slide">
-            <img src="./assets/images/partners/yamaha.jpg" height="100" width="250" alt="" />
-          </div>
+      <section class="media">
+        <div class="media-logos">
+          <?php 
+            // query custom post type 'partners'
+            $args = [
+              'post_type' => 'shows',
+              'posts_per_page' => -1,
+            ];
+            $query = new WP_Query($args);
+            
+          while($query->have_posts()): $query->the_post();
+            $logos = get_field('show_logo'); 
+            
+            $image = wp_get_attachment_image_src($logos['ID'], $size="thumbnail", $icon=false, []);
+            ?>
+            <img src="<?php echo $image[0] ?>" alt="">
+            
+          <?php endwhile; wp_reset_query();
+          ?>
         </div>
-      </div>
+      </section>
+      
+
     </main>
