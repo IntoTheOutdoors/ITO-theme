@@ -40,8 +40,6 @@
                 ?>
                 </div>
                 <a href="<?php the_permalink(); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
-    
-                <!-- <video src="./assets/videos/featured-video.mp4" controls loop></video> -->
         </div>
         <div class="curriculums col-5">
             <h4>Latest curriculum videos & lesson plans</h4>
@@ -50,11 +48,16 @@
               $curriculums = get_field('curriculum_videos');
               foreach($curriculums as $curriculum): ?>
                 <div class="curriculum">
-                  <div class="embed-container">
-                    <?php echo get_field('youtube_video', $curriculum->ID); ?>
+                  <div class="curriculum-image">
+                    <a href="<?echo get_page_link($curriculum->ID); ?>">
+                    <?php 
+                      echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
+                    ?>
+                    </a>
+
                   </div>
                   <div class="curriculum-text">
-                    <h6><a href="<?php the_permalink(); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h6>
+                    <h5><a href="<?php echo get_page_link($curriculum->ID); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h5>
                   </div>
                 </div>
                 
@@ -97,18 +100,63 @@
             $query = new WP_Query($args);
             
           while($query->have_posts()): $query->the_post();
-            $logos = get_field('show_logo'); 
-            $image = wp_get_attachment_image_src($logos['ID'], $size="thumbnail", $icon=false, []);
-            ?>
-            <img src="<?php echo $image[0] ?>" alt="">
+            $logos = get_field('show_logo');
+            $app = get_field('show_app');
+            $image = wp_get_attachment_image($logos['ID'], $size="thumbnail", $icon=false, []);
             
-          <?php endwhile; wp_reset_query();
+            if($app == 0): ?>
+              <?php echo $image ?>
+            <?php endif; endwhile; wp_reset_query();
           ?>
         </div>
         <div class="media-text">
-            <h4>We are now available on a variety of streaming channels and platforms!</h4>
+              <h4>We are now available on a variety of streaming channels and platforms!</h4>
         </div>
+        <?php 
+        // query custom post type 'shows'
+        $args = [
+          'post_type' => 'shows',
+          'posts_per_page' => -1,
+          'order' => 'DESC'
+        ];
+
+        ?> 
         <div class="media-downloads">
+        
+        <?php 
+        // QUERY for the app downloads
+        $query = new WP_Query($args);
+        while($query->have_posts()): $query->the_post();
+            $logos = get_field('show_logo');
+            $app = get_field('show_app');
+            $image = wp_get_attachment_image($logos['ID'], $size="medium", $icon=false, []);
+           
+            if($app == 1): ?>
+                <a href="<?php echo the_field('show_url') ?>" target="_blank"><?php echo $image; ?></a>
+        <?php endif; endwhile; wp_reset_query(); ?>
+        ?>
+        </div>
+        
+      </section>
+
+      <section class="slider">
+        <div class="slide-track">
+          <?php 
+            $args = [
+              'post_type' => 'partners',
+              'post_per_page' => -1,
+              'order' => 'ASC'
+            ];
+
+            $partner_logos = new WP_Query($args);
+            while($partner_logos->have_posts()): $partner_logos->the_post(); ?>
+              <div class="slide">
+                <a href="<?php echo the_field('header_url');  ?>" target="_blank">
+                  <img src="<?php echo the_field('header_image'); ?>">
+                </a>
+              </div>
+            <?php endwhile; 
+          ?>
         </div>
       </section>
       

@@ -1,0 +1,148 @@
+.episodes {
+    margin-top: 60px;
+}
+
+.filter {
+
+    h4 {
+        text-transform: uppercase;
+        text-align: center;
+        color: $first-color;
+    }
+    &-search {
+        padding: 20px;
+        background-color: $fourth-color;
+
+        &-check {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    &-categories {
+        margin: 20px 0;
+        padding: 20px;
+        background-color: $fourth-color;
+
+        h4 {
+            padding-bottom: 20px;
+            color: $first-color;
+        }
+    }
+
+    &-grade {
+        padding: 20px;
+        background-color: $fourth-color;
+        margin-bottom: 40px;
+        
+        h4 {
+            padding-bottom: 20px;
+        }
+    }
+
+    &-downloads {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        background-color: $first-color;
+        padding: 20px 0;
+        margin-top: 20px;
+    }
+
+    &-ito {
+        height: 50px;
+        width: auto;
+    }
+
+    &-appstore {
+        height: 40px;
+        width: auto;
+    }
+
+    &-googleplay {
+        height: 60px;
+        width: auto;
+    }
+}
+
+.results {
+    h3 {
+        text-transform: uppercase;
+        font-family: $font-one;
+        margin: 20px 0;
+        color: $first-color;
+    }
+
+    &-featured {
+        display: flex;
+        flex-direction: column;
+        background-color: $fifth-color;
+        padding: 40px;
+        
+
+        h3 {
+            color: $white;
+            font-family: $font-one;
+            text-transform: uppercase;
+        }
+
+        &-content {
+            display: flex;
+            align-items: center;
+        }
+
+        &-text {
+            padding-left: 40px;
+            display: flex;
+            flex-direction: column;
+            
+            p {
+                margin-bottom: 40px;
+                color: $white;   
+            }
+        }
+        img {
+            width: auto;
+            height: 271px;
+        }
+    }
+
+    &-episodes {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        
+
+        &-item {
+            img {
+                height: 180px;
+                width: auto;
+            }
+
+            h5 {
+                font-family: $font-one;
+                color: $first-color;
+                text-transform: uppercase;
+                margin-top: 20px;
+
+                &:hover {
+                    color: $second-color;
+                }
+            }
+        }
+    }
+
+    &-pagination {
+        width: 100%;
+
+        p {
+            text-align: center;
+            margin: 20px;
+            font-size: 22px;
+            color: $first-color;
+        }
+    }
+}

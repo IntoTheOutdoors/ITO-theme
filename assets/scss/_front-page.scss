@@ -99,24 +99,11 @@
 }
 
 .curriculums {
-    .embed-container {
-        width: 200px !important;
-        height: 120px;
-    }
-
-    .embed-container iframe,
-    .embed-container object,
-    .embed-container embed { 
-        position: relative;
-        width: 200px;
-        height: 100%;
-    }
-
     .curriculum {
         display: flex;
         margin: 20px 0;
 
-        h6 {
+        h5 {
             padding-left: 20px;
         }
 
@@ -175,6 +162,7 @@
 
         img {
             padding: 0 20px;
+            width: auto;
         }
     }
 
@@ -188,6 +176,73 @@
     }
 
     &-downloads {
-        margin-top: 20px;
+        margin: 40px 0;
+
+        img {
+            padding: 0 40px;
+            width: auto;
+        }
     }
+}
+
+// CAROUSEL
+@mixin white-gradient {
+	background: linear-gradient(to right,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%);
+}
+
+$animationSpeed: 20s;
+
+// Animation
+@keyframes scroll {
+	0% { transform: translateX(0); }
+	100% { transform: translateX(calc(-250px * 16))}
+}
+
+
+// Styling
+.slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 200px;
+	overflow:hidden;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 200px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+		width: calc(50px * 16);
+	}
+	
+	.slide {
+
+        img {
+            height: 100px;
+            width: 250px;
+        }
+	}
 }

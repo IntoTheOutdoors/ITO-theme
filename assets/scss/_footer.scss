@@ -1,0 +1,32 @@
+footer {
+    background-color: $primary;
+}
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    ul, &-text {
+        display: flex;
+
+        li {
+            list-style: none;
+            align-self: center;
+            font-size: 18px;
+            color: $white;
+            text-transform: uppercase;
+            
+            padding: 80px 40px;
+        }
+    }
+
+    &-socialmedia {
+        
+        i {
+            font-size: 40px;
+            padding: 0 5px;
+        }
+    }
+    
+}
