@@ -54,6 +54,7 @@ function theme_setup() {
     ]);
 
     add_theme_support( 'custom-logo');
+    add_theme_support( 'post-thumbnails' );
 }
 
 function add_file_types_to_uploads($file_types) {

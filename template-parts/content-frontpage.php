@@ -35,34 +35,41 @@
                 <div class="embed-container">
                 <?php
                   foreach($featured_posts as $featured_post):
-                    echo get_field('youtube_video', $featured_post->ID);
+                    if(the_field('youtube_url')) {
+                      echo get_field('youtube_url', $featured_post->ID);
+                    } else {
+                      echo get_field('vimeo_url', $featured_post->ID);
+                    }
                   endforeach;
                 ?>
                 </div>
                 <a href="<?php the_permalink(); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
         </div>
         <div class="curriculums col-5">
-            <h4>Latest curriculum videos & lesson plans</h4>
             
             <?php 
               $curriculums = get_field('curriculum_videos');
-              foreach($curriculums as $curriculum): ?>
-                <div class="curriculum">
-                  <div class="curriculum-image">
-                    <a href="<?echo get_page_link($curriculum->ID); ?>">
-                    <?php 
-                      echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
-                    ?>
-                    </a>
+              if($curriculums != ""): ?>
+                <h4>Latest curriculum videos & lesson plans</h4>
+                <?php 
+                foreach($curriculums as $curriculum): ?>
+                  <div class="curriculum">
+                    <div class="curriculum-image">
+                      <a href="<?echo get_page_link($curriculum->ID); ?>">
+                      <?php 
+                        echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
+                      ?>
+                      </a>
 
+                    </div>
+                    <div class="curriculum-text">
+                      <h5><a href="<?php echo get_page_link($curriculum->ID); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h5>
+                    </div>
                   </div>
-                  <div class="curriculum-text">
-                    <h5><a href="<?php echo get_page_link($curriculum->ID); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h5>
-                  </div>
-                </div>
-                
-                <?php
-              endforeach;
+                  
+                  <?php
+                endforeach;
+              endif;
             ?>
             </div>
             
