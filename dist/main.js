@@ -10,23 +10,25 @@
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 (function ($) {
-  $(document).ready(function () {
-    $(document).on('submit', '#itoForm', function (e) {
-      var _$$ajax;
+  $(document).on('submit', '#itoForm', function (e) {
+    var _$$ajax;
 
-      e.preventDefault();
-      var data = $(this).serialize();
-      $.ajax((_$$ajax = {
-        url: wpAjax.ajaxUrl,
-        data: {
-          action: 'filter'
-        }
-      }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
-        $('[data-js-filter=target]').html(result);
-      }), _defineProperty(_$$ajax, "error", function error(result) {
-        console.log(result);
-      }), _$$ajax));
-    });
+    e.preventDefault();
+    var data = $(this).serialize();
+    $.ajax((_$$ajax = {
+      url: wpAjax.ajaxUrl,
+      data: {
+        action: 'filter'
+      }
+    }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
+      $('[data-js-filter=target]').html(result);
+    }), _defineProperty(_$$ajax, "error", function error(result) {
+      console.log(result);
+    }), _$$ajax));
+  });
+  $('#itoReset').on('click', function (e) {
+    e.preventDefault();
+    $('#itoForm')[0].reset();
   });
 })(jQuery);
 

@@ -1,5 +1,4 @@
 (function($) {
-   $(document).ready(function() {
     $(document).on('submit', '#itoForm', function (e) {
       e.preventDefault();
      let data = $(this).serialize();
@@ -15,5 +14,10 @@
         }
       });
     })
-   })
+
+    $('#itoReset').on('click', function(e) {
+      e.preventDefault();
+      $('#itoForm')[0].reset();
+    })
+
 })(jQuery);

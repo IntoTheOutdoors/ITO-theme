@@ -1,4 +1,5 @@
-<h3>All Episodes</h3>
+<h3> All Episodes </h3>
+
 <?php
   $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
   $args = [

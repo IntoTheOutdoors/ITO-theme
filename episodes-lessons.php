@@ -13,7 +13,29 @@
         ?>
         </div>
     </div>
+
+    
 <?php 
 endwhile;
 
+$args = [
+    'post_type' => 'segments',
+    'post_status' => 'publish',
+    'meta_key' => 'lesson_plans'
+];
+
+$query = new WP_Query($args);
+
+if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+    $lessons = get_field('lesson_plans');
+    // var_dump($lessons);
+    foreach($lessons as $lesson):
+        echo get_the_title($lesson->ID);
+    endforeach;
+
+endwhile; endif;
+
+
+
 get_footer(); ?>
+

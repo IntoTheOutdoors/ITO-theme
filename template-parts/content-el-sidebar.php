@@ -9,10 +9,10 @@
     <fieldset data-css-form="group">
         <label data-css-form="label" for="episode-types">Topics</label>
         <div data-css-form="input-group" id="episode-types">
-            <input type="radio" class="form-check-input" id="<?php $query->slug ?>" value="curriculum-episode" name="episode-types">Curriculum</input>
+            <input type="radio" class="form-check-input" value="curriculum-episode" name="episode-types">Curriculum</input>
         </div>
         <div data-css-form="input-group" id="episode-types">
-            <input type="radio" class="form-check-input" id="<?php $query->slug ?>" value="full-episode" name="episode-types">Episodes</input>
+            <input type="radio" class="form-check-input" value="full-episode" name="episode-types">Episodes</input>
         </div>
     </fieldset>
 
@@ -54,6 +54,11 @@
     <fieldset data-css-form="group right">
       <button data-css-button="button red">Filter</button>
       <input id="itoSubmit" type="hidden" name="action" value="filter">
+    </fieldset>
+
+    <!-- Fitler button -->
+    <fieldset data-css-form="group right">
+      <input id="itoReset" type="reset">
     </fieldset>
   </form>
 </aside>
