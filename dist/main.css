@@ -10893,6 +10893,11 @@ header .overlay {
   position: relative;
 }
 
+.second-logo img {
+  height: 100px !important;
+  width: auto;
+}
+
 .jumbotron-content {
   position: absolute;
   left: 0;
@@ -11101,6 +11106,124 @@ header .overlay {
   width: 250px;
 }
 
+.episodes {
+  margin-top: 60px;
+}
+
+.filter h4, .filter .h4 {
+  text-transform: uppercase;
+  text-align: center;
+  color: #1a5458;
+}
+.filter-search {
+  padding: 20px;
+  background-color: #1E3433;
+}
+.filter-search-check {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.filter-categories {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #1E3433;
+}
+.filter-categories h4, .filter-categories .h4 {
+  padding-bottom: 20px;
+  color: #1a5458;
+}
+.filter-grade {
+  padding: 20px;
+  background-color: #1E3433;
+  margin-bottom: 40px;
+}
+.filter-grade h4, .filter-grade .h4 {
+  padding-bottom: 20px;
+}
+.filter-downloads {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #1a5458;
+  padding: 20px 0;
+  margin-top: 20px;
+}
+.filter-ito {
+  height: 50px;
+  width: auto;
+}
+.filter-appstore {
+  height: 40px;
+  width: auto;
+}
+.filter-googleplay {
+  height: 60px;
+  width: auto;
+}
+
+.results h3, .results .h3 {
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  margin: 20px 0;
+  color: #1a5458;
+}
+.results-featured {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+.results-featured h3, .results-featured .h3 {
+  color: #fff;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+}
+.results-featured-content {
+  display: flex;
+  align-items: center;
+}
+.results-featured-text {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+}
+.results-featured-text p {
+  margin-bottom: 40px;
+  color: #fff;
+}
+.results-featured img {
+  width: auto;
+  height: 271px;
+}
+.results-episodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.results-episodes-item img {
+  height: 180px;
+  width: auto;
+}
+.results-episodes-item h5, .results-episodes-item .h5 {
+  font-family: "Roboto Slab", serif;
+  color: #1a5458;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+.results-episodes-item h5:hover, .results-episodes-item .h5:hover {
+  color: #f48822;
+}
+.results-pagination {
+  width: 100%;
+}
+.results-pagination p {
+  text-align: center;
+  margin: 20px;
+  font-size: 22px;
+  color: #1a5458;
+}
+
 footer {
   background-color: #1a5458;
 }
@@ -11121,13 +11244,9 @@ footer {
   text-transform: uppercase;
   padding: 80px 40px;
 }
-.footer-socialmedia {
-  color: #fff;
-  font-size: 40px;
-}
 .footer-socialmedia i {
+  font-size: 40px;
   padding: 0 5px;
-  color: #fff;
 }
 
 body {

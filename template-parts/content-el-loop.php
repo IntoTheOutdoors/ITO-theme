@@ -1,70 +1,128 @@
+<h3>All Episodes</h3>
 <?php
-  $args = array(
-    'post_type' => 'topics',
-    'posts_per_page' => -1,
-  );
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+  $args = [
+    'post_type' => 'segments',
+    'posts_per_page' => 5,
+    'tax_query' => [
+      [
+      'taxonomy' => 'episode_type',
+      'field' => 'slug',
+      'terms' => 'full-episode'
+      ]
+      ],
+    'paged' => $paged
+  ];
 
   $query = new WP_Query($args);
 
-  if($query->have_posts()) : 
-    
-    $counter = 0;
-    
-    while($query->have_posts()) : $counter++; $query->the_post();
+  if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
 
-    $movie_id = get_the_ID();
-  
+    $episode_id = get_the_ID();
     $url = get_the_permalink();
     $title = get_the_title();
     $thumb = get_the_post_thumbnail_url();
-    $excerpt = get_the_excerpt();
-    $year = get_post_meta($movie_id,'year',true);
-    $rating = get_post_meta($movie_id,'rating',true);
-    $runtime = get_post_meta($movie_id,'runtime',true);
-    $score = get_post_meta($movie_id,'score',true);
-
-    $taxonomy = 'full-episode';
- 
-    // Get the term IDs assigned to post.
-    $post_terms = wp_get_object_terms( $movie_id, $taxonomy, array( 'fields' => 'ids' ) );
-    
-    // Separator between links.
-    $separator = ', ';
-    
-    if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-    
-        $term_ids = implode( ',' , $post_terms );
-    
-        $terms = wp_list_categories( array(
-            'title_li' => '',
-            'style'    => 'none',
-            'echo'     => false,
-            'taxonomy' => $taxonomy,
-            'include'  => $term_ids
-        ) );
-    
-        $terms = rtrim( trim( str_replace( '<br />',  $separator, $terms ) ), $separator );
-    }
-
 ?>
-<article data-css-card="movie-card">
-  <div data-css-card="movie-wrapper">
-    <div data-css-card="movie-thumbnail">
-      <img src="<?= $thumb; ?>" alt="Avengers: Infinity War" />
-    </div>
-    <div data-css-card="movie-summary">
-      <h2 class="title"><span class="number"><?= $counter; ?>. </span><a href="<?= $url;?>"><?= $title; ?></a> <span class="date">(<?= $year; ?>)</span></h2>
-      <div data-css-card="movie-meta">
-        <span class="rating"><?= $rating; ?></span> 
-        <span class="runtime"><?= $runtime; ?></span> 
-        <div class="categories">
-          <?= $terms; ?>
+    <article data-css-card="topic-card">
+      <div data-css-card="topic-wrapper">
+        <div data-css-card="topic-thumbnail">
+          <img src="<?= $thumb; ?>" />
+        </div>
+        <div data-css-card="topic-summary">
+          <h2 class="title"><span class="number"></span><a href="<?= $url;?>"><?= $title; ?></a></h2>
         </div>
       </div>
-      <p data-css-card="movie-score"><span class="score"><?= $score; ?></span></p>
-      <?= $excerpt; ?>
+    </article>
+<?php endwhile;?>
+
+    <!-- Add the pagination functions here. -->
+    <div class="pagination">
+
+    <?php 
+        echo paginate_links( array(
+            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'total'        => $query->max_num_pages,
+            'current'      => max( 1, get_query_var( 'paged' ) ),
+            'format'       => '?paged=%#%',
+            'show_all'     => false,
+            'type'         => 'plain',
+            'end_size'     => 2,
+            'mid_size'     => 1,
+            'prev_next'    => true,
+            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Next', 'text-domain' ) ),
+            'next_text'    => sprintf( '%1$s <i></i>', __( 'Prev', 'text-domain' ) ),
+            'add_args'     => false,
+            'add_fragment' => '',
+        ) );
+
+    ?>
     </div>
-  </div>
-</article>
-<?php endwhile;
-endif; wp_reset_postdata(); 
+<?php wp_reset_postdata(  ); ?>
+<?php else : ?>
+  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
+
+<h3>All Curriculum</h3>
+<?php
+  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+  $args = [
+    'post_type' => 'segments',
+    'posts_per_page' => 5,
+    'tax_query' => [
+      [
+      'taxonomy' => 'episode_type',
+      'field' => 'slug',
+      'terms' => 'curriculum-episode'
+      ]
+      ],
+    'paged' => $paged
+  ];
+
+  $query = new WP_Query($args);
+
+  if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+
+    $episode_id = get_the_ID();
+    $url = get_the_permalink();
+    $title = get_the_title();
+    $thumb = get_the_post_thumbnail_url();
+?>
+    <article data-css-card="topic-card">
+      <div data-css-card="topic-wrapper">
+        <div data-css-card="topic-thumbnail">
+          <img src="<?= $thumb; ?>" />
+        </div>
+        <div data-css-card="topic-summary">
+          <h2 class="title"><span class="number"></span><a href="<?= $url;?>"><?= $title; ?></a></h2>
+        </div>
+      </div>
+    </article>
+<?php endwhile;?>
+
+    <!-- Add the pagination functions here. -->
+    <div class="pagination">
+
+    <?php 
+        echo paginate_links( array(
+            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
+            'total'        => $query->max_num_pages,
+            'current'      => max( 1, get_query_var( 'paged' ) ),
+            'format'       => '?paged=%#%',
+            'show_all'     => false,
+            'type'         => 'plain',
+            'end_size'     => 2,
+            'mid_size'     => 1,
+            'prev_next'    => true,
+            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Next', 'text-domain' ) ),
+            'next_text'    => sprintf( '%1$s <i></i>', __( 'Prev', 'text-domain' ) ),
+            'add_args'     => false,
+            'add_fragment' => '',
+        ) );
+
+    ?>
+    </div>
+<?php wp_reset_postdata(  ); ?>
+<?php else : ?>
+  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+<?php endif; ?>
+
