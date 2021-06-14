@@ -1,129 +1,96 @@
-<h3> All Episodes </h3>
+<div class="results-episodes">
+    <h3 class="results-episodes-text"> All Episodes </h3>
 
-<?php
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-  $args = [
-    'post_type' => 'segments',
-    'posts_per_page' => 5,
-    'tax_query' => [
-      [
-      'taxonomy' => 'episode_type',
-      'field' => 'slug',
-      'terms' => 'full-episode'
-      ]
-      ],
-    'paged' => $paged
-  ];
+    <div class="results-episodes-container">
+    <?php
+      $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+      $args = [
+        'post_type' => ['topics'],
+        'posts_per_page' => 3,
+        'paged' => $paged
+      ];
 
-  $query = new WP_Query($args);
+      $query = new WP_Query($args);
 
-  if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+      if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+        $topics = get_field('full_episode');
 
-    $episode_id = get_the_ID();
-    $url = get_the_permalink();
-    $title = get_the_title();
-    $thumb = get_the_post_thumbnail_url();
-?>
-    <article data-css-card="topic-card">
-      <div data-css-card="topic-wrapper">
-        <div data-css-card="topic-thumbnail">
-          <img src="<?= $thumb; ?>" />
-        </div>
-        <div data-css-card="topic-summary">
-          <h2 class="title"><span class="number"></span><a href="<?= $url;?>"><?= $title; ?></a></h2>
-        </div>
-      </div>
-    </article>
-<?php endwhile;?>
+        if(is_array($topics) || is_object($topics)):
+        foreach($topics as $topic): ?>
+          <div class="results-episodes-item card">
+            <a href="<?php the_permalink($topic->ID); ?>">
+            <img src="<?php echo get_the_post_thumbnail_url($topic->ID); ?>" class="card-img-top"/>
+            <div class="card-body">
+              <h5 class="card-title"><?php the_title();?></h5>
+            </div>
+            </a>
+          </div>
 
-    <!-- Add the pagination functions here. -->
-    <div class="pagination">
+        <?php endforeach; endif; 
+        ?>
+        
 
-    <?php 
-        echo paginate_links( array(
-            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-            'total'        => $query->max_num_pages,
-            'current'      => max( 1, get_query_var( 'paged' ) ),
-            'format'       => '?paged=%#%',
-            'show_all'     => false,
-            'type'         => 'plain',
-            'end_size'     => 2,
-            'mid_size'     => 1,
-            'prev_next'    => true,
-            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Next', 'text-domain' ) ),
-            'next_text'    => sprintf( '%1$s <i></i>', __( 'Prev', 'text-domain' ) ),
-            'add_args'     => false,
-            'add_fragment' => '',
-        ) );
+        <?php endwhile;?>
+        <?php wp_reset_query(); ?>
 
-    ?>
     </div>
-<?php wp_reset_postdata(  ); ?>
-<?php else : ?>
-  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
-
-<h3>All Curriculum</h3>
-<?php
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
-  $args = [
-    'post_type' => 'segments',
-    'posts_per_page' => 5,
-    'tax_query' => [
-      [
-      'taxonomy' => 'episode_type',
-      'field' => 'slug',
-      'terms' => 'curriculum-episode'
-      ]
-      ],
-    'paged' => $paged
-  ];
-
-  $query = new WP_Query($args);
-
-  if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
-
-    $episode_id = get_the_ID();
-    $url = get_the_permalink();
-    $title = get_the_title();
-    $thumb = get_the_post_thumbnail_url();
-?>
-    <article data-css-card="topic-card">
-      <div data-css-card="topic-wrapper">
-        <div data-css-card="topic-thumbnail">
-          <img src="<?= $thumb; ?>" />
-        </div>
-        <div data-css-card="topic-summary">
-          <h2 class="title"><span class="number"></span><a href="<?= $url;?>"><?= $title; ?></a></h2>
-        </div>
-      </div>
-    </article>
-<?php endwhile;?>
-
-    <!-- Add the pagination functions here. -->
-    <div class="pagination">
-
-    <?php 
-        echo paginate_links( array(
-            'base'         => str_replace( 999999999, '%#%', esc_url( get_pagenum_link( 999999999 ) ) ),
-            'total'        => $query->max_num_pages,
-            'current'      => max( 1, get_query_var( 'paged' ) ),
-            'format'       => '?paged=%#%',
-            'show_all'     => false,
-            'type'         => 'plain',
-            'end_size'     => 2,
-            'mid_size'     => 1,
-            'prev_next'    => true,
-            'prev_text'    => sprintf( '<i></i> %1$s', __( 'Next', 'text-domain' ) ),
-            'next_text'    => sprintf( '%1$s <i></i>', __( 'Prev', 'text-domain' ) ),
-            'add_args'     => false,
-            'add_fragment' => '',
-        ) );
-
-    ?>
+    <div class="results-episodes-loadmore">
+      <form id="itoForm" data-js-form="filter" method="POST" class="filter-form">
+        <fieldset>
+          <button class="btn-secondary">Load More Episodes</button>
+          <input id="itoSubmit" type="hidden" name="action" value="filter">
+        </fieldset>
+      </form>
     </div>
-<?php wp_reset_postdata(  ); ?>
-<?php else : ?>
-  <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
-<?php endif; ?>
+        <?php else : ?>
+          <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+        <?php endif; ?>
+    </div>
 
+    <h3 class="results-episodes-text"> All Curriculums </h3>
+
+    <div class="results-episodes-container">
+    <?php
+      $args = [
+        'post_type' => ['topics'],
+        'posts_per_page' => 6,
+      ];
+
+      $query = new WP_Query($args);
+
+      if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
+        $curriculums = get_field('curriculum_videos');
+
+        if(is_array($curriculums) || is_object($curriculums)):
+        foreach($curriculums as $curriculum): ?>
+            <div class="results-episodes-item card">
+              <a href="<?php the_permalink($curriculum->ID); ?>">
+              <img src="<?php echo get_the_post_thumbnail_url($curriculum->ID); ?>" class="card-img-top"/>
+              <div class="card-body">
+                <h5 class="card-title"><?php echo get_the_title($curriculum->ID);?></h5>
+              </div>
+              </a>
+            </div>
+
+        <?php endforeach;
+        endif;
+       
+
+       endwhile;?>
+        <?php wp_reset_query(); ?>
+
+    </div>
+    <div class="results-episodes-loadmore">
+      <form id="itoForm" data-js-form="filter" method="POST" class="filter-form">
+        <fieldset>
+          <button class="btn-secondary">Load More Curriculums</button>
+          <input type="hidden" value="curriculum_videos" name="episode-types"></input>
+          <input id="itoSubmit" type="hidden" name="action" value="filter">
+        </fieldset>
+      </form>
+    </div>
+        <?php else : ?>
+          <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
+        <?php endif; ?>
+    </div>
+</div>

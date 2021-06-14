@@ -1,0 +1,121 @@
+.filter {
+    &-form {
+        background-color: $fourth;
+    }
+
+    &-search {
+        padding: 20px;
+    }
+
+    &-types {
+        background-color: $fourth;
+        padding: 0px 20px;
+
+        label {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        &-input {
+            display: flex;
+            justify-content: space-between;
+            text-transform: uppercase;
+            margin-top: 10px;
+
+            input[type="radio"] {
+                margin-right: 10px;
+                display:inline-block;
+                width:20px;
+                height:20px;
+            }
+        }
+    }
+
+    &-categories {
+        padding: 0px 20px;
+        margin-top: 20px;
+        background-color: $fourth;
+
+        label {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    &-grade {
+        padding: 0px 20px;
+        margin-top: 20px;
+        background-color: $fourth;
+        
+        &-label {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        &-select {
+            margin-top: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            display:inline-block;
+            width:20px;
+            height:20px;
+        }
+    }
+
+    &-submit {
+        display: flex;
+        justify-content: space-between;
+        padding: 0px 10px;
+        margin-top: 20px;
+        padding-bottom: 20px;
+
+        
+        button, input[type="reset"] {
+            padding: 10px 60px;
+            border: none;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: bold;
+            background-color: $secondary;
+        }
+    }
+
+    &-downloads {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: $primary;
+        
+        &-container {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        h4 {
+            color: $white;
+            text-align: center;
+        }
+
+        img {
+            align-self: center;
+            width: auto;
+            height: 44px;
+            padding: 0 10px;
+        }
+    }
+}
+
+aside {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 60px;
+}
+
+#episode-category {
+    margin-top: 20px;
+    width: 100%;
+}
+

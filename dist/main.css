@@ -10841,6 +10841,15 @@ textarea.form-control-lg {
   background-color: #f48822;
   filter: brightness(97%);
 }
+.btn-secondary {
+  background-color: #1a5458;
+  color: white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+}
+.btn-secondary:hover, .btn-secondary:active {
+  background-color: #1a5458;
+}
 
 #home-video {
   position: relative;
@@ -11107,121 +11116,188 @@ header .overlay {
 }
 
 .episodes {
-  margin-top: 60px;
-}
-
-.filter h4, .filter .h4 {
-  text-transform: uppercase;
-  text-align: center;
-  color: #1a5458;
-}
-.filter-search {
-  padding: 20px;
-  background-color: #1E3433;
-}
-.filter-search-check {
-  display: flex;
-  justify-content: space-between;
-  text-transform: uppercase;
-  font-weight: bold;
-}
-.filter-categories {
-  margin: 20px 0;
-  padding: 20px;
-  background-color: #1E3433;
-}
-.filter-categories h4, .filter-categories .h4 {
-  padding-bottom: 20px;
-  color: #1a5458;
-}
-.filter-grade {
-  padding: 20px;
-  background-color: #1E3433;
-  margin-bottom: 40px;
-}
-.filter-grade h4, .filter-grade .h4 {
-  padding-bottom: 20px;
-}
-.filter-downloads {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  background-color: #1a5458;
-  padding: 20px 0;
   margin-top: 20px;
 }
-.filter-ito {
-  height: 50px;
-  width: auto;
-}
-.filter-appstore {
-  height: 40px;
-  width: auto;
-}
-.filter-googleplay {
-  height: 60px;
-  width: auto;
-}
 
-.results h3, .results .h3 {
-  text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
-  margin: 20px 0;
-  color: #1a5458;
-}
 .results-featured {
+  background-color: #63784B;
   display: flex;
   flex-direction: column;
-  padding: 40px;
+  padding: 20px;
 }
-.results-featured h3, .results-featured .h3 {
-  color: #fff;
-  font-family: "Roboto Slab", serif;
+.results-featured h2, .results-featured .h2 {
   text-transform: uppercase;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  color: #F3B725;
 }
-.results-featured-content {
+.results-featured-container {
   display: flex;
-  align-items: center;
+  margin-top: 20px;
+}
+.results-featured-container img {
+  height: 160px;
+  width: auto;
 }
 .results-featured-text {
-  padding-left: 40px;
   display: flex;
+  justify-self: center;
   flex-direction: column;
+  margin-left: 40px;
 }
-.results-featured-text p {
-  margin-bottom: 40px;
+.results-featured-text h5, .results-featured-text .h5 {
   color: #fff;
 }
-.results-featured img {
-  width: auto;
-  height: 271px;
+.results-featured-text p {
+  color: #E6EBCD;
+}
+.results-featured a {
+  width: 200px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 .results-episodes {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: space-between;
 }
-.results-episodes-item img {
-  height: 180px;
-  width: auto;
-}
-.results-episodes-item h5, .results-episodes-item .h5 {
+.results-episodes-text {
+  text-transform: uppercase;
+  font-weight: bold;
   font-family: "Roboto Slab", serif;
   color: #1a5458;
-  text-transform: uppercase;
   margin-top: 20px;
 }
-.results-episodes-item h5:hover, .results-episodes-item .h5:hover {
-  color: #f48822;
+.results-episodes-container {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
-.results-pagination {
-  width: 100%;
+.results-episodes-loadmore {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 40px;
 }
-.results-pagination p {
+
+.card {
+  width: 260px;
+  margin: 10px;
+}
+.card-title {
+  display: flex;
+  align-items: center;
   text-align: center;
-  margin: 20px;
-  font-size: 22px;
+}
+.card a {
+  text-decoration: none;
   color: #1a5458;
+}
+.card:hover, .card:active {
+  transform: scale(1.05);
+  -webkit-animation: fadeIn 5s;
+          animation: fadeIn 5s;
+}
+
+.filter-form {
+  background-color: #E6EBCD;
+}
+.filter-search {
+  padding: 20px;
+}
+.filter-types {
+  background-color: #E6EBCD;
+  padding: 0px 20px;
+}
+.filter-types label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.filter-types-input {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+.filter-types-input input[type=radio] {
+  margin-right: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.filter-categories {
+  padding: 0px 20px;
+  margin-top: 20px;
+  background-color: #E6EBCD;
+}
+.filter-categories label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.filter-grade {
+  padding: 0px 20px;
+  margin-top: 20px;
+  background-color: #E6EBCD;
+}
+.filter-grade-label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.filter-grade-select {
+  margin-top: 20px;
+}
+.filter-grade input[type=checkbox] {
+  margin-right: 10px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+.filter-submit {
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 10px;
+  margin-top: 20px;
+  padding-bottom: 20px;
+}
+.filter-submit button, .filter-submit input[type=reset] {
+  padding: 10px 60px;
+  border: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background-color: #f48822;
+}
+.filter-downloads {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #1a5458;
+}
+.filter-downloads-container {
+  display: flex;
+  margin: 20px 0;
+}
+.filter-downloads h4, .filter-downloads .h4 {
+  color: #fff;
+  text-align: center;
+}
+.filter-downloads img {
+  align-self: center;
+  width: auto;
+  height: 44px;
+  padding: 0 10px;
+}
+
+aside {
+  /* Safari */
+  position: sticky;
+  top: 60px;
+}
+
+#episode-category {
+  margin-top: 20px;
+  width: 100%;
 }
 
 footer {

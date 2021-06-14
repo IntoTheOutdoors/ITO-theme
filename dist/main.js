@@ -21,6 +21,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         action: 'filter'
       }
     }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
+      console.log(result);
       $('[data-js-filter=target]').html(result);
     }), _defineProperty(_$$ajax, "error", function error(result) {
       console.log(result);
@@ -28,6 +29,21 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   });
   $('#itoReset').on('click', function (e) {
     e.preventDefault();
+    var data = $(this).val();
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: {
+        action: 'reset',
+        data: data
+      },
+      type: 'post',
+      success: function success(result) {
+        $('[data-js-filter=target]').html(result);
+      },
+      error: function error(result) {
+        console.log('erorr occured somewhere', result);
+      }
+    });
     $('#itoForm')[0].reset();
   });
 })(jQuery);

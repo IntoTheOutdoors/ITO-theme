@@ -3,10 +3,15 @@
 $primary: #1a5458;
 $secondary: #f48822;
 $third: #1E3433;
+$fourth: #E6EBCD;
+$fifth: #63784B;
+$sixth: #F3B725;
 
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
+  "third": $third,
+  "fourth": $fourth,
 );
 
 // font
@@ -24,6 +29,17 @@ $font-one: 'Roboto Slab', serif;
     &:hover, &:active {
       background-color: $secondary;
       filter: brightness(97%);
+    }
+  }
+
+  &-secondary {
+    background-color: $primary;
+    color: white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+
+    &:hover, &:active {
+      background-color: $primary;
     }
   }
 }
