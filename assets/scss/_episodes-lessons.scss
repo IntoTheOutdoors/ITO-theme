@@ -3,8 +3,13 @@
 }
 
 .results {
+    &-header {
+        font-family: $font-one;
+        color: $primary;
+        text-transform: uppercase;
+    }
+
     &-featured {
-        background-color: $fifth;
         display: flex;
         flex-direction: column;
         padding: 20px;
@@ -13,16 +18,18 @@
             text-transform: uppercase;
             text-align: center;
             font-family: $font-one;
-            color: $sixth;
+            font-size: 18px;
+            color: $primary;
         }
     
         &-container {
             display: flex;
-            margin-top: 20px;
-            
+            margin-top: 4px;
+
             img {
-                height: 160px;
+                height: 184px;
                 width: auto;
+                background-size: cover;
             }
         }
         
@@ -30,21 +37,24 @@
             display: flex;
             justify-self: center;
             flex-direction: column;
-            margin-left: 40px;
+            margin-left: 20px;
+            padding: 10px;
             
             h5 {
-                color: $white;
+                color: $primary;
+                margin: 0;
             }
 
             p {
-                color: $fourth;
+                color: black;
+                font-size: 12px;
+                margin: 4px 0;
             }
         }
  
         a {
             width: 200px;
             margin: 0 auto;
-            margin-top: 10px;
         }
     }
 
@@ -58,11 +68,11 @@
             font-weight: bold;
             font-family: $font-one;
             color: $primary;
-            margin-top: 20px;
+            margin-top: 10px;
         }
 
         &-container {
-            margin-top: 20px;
+            margin-top: 10px;
             display: flex;
             flex-wrap: wrap;
         }        
@@ -70,31 +80,50 @@
         &-loadmore {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            margin-bottom: 40px;
+            margin-top: 10px;
+            margin-bottom: 20px;
             
         }
     }
 
+    &-filter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 20px 0;
+    }
+
+
+
 }
 
 .card {
-    width: 260px;
-    margin: 10px;
+    width: 200px;
+    margin: 5px 5px;
 
     &-title {
         display: flex;
+        justify-content: center;
         align-items: center;
         text-align: center;
+        font-size: 12px;
     }
     
     a {
         text-decoration: none;
-        color: $primary;
+        color: black;
     }
 
     &:hover, &:active {
         transform: scale(1.05);
         animation: fadeIn 5s;
     }
+}
+
+.btn-secondary {
+    font-size: 12px;
+}
+
+.btn-featured {
+    padding: 8px 10px;
 }

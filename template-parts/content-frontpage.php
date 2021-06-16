@@ -82,7 +82,7 @@
       <?php 
         $image = wp_get_attachment_image_src(10757, $size="thumbnail", $icon=false, []);
       ?>
-      <section class="family" style="background: url(<?php echo $image[0]; ?>) no-repeat; background-position: bottom; width: 100%; height: 565px; margin: 0 auto;">
+      <section class="family" style="background: url(<?php echo $image[0]; ?>) repeat-x; background-position: bottom; width: 100%; height: 565px; margin: 0 auto;">
         <!-- SIGNUP (CALL TO ACTION) -->
         <section class="signup container">
           <div class="signup-text">

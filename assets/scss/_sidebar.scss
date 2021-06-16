@@ -1,14 +1,11 @@
 .filter {
-    &-form {
-        background-color: $fourth;
-    }
+    background-color: $grey-one;
 
     &-search {
         padding: 20px;
     }
 
     &-types {
-        background-color: $fourth;
         padding: 0px 20px;
 
         label {
@@ -34,7 +31,6 @@
     &-categories {
         padding: 0px 20px;
         margin-top: 20px;
-        background-color: $fourth;
 
         label {
             text-transform: uppercase;
@@ -45,7 +41,6 @@
     &-grade {
         padding: 0px 20px;
         margin-top: 20px;
-        background-color: $fourth;
         
         &-label {
             text-transform: uppercase;
@@ -78,7 +73,7 @@
             text-transform: uppercase;
             color: $white;
             font-weight: bold;
-            background-color: $secondary;
+            background-color: $primary;
         }
     }
 
@@ -86,6 +81,7 @@
         display: flex;
         flex-direction: column;
         margin-top: 20px;
+        margin-bottom: 40px;
         padding: 10px;
         background-color: $primary;
         
@@ -114,8 +110,9 @@ aside {
     top: 60px;
 }
 
+
 #episode-category {
     margin-top: 20px;
     width: 100%;
 }
-
+ 

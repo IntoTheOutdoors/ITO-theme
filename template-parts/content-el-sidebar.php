@@ -9,10 +9,10 @@
         <label for="episode-types">Search episodes by topics:</label>
         <div class="filter-types-input">
           <div id="episode-types">
-              <input type="radio" value="curriculum_videos" name="episode-types">Curriculums</input>
+              <input checked  type="radio" value="full_episode" name="episode-types">Episodes</input>
           </div>
           <div id="episode-types">
-              <input type="radio" value="full_episode" name="episode-types">Episodes</input>
+              <input type="radio" value="curriculum_videos" name="episode-types">Curriculums</input>
           </div>
         </div>
     </fieldset>
@@ -41,7 +41,7 @@
       <?php
       $grade_levels = get_terms( array(
           'taxonomy' => 'grade_level',
-          'hide_empty' => false,
+          'hide_empty' => false,  
       ) );
 
       ?>

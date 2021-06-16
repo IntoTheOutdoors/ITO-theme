@@ -7,6 +7,12 @@ $fourth: #E6EBCD;
 $fifth: #63784B;
 $sixth: #F3B725;
 
+$grey-one: #FAFAFA;
+$grey-two: #F8F9FA;
+
+$dark-one: #1E3433;
+$dark-two: #3B3B3B;
+
 $theme-colors: (
   "primary": $primary,
   "secondary": $secondary,
@@ -16,6 +22,7 @@ $theme-colors: (
 
 // font
 $font-one: 'Roboto Slab', serif;
+$font-two: 'Noto Sans', sans-serif;
 
 .btn {
   padding: 20px 80px;
@@ -37,6 +44,7 @@ $font-one: 'Roboto Slab', serif;
     color: white;
     padding: 10px 20px;
     text-transform: uppercase;
+    border: none;
 
     &:hover, &:active {
       background-color: $primary;

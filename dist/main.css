@@ -10846,6 +10846,7 @@ textarea.form-control-lg {
   color: white;
   padding: 10px 20px;
   text-transform: uppercase;
+  border: none;
 }
 .btn-secondary:hover, .btn-secondary:active {
   background-color: #1a5458;
@@ -11002,8 +11003,7 @@ header .overlay {
 
 .family {
   width: 100%;
-  height: 100%;
-  margin: 0 auto;
+  height: auto;
   margin-top: 80px;
 }
 
@@ -11119,8 +11119,12 @@ header .overlay {
   margin-top: 20px;
 }
 
+.results-header {
+  font-family: "Roboto Slab", serif;
+  color: #1a5458;
+  text-transform: uppercase;
+}
 .results-featured {
-  background-color: #63784B;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -11129,32 +11133,37 @@ header .overlay {
   text-transform: uppercase;
   text-align: center;
   font-family: "Roboto Slab", serif;
-  color: #F3B725;
+  font-size: 18px;
+  color: #1a5458;
 }
 .results-featured-container {
   display: flex;
-  margin-top: 20px;
+  margin-top: 4px;
 }
 .results-featured-container img {
-  height: 160px;
+  height: 184px;
   width: auto;
+  background-size: cover;
 }
 .results-featured-text {
   display: flex;
   justify-self: center;
   flex-direction: column;
-  margin-left: 40px;
+  margin-left: 20px;
+  padding: 10px;
 }
 .results-featured-text h5, .results-featured-text .h5 {
-  color: #fff;
+  color: #1a5458;
+  margin: 0;
 }
 .results-featured-text p {
-  color: #E6EBCD;
+  color: black;
+  font-size: 12px;
+  margin: 4px 0;
 }
 .results-featured a {
   width: 200px;
   margin: 0 auto;
-  margin-top: 10px;
 }
 .results-episodes {
   display: flex;
@@ -11166,32 +11175,40 @@ header .overlay {
   font-weight: bold;
   font-family: "Roboto Slab", serif;
   color: #1a5458;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .results-episodes-container {
-  margin-top: 20px;
+  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
 }
 .results-episodes-loadmore {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.results-filter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px 0;
 }
 
 .card {
-  width: 260px;
-  margin: 10px;
+  width: 200px;
+  margin: 5px 5px;
 }
 .card-title {
   display: flex;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  font-size: 12px;
 }
 .card a {
   text-decoration: none;
-  color: #1a5458;
+  color: black;
 }
 .card:hover, .card:active {
   transform: scale(1.05);
@@ -11199,14 +11216,21 @@ header .overlay {
           animation: fadeIn 5s;
 }
 
-.filter-form {
-  background-color: #E6EBCD;
+.btn-secondary {
+  font-size: 12px;
+}
+
+.btn-featured {
+  padding: 8px 10px;
+}
+
+.filter {
+  background-color: #FAFAFA;
 }
 .filter-search {
   padding: 20px;
 }
 .filter-types {
-  background-color: #E6EBCD;
   padding: 0px 20px;
 }
 .filter-types label {
@@ -11228,7 +11252,6 @@ header .overlay {
 .filter-categories {
   padding: 0px 20px;
   margin-top: 20px;
-  background-color: #E6EBCD;
 }
 .filter-categories label {
   text-transform: uppercase;
@@ -11237,7 +11260,6 @@ header .overlay {
 .filter-grade {
   padding: 0px 20px;
   margin-top: 20px;
-  background-color: #E6EBCD;
 }
 .filter-grade-label {
   text-transform: uppercase;
@@ -11265,12 +11287,13 @@ header .overlay {
   text-transform: uppercase;
   color: #fff;
   font-weight: bold;
-  background-color: #f48822;
+  background-color: #1a5458;
 }
 .filter-downloads {
   display: flex;
   flex-direction: column;
   margin-top: 20px;
+  margin-bottom: 40px;
   padding: 10px;
   background-color: #1a5458;
 }
@@ -11298,6 +11321,59 @@ aside {
 #episode-category {
   margin-top: 20px;
   width: 100%;
+}
+
+.episode-videos {
+  display: flex;
+  justify-content: space-between;
+}
+.episode-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  margin-left: 20px;
+  width: 700px;
+  background-color: #F8F9FA;
+}
+.episode-lists h5, .episode-lists .h5 {
+  color: #1a5458;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  font-weight: bolder;
+  text-align: center;
+  padding: 10px 0;
+}
+.episode-lists-full, .episode-lists-curriculum {
+  margin: 10px 0;
+  align-self: flex-start;
+}
+.episode-lists-full-item, .episode-lists-curriculum-item {
+  display: flex;
+  align-self: center;
+  padding: 10px 0;
+}
+.episode-lists-full-item img, .episode-lists-curriculum-item img {
+  width: auto;
+  height: 60px;
+}
+.episode-lists-full-item p, .episode-lists-curriculum-item p {
+  color: #3B3B3B;
+  margin-left: 20px;
+  align-self: center;
+}
+
+.breadcrumb {
+  margin-top: 20px;
+}
+.breadcrumb a {
+  color: #1a5458;
+  text-decoration: none;
+}
+
+.load-video:hover {
+  cursor: pointer;
 }
 
 footer {

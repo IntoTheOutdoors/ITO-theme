@@ -46,6 +46,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     });
     $('#itoForm')[0].reset();
   });
+  $('.load-video').on('click', function () {
+    console.log($(this).data('video-embed'));
+    $('.episode-player').html($(this).data('video-embed'));
+  });
 })(jQuery);
 
 /***/ }),
