@@ -1,18 +1,25 @@
 .episode {
+    margin-bottom: 20px;
     &-videos {
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-       
     }
+
+    &-container {
+        display: flex;
+    }
+
 
     &-lists {
         display: flex;
         justify-content: center;
-        align-items: center;
+        align-self: flex-start;
         flex-direction: column;
         padding: 20px;
         margin-left: 20px;
         width: 700px;
+        height: auto;
         background-color: $grey-two;
 
         h5 {
@@ -26,7 +33,6 @@
 
         &-full, &-curriculum {
             margin: 10px 0;
-            align-self: flex-start;
         }
 
         &-full-item, &-curriculum-item {
@@ -44,6 +50,72 @@
                 margin-left: 20px;
                 align-self: center;
             }
+        }
+    }
+
+    &-info {
+        display: flex;
+        width: 888px;
+        height: auto;
+        background-color: $grey-two;
+        margin-left: 6px;
+        margin-top: -6px;
+        
+        h3 {
+            font-size: 20px;
+            color: $dark-two;
+        }
+
+        p {
+            color: $dark-two;
+        }
+
+        &-title {
+            padding: 10px;
+            padding-top: 20px;
+            width: 50%;
+
+            h3 {
+                font-weight: bold;
+            }
+        }
+
+        &-lessons {
+            padding: 10px;
+            padding-top: 20px;
+            width: 50%;
+            background-color: $seventh;
+            flex-direction: column;
+            display: flex;
+
+            h3 {
+                font-weight: bold;
+                text-transform: uppercase;
+                text-align: center;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            a {
+                align-self: center;
+                width: 180px;
+            }
+        }
+    }
+
+    &-details {
+        margin-top: 40px;
+        max-width: 70%;
+        color: black;
+
+        ul > li a {
+            color: $dark-two !important;
+        }
+
+        &-content {
+            margin-top: 40px;
         }
     }
 }

@@ -1,5 +1,5 @@
 <div class="results-episodes">
-    <h3 class="results-episodes-text"> All Episodes </h3>
+    <!-- <h3 class="results-episodes-text"> All Episodes </h3> -->
 
     <div class="results-episodes-container">
     <?php

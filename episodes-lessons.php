@@ -8,10 +8,10 @@
     <div class="container episodes">
         <div class="row">
             <div class="col-4 filter">
-                <?php  get_template_part('template-parts/content-el', 'sidebar'); ?>
+                <?php  get_template_part('template-parts/episodes-lessons', 'sidebar'); ?>
             </div>
             <div class="col-8">
-                <?php    get_template_part('template-parts/content', 'el'); ?>
+                <?php    get_template_part('template-parts/episodes-lessons', 'results'); ?>
             </div>
         </div>
     </div>

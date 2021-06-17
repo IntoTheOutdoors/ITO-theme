@@ -9,6 +9,7 @@
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+// JQUERY
 (function ($) {
   $(document).on('submit', '#itoForm', function (e) {
     var _$$ajax;
@@ -21,7 +22,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         action: 'filter'
       }
     }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
-      console.log(result);
+      // console.log(result);
       $('[data-js-filter=target]').html(result);
     }), _defineProperty(_$$ajax, "error", function error(result) {
       console.log(result);
@@ -47,8 +48,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     $('#itoForm')[0].reset();
   });
   $('.load-video').on('click', function () {
-    console.log($(this).data('video-embed'));
     $('.episode-player').html($(this).data('video-embed'));
+    $('.episode-info-title h3').html($(this).data('episode-title'));
+  });
+  $('#itoForm').on('click', function () {
+    $('#itoForm').submit();
+  });
+  $('#episode-category :selected').on('click', function () {
+    $('#itoForm').submit();
+  });
+  $('#myTab a').on('click', function (e) {
+    e.preventDefault();
+    $(this).tab('show');
   });
 })(jQuery);
 

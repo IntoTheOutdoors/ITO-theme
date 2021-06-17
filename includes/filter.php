@@ -73,7 +73,7 @@ function filter_ajax() {
 
     $query = new WP_Query($args); ?>
 
-    <h3 class="results-header">Results</h3>
+    <!-- <h3 class="results-header">Results</h3> -->
     <div class="results-filter">
     <?php 
     if($query->have_posts()):

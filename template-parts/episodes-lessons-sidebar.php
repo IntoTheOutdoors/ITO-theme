@@ -1,7 +1,7 @@
 <aside>
   <form id="itoForm" data-js-form="filter" method="POST" class="filter-form">
     <fieldset class="filter-search mb-3">
-      <input class="form-control" type="text" id="episode-search" name="episode-search" placeholder="Search here...">
+      <input class="form-control submit" type="text" id="episode-search" name="episode-search" placeholder="Search here...">
     </fieldset>
 
     <!-- Episode Types -->
@@ -9,30 +9,28 @@
         <label for="episode-types">Search episodes by topics:</label>
         <div class="filter-types-input">
           <div id="episode-types">
-              <input checked  type="radio" value="full_episode" name="episode-types">Episodes</input>
+              <input class="submit" checked  type="radio" value="full_episode" name="episode-types">Episodes</input>
           </div>
           <div id="episode-types">
-              <input type="radio" value="curriculum_videos" name="episode-types">Curriculums</input>
+              <input class="submit" type="radio" value="curriculum_videos" name="episode-types">Curriculums</input>
           </div>
         </div>
     </fieldset>
 
     <!-- CATEGORY -->
     <fieldset class="filter-categories">
-      <label for="episode-category">search episodes by category</label>
-      <br>
       <?php
       $categories = get_terms( array(
           'taxonomy' => 'topic_categories',
           'hide_empty' => false,
       ) );
       ?>
-      <select id="episode-category" name="episode-category">
-        <option value="">Select Category</option>
-        <?php foreach($categories as $category) : ?>
-        <option value="<?= $category->term_id; ?>"><?= $category->name; ?></option>
-        <?php endforeach; ?>
-      </select>
+      <label for="filter-categories">Search episodes by Category:</label>
+      <?php foreach($categories as $category) : ?>
+        <div class="filter-categories-item">
+          <input class="submit" value="<?= $category->term_id; ?>" type="radio" name="episode-category"><?php echo $category->name; ?></input><br>
+        </div>
+      <?php endforeach; ?>
     </fieldset>
 
     <!-- GRADE LEVEL -->
@@ -45,10 +43,10 @@
       ) );
 
       ?>
-      <div class="filter-grade-select">
+      <div>
         <?php foreach($grade_levels as $grade_level) : ?>
-        <div>
-          <input type="checkbox" id="<?= $grade_level->term_id; ?>" name="episode-grade-level[]" value="<?= $grade_level->term_id; ?>"><label for="<?= $grade_level->name; ?>"><?= $grade_level->name; ?></label>
+        <div class="filter-grade-item">
+          <input class="submit" type="checkbox" id="<?= $grade_level->term_id; ?>" name="episode-grade-level[]" value="<?= $grade_level->term_id; ?>"><label for="<?= $grade_level->name; ?>"><?= $grade_level->name; ?></label>
         </div>
         <?php endforeach; ?>
       </div>
@@ -57,7 +55,7 @@
     <!-- Fitler button -->
     <div class="filter-submit">
       <fieldset>
-        <button data-css-button="button red">Filter</button>
+        <!-- <button data-css-button="button red">Filter</button> -->
         <input id="itoSubmit" type="hidden" name="action" value="filter">
       </fieldset>
   

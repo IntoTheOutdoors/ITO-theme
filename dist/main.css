@@ -10844,7 +10844,7 @@ textarea.form-control-lg {
 .btn-secondary {
   background-color: #1a5458;
   color: white;
-  padding: 10px 20px;
+  padding: 10px 30px;
   text-transform: uppercase;
   border: none;
 }
@@ -11226,6 +11226,7 @@ header .overlay {
 
 .filter {
   background-color: #FAFAFA;
+  margin-bottom: 40px;
 }
 .filter-search {
   padding: 20px;
@@ -11240,7 +11241,7 @@ header .overlay {
 .filter-types-input {
   display: flex;
   justify-content: space-between;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-top: 10px;
 }
 .filter-types-input input[type=radio] {
@@ -11248,6 +11249,7 @@ header .overlay {
   display: inline-block;
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 }
 .filter-categories {
   padding: 0px 20px;
@@ -11255,11 +11257,27 @@ header .overlay {
 }
 .filter-categories label {
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: bolder;
+}
+.filter-categories-item {
+  margin: 10px 0;
+}
+.filter-categories-item label {
+  text-transform: capitalize;
+}
+.filter-categories-item input[type=radio] {
+  display: inline-block;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
 }
 .filter-grade {
   padding: 0px 20px;
   margin-top: 20px;
+}
+.filter-grade-item {
+  margin: 10px 0;
 }
 .filter-grade-label {
   text-transform: uppercase;
@@ -11273,16 +11291,19 @@ header .overlay {
   display: inline-block;
   width: 20px;
   height: 20px;
+  vertical-align: middle;
 }
 .filter-submit {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   padding: 0px 10px;
-  margin-top: 20px;
-  padding-bottom: 20px;
+  margin: 10px 0;
+  margin-bottom: 20px;
 }
 .filter-submit button, .filter-submit input[type=reset] {
   padding: 10px 60px;
+  width: 100%;
   border: none;
   text-transform: uppercase;
   color: #fff;
@@ -11292,8 +11313,7 @@ header .overlay {
 .filter-downloads {
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin: 10px 0;
   padding: 10px;
   background-color: #1a5458;
 }
@@ -11323,18 +11343,26 @@ aside {
   width: 100%;
 }
 
+.episode {
+  margin-bottom: 20px;
+}
 .episode-videos {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
+}
+.episode-container {
+  display: flex;
 }
 .episode-lists {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-self: flex-start;
   flex-direction: column;
   padding: 20px;
   margin-left: 20px;
   width: 700px;
+  height: auto;
   background-color: #F8F9FA;
 }
 .episode-lists h5, .episode-lists .h5 {
@@ -11347,7 +11375,6 @@ aside {
 }
 .episode-lists-full, .episode-lists-curriculum {
   margin: 10px 0;
-  align-self: flex-start;
 }
 .episode-lists-full-item, .episode-lists-curriculum-item {
   display: flex;
@@ -11363,6 +11390,60 @@ aside {
   margin-left: 20px;
   align-self: center;
 }
+.episode-info {
+  display: flex;
+  width: 888px;
+  height: auto;
+  background-color: #F8F9FA;
+  margin-left: 6px;
+  margin-top: -6px;
+}
+.episode-info h3, .episode-info .h3 {
+  font-size: 20px;
+  color: #3B3B3B;
+}
+.episode-info p {
+  color: #3B3B3B;
+}
+.episode-info-title {
+  padding: 10px;
+  padding-top: 20px;
+  width: 50%;
+}
+.episode-info-title h3, .episode-info-title .h3 {
+  font-weight: bold;
+}
+.episode-info-lessons {
+  padding: 10px;
+  padding-top: 20px;
+  width: 50%;
+  background-color: #CCE3DE;
+  flex-direction: column;
+  display: flex;
+}
+.episode-info-lessons h3, .episode-info-lessons .h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+.episode-info-lessons p {
+  font-size: 12px;
+}
+.episode-info-lessons a {
+  align-self: center;
+  width: 180px;
+}
+.episode-details {
+  margin-top: 40px;
+  max-width: 70%;
+  color: black;
+}
+.episode-details ul > li a {
+  color: #3B3B3B !important;
+}
+.episode-details-content {
+  margin-top: 40px;
+}
 
 .breadcrumb {
   margin-top: 20px;
@@ -11377,7 +11458,7 @@ aside {
 }
 
 footer {
-  background-color: #1a5458;
+  background-color: #1E3433;
 }
 
 .footer {
@@ -11399,6 +11480,7 @@ footer {
 .footer-socialmedia i {
   font-size: 40px;
   padding: 0 5px;
+  color: #fff;
 }
 
 body {

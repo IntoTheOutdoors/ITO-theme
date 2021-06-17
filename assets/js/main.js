@@ -1,3 +1,5 @@
+
+// JQUERY
 (function($) {
     $(document).on('submit', '#itoForm', function (e) {
       e.preventDefault();
@@ -8,7 +10,7 @@
         data: {action: 'filter'}, data,
         type: 'post',
         success: (result) => {
-          console.log(result);
+          // console.log(result);
           $('[data-js-filter=target]').html(result);
         },
         error: (result) => {
@@ -36,7 +38,20 @@
     });
 
     $('.load-video').on('click', function() {
-      console.log($(this).data('video-embed'));
       $('.episode-player').html($(this).data('video-embed'));
+      $('.episode-info-title h3').html($(this).data('episode-title'));
     });
+
+    $('#itoForm').on('click', function() {  
+      $('#itoForm').submit();
+    });
+
+    $('#episode-category :selected').on('click', function() {
+      $('#itoForm').submit();
+    });
+
+    $('#myTab a').on('click', function (e) {
+      e.preventDefault()
+      $(this).tab('show')
+    })
 })(jQuery);
