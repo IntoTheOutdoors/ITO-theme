@@ -1,8 +1,8 @@
 <main >
-    <!-- JUMBOTRON CALL TO ACTION -->
-    <section class="jumbotron">   
-        <div class="jumbotron-content container">
-            <div class="jumbotron-content-text">
+    <!-- CTA -->
+    <section class="cta">   
+        <div class="cta-content container">
+            <div class="cta-content-text">
                 <h1>into the outdoors</h1>
                 <h2>Creating Pathways</h2>
                 <p>to environmental awareness and outdoor lifestyles that <br> 
@@ -90,7 +90,7 @@
             <p>Join our email list to be the first to get the lasts news, 
               new episode notifications, and exclusive contests 
               conveniently in your inbox!</p>
-            <a href="" class="btn btn-primary">signup</a>
+            <a href="" class="btn btn-secondary">signup</a>
           </div>
         </section>
       </section>

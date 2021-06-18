@@ -1,5 +1,4 @@
 <h5>Full Episode</h5>
-
 <?php $curriculum_videos = get_field('curriculum_videos'); ?>
 <div class="episode-lists-full">
     <?php 
@@ -15,6 +14,15 @@
         <img src="<?php echo $image[0]; ?>" alt="">
         <p><?php the_title(); ?></p>
     </div>
+
+    <!-- Lesson Plans here -->
+    <?php  
+        get_template_part('template-parts/single-episode', 'lessons', [
+            'curriculum_id' => $full_video[0]->ID,
+            'fullepisode' => true
+        ]); 
+    ?>
+    <hr>
 </div>
 <h5>Curriculum Videos</h5>
 <div class="episode-lists-curriculum">
@@ -41,7 +49,16 @@
                 ?>
                 <img src="<?php echo $image[0]; ?>" alt="">
                 <p><?php echo get_the_title($curriculum_video->ID); ?></p>
+            
+                <!-- Lesson Plans here -->
+                
             </div>
+
+            <?php  get_template_part('template-parts/single-episode', 'lessons', [
+                'curriculum_id' => $curriculum_video->ID
+            ]); ?>
+            <hr>
+
         <?php endforeach;
         else: ?>
             <p class="no-content"><?php echo "No Curriculum Video(s) Available"; ?></p>

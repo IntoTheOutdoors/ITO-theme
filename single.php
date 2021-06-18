@@ -13,8 +13,6 @@
         <!-- EPISODE PLAYER HERE -->
         <div class="episode-container">
             <div class="episodes-video-container">
-                <?php
-                if($post->post_type == "topics"): ?>
                 <div class="episode-player">
                     <?php get_template_part( 'template-parts/single-episode', 'player' ); ?>
                 </div>
@@ -24,7 +22,14 @@
                         <p><?php echo get_the_date(); ?></p>
                     </div>
                     <div class="episode-info-lessons">
-                        <?php get_template_part('template-parts/single-episode', 'lessons'); ?>
+                    <h3>All Lesson Plans</h3>
+                    <?php
+                        $files = get_field('download_all_curriculum'); 
+                        if(!empty($files)):  ?>
+                            <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
+                    <?php 
+                        endif; 
+                    ?> 
                     </div>
                 </div>
             </div>
@@ -37,14 +42,17 @@
 
 
         <!-- END OF EPISODE LIST -->
-        <div class="episode-details">
-            <?php get_template_part('template-parts/single-episode', 'details'); ?>
-        </div>
-        <?php
-            else: 
-                echo "not a topic";
-            endif; 
-        ?>
+        <div class="episode-bottom">
+            <div class="episode-bottom-details">
+                <?php get_template_part('template-parts/single-episode', 'details'); ?>
+            </div>
+            <div class="episode-bottom-related">
+                <?php $topic = get_the_ID(); ?>
+                <?php get_template_part('template-parts/single-episode', 'related', [
+                    'topic_id' => $topic
+                ]); ?>
+            </div>
+        </div>  
     </div>
 </div>    
 </main>

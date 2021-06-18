@@ -92,16 +92,11 @@
         padding: 0px 10px;
         margin: 10px 0;
         margin-bottom: 20px;
-
+        text-align: center;
         
-        button, input[type="reset"] {
-            padding: 10px 60px;
+        input {
             width: 100%;
-            border: none;
-            text-transform: uppercase;
-            color: $white;
             font-weight: bold;
-            background-color: $primary;
         }
     }
 

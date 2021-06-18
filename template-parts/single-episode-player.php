@@ -8,7 +8,7 @@ foreach($full_episodes as $full_episode):
     else:
         $vimeo_episode = get_field('vimeo_url', $full_episode->ID);
         $updated_src = customize_iframe($vimeo_episode); ?>
-        <iframe src=<?php echo $updated_src; ?> width="900" height="500" frameborder="0" allow="autoplay"></iframe>
+        <iframe src=<?php echo $updated_src; ?>  frameborder="0" allow="autoplay"></iframe>
     <?php 
     endif; 
 endforeach;

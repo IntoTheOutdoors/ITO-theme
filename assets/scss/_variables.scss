@@ -1,25 +1,23 @@
 // colors
 
-$primary: #1a5458;
-$secondary: #f48822;
+
 $third: #1E3433;
 $fourth: #E6EBCD;
 $fifth: #63784B;
 $sixth: #F3B725;
 $seventh: #CCE3DE;
 
+$white: #fff;
+
 $grey-one: #FAFAFA;
 $grey-two: #F8F9FA;
+$grey-three: #dee2e6;
+$grey-four: #ced4da;
+$grey-five: #adb5bd;
 
 $dark-one: #1E3433;
 $dark-two: #3B3B3B;
 
-$theme-colors: (
-  "primary": $primary,
-  "secondary": $secondary,
-  "third": $third,
-  "fourth": $fourth,
-);
 
 // font
 $font-one: 'Roboto Slab', serif;
@@ -34,21 +32,14 @@ $font-two: 'Noto Sans', sans-serif;
     background-color: $secondary;
     border: none;
 
-    &:hover, &:active {
-      background-color: $secondary;
-      filter: brightness(97%);
-    }
+    
   }
 
   &-secondary {
     background-color: $primary;
     color: white;
-    padding: 10px 30px;
     text-transform: uppercase;
     border: none;
 
-    &:hover, &:active {
-      background-color: $primary;
-    }
   }
 }

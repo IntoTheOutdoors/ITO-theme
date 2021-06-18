@@ -347,3 +347,57 @@ Custom Theme for Into the Outdoors - Creating pathways to environmental awarenes
           <p><?php _e('Sorry, no posts matched your criteria.'); ?></p>
         <?php endif; ?>
     </div>
+
+
+
+
+
+/// lesson plans
+
+
+        if(is_array($curriculum_videos) || is_object($curriculum_videos)):
+        foreach($curriculum_videos as $curriculum_video): 
+?>
+        <div class="dropdown">
+            <? if(!empty($lesson_plans)): ?>
+            <a class="btn btn-outline-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="fas fa-arrow-circle-down"></i>
+                <?php 
+                    if(count($lesson_plans) > 1): ?>
+                        <span>Lesson plans</span>
+                <?php 
+                    else: 
+                ?>
+                        <span>Lesson Plan</span>
+                <?php 
+                    endif
+                ?>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                
+                <?php 
+                    foreach($lesson_plans as $lesson_plan): 
+                    $file = get_field('file_upload', $lesson_plan->ID);
+                    $url = get_field('url', $lesson_plan->ID);
+
+                    // if only 1 file is available
+
+                    // if file is an array / object
+
+                    // if url 
+
+                    // if url is an array
+                ?>
+                        <li><a class="dropdown-item" href="<?php echo $file['url']; ?>" target="_blank"><?php echo get_the_title($lesson_plan->ID); ?></a></li>
+                    <?php 
+                    var_dump($url);
+                        
+                    endforeach;
+                ?>
+            </ul>
+            <?php endif; ?>
+        </div>
+        <hr>
+        <?php endforeach; 
+endif;

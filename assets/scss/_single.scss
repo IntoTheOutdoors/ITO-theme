@@ -28,16 +28,17 @@
             font-family: $font-one;
             font-weight: bolder;
             text-align: center;
-            padding: 10px 0;
         }
 
-        &-full, &-curriculum {
-            margin: 10px 0;
+        &-curriculum {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
+
 
         &-full-item, &-curriculum-item {
             display: flex;
-            align-self: center;
             padding: 10px 0;
 
             img {
@@ -50,6 +51,11 @@
                 margin-left: 20px;
                 align-self: center;
             }
+        }
+
+        hr {
+            color: $grey-five;
+            margin-top: 20px;
         }
     }
 
@@ -73,7 +79,7 @@
         &-title {
             padding: 10px;
             padding-top: 20px;
-            width: 50%;
+            width: 60%;
 
             h3 {
                 font-weight: bold;
@@ -81,9 +87,8 @@
         }
 
         &-lessons {
-            padding: 10px;
-            padding-top: 20px;
-            width: 50%;
+            padding: 20px 10px;
+            width: 40%;
             background-color: $seventh;
             flex-direction: column;
             display: flex;
@@ -105,17 +110,28 @@
         }
     }
 
-    &-details {
+    &-bottom {
         margin-top: 40px;
-        max-width: 70%;
         color: black;
+        display: flex;
+        
+        &-details {
+            width: 60%;
 
-        ul > li a {
-            color: $dark-two !important;
+            ul > li a {
+                color: $dark-two !important;
+            }
         }
 
-        &-content {
-            margin-top: 40px;
+        &-related {
+            width: 40%;
+        }
+    }
+
+    &-player {
+        iframe {
+            width: 900px;
+            height: 500px;
         }
     }
 }
@@ -134,4 +150,19 @@
     &:hover {
         cursor: pointer;
     }
+}
+
+.dropdown {
+
+    .fa-arrow-circle-down {
+        margin-right: 10px;
+    }
+
+    &-menu {
+        li {
+            width: 300px;
+        }
+    }
+
+
 }

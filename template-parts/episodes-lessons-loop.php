@@ -27,10 +27,7 @@
           </div>
 
         <?php endforeach; endif; 
-        ?>
-        
-
-        <?php endwhile;?>
+        endwhile;?>
         <?php wp_reset_query(); ?>
 
     </div>

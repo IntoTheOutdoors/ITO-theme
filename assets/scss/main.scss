@@ -1,12 +1,14 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "./custom";
 @import "./variables";
 @import "./mixins";
-@import "./header.scss";
-@import "./front-page.scss";
+@import "./header";
+@import "./front-page";
 @import "./episodes-lessons";
 @import "./sidebar";
 @import "./single";
-@import "./footer.scss";
+@import "./footer";
+
+@import "~bootstrap/scss/bootstrap";
 
 body {
     padding: 0;

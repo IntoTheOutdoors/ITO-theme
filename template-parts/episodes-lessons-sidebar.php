@@ -60,13 +60,13 @@
       </fieldset>
   
       <fieldset>
-        <input id="itoReset" type="reset" name="action" value="Reset">
+        <input class="btn btn-outline-primary" id="itoReset" type="reset" name="action" value="Reset">
       </fieldset>
     </div>
   </form>
 
   <div class="filter-downloads">
-    <h4> Download the app to watch us where you go!</h4>
+    <h4> Download the app to watch us whereever you go!</h4>
     <div class="filter-downloads-container">
     <?php 
         // QUERY for the app downloads
