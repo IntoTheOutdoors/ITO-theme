@@ -6,97 +6,36 @@
         justify-content: space-between;
     }
 
-    &-container {
-        display: flex;
-    }
-
-
-    &-lists {
-        display: flex;
-        justify-content: center;
-        align-self: flex-start;
-        flex-direction: column;
-        padding: 20px;
-        margin-left: 20px;
-        width: 700px;
-        height: auto;
-        background-color: $grey-two;
-
-        h5 {
-            color: $primary;
-            text-transform: uppercase;
-            font-family: $font-one;
-            font-weight: bolder;
-            text-align: center;
-        }
-
-        &-curriculum {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-        }
-
-
-        &-full-item, &-curriculum-item {
-            display: flex;
-            padding: 10px 0;
-
-            img {
-                width: auto;
-                height: 60px;
-            }
-
-            p {
-                color: $dark-two;
-                margin-left: 20px;
-                align-self: center;
-            }
-        }
-
-        hr {
-            color: $grey-five;
-            margin-top: 20px;
+    &-player {
+        iframe {
+            width: 900px;
+            height: 500px;
         }
     }
 
     &-info {
         display: flex;
-        width: 888px;
         height: auto;
         background-color: $grey-two;
+        max-width: 889px;
         margin-left: 6px;
         margin-top: -6px;
-        
-        h3 {
-            font-size: 20px;
-            color: $dark-two;
-        }
-
-        p {
-            color: $dark-two;
-        }
 
         &-title {
-            padding: 10px;
-            padding-top: 20px;
             width: 60%;
-
-            h3 {
-                font-weight: bold;
-            }
+            padding: 20px;
         }
 
-        &-lessons {
+        &-lessons{
             padding: 20px 10px;
             width: 40%;
             background-color: $seventh;
             flex-direction: column;
             display: flex;
 
-            h3 {
-                font-weight: bold;
-                text-transform: uppercase;
+            h5 {
                 text-align: center;
+                text-transform: uppercase;
             }
 
             p {
@@ -110,13 +49,72 @@
         }
     }
 
+    &-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &-container {
+            width: 900px;
+        }
+
+        &-lists {
+            display: flex;
+            justify-content: center;
+            align-self: flex-start;
+            flex-direction: column;
+            padding: 20px;
+            width: 400px;
+            height: auto;
+            background-color: $grey-two;
+
+            h5 {
+                color: $primary;
+                text-transform: uppercase;
+                font-family: $font-one;
+                font-weight: bolder;
+                text-align: center;
+            }
+
+            &-curriculum {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+
+            &-full-item, &-curriculum-item {
+                display: flex;
+                padding: 10px 0;
+
+                img {
+                    width: auto;
+                    height: 60px;
+                }
+
+                p {
+                    color: $dark-two;
+                    margin-left: 20px;
+                    align-self: center;
+                }
+            }
+
+            hr {
+                color: $grey-five;
+                margin-top: 20px;
+            }
+        }
+    }
+
     &-bottom {
-        margin-top: 40px;
+        margin-top: 20px;
         color: black;
         display: flex;
-        
+    
         &-details {
-            width: 60%;
+            min-width: 75%;
+            width: 100%;
+            padding: 20px;
 
             ul > li a {
                 color: $dark-two !important;
@@ -124,14 +122,32 @@
         }
 
         &-related {
-            width: 40%;
-        }
-    }
+            min-width: 25%;
+            padding-left: 10px;
+            width: 100%;
 
-    &-player {
-        iframe {
-            width: 900px;
-            height: 500px;
+            h3 {
+                margin-left: 20px;
+                font-family: $font-one;
+                text-transform: uppercase;
+                color: $primary;
+            }
+
+            &-item {
+                padding: 10px 0;
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
 }
@@ -160,7 +176,7 @@
 
     &-menu {
         li {
-            width: 300px;
+            width: auto;
         }
     }
 

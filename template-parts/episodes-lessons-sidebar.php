@@ -6,13 +6,13 @@
 
     <!-- Episode Types -->
     <fieldset id="types" class="filter-types">
-        <label for="episode-types">Search episodes by topics:</label>
+        <label for="episode-types">Search episodes by type:</label>
         <div class="filter-types-input">
           <div id="episode-types">
               <input class="submit" checked  type="radio" value="full_episode" name="episode-types">Episodes</input>
           </div>
           <div id="episode-types">
-              <input class="submit" type="radio" value="curriculum_videos" name="episode-types">Curriculums</input>
+              <input class="submit" type="radio" value="curriculum_videos" name="episode-types">Classroom Videos</input>
           </div>
         </div>
     </fieldset>

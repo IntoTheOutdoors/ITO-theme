@@ -9,51 +9,112 @@
         </ol>
     </nav>
     
-    <div class="episode-videos">
+    <?php 
+        if($post->post_type == "topics"): 
+    ?>
+    <section class="episode-videos">
         <!-- EPISODE PLAYER HERE -->
-        <div class="episode-container">
-            <div class="episodes-video-container">
-                <div class="episode-player">
-                    <?php get_template_part( 'template-parts/single-episode', 'player' ); ?>
-                </div>
-                <div class="episode-info">
-                    <div class="episode-info-title">
-                        <h3><?php echo the_title(); ?> </h3>
-                        <p><?php echo get_the_date(); ?></p>
+            <div class="episode-top">
+                <div class="episode-top-container">
+                    <div class="episode-player">
+                        <?php get_template_part( 'template-parts/single-episode', 'player' ); ?>
                     </div>
-                    <div class="episode-info-lessons">
-                    <h3>All Lesson Plans</h3>
-                    <?php
-                        $files = get_field('download_all_curriculum'); 
-                        if(!empty($files)):  ?>
-                            <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
+                    <div class="episode-info">
+                        <div class="episode-info-title">
+                            <h5><?php echo the_title(); ?> </h5>
+                            <p><?php echo get_the_date(); ?></p>
+                        </div>
+                        <div class="episode-info-lessons">
+                            <h5>All Lesson Plans</h5>
+                            <?php
+                                $files = get_field('download_all_curriculum'); 
+                                if(!empty($files)):  ?>
+                                    <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
+                            <?php 
+                                endif; 
+                            ?> 
+                        </div>
+                    </div>
+                </div>
+                <!-- EPISODE LISTS HERE -->
+                <div class="episode-top-lists">
+                    <?php  get_template_part('template-parts/single-episode', 'lists'); ?>
+                </div>
+            </div>
+       
+       
+            <!-- END OF EPISODE LIST -->
+            <div class="episode-bottom">
+                <div class="episode-bottom-details">
+                    <?php get_template_part('template-parts/single-episode', 'details'); ?>
+                </div>
+                <div class="episode-bottom-related">
                     <?php 
-                        endif; 
-                    ?> 
+                        $topic = get_the_ID(); 
+                    ?>
+                    <?php get_template_part('template-parts/single-episode', 'related', [
+                        'topic_id' => $topic
+                    ]); ?>
+                </div>
+            </div>  
+       
+    </section>
+    <?php 
+        // This will be the segments part
+        else:
+    ?>
+    <section class="episode-videos">
+            <div class="episode-top">
+                <div class="episode-top-container">
+                    <div class="episode-player">
+                        <?php get_template_part( 'template-parts/single-episode', 'player', [
+                            'curriculum' => $post
+                        ]); ?>
+                    </div>
+                    <div class="episode-info">
+                        <div class="episode-info-title">
+                            <h5><?php echo the_title(); ?> </h5>
+                            <p><?php echo get_the_date(); ?></p>
+                        </div>
+                        <div class="episode-info-lessons">
+                            <h5>All Lesson Plans</h5>
+
+                            <?php
+                                $topics = get_posts([
+                                    'post_type' => 'topics',
+                                    'meta_query' => [
+                                        [
+                                            'key' => 'curriculum_videos',
+                                            'value' => '"' . get_the_ID() . '"',
+                                            'compare' => 'LIKE'
+                                        ]
+                                    ]
+                                ]);
+                            
+                                if( $topics ):
+                                    foreach( $topics as $topic ): 
+                                        $files = get_field('download_all_curriculum', $topic->ID); 
+                                        if(!empty($files)):  ?>
+                                            <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
+                                        <?php
+                                        endif;
+                                    endforeach;
+                                endif;                                    
+                            ?> 
+                        </div>
                     </div>
                 </div>
+                <!-- EPISODE LISTS HERE -->
+                <div class="episode-top-lists">
+                    <?php  get_template_part('template-parts/single-episode', 'lists', [
+                        'curriculum' => $post
+                    ]); ?>
+                </div>
             </div>
-            <!-- EPISODE LISTS HERE -->
-            <div class="episode-lists">
-                <?php  get_template_part('template-parts/single-episode', 'lists'); ?>
-            </div>
-        </div>
-        <!-- END OF EPISODE PLAYER -->
-
-
-        <!-- END OF EPISODE LIST -->
-        <div class="episode-bottom">
-            <div class="episode-bottom-details">
-                <?php get_template_part('template-parts/single-episode', 'details'); ?>
-            </div>
-            <div class="episode-bottom-related">
-                <?php $topic = get_the_ID(); ?>
-                <?php get_template_part('template-parts/single-episode', 'related', [
-                    'topic_id' => $topic
-                ]); ?>
-            </div>
-        </div>  
-    </div>
+    </section>
+    <?php
+        endif;
+    ?>
 </div>    
 </main>
 

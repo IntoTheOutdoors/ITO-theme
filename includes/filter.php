@@ -86,7 +86,7 @@ function filter_ajax() {
                 foreach($episodes as $episode):
                     ?>
                     <div class="results-filter-item card">
-                        <a href="<?php the_permalink(); ?>">
+                        <a href="<?php the_permalink($episode->ID); ?>">
                         <img src="<?php echo get_the_post_thumbnail_url($episode->ID); ?>" class="card-img-top"/>
                         <div class="card-body">
                             <h5 class="card-title"><?php echo get_the_title($episode->ID);?></h5>

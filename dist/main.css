@@ -510,71 +510,21 @@ aside {
   flex-direction: column;
   justify-content: space-between;
 }
-.episode-container {
-  display: flex;
-}
-.episode-lists {
-  display: flex;
-  justify-content: center;
-  align-self: flex-start;
-  flex-direction: column;
-  padding: 20px;
-  margin-left: 20px;
-  width: 700px;
-  height: auto;
-  background-color: #F8F9FA;
-}
-.episode-lists h5, .episode-lists .h5 {
-  color: #1a5458;
-  text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
-  font-weight: bolder;
-  text-align: center;
-}
-.episode-lists-curriculum {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.episode-lists-full-item, .episode-lists-curriculum-item {
-  display: flex;
-  padding: 10px 0;
-}
-.episode-lists-full-item img, .episode-lists-curriculum-item img {
-  width: auto;
-  height: 60px;
-}
-.episode-lists-full-item p, .episode-lists-curriculum-item p {
-  color: #3B3B3B;
-  margin-left: 20px;
-  align-self: center;
-}
-.episode-lists hr {
-  color: #adb5bd;
-  margin-top: 20px;
+.episode-player iframe {
+  width: 900px;
+  height: 500px;
 }
 .episode-info {
   display: flex;
-  width: 888px;
   height: auto;
   background-color: #F8F9FA;
+  max-width: 889px;
   margin-left: 6px;
   margin-top: -6px;
 }
-.episode-info h3, .episode-info .h3 {
-  font-size: 20px;
-  color: #3B3B3B;
-}
-.episode-info p {
-  color: #3B3B3B;
-}
 .episode-info-title {
-  padding: 10px;
-  padding-top: 20px;
   width: 60%;
-}
-.episode-info-title h3, .episode-info-title .h3 {
-  font-weight: bold;
+  padding: 20px;
 }
 .episode-info-lessons {
   padding: 20px 10px;
@@ -583,10 +533,9 @@ aside {
   flex-direction: column;
   display: flex;
 }
-.episode-info-lessons h3, .episode-info-lessons .h3 {
-  font-weight: bold;
-  text-transform: uppercase;
+.episode-info-lessons h5, .episode-info-lessons .h5 {
   text-align: center;
+  text-transform: uppercase;
 }
 .episode-info-lessons p {
   font-size: 12px;
@@ -595,23 +544,88 @@ aside {
   align-self: center;
   width: 180px;
 }
+.episode-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.episode-top-container {
+  width: 900px;
+}
+.episode-top-lists {
+  display: flex;
+  justify-content: center;
+  align-self: flex-start;
+  flex-direction: column;
+  padding: 20px;
+  width: 400px;
+  height: auto;
+  background-color: #F8F9FA;
+}
+.episode-top-lists h5, .episode-top-lists .h5 {
+  color: #1a5458;
+  text-transform: uppercase;
+  font-family: "Roboto Slab", serif;
+  font-weight: bolder;
+  text-align: center;
+}
+.episode-top-lists-curriculum {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.episode-top-lists-full-item, .episode-top-lists-curriculum-item {
+  display: flex;
+  padding: 10px 0;
+}
+.episode-top-lists-full-item img, .episode-top-lists-curriculum-item img {
+  width: auto;
+  height: 60px;
+}
+.episode-top-lists-full-item p, .episode-top-lists-curriculum-item p {
+  color: #3B3B3B;
+  margin-left: 20px;
+  align-self: center;
+}
+.episode-top-lists hr {
+  color: #adb5bd;
+  margin-top: 20px;
+}
 .episode-bottom {
-  margin-top: 40px;
+  margin-top: 20px;
   color: black;
   display: flex;
 }
 .episode-bottom-details {
-  width: 60%;
+  min-width: 75%;
+  width: 100%;
+  padding: 20px;
 }
 .episode-bottom-details ul > li a {
   color: #3B3B3B !important;
 }
 .episode-bottom-related {
-  width: 40%;
+  min-width: 25%;
+  padding-left: 10px;
+  width: 100%;
 }
-.episode-player iframe {
-  width: 900px;
-  height: 500px;
+.episode-bottom-related h3, .episode-bottom-related .h3 {
+  margin-left: 20px;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.episode-bottom-related-item {
+  padding: 10px 0;
+}
+.episode-bottom-related-item a {
+  text-decoration: none;
+}
+.episode-bottom-related-item p {
+  text-align: center;
+}
+.episode-bottom-related-item img {
+  width: 100%;
 }
 
 .breadcrumb {
@@ -630,7 +644,7 @@ aside {
   margin-right: 10px;
 }
 .dropdown-menu li {
-  width: 300px;
+  width: auto;
 }
 
 footer {

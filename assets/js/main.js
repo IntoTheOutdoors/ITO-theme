@@ -38,7 +38,7 @@
 
     $('.load-video').on('click', function() {
       $('.episode-player').html($(this).data('video-embed'));
-      $('.episode-info-title h3').html($(this).data('episode-title'));
+      $('.episode-info-title h5').html($(this).data('episode-title'));
     });
 
     $('#itoForm').on('click', function() {  
