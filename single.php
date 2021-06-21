@@ -111,6 +111,20 @@
                     ]); ?>
                 </div>
             </div>
+            <!-- END OF EPISODE LIST -->
+            <div class="episode-bottom">
+                <div class="episode-bottom-details">
+                    <?php get_template_part('template-parts/single-episode', 'details', [
+                        'topic' => $topic
+                    ]); ?>
+                </div>
+                <div class="episode-bottom-related">
+                    
+                    <?php get_template_part('template-parts/single-episode', 'related', [
+                        'topic_id' => $topic->ID
+                    ]); ?>
+                </div>
+            </div>  
     </section>
     <?php
         endif;
