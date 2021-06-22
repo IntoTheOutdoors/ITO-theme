@@ -94,11 +94,58 @@
     }
 }
 
+.tab {
+    &-pane {
+        margin-top: 20px;
+    }
+}
+
+.resources {
+    margin-top: 20px;
+
+    &-item {
+        a {
+            text-decoration: none;
+        }
+
+        p {
+            font-size: 11px;
+        }
+    }
+
+    &-partners {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 0;
+        
+        img {
+            width: 200px;
+            height: auto;
+        }
+    }
+
+    &-videos {
+        a {
+            text-decoration: none;
+
+        }
+
+        i {
+            margin-right: 10px;
+        }
+
+        h6 {
+            margin-top: 20px;
+        }
+    }
+}
+
 .downloads {
     display: flex;
     flex-direction: column;
     padding: 10px;
     background-color: $primary;
+    margin-bottom: 40px;
     
     &-container {
         display: flex;

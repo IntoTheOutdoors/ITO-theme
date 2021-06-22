@@ -110,6 +110,12 @@ header .overlay {
 }
 .cta-content a {
   margin-top: 20px;
+  padding: 20px 60px;
+  border-radius: 40px;
+  color: #fff;
+}
+.cta-content a:hover, .cta-content a:active {
+  color: #fff;
 }
 
 .featured {
@@ -191,6 +197,12 @@ header .overlay {
 .signup-text a {
   width: 300px;
   align-self: center;
+  padding: 20px 40px;
+  border-radius: 40px;
+  color: #fff;
+}
+.signup-text a:hover, .signup-text a:active {
+  color: #fff;
 }
 
 .media {
@@ -431,11 +443,44 @@ header .overlay {
   padding: 10px 0;
 }
 
+.tab-pane {
+  margin-top: 20px;
+}
+
+.resources {
+  margin-top: 20px;
+}
+.resources-item a {
+  text-decoration: none;
+}
+.resources-item p {
+  font-size: 11px;
+}
+.resources-partners {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.resources-partners img {
+  width: 200px;
+  height: auto;
+}
+.resources-videos a {
+  text-decoration: none;
+}
+.resources-videos i {
+  margin-right: 10px;
+}
+.resources-videos h6, .resources-videos .h6 {
+  margin-top: 20px;
+}
+
 .downloads {
   display: flex;
   flex-direction: column;
   padding: 10px;
   background-color: #1a5458;
+  margin-bottom: 40px;
 }
 .downloads-container {
   display: flex;

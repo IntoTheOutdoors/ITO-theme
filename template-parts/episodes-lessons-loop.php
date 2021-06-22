@@ -21,13 +21,16 @@
             <a href="<?php the_permalink(); ?>">
             <img src="<?php echo get_the_post_thumbnail_url($topic->ID); ?>" class="card-img-top"/>
             <div class="card-body">
-              <h5 class="card-title"><?php the_title();?></h5>
+              <h5 class="card-title"><?php esc_html(the_title());?></h5>
             </div>
             </a>
           </div>
 
         <?php endforeach; endif; 
-        endwhile;?>
+        ?>
+        
+
+        <?php endwhile;?>
         <?php wp_reset_query(); ?>
 
     </div>

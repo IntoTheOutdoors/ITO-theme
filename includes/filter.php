@@ -103,7 +103,7 @@ function filter_ajax() {
                         <a href="<?php the_permalink(); ?>">
                         <img src="<?php echo get_the_post_thumbnail_url($full_episode->ID); ?>" class="card-img-top"/>
                         <div class="card-body">
-                            <h5 class="card-title"><?php echo get_the_title($full_episode->ID);?></h5>
+                            <h5 class="card-title"><?php the_title();?></h5>
                         </div>
                         </a>
                     </div>

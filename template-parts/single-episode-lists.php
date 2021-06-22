@@ -49,7 +49,7 @@
                     <?php 
                         $curriculum_videos = get_field('curriculum_videos', $topic->ID);
                         if(is_array($curriculum_videos) || is_object($curriculum_videos)):
-                        foreach($curriculum_videos as $curriculum_video): 
+                        foreach($curriculum_videos as $index => $curriculum_video): 
                         
                             $get_url = get_field('vimeo_url', $curriculum_video->ID);
                             $updated_url = customize_iframe($get_url);
@@ -71,7 +71,13 @@
                                 <?php  get_template_part('template-parts/single-episode', 'lessons', [
                                     'curriculum_id' => $curriculum_video->ID
                                 ]); ?>
+                                 <?php 
+                                if ($index != array_key_last($curriculum_videos)):
+                                ?>  
                                 <hr>
+                                <?php 
+                                endif; 
+                                ?>
                             </div>
 
 
@@ -128,13 +134,14 @@
                     <?php 
                         $iframe = ob_get_clean(); 
                     ?>
-                
-                    <div class="episode-top-lists-curriculum-item load-video" 
-                        data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
-                        data-episode-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"
-                    >
-                        <p><?php echo get_the_title($curriculum_video->ID); ?></p>
-                    
+                    <div class="episode-top-lists-curriculum-item">
+                        <div class="load-video" 
+                            data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
+                            data-episode-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"
+                        >
+                            <p><?php echo get_the_title($curriculum_video->ID); ?></p>
+                        
+                        </div>
                         <!-- Lesson Plans here -->    
                         <?php  get_template_part('template-parts/single-episode', 'lessons', [
                             'curriculum_id' => $curriculum_video->ID
@@ -143,7 +150,9 @@
                             if ($index != array_key_last($curriculum_videos)):
                         ?>  
                         <hr>
-                        <?php endif; ?>
+                        <?php 
+                            endif; 
+                        ?>
                     </div>
 
 
