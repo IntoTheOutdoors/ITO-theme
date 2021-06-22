@@ -1,24 +1,24 @@
 .filter {
-    background-color: $grey-one;
-    margin-bottom: 40px;
-
-    &-search {
-        padding: 20px;
+    &-form {
+        background-color: $white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        @include shadow;
+        padding: 4px 40px;
     }
 
     &-types {
-        padding: 0px 20px;
-
+        margin-top: 10px;
         label {
             text-transform: uppercase;
             font-weight: bold;
+            margin: 4px 0;
         }
 
         &-input {
             display: flex;
             justify-content: space-between;
             text-transform: capitalize;
-            margin-top: 10px;
 
             input[type="radio"] {
                 margin-right: 10px;
@@ -31,17 +31,14 @@
     }
 
     &-categories {
-        padding: 0px 20px;
-        margin-top: 20px;
-
+        margin-top: 10px;
         label {
             text-transform: uppercase;
             font-weight: bolder;
         }
         
         &-item {
-            margin: 10px 0;
-
+            margin: 4px 0;
             label {
                 text-transform: capitalize;
             }
@@ -54,17 +51,12 @@
                 vertical-align: middle;
             }
         }
-        
-
-        
     }
 
     &-grade {
-        padding: 0px 20px;
-        margin-top: 20px;
-        
+        margin-top: 10px;
         &-item {
-            margin: 10px 0;
+            margin: 4px 0;
         }
 
         &-label {
@@ -89,40 +81,40 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 0px 10px;
-        margin: 10px 0;
-        margin-bottom: 20px;
         text-align: center;
+        padding: 10px;
         
         input {
             width: 100%;
             font-weight: bold;
+            margin: 10px 0;
+            border-radius: 20px;
+            padding: 10px 0;
         }
     }
+}
 
-    &-downloads {
+.downloads {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: $primary;
+    
+    &-container {
         display: flex;
-        flex-direction: column;
-        margin: 10px 0;
-        padding: 10px;
-        background-color: $primary;
-        
-        &-container {
-            display: flex;
-            margin: 20px 0;
-        }
+        padding: 6px;
+    }
 
-        h4 {
-            color: $white;
-            text-align: center;
-        }
+    h4 {
+        color: $white;
+        text-align: center;
+    }
 
-        img {
-            align-self: center;
-            width: auto;
-            height: 44px;
-            padding: 0 10px;
-        }
+    img {
+        align-self: center;
+        width: auto;
+        height: 44px;
+        padding: 0 10px;
     }
 }
 
@@ -136,5 +128,13 @@ aside {
 #episode-category {
     margin-top: 20px;
     width: 100%;
+}
+
+#episode-search {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $grey-one;
 }
  

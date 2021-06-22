@@ -119,7 +119,6 @@
                     ]); ?>
                 </div>
                 <div class="episode-bottom-related">
-                    
                     <?php get_template_part('template-parts/single-episode', 'related', [
                         'topic_id' => $topic->ID
                     ]); ?>

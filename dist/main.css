@@ -287,47 +287,6 @@ header .overlay {
   color: #1a5458;
   text-transform: uppercase;
 }
-.results-featured {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-.results-featured h2, .results-featured .h2 {
-  text-transform: uppercase;
-  text-align: center;
-  font-family: "Roboto Slab", serif;
-  font-size: 18px;
-  color: #1a5458;
-}
-.results-featured-container {
-  display: flex;
-  margin-top: 4px;
-}
-.results-featured-container img {
-  height: 184px;
-  width: auto;
-  background-size: cover;
-}
-.results-featured-text {
-  display: flex;
-  justify-self: center;
-  flex-direction: column;
-  margin-left: 20px;
-  padding: 10px;
-}
-.results-featured-text h5, .results-featured-text .h5 {
-  color: #1a5458;
-  margin: 0;
-}
-.results-featured-text p {
-  color: black;
-  font-size: 12px;
-  margin: 4px 0;
-}
-.results-featured a {
-  width: 200px;
-  margin: 0 auto;
-}
 .results-episodes {
   display: flex;
   flex-direction: column;
@@ -341,7 +300,6 @@ header .overlay {
   margin-top: 10px;
 }
 .results-episodes-container {
-  margin-top: 10px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -355,12 +313,12 @@ header .overlay {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  margin: 20px 0;
 }
 
 .card {
   width: 200px;
-  margin: 5px 5px;
+  margin: 10px 6px;
+  border-radius: 20px !important;
 }
 .card-title {
   display: flex;
@@ -369,12 +327,16 @@ header .overlay {
   text-align: center;
   font-size: 12px;
 }
+.card img {
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
 .card a {
   text-decoration: none;
   color: black;
 }
 .card:hover, .card:active {
-  transform: scale(1.05);
+  transform: scale(1.01);
   -webkit-animation: fadeIn 5s;
           animation: fadeIn 5s;
 }
@@ -387,25 +349,25 @@ header .overlay {
   padding: 8px 10px;
 }
 
-.filter {
-  background-color: #FAFAFA;
-  margin-bottom: 40px;
-}
-.filter-search {
-  padding: 20px;
+.filter-form {
+  background-color: #fff;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+  padding: 4px 40px;
 }
 .filter-types {
-  padding: 0px 20px;
+  margin-top: 10px;
 }
 .filter-types label {
   text-transform: uppercase;
   font-weight: bold;
+  margin: 4px 0;
 }
 .filter-types-input {
   display: flex;
   justify-content: space-between;
   text-transform: capitalize;
-  margin-top: 10px;
 }
 .filter-types-input input[type=radio] {
   margin-right: 10px;
@@ -415,15 +377,14 @@ header .overlay {
   vertical-align: middle;
 }
 .filter-categories {
-  padding: 0px 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .filter-categories label {
   text-transform: uppercase;
   font-weight: bolder;
 }
 .filter-categories-item {
-  margin: 10px 0;
+  margin: 4px 0;
 }
 .filter-categories-item label {
   text-transform: capitalize;
@@ -436,11 +397,10 @@ header .overlay {
   vertical-align: middle;
 }
 .filter-grade {
-  padding: 0px 20px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .filter-grade-item {
-  margin: 10px 0;
+  margin: 4px 0;
 }
 .filter-grade-label {
   text-transform: uppercase;
@@ -460,31 +420,32 @@ header .overlay {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 0px 10px;
-  margin: 10px 0;
-  margin-bottom: 20px;
   text-align: center;
+  padding: 10px;
 }
 .filter-submit input {
   width: 100%;
   font-weight: bold;
+  margin: 10px 0;
+  border-radius: 20px;
+  padding: 10px 0;
 }
-.filter-downloads {
+
+.downloads {
   display: flex;
   flex-direction: column;
-  margin: 10px 0;
   padding: 10px;
   background-color: #1a5458;
 }
-.filter-downloads-container {
+.downloads-container {
   display: flex;
-  margin: 20px 0;
+  padding: 6px;
 }
-.filter-downloads h4, .filter-downloads .h4 {
+.downloads h4, .downloads .h4 {
   color: #fff;
   text-align: center;
 }
-.filter-downloads img {
+.downloads img {
   align-self: center;
   width: auto;
   height: 44px;
@@ -502,6 +463,14 @@ aside {
   width: 100%;
 }
 
+#episode-search {
+  margin: 0;
+  margin-top: 20px;
+  width: 100%;
+  border-radius: 20px;
+  background-color: #FAFAFA;
+}
+
 .episode {
   margin-bottom: 20px;
 }
@@ -517,10 +486,13 @@ aside {
 .episode-info {
   display: flex;
   height: auto;
-  background-color: #F8F9FA;
+  background-color: #fff;
   max-width: 889px;
   margin-left: 6px;
   margin-top: -6px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-info-title {
   width: 60%;
@@ -528,10 +500,11 @@ aside {
 }
 .episode-info-lessons {
   padding: 20px 10px;
-  width: 40%;
+  width: 41%;
   background-color: #CCE3DE;
   flex-direction: column;
   display: flex;
+  border-bottom-right-radius: 20px;
 }
 .episode-info-lessons h5, .episode-info-lessons .h5 {
   text-align: center;
@@ -543,6 +516,7 @@ aside {
 .episode-info-lessons a {
   align-self: center;
   width: 180px;
+  border-radius: 20px;
 }
 .episode-top {
   display: flex;
@@ -554,13 +528,15 @@ aside {
 }
 .episode-top-lists {
   display: flex;
-  justify-content: center;
   align-self: flex-start;
   flex-direction: column;
   padding: 20px;
   width: 400px;
   height: auto;
-  background-color: #F8F9FA;
+  background-color: #fff;
+  margin-left: 20px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-top-lists h5, .episode-top-lists .h5 {
   color: #1a5458;
@@ -568,15 +544,16 @@ aside {
   font-family: "Roboto Slab", serif;
   font-weight: bolder;
   text-align: center;
+  margin-top: 20px;
 }
 .episode-top-lists-curriculum {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
 }
 .episode-top-lists-full-item, .episode-top-lists-curriculum-item {
   display: flex;
-  padding: 10px 0;
+  flex-direction: column;
+  padding: 10px;
 }
 .episode-top-lists-full-item img, .episode-top-lists-curriculum-item img {
   width: auto;
@@ -584,12 +561,18 @@ aside {
 }
 .episode-top-lists-full-item p, .episode-top-lists-curriculum-item p {
   color: #3B3B3B;
-  margin-left: 20px;
-  align-self: center;
 }
-.episode-top-lists hr {
-  color: #adb5bd;
+.episode-top-lists-full-item:hover, .episode-top-lists-full-item:active, .episode-top-lists-curriculum-item:hover, .episode-top-lists-curriculum-item:active {
+  background-color: #F8F9FA;
+}
+.episode-top-lists-full-item hr, .episode-top-lists-curriculum-item hr {
+  color: lightgray;
+  margin: 0;
+  padding: 0;
   margin-top: 20px;
+}
+.episode-top-lists-curriculum-item:last-child {
+  margin-bottom: 20px;
 }
 .episode-bottom {
   margin-top: 20px;
@@ -606,11 +589,10 @@ aside {
 }
 .episode-bottom-related {
   min-width: 25%;
-  padding-left: 10px;
   width: 100%;
+  margin-top: 20px;
 }
-.episode-bottom-related h3, .episode-bottom-related .h3 {
-  margin-left: 20px;
+.episode-bottom-related h4, .episode-bottom-related .h4 {
   font-family: "Roboto Slab", serif;
   text-transform: uppercase;
   color: #1a5458;
@@ -11505,4 +11487,5 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Noto Sans", sans-serif;
+  background-color: #FAFAFA;
 }

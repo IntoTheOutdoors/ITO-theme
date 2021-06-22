@@ -20,7 +20,7 @@
     $related = new WP_Query($args);
 
     ?>
-    <h3>Related Episode</h3>
+    <h4>Related Episode</h4>
     <!-- this should be by category related episode -->
     <?php
     if($related->have_posts()):

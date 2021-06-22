@@ -1,5 +1,6 @@
 .episode {
     margin-bottom: 20px;
+
     &-videos {
         display: flex;
         flex-direction: column;
@@ -7,6 +8,7 @@
     }
 
     &-player {
+        
         iframe {
             width: 900px;
             height: 500px;
@@ -16,10 +18,13 @@
     &-info {
         display: flex;
         height: auto;
-        background-color: $grey-two;
+        background-color: $white;
         max-width: 889px;
         margin-left: 6px;
         margin-top: -6px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        @include shadow;
 
         &-title {
             width: 60%;
@@ -28,10 +33,11 @@
 
         &-lessons{
             padding: 20px 10px;
-            width: 40%;
+            width: 41%;
             background-color: $seventh;
             flex-direction: column;
             display: flex;
+            border-bottom-right-radius: 20px;
 
             h5 {
                 text-align: center;
@@ -45,6 +51,7 @@
             a {
                 align-self: center;
                 width: 180px;
+                border-radius: 20px;
             }
         }
     }
@@ -60,13 +67,15 @@
 
         &-lists {
             display: flex;
-            justify-content: center;
             align-self: flex-start;
             flex-direction: column;
-            padding: 20px;
+            padding: 20px; 
             width: 400px;
             height: auto;
-            background-color: $grey-two;
+            background-color: $white;
+            margin-left: 20px;
+            border-radius: 20px;
+            @include shadow;
 
             h5 {
                 color: $primary;
@@ -74,18 +83,19 @@
                 font-family: $font-one;
                 font-weight: bolder;
                 text-align: center;
+                margin-top: 20px;
             }
 
             &-curriculum {
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
             }
 
 
             &-full-item, &-curriculum-item {
                 display: flex;
-                padding: 10px 0;
+                flex-direction: column;
+                padding: 10px;
 
                 img {
                     width: auto;
@@ -94,14 +104,24 @@
 
                 p {
                     color: $dark-two;
-                    margin-left: 20px;
-                    align-self: center;
+                }
+
+                &:hover, &:active {
+                    background-color: $grey-two;
+                }
+
+                hr {
+                    color: rgb(211, 211, 211);
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 20px;
                 }
             }
 
-            hr {
-                color: $grey-five;
-                margin-top: 20px;
+            &-curriculum-item {
+                &:last-child {
+                    margin-bottom: 20px;
+                }
             }
         }
     }
@@ -123,11 +143,10 @@
 
         &-related {
             min-width: 25%;
-            padding-left: 10px;
             width: 100%;
+            margin-top: 20px;
 
-            h3 {
-                margin-left: 20px;
+            h4 {
                 font-family: $font-one;
                 text-transform: uppercase;
                 color: $primary;
@@ -179,6 +198,4 @@
             width: auto;
         }
     }
-
-
 }

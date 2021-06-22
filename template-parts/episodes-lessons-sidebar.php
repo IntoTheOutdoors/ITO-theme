@@ -64,10 +64,9 @@
       </fieldset>
     </div>
   </form>
-
-  <div class="filter-downloads">
+  <div class="downloads">
     <h4> Download the app to watch us whereever you go!</h4>
-    <div class="filter-downloads-container">
+    <div class="downloads-container">
     <?php 
         // QUERY for the app downloads
         $args = [
@@ -87,8 +86,7 @@
         <?php endif; 
       endwhile; wp_reset_query(); ?>
     </div>
-</div>
-
+  </div>
 </aside>
 
 
