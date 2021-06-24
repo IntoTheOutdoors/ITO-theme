@@ -62,6 +62,31 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     $(this).tab('show');
   });
 })(jQuery);
+/** WHERE TO WATCH */
+
+
+(function ($) {
+  /** WHERE TO WATCH */
+  $(document).on('submit', '#broadcastForm', function (e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    console.log($(this).val());
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: data,
+      type: 'post',
+      success: function success(result) {
+        $('.broadcast-results').html(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  });
+  $('.form-select').on('change', function () {
+    $('#broadcastForm').submit();
+  });
+})(jQuery);
 
 /***/ }),
 
