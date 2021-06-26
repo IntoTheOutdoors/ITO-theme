@@ -1,0 +1,123 @@
+.watch {
+    margin-top: 20px;
+    h3 {
+        @include title;
+    }
+
+    p {
+        margin-top: 20px;
+    }
+
+    &-media {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        img {
+            margin: 0 20px;
+            height: 100%;
+        }
+    }
+
+    &-downloads {
+        display: flex;
+        justify-content: center;;
+        margin-bottom: 80px;
+        
+        img {
+            align-self: center;
+            margin: 0 20px;
+            margin-top: 20px;
+            height: auto;
+            width: 100%;
+        }
+    }
+
+    
+}
+
+.schedule {
+    margin-top: 40px;
+    h3 {
+        @include title;
+    }
+
+    &-items {
+        margin-top: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    &-item {
+        width: 600px;
+        margin: 10px 0;
+        display: flex;
+        justify-content: space-between;
+
+        &-date {
+            display: flex;
+            height: 50%;
+            text-transform: uppercase;
+            font-weight: bold;
+            color: $white;
+            background-color: $primary;
+            padding: 20px 40px;
+            margin-right: 20px;
+            border-radius: 30px;
+
+    
+            h5 {
+                align-self: center;
+                text-align: center;
+            }
+        }
+        &-info {
+            display: flex;
+            flex-direction: column;
+    
+            h5 {
+                color: $primary;
+            }
+        }
+    }
+}
+
+.broadcast {
+    margin-top: 40px;
+
+    h3 {
+        @include title();
+        margin-top: 40px;
+    }
+
+    label {
+        background-color: $primary;
+        width: auto;
+        color: $white;
+    }
+
+    &-state {
+        margin-top: 20px;
+        width: 300px;
+
+        .form-select {
+            border: solid 1px $primary;
+            padding: 20px 10px;
+        }
+    }
+
+    &-network, &-pbs {
+        margin-top: 40px;
+    }
+
+    &-items {
+        margin-bottom: 40px;
+    }
+}
+
+.input {
+    &-group-text {
+        background-color: $primary;
+        color: $white;
+    }
+}

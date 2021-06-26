@@ -70,7 +70,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   $(document).on('submit', '#broadcastForm', function (e) {
     e.preventDefault();
     var data = $(this).serialize();
-    console.log($(this).val());
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: data,
@@ -85,6 +84,26 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   });
   $('.form-select').on('change', function () {
     $('#broadcastForm').submit();
+  });
+})(jQuery);
+/** PARTNERS */
+
+
+(function ($) {
+  $(document).on('submit', '#passwordProtected', function (e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: data,
+      type: 'post',
+      success: function success(result) {
+        $('.password-results').html(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
   });
 })(jQuery);
 

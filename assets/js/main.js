@@ -61,7 +61,7 @@
   $(document).on('submit', '#broadcastForm', function (e) {
     e.preventDefault();
     let data = $(this).serialize();
-    console.log($(this).val());
+    
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: data,
@@ -77,5 +77,25 @@
 
   $('.form-select').on('change', function() {
     $('#broadcastForm').submit();
+  });
+})(jQuery);
+
+/** PARTNERS */
+(function($){
+  $(document).on('submit', '#passwordProtected', function (e) {
+    e.preventDefault();
+    let data = $(this).serialize();
+    
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: data,
+      type: 'post',
+      success: (result) => {
+        $('.password-results').html(result);
+      },
+      error: (result) => {
+        console.log(result)
+      }
+    });
   });
 })(jQuery);

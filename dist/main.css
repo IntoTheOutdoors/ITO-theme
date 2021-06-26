@@ -674,6 +674,125 @@ aside {
   width: auto;
 }
 
+.watch {
+  margin-top: 20px;
+}
+.watch h3, .watch .h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.watch p {
+  margin-top: 20px;
+}
+.watch-media {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.watch-media img {
+  margin: 0 20px;
+  height: 100%;
+}
+.watch-downloads {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.watch-downloads img {
+  align-self: center;
+  margin: 0 20px;
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.schedule {
+  margin-top: 40px;
+}
+.schedule h3, .schedule .h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.schedule-items {
+  margin-top: 40px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.schedule-item {
+  width: 600px;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.schedule-item-date {
+  display: flex;
+  height: 50%;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #fff;
+  background-color: #1a5458;
+  padding: 20px 40px;
+  margin-right: 20px;
+  border-radius: 30px;
+}
+.schedule-item-date h5, .schedule-item-date .h5 {
+  align-self: center;
+  text-align: center;
+}
+.schedule-item-info {
+  display: flex;
+  flex-direction: column;
+}
+.schedule-item-info h5, .schedule-item-info .h5 {
+  color: #1a5458;
+}
+
+.broadcast {
+  margin-top: 40px;
+}
+.broadcast h3, .broadcast .h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+  margin-top: 40px;
+}
+.broadcast label {
+  background-color: #1a5458;
+  width: auto;
+  color: #fff;
+}
+.broadcast-state {
+  margin-top: 20px;
+  width: 300px;
+}
+.broadcast-state .form-select {
+  border: solid 1px #1a5458;
+  padding: 20px 10px;
+}
+.broadcast-network, .broadcast-pbs {
+  margin-top: 40px;
+}
+.broadcast-items {
+  margin-bottom: 40px;
+}
+
+.input-group-text {
+  background-color: #1a5458;
+  color: #fff;
+}
+
+.title {
+  margin: 20px 0;
+}
+.title h3, .title .h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+
 footer {
   background-color: #1E3433;
 }
