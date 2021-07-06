@@ -1,4 +1,5 @@
 .filter {
+    height: auto;
     &-form {
         background-color: $white;
         border-radius: 20px;
@@ -100,56 +101,15 @@
     }
 }
 
-.resources {
-    margin-top: 20px;
-
-    &-item {
-        a {
-            text-decoration: none;
-        }
-
-        p {
-            font-size: 11px;
-        }
-    }
-
-    &-partners {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 20px 0;
-        
-        img {
-            width: 200px;
-            height: auto;
-        }
-    }
-
-    &-videos {
-        a {
-            text-decoration: none;
-
-        }
-
-        i {
-            margin-right: 10px;
-        }
-
-        h6 {
-            margin-top: 20px;
-        }
-    }
-}
-
 .downloads {
     display: flex;
     flex-direction: column;
     padding: 10px;
     background-color: $primary;
-    margin-bottom: 40px;
     
     &-container {
         display: flex;
-        padding: 6px;
+        align-items: center;
     }
 
     h4 {
@@ -159,9 +119,9 @@
 
     img {
         align-self: center;
-        width: auto;
-        height: 44px;
-        padding: 0 10px;
+        height: auto;
+        width: 100%;
+        margin: 4px 2px;
     }
 }
 

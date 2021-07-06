@@ -79,11 +79,36 @@ function add_file_types_to_uploads($file_types) {
     return $file_types;
 }
 
+// register sidebar
+function custom_sidebar() {
+    register_sidebar(
+        [
+            'id' => 'primary',
+            'name' => __('Primary Sidebar'),
+            'description' => __('This is for the blog sidebar'),
+            'before_widget' => '<div id="sidebar">',
+            'after_widget' => '</div>',
+            'before_title' => '<h3 class="widget-title">',
+            'after_title' => '</h3>',
+        ]
+    );
+}
+
+function custom_search_form( $form, $value = "Search", $post_type = 'post' ) {
+    $form_value = (isset($value)) ? $value : attribute_escape(apply_filters('the_search_query', get_search_query()));
+    $form = '<form method="get" id="searchform" action="' . get_option('home') . '/" >
+    <div>
+        <input type="hidden" name="post_type" value="'.$post_type.'" />
+        <input type="text" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="'.attribute_escape(__('Search')).'" />
+    </div>
+    </form>';
+    return $form;
+}
+
 add_filter('upload_mimes', 'add_file_types_to_uploads');
-
-
 add_action('wp_enqueue_scripts', 'load_files');
 add_action('after_setup_theme', 'theme_setup');
-
+add_action('widgets_init', 'custom_sidebar');
 
 // 

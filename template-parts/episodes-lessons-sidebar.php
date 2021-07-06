@@ -65,7 +65,7 @@
     </div>
   </form>
   <div class="downloads">
-    <h4> Download the app to watch us whereever you go!</h4>
+    <h4> Download the app to watch us wherever you go!</h4>
     <div class="downloads-container">
     <?php 
         // QUERY for the app downloads

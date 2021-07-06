@@ -6,23 +6,30 @@ function protected_ajax() {
     $passwordInput = $_POST['protected-form'];
     $password = $_POST['password-text'];
 
-    // var_dump($passwordInput . ' test ' . $password);
-    
-    if($password == $passwordInput):
-        echo 'This is the sponsors'; 
-    else:
-        ?>
-        <form id="passwordProtected" method="POST">
-          <div class="form-group">
-            <label for="protected-form">Password</label>
-            <input type="text" id="protected-form" name="protected-form" placeholder="Search here...">
-            <input type="hidden" id="password-text" name="password-text" placeholder="Search here..." value="<?php echo $password; ?>">
-            <small id="emailHelp" class="form-text text-muted">Sorry wrong password. Please enter it again!</small>
-          </div>
-            <input type="hidden" name="action" value="protected">
-        </form>
-        <?php
-    endif;
-    die();
+     
+    // if($_SERVER['REQUEST_METHOD'] == 'POST'):
+    //     setcookie('mycookie', $password);
+    //     $cookie_set = true;
+    // endif;
+
+  
+  if($password == $passwordInput):
+    setcookie('passwordCookie', $password, time() + (86400 * 30), "/");
+    get_template_part( 'template-parts/page-partners', 'sales' );
+  else:
+    ?>
+      <form id="passwordProtected" method="POST">
+        <div class="form-group">
+          <p>This content is password protected. To view it please enter your password below:</p>
+          <input type="password" id="protected-form" name="protected-form" placeholder="Password">
+          <input type="hidden" id="password-text" name="password-text" placeholder="Search here..." value="<?php echo $password; ?>"><br>
+          <small id="emailHelp" class="form-text text-muted">Sorry, you entered a wrong password!</small>
+          <input type="hidden" name="action" value="protected">
+        </div>
+      </form>
+    <?php
+  endif;
+  
+  die();
 }
 ?>

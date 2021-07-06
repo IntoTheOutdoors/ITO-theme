@@ -1,6 +1,7 @@
 <?php 
     get_header('second');
 ?>
+<main>
 <section class="container">
     <div class="watch">
         <h3>Where to watch</h3>
@@ -251,6 +252,7 @@
             ?>
     </section>
 </section>
+</main>
 
 <?php 
     get_footer();

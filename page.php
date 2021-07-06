@@ -7,7 +7,11 @@
         <h3><?php the_title(); ?>
     </section>
     <section class="content">
-        <p><?php the_content(); ?></p>
+        <?php
+        while(have_posts()): the_post();
+            the_content();
+        endwhile;
+        ?>
     </section>
 </main>
 <?php

@@ -85,7 +85,7 @@ function filter_ajax() {
                 <?php
                 foreach($episodes as $episode):
                     ?>
-                    <div class="results-filter-item card">
+                    <div class="results-filter-item card shadow">
                         <a href="<?php the_permalink($episode->ID); ?>">
                         <img src="<?php echo get_the_post_thumbnail_url($episode->ID); ?>" class="card-img-top"/>
                         <div class="card-body">
@@ -99,7 +99,7 @@ function filter_ajax() {
             else:
                 $full_episodes = get_field('full_episode');
                 foreach($full_episodes as $full_episode): ?>
-                    <div class="results-filter-item card">
+                    <div class="results-filter-item card shadow">
                         <a href="<?php the_permalink(); ?>">
                         <img src="<?php echo get_the_post_thumbnail_url($full_episode->ID); ?>" class="card-img-top"/>
                         <div class="card-body">

@@ -25,7 +25,7 @@
                             <p><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="episode-info-lessons">
-                            <h5>All Lesson Plans</h5>
+                            <h5>All Lesson Plans for this Episode</h5>
                             <?php
                                 $files = get_field('download_all_curriculum'); 
                                 if(!empty($files)):  ?>
@@ -77,7 +77,7 @@
                             <p><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="episode-info-lessons">
-                            <h5>All Lesson Plans</h5>
+                            <h5>All Lesson Plans for this Episode</h5>
 
                             <?php
                                 $topics = get_posts([

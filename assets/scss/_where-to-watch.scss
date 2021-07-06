@@ -10,9 +10,7 @@
 
     &-media {
         display: flex;
-        justify-content: center;
-        margin-top: 20px;
-
+        margin-top: 40px;
         img {
             margin: 0 20px;
             height: 100%;
@@ -21,15 +19,18 @@
 
     &-downloads {
         display: flex;
-        justify-content: center;;
-        margin-bottom: 80px;
+        justify-content: center;
+        align-items: center;
+        margin-top: 40px;
         
         img {
             align-self: center;
-            margin: 0 20px;
-            margin-top: 20px;
             height: auto;
             width: 100%;
+        }
+
+        a {
+            margin: 0 20px;
         }
     }
 

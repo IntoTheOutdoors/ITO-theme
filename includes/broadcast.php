@@ -26,7 +26,7 @@ function network_broadcast_ajax() {
     ?>
 
     <div class="col-6 broadcast-network">
-        <h3 class="subheader">Boadcast Station</h3>
+        <h3 class="subheader">Broadcast Station</h3>
         <p>List of broadcast and public TV:</p>
         <div class="broadcast-items">
             <div class="broadcast-item">

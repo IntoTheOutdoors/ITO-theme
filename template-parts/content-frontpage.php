@@ -1,4 +1,4 @@
-<main >
+<main class="wrapper" >
     <!-- CTA -->
     <section class="cta">   
         <div class="cta-content container">
