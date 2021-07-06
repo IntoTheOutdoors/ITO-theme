@@ -33,7 +33,7 @@
                 ?>
             </div>
             <div class="blog-sidebar">
-                <?= custom_search_form( null, 'Search posts', 'post'); ?>
+                <?php echo custom_search_form( null, 'Search posts', 'post'); ?>
                 <?php dynamic_sidebar( 'primary' ); ?>
             </div>
         </div>

@@ -15,6 +15,7 @@
             </div>
         <?php 
             endwhile; 
+            echo custom_search_form( null, 'Search posts', 'post');
             dynamic_sidebar( 'primary' );
         ?>
 
