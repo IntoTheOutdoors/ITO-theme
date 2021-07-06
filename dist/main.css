@@ -972,6 +972,7 @@ footer ul li {
   justify-content: center;
   align-items: center;
   margin-top: 60px;
+  margin-bottom: 40px;
 }
 .single-content-info p {
   text-transform: capitalize;
