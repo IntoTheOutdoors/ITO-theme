@@ -19,19 +19,18 @@
   position: relative;
   background-color: black;
   height: 100vh;
-  min-height: 25rem;
   width: 100%;
   overflow: hidden;
 }
 #home-video video {
+  -o-object-fit: cover;
+     object-fit: cover;
   filter: brightness(80%);
   position: absolute;
   top: 50%;
   left: 50%;
   min-width: 100%;
   min-height: 100%;
-  width: auto;
-  height: auto;
   z-index: 0;
   transform: translateX(-50%) translateY(-50%);
 }
@@ -71,6 +70,42 @@ header .overlay {
   width: auto;
 }
 
+@media only screen and (max-width: 1440px) {
+  #home-video video {
+    top: 70%;
+  }
+
+  .nav-item {
+    padding: 0 6px;
+  }
+  .nav-item a {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  #home-video video {
+    top: 70%;
+  }
+
+  .nav-item {
+    padding: 0 2px;
+  }
+  .nav-item a {
+    color: #fff !important;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+  .nav-item a span {
+    font-size: 12px;
+  }
+
+  .second-logo img {
+    height: 40px !important;
+    width: auto;
+  }
+}
 .cta-content {
   position: absolute;
   left: 0;
@@ -11842,4 +11877,9 @@ main {
 
 .card {
   border: none;
+}
+
+.video-stream html5-main-video {
+  width: 889px !important;
+  height: 500px !important;
 }

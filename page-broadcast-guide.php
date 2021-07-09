@@ -51,7 +51,7 @@
         </div>
     </div>
     <section class="broadcast">
-        <h3>BROADCAST TELEVISION & PBS.</h3>
+        <h3>BROADCAST TELEVISION & PBS</h3>
         
         <form id="broadcastForm" method="POST">
           <?php 
@@ -104,7 +104,7 @@
         </form>
         <div class="row broadcast-results">
           <div class="col-6 broadcast-network">
-              <h3 class="subheader">Boadcast Station</h3>
+              <h3 class="subheader">Broadcast Station</h3>
               <p>List of broadcast and public TV:</p>
               <div class="broadcast-items">
                 <div class="broadcast-item">

@@ -5,7 +5,7 @@ $password = get_field('password');
 <main>
 <div class="partners container">
   <div class="partners-intro">
-    <h3>Protected: Our Education Initiatives</h3>
+    <h3>Our Education Initiatives</h3>
   </div>
   <div class="password-results">
     <?php

@@ -401,3 +401,6 @@ Custom Theme for Into the Outdoors - Creating pathways to environmental awarenes
         <hr>
         <?php endforeach; 
 endif;
+
+///// fixing errors in the single page
+   
