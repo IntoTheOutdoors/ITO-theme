@@ -219,3 +219,24 @@
         }
     }
 }
+
+.tab-content {
+    &-alert {
+        margin-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        i {
+            padding: 10px;
+            font-size: 40px;
+        }
+
+    }
+}
+
+.alert-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

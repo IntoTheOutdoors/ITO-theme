@@ -30,20 +30,19 @@
                 
                 
                 while($query->have_posts()): $query->the_post();
-                $featured_posts = get_field('full_episode');
+                $featured_post = get_field('full_episode');
                 ?>
                 <div class="embed-container">
-                <?php
-                  foreach($featured_posts as $featured_post):
-                    if(the_field('youtube_url')) {
-                      echo get_field('youtube_url', $featured_post->ID);
+                  <?php
+                    $featured_video = the_field('youtube_url', $featured_post[0]->ID);
+                    if(!empty($featured_video)) {
+                      echo $featured_video;
                     } else {
-                      echo get_field('vimeo_url', $featured_post->ID);
+                      echo get_field('vimeo_url', $featured_post[0]->ID);
                     }
-                  endforeach;
                 ?>
                 </div>
-                <a href="<?php the_permalink(); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
+                <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
         </div>
         <div class="curriculums col-5">
             
@@ -90,7 +89,20 @@
             <p>Join our email list to be the first to get the lasts news, 
               new episode notifications, and exclusive contests 
               conveniently in your inbox!</p>
-            <a href="" class="btn btn-secondary">signup</a>
+            <!-- Button trigger modal -->
+            <a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              Signup
+            </a>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <!-- Begin Constant Contact Inline Form Code -->
+                  <div class="ctct-inline-form" data-form-id="215a7c57-cdb5-43cb-b987-bde5f816e4c8"></div>
+                  <!-- End Constant Contact Inline Form Code -->
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </section>

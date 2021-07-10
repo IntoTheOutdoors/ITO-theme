@@ -27,7 +27,7 @@
           ?>
         </div>
         <div class="watch-downloads">
-
+            <h5>Download the app to watch us wherever you go!</h5>
             <?php 
             // query custom post type 'shows'
             $args = [
@@ -47,7 +47,9 @@
               
                 if($app == 1): ?>
                     <a href="<?php echo the_field('show_url') ?>" target="_blank"><?php echo $image; ?></a>
-            <?php endif; endwhile; wp_reset_query(); ?>
+            <?php 
+                endif; 
+            endwhile; wp_reset_query(); ?>
         </div>
     </div>
     <section class="broadcast">

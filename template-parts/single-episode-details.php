@@ -21,6 +21,14 @@
                 <?php echo (!empty($topic)) ? apply_filters( 'the_content', get_the_content(null, false, $topic->ID)) : the_content() ?>
             </p>
         </div>
+        <div class="alert alert-warning d-flex align-items-center tab-content-alert" role="alert">
+            <div class="alert-container">
+                <i class="fas fa-exclamation-circle"></i>
+                <span>
+                    Hi! You are leaving the Into The Outdoors website to go to a site intended for adults if you click the links below.
+                <span>
+            </div>
+        </div>
         <div class="tab-pane" id="resources" role="tabpanel" aria-labelledby="resources-tab">
             <h4>Resource Links</h4>
             <div class="resources">

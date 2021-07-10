@@ -695,6 +695,23 @@ aside {
   margin: 4px 0;
 }
 
+.tab-content-alert {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tab-content-alert i {
+  padding: 10px;
+  font-size: 40px;
+}
+
+.alert-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .watch {
   margin-top: 20px;
 }

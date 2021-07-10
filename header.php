@@ -8,12 +8,16 @@
 
     <!-- Title, Keywords and Descriptions -->
     <title><?php wp_title(); ?></title>
+    <!-- Begin Constant Contact Active Forms -->
+    <script> var _ctct_m = "2bfea107d3724af9bd6954cca1151b3e"; </script>
+    <script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
+    <!-- End Constant Contact Active Forms -->
     <?php wp_head(); ?>
 </head>
 <body>
 <header id="home-video">
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="<?php echo get_template_directory_uri() . '/assets/videos/video-intro.mp4'; ?>" type="video/mp4">
+        <source src="<?php echo get_template_directory_uri() . '/assets/videos/video-large.mp4'; ?>" type="video/mp4">
     </video>
     <nav class="navbar navbar-expand-md navbar-light bg-transparent" role="navigation">
         <div class="container">

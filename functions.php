@@ -33,8 +33,10 @@ function load_files() {
     wp_enqueue_style('fonts');
     wp_enqueue_style('bootstrap');
     wp_enqueue_style('fontawesome');
-
+    
     // enqueue scripts
+    wp_enqueue_script('signupScriptAsync');
+    wp_enqueue_script('signupScriptDefer');
     wp_enqueue_script('jquery');
     wp_enqueue_script('popper');
     wp_enqueue_script('bootstrap');
@@ -110,5 +112,3 @@ add_filter('upload_mimes', 'add_file_types_to_uploads');
 add_action('wp_enqueue_scripts', 'load_files');
 add_action('after_setup_theme', 'theme_setup');
 add_action('widgets_init', 'custom_sidebar');
-
-// 
