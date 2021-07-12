@@ -18,7 +18,7 @@
     <!-- FEATURED EPISODES -->
     <section class="featured">
         <div class="container row">
-        <div class="col-7">
+        <div class="featured-episode col-7">
             <h4>Featured Episode</h4>
             <?php 
                 $args = [
@@ -44,8 +44,7 @@
                 </div>
                 <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
         </div>
-        <div class="curriculums col-5">
-            
+        <div class="featured-curriculums col-5">
             <?php 
               $curriculums = get_field('curriculum_videos');
               if($curriculums != ""): ?>
@@ -62,7 +61,7 @@
 
                     </div>
                     <div class="curriculum-text">
-                      <h5><a href="<?php echo get_page_link($curriculum->ID); ?>"><?php echo get_the_title($curriculum->ID); ?></a></h5>
+                    <a href="<?php echo get_page_link($curriculum->ID); ?>"><h5><?php echo get_the_title($curriculum->ID); ?></h5></a>
                     </div>
                   </div>
                   

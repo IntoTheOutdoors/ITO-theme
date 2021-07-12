@@ -21,24 +21,24 @@
     }
 }
 
-
 header .container {
     position: relative;
     z-index: 2;
-  }
+}
   
-  header .overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: black;
-    opacity: 0.5;
-    z-index: 1;
-  }
+header .overlay {
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+background-color: black;
+opacity: 0.5;
+z-index: 1;
+}
 
 .nav {
+    
 
     &-item {
         padding: 0 20px;
@@ -51,11 +51,23 @@ header .container {
     }
 }
 
+.navbar {
+    background: linear-gradient(to top,  rgba(255,255,255,0) 0%,rgb(52, 52, 52, .8) 100%);
+}
+
 // second navigation
 .bg-custom-second {
     background-color: $third;
     position: relative;
 }
+
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(230, 235, 205)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: $fourth !important;
+} 
 
 .second-logo {
     img {
@@ -64,34 +76,8 @@ header .container {
     }
 }
 
-@media only screen and (max-width: 1440px) {
-    #home-video {
-        & video {
-            top: 70%;
-        }
-    }
-
-    .nav {
-
-        &-item {
-            padding: 0 6px;
-        
-            a{
-                color: #fff !important;
-                text-transform: uppercase;
-                font-weight: 600;
-            }
-        }
-    }
-}
 
 @media only screen and (max-width: 1024px) {
-    #home-video {
-        & video {
-            top: 70%;
-        }
-    }
-
     .nav {
 
         &-item {
@@ -114,5 +100,21 @@ header .container {
             height: 40px !important;
             width: auto;
         }
+    }
+
+    .custom-logo {
+        width: 120px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+      
+    .custom-toggler.navbar-toggler {
+        border-color: rgb(255,102,203);
     }
 }

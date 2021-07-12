@@ -19,7 +19,7 @@
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
         <source src="<?php echo get_template_directory_uri() . '/assets/videos/video-large.mp4'; ?>" type="video/mp4">
     </video>
-    <nav class="navbar navbar-expand-md navbar-light bg-transparent" role="navigation">
+    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
         <div class="container">
             <div class="logo">
                 <a class="navbar-brand" href="<?php bloginfo( "url" ) ?>">
@@ -27,7 +27,7 @@
                 </a>
             </div>
             <!-- Brand and toggle get grouped for better mobile display -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ito-theme' ); ?>">
+            <button class="navbar-toggler ml-auto custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="<?php esc_attr_e( 'Toggle navigation', 'ito-theme' ); ?>">
                 <span class="navbar-toggler-icon"></span>
             </button>
                 <?php

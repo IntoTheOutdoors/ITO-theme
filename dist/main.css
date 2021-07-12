@@ -15,6 +15,23 @@
   border: none;
 }
 
+@-webkit-keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 16));
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-250px * 16));
+  }
+}
 #home-video {
   position: relative;
   background-color: black;
@@ -60,9 +77,21 @@ header .overlay {
   font-weight: 600;
 }
 
+.navbar {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(52, 52, 52, 0.8) 100%);
+}
+
 .bg-custom-second {
   background-color: #1E3433;
   position: relative;
+}
+
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgb(230, 235, 205)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E") !important;
+}
+
+.custom-toggler.navbar-toggler {
+  border-color: #E6EBCD !important;
 }
 
 .second-logo img {
@@ -70,25 +99,7 @@ header .overlay {
   width: auto;
 }
 
-@media only screen and (max-width: 1440px) {
-  #home-video video {
-    top: 70%;
-  }
-
-  .nav-item {
-    padding: 0 6px;
-  }
-  .nav-item a {
-    color: #fff !important;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-}
 @media only screen and (max-width: 1024px) {
-  #home-video video {
-    top: 70%;
-  }
-
   .nav-item {
     padding: 0 2px;
   }
@@ -104,6 +115,20 @@ header .overlay {
   .second-logo img {
     height: 40px !important;
     width: auto;
+  }
+
+  .custom-logo {
+    width: 120px;
+    height: auto;
+  }
+}
+@media screen and (max-width: 768px) {
+  .custom-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  }
+
+  .custom-toggler.navbar-toggler {
+    border-color: #ff66cb;
   }
 }
 .cta-content {
@@ -187,21 +212,28 @@ header .overlay {
   width: 100%;
   height: 100%;
 }
-.featured h5, .featured .h5 {
-  margin-top: 30px;
+.featured-curriculums .curriculum {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
-.featured h5:hover, .featured .h5:hover, .featured h5:active, .featured .h5:active {
+.featured-curriculums .curriculum-image a:active, .featured-curriculums .curriculum-image a:hover {
   color: #f48822;
 }
-
-.curriculums .curriculum {
-  display: flex;
-  margin: 10px 0;
+.featured-curriculums .curriculum-image img {
+  width: 120px;
+  height: auto;
 }
-.curriculums .curriculum h5, .curriculums .curriculum .h5 {
-  padding-left: 20px;
+.featured-curriculums .curriculum-image img:first-child {
+  margin-top: 0;
 }
-.curriculums .curriculum a:active, .curriculums .curriculum a:hover {
+.featured-curriculums .curriculum-text {
+  align-self: center;
+}
+.featured-curriculums .curriculum-text h5, .featured-curriculums .curriculum-text .h5 {
+  margin-left: 40px;
+}
+.featured-curriculums .curriculum-text h5:hover, .featured-curriculums .curriculum-text .h5:hover, .featured-curriculums .curriculum-text h5:active, .featured-curriculums .curriculum-text .h5:active {
   color: #f48822;
 }
 
@@ -270,23 +302,6 @@ header .overlay {
   width: auto;
 }
 
-@-webkit-keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 16));
-  }
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(calc(-250px * 16));
-  }
-}
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
@@ -325,6 +340,129 @@ header .overlay {
   width: 250px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .cta h2, .cta .h2 {
+    font-size: 26px;
+    align-self: center;
+  }
+  .cta p {
+    font-size: 16px;
+  }
+
+  .featured .row {
+    display: flex;
+    flex-direction: row;
+  }
+  .featured iframe {
+    width: 500px !important;
+    min-height: auto !important;
+  }
+  .featured-episode h4, .featured-episode .h4, .featured-curriculums h4, .featured-curriculums .h4 {
+    margin: 20px 0;
+    margin-bottom: 60px;
+    font-size: 21px;
+  }
+  .featured-curriculums h4, .featured-curriculums .h4 {
+    margin-bottom: 36px;
+  }
+
+  .curriculum {
+    display: flex;
+    margin-top: 20px;
+  }
+  .curriculum-image img {
+    width: 90px;
+    height: auto;
+  }
+  .curriculum-image img:first-child {
+    margin-top: 0;
+  }
+  .curriculum-text {
+    margin-left: 20px;
+  }
+  .curriculum-text h5, .curriculum-text .h5 {
+    font-size: 18px;
+  }
+
+  .media {
+    padding: 0;
+  }
+  .media-logos {
+    padding: 10px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .cta-content {
+    justify-content: center;
+  }
+  .cta-content h2, .cta-content .h2 {
+    align-self: center;
+    justify-content: center;
+  }
+
+  .signup-text {
+    width: 700px;
+  }
+  .signup-text h3, .signup-text .h3 {
+    font-size: 28px;
+  }
+  .signup-text p {
+    font-size: 21px;
+    text-align: center;
+  }
+
+  .featured iframe {
+    width: 360px !important;
+    min-height: auto !important;
+  }
+  .featured-episode h4, .featured-episode .h4, .featured-curriculums h4, .featured-curriculums .h4 {
+    margin: 20px 0;
+    margin-bottom: 60px;
+    font-size: 18px;
+  }
+  .featured-curriculums h4, .featured-curriculums .h4 {
+    margin-bottom: 36px;
+  }
+
+  .curriculum {
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  .curriculum-image img {
+    width: 200px !important;
+  }
+  .curriculum-image img:first-child {
+    margin-top: 0;
+  }
+  .curriculum-text h5, .curriculum-text .h5 {
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 0px !important;
+  }
+
+  .media-logos {
+    display: flex;
+  }
+  .media-logos img {
+    padding: 0 20px;
+    margin: 20px 0;
+    width: 90px;
+    height: auto;
+  }
+  .media-text h4, .media-text .h4 {
+    font-size: 18px;
+  }
+  .media-downloads img {
+    padding: 0 10px;
+    width: 120px;
+    height: auto;
+  }
+}
 .episodes {
   margin-top: 20px;
 }
