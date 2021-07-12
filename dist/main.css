@@ -695,21 +695,21 @@ aside {
   margin: 4px 0;
 }
 
-.tab-content-alert {
+.tab-content h4, .tab-content .h4 {
   margin-top: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
-.tab-content-alert i {
-  padding: 10px;
-  font-size: 40px;
+.tab-content .resources-videos i {
+  padding-right: 10px;
 }
 
-.alert-container {
+.alert {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
+}
+.alert-container {
+  align-self: center;
 }
 
 .watch {

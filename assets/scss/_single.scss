@@ -221,22 +221,23 @@
 }
 
 .tab-content {
-    &-alert {
+    h4 {
         margin-top: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    }
 
+    .resources-videos {
         i {
-            padding: 10px;
-            font-size: 40px;
+            padding-right: 10px;
         }
-
     }
 }
-
-.alert-container {
+.alert {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 40px;
+
+    &-container {
+        align-self: center;
+    }
 }
