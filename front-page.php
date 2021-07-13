@@ -1,3 +1,5 @@
 <?php get_header(); ?>
-    <?php get_template_part( 'template-parts/content', 'frontpage' ); ?>
+    <main class="wrapper" >
+        <?php get_template_part( 'template-parts/content', 'frontpage' ); ?>
+    </main>
 <?php get_footer(); ?>

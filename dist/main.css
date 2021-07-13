@@ -68,22 +68,25 @@ header .overlay {
   z-index: 1;
 }
 
+.custom-logo {
+  width: 90px;
+  height: auto;
+  padding-top: 10px;
+}
+
 .nav-item {
   padding: 0 20px;
+  justify-self: center;
 }
 .nav-item a {
   color: #fff !important;
   text-transform: uppercase;
   font-weight: 600;
+  text-align: center;
 }
 
 .navbar {
   background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(52, 52, 52, 0.8) 100%);
-}
-
-.bg-custom-second {
-  background-color: #1E3433;
-  position: relative;
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -94,51 +97,16 @@ header .overlay {
   border-color: #E6EBCD !important;
 }
 
-.second-logo img {
-  height: 100px !important;
-  width: auto;
+.wrapper {
+  min-width: 100%;
 }
 
-@media only screen and (max-width: 1024px) {
-  .nav-item {
-    padding: 0 2px;
-  }
-  .nav-item a {
-    color: #fff !important;
-    text-transform: uppercase;
-    font-weight: 600;
-  }
-  .nav-item a span {
-    font-size: 12px;
-  }
-
-  .second-logo img {
-    height: 40px !important;
-    width: auto;
-  }
-
-  .custom-logo {
-    width: 120px;
-    height: auto;
-  }
-}
-@media screen and (max-width: 768px) {
-  .custom-toggler .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-  }
-
-  .custom-toggler.navbar-toggler {
-    border-color: #ff66cb;
-  }
-}
 .cta-content {
   position: absolute;
   left: 0;
   right: 0;
   bottom: 60px;
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 20px;
+  min-width: 100%;
 }
 .cta-content-text {
   display: flex;
@@ -146,35 +114,34 @@ header .overlay {
   justify-content: flex-start;
   align-items: center;
 }
-.cta-content h1, .cta-content .h1 {
+.cta-content-text h1, .cta-content-text .h1 {
   /* Hide the text. */
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
-.cta-content h2, .cta-content .h2 {
+.cta-content-text h2, .cta-content-text .h2 {
   font-family: "Roboto Slab", serif;
-  font-size: 50px;
+  font-size: 24px;
   font-weight: bold;
   color: #fff;
   text-transform: uppercase;
-  align-self: flex-start;
+  align-self: center;
 }
-.cta-content p {
-  width: 540px;
+.cta-content-text p {
   font-family: "Roboto Slab", serif;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   text-align: center;
   color: #fff;
-  align-self: flex-start;
+  width: 90%;
 }
-.cta-content a {
-  padding: 20px 60px;
+.cta-content-text a {
+  padding: 10px 30px;
   border-radius: 40px;
   color: #fff;
 }
-.cta-content a:hover, .cta-content a:active {
+.cta-content-text a:hover, .cta-content-text a:active {
   color: #fff;
 }
 
@@ -182,7 +149,9 @@ header .overlay {
   position: relative;
   display: flex;
   justify-content: center;
-  margin: 20px 0;
+  flex-direction: column;
+  margin: 0 !important;
+  padding: 4px;
 }
 .featured a {
   text-decoration: none;
@@ -192,36 +161,31 @@ header .overlay {
   color: #1a5458;
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
-  margin-top: 30px;
-  margin-bottom: 60px;
+  margin: 40px 0;
+  margin-left: 10px;
   text-decoration: none;
+  text-align: center;
 }
-.featured-video {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.featured-video .embed-container {
+.featured-episode iframe {
   width: 100%;
-  height: 400px;
 }
-.featured-video .embed-container iframe,
-.featured-video .embed-container object,
-.featured-video .embed-container embed {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.featured-episode h5, .featured-episode .h5 {
+  font-size: 18px;
+  text-align: center;
 }
 .featured-curriculums .curriculum {
   display: flex;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-direction: column;
+}
+.featured-curriculums .curriculum-image {
+  display: flex;
+  justify-content: center;
 }
 .featured-curriculums .curriculum-image a:active, .featured-curriculums .curriculum-image a:hover {
   color: #f48822;
 }
 .featured-curriculums .curriculum-image img {
-  width: 120px;
+  width: 200px;
   height: auto;
 }
 .featured-curriculums .curriculum-image img:first-child {
@@ -231,7 +195,8 @@ header .overlay {
   align-self: center;
 }
 .featured-curriculums .curriculum-text h5, .featured-curriculums .curriculum-text .h5 {
-  margin-left: 40px;
+  text-align: center;
+  margin-top: 20px;
 }
 .featured-curriculums .curriculum-text h5:hover, .featured-curriculums .curriculum-text .h5:hover, .featured-curriculums .curriculum-text h5:active, .featured-curriculums .curriculum-text .h5:active {
   color: #f48822;
@@ -239,32 +204,32 @@ header .overlay {
 
 .family {
   width: 100%;
-  height: auto;
-  margin-top: 80px;
+  height: 300px !important;
 }
 
 .signup {
-  margin-top: 120px;
+  margin-top: 60px;
 }
 .signup-text {
   display: flex;
   flex-direction: column;
-  width: 800px;
 }
 .signup-text h3, .signup-text .h3 {
-  font-size: 50px;
+  font-size: 24px;
   font-family: "Roboto Slab", serif;
   text-align: center;
   color: #1a5458;
 }
 .signup-text p {
-  font-size: 30px;
+  font-size: 14px;
   text-align: center;
+  width: 90%;
+  align-self: center;
 }
 .signup-text a {
-  width: 300px;
+  width: 200px;
   align-self: center;
-  padding: 20px 40px;
+  padding: 10px 20px;
   border-radius: 40px;
   color: #fff;
 }
@@ -273,35 +238,87 @@ header .overlay {
 }
 
 .media {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
   background-color: #1E3433;
-  padding: 60px 0;
+  display: flex;
+  flex-direction: column;
 }
 .media-logos {
-  align-items: center;
-}
-.media-logos img {
-  padding: 0 20px;
-  width: auto;
+  display: none;
 }
 .media-text {
-  margin-top: 20px;
+  padding: 0 10px;
 }
 .media-text h4, .media-text .h4 {
-  padding-top: 40px;
   color: #fff;
+  text-align: center;
 }
 .media-downloads {
-  margin: 40px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.media-downloads img {
-  padding: 0 40px;
-  width: auto;
+.media-downloads a {
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .cta-content {
+    display: flex;
+    justify-content: flex-start;
+  }
+  .cta-content-text {
+    width: 60%;
+  }
+
+  .featured {
+    flex-direction: row;
+  }
+  .featured h4, .featured .h4 {
+    margin: 20px 0;
+    font-size: 21px;
+  }
+  .featured-episode {
+    width: 100%;
+  }
+  .featured-episode h5, .featured-episode .h5 {
+    font-size: 18px;
+    text-align: center;
+  }
+  .featured-episode iframe {
+    width: 100%;
+  }
+  .featured-curriculums .curriculum {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  .featured-curriculums .curriculum-image {
+    display: flex;
+    justify-content: center;
+  }
+  .featured-curriculums .curriculum-image a:active, .featured-curriculums .curriculum-image a:hover {
+    color: #f48822;
+  }
+  .featured-curriculums .curriculum-image img {
+    width: 200px;
+    height: auto;
+  }
+  .featured-curriculums .curriculum-image img:first-child {
+    margin-top: 0;
+  }
+  .featured-curriculums .curriculum-text {
+    align-self: center;
+  }
+  .featured-curriculums .curriculum-text h5, .featured-curriculums .curriculum-text .h5 {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .featured-curriculums .curriculum-text h5:hover, .featured-curriculums .curriculum-text .h5:hover, .featured-curriculums .curriculum-text h5:active, .featured-curriculums .curriculum-text .h5:active {
+    color: #f48822;
+  }
+}
 .slider {
   background: white;
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.125);
@@ -340,159 +357,6 @@ header .overlay {
   width: 250px;
 }
 
-@media only screen and (max-width: 1024px) {
-  .cta h2, .cta .h2 {
-    font-size: 26px;
-    align-self: center;
-  }
-  .cta p {
-    font-size: 16px;
-  }
-
-  .featured .row {
-    display: flex;
-    flex-direction: row;
-  }
-  .featured iframe {
-    width: 500px !important;
-    min-height: auto !important;
-  }
-  .featured-episode h4, .featured-episode .h4, .featured-curriculums h4, .featured-curriculums .h4 {
-    margin: 20px 0;
-    margin-bottom: 60px;
-    font-size: 21px;
-  }
-  .featured-curriculums h4, .featured-curriculums .h4 {
-    margin-bottom: 36px;
-  }
-
-  .curriculum {
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .curriculum-image img {
-    width: 200px !important;
-  }
-  .curriculum-image img:first-child {
-    margin-top: 0;
-  }
-  .curriculum-text h5, .curriculum-text .h5 {
-    font-size: 14px;
-    margin-top: 6px;
-    margin-left: 0px !important;
-  }
-
-  .media {
-    padding: 0;
-  }
-  .media-logos {
-    padding: 10px 20px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-}
-@media screen and (max-width: 768px) {
-  .cta-content {
-    justify-content: center;
-  }
-  .cta-content h2, .cta-content .h2 {
-    align-self: center;
-    justify-content: center;
-  }
-
-  .signup-text {
-    width: 700px;
-  }
-  .signup-text h3, .signup-text .h3 {
-    font-size: 28px;
-  }
-  .signup-text p {
-    font-size: 21px;
-    text-align: center;
-  }
-
-  .featured iframe {
-    width: 360px !important;
-    min-height: auto !important;
-  }
-  .featured-episode h4, .featured-episode .h4, .featured-curriculums h4, .featured-curriculums .h4 {
-    margin: 20px 0;
-    margin-bottom: 60px;
-    font-size: 18px;
-  }
-  .featured-curriculums h4, .featured-curriculums .h4 {
-    margin-bottom: 36px;
-  }
-
-  .media-logos {
-    display: flex;
-  }
-  .media-logos img {
-    padding: 0 20px;
-    margin: 20px 0;
-    width: 90px;
-    height: auto;
-  }
-  .media-text h4, .media-text .h4 {
-    font-size: 18px;
-  }
-  .media-downloads img {
-    padding: 0 10px;
-    width: 120px;
-    height: auto;
-  }
-}
-@media screen and (max-width: 425px) {
-  .featured .row {
-    flex-direction: column;
-  }
-  .featured-episode {
-    align-items: center;
-    justify-content: center;
-  }
-  .featured h4, .featured .h4 {
-    font-size: 22px;
-    min-width: 425px;
-    margin: 10px 0;
-    margin: 20px;
-  }
-  .featured h5, .featured .h5 {
-    width: 400px;
-    font-size: 14px;
-  }
-
-  .signup-text {
-    padding: 0 10px;
-  }
-  .signup-text h3, .signup-text .h3 {
-    font-size: 18px;
-  }
-  .signup-text p {
-    font-size: 14px;
-    text-align: center;
-  }
-
-  .curriculum {
-    display: flex;
-    flex-direction: row;
-    width: 400px;
-  }
-  .curriculum-image img {
-    width: 60px !important;
-  }
-
-  .signup-text {
-    width: 400px;
-  }
-
-  .media-logos {
-    display: none;
-  }
-}
 .episodes {
   margin-top: 20px;
 }
@@ -1031,30 +895,30 @@ aside {
   text-align: center;
 }
 
-footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+.footer {
   background: #1E3433;
-  height: 100px;
-}
-footer ul {
+  padding: 10px 0;
   display: flex;
-}
-footer ul li {
-  list-style: none;
+  flex-direction: column;
   align-self: center;
-  font-size: 18px;
+}
+.footer-text {
+  display: flex;
+  flex-direction: column;
+}
+.footer ul {
+  padding-left: 0px;
+}
+.footer ul li {
+  list-style: none;
   color: #fff;
   text-transform: uppercase;
   text-decoration: none;
+  text-align: center;
   font-size: 12px;
 }
-
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.footer-socialmedia {
+  margin: 0 auto;
 }
 .footer-socialmedia i {
   font-size: 30px;

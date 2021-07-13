@@ -1,56 +1,59 @@
+.wrapper {
+    min-width: 100%;
+}
+
 .cta {
     &-content {
         position: absolute;
         left: 0;
         right: 0;
         bottom: 60px;
-        display: flex;
-        justify-content: flex-start;
-        margin-top: 20px;
+        min-width: 100%;
         
         &-text {
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             align-items: center;
+
+            h1 {
+
+                /* Hide the text. */
+               text-indent: 100%;
+               white-space: nowrap;
+               overflow: hidden;
+           }
+   
+           h2 {
+               font-family: $font-one;
+               font-size: 24px;
+               font-weight: bold;
+               color: $white;
+               text-transform: uppercase;
+               align-self: center;
+           }
+   
+           p {
+               font-family: $font-one;
+               font-size: 12px;
+               font-weight: bold;
+               text-align: center;
+               color: $white;
+               width: 90%;
+           }
+   
+           a {
+               padding: 10px 30px;
+               border-radius: 40px;
+               color: $white;
+   
+               &:hover, &:active {
+                   color: $white;
+               }
+           }
         }
 
-        h1 {
-
-             /* Hide the text. */
-            text-indent: 100%;
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        h2 {
-            font-family: $font-one;
-            font-size: 50px;
-            font-weight: bold;
-            color: $white;
-            text-transform: uppercase;
-            align-self: flex-start;
-        }
-
-        p {
-            width: 540px;
-            font-family: $font-one;
-            font-size: 20px;
-            font-weight: bold;
-            text-align: center;
-            color: $white;
-            align-self: flex-start;
-        }
-
-        a {
-            padding: 20px 60px;
-            border-radius: 40px;
-            color: $white;
-
-            &:hover, &:active {
-                color: $white;
-            }
-        }
+        
     }
 }
 
@@ -58,8 +61,10 @@
     position: relative;
     display: flex;
     justify-content: center;
-    margin: 20px 0;
-
+    flex-direction: column;
+    margin: 0 !important;
+    padding: 4px;
+    
     a {
         text-decoration: none;
         color: $primary;
@@ -69,43 +74,32 @@
         color: $primary;
         text-transform: uppercase;
         font-family: $font-one;
-        margin-top: 30px;
-        margin-bottom: 60px;
+        margin: 40px 0;
+        margin-left: 10px;
         text-decoration: none;
-        
+        text-align: center;
     }
 
-    &-video {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        .embed-container {
-            width: 100%;
-            height: 400px;
-            // object-fit: cover;
-            // overflow: hidden;
-        }
+    &-episode {
+       iframe {
+           width: 100%;
+       }
 
-        .embed-container iframe,
-        .embed-container object,
-        .embed-container embed { 
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
+       h5 {
+           font-size: 18px;
+           text-align: center;
+       }
     }
-
-   
 
     &-curriculums {
         .curriculum {
             display: flex;
-            flex-wrap: wrap;
-            margin-top: 20px;
-    
-            
+            flex-direction: column;
+                
             &-image {
+                display: flex;
+                justify-content: center;
+
                 a {
                     &:active, &:hover {
                         color: $secondary;
@@ -113,7 +107,7 @@
                 }
     
                 img {
-                    width: 120px;
+                    width: 200px;
                     height: auto;
     
                     &:first-child {
@@ -126,7 +120,8 @@
                 align-self: center;
 
                 h5 {
-                    margin-left: 40px;
+                    text-align: center;
+                    margin-top: 20px;
 
                     &:hover, &:active {
                         color: $secondary;
@@ -139,35 +134,34 @@
 
 .family {
     width: 100%;
-    height: auto;
-    margin-top: 80px;
-
+    height: 300px !important;
 }
 
 .signup {
-    margin-top: 120px;
+    margin-top: 60px;
 
     &-text {
         display: flex;
         flex-direction: column;
-        width: 800px;
     
         h3 {
-            font-size: 50px;
+            font-size: 24px;
             font-family: $font-one;
             text-align: center;
             color: $primary;
         }
 
         p {
-            font-size: 30px;
+            font-size: 14px;
             text-align: center;
+            width: 90%;
+            align-self: center;
         }
 
         a {
-            width: 300px;
+            width: 200px;
             align-self: center;
-            padding: 20px 40px;
+            padding: 10px 20px;
             border-radius: 40px;
             color: $white;
             
@@ -179,302 +173,111 @@
 }
 
 .media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     background-color: $third;
-    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
     
     &-logos {
-        align-items: center;
-
-        img {
-            padding: 0 20px;
-            width: auto;
-        }
+        display: none;
     }
-
+    
     &-text {
-        margin-top: 20px;
+        padding: 0 10px;
         
         h4 {
-            padding-top: 40px;
             color: $white;
+            text-align: center;
         }
     }
 
     &-downloads {
-        margin: 40px 0;
-
-        img {
-            padding: 0 40px;
-            width: auto;
-        }
-    }
-}
-
-$animationSpeed: 20s;
-
-
-
-// Styling
-.slider {
-	background: white;
-	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
-	height: 200px;
-	overflow:hidden;
-	position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-	
-	&::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 200px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	}
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
-
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll $animationSpeed linear infinite;
-		display: flex;
-		width: calc(50px * 16);
-	}
-	
-	.slide {
-
-        img {
-            height: 100px;
-            width: 250px;
-        }
-	}
-}
-
-@media only screen and (max-width: 1024px) {
-    .cta {
-        h2 {
-            font-size: 26px;
-            align-self: center;
-        }
-
-        p {
-            font-size: 16px;
-        }
-    }
-
-    .featured {
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
-        
-        iframe {
-            width: 500px !important;
-            min-height: auto !important;
-        }
-
-        &-episode, &-curriculums {
-            h4 {
-                margin: 20px 0;
-                margin-bottom: 60px;
-                font-size: 21px;
-            }
-        }
-
-        &-curriculums {
-            h4 {
-                margin-bottom: 36px;
-            }
-        }
-    }
-
-    .curriculum {
-        margin-top: 20px;
-        align-items: center;
-        justify-content: center;
+        display: flex;
         flex-direction: column;
-
-        &-image {
-            img {
-                width: 200px !important;
-
-                &:first-child {
-                    margin-top: 0;
-                }
-            }
-        }
-
-        &-text {
-
-            h5 {
-                font-size: 14px;
-                margin-top: 6px;
-                margin-left: 0px !important;
-            }
-        }
-    }
-
-    .media {
-        padding: 0;
-        &-logos {
-            padding: 10px 20px;
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .cta-content {
         justify-content: center;
 
-        h2 {
-            align-self: center;
-            justify-content: center;
+        a {
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-bottom: 10px;
         }
     }
-    .signup {
-        &-text {
-            width: 700px;
-            h3 {
-                font-size: 28px;
-            }
-
-            p {
-                font-size: 21px;
-                text-align: center;
-            }
-        }
-    }
-
-    .featured {
-        iframe {
-            width: 360px !important;
-            min-height: auto !important;
-        }
-
-        &-episode, &-curriculums {
-            h4 {
-                margin: 20px 0;
-                margin-bottom: 60px;
-                font-size: 18px;
-            }
-        }
-
-        &-curriculums {
-            h4 {
-                margin-bottom: 36px;
-            }
-        }
-    }
-
-
-    .media {
-        &-logos {
-            display: flex;
-            
-            img {
-                padding: 0 20px;
-                margin: 20px 0;
-                width: 90px;
-                height: auto;
-            }
-        }
-
-        &-text {
-            h4 {
-                font-size: 18px;
-            }
-        }
-
-        &-downloads {
-            img {
-                padding: 0 10px;
-                width: 120px;
-                height: auto;
-            }
-        }
-    }
+    
 }
 
-@media screen and (max-width: 425px) {
+// TABLET SIZE (768px)
+@media screen and (min-width: 426px) and (max-width: 768px) {
+    .cta {
+        &-content {
+            display: flex;
+            justify-content: flex-start;
+            
+            &-text {
+                width: 60%;
+            }
+        }
+    }
+
     .featured {
-        .row {
-            flex-direction: column;
+        flex-direction: row;
+        
+        h4 {
+            margin: 20px 0;
+            font-size: 21px;
         }
 
         &-episode {
-            align-items: center;
-            justify-content: center;
-        }
-
-        h4 {
-            font-size: 22px;
-            min-width: 425px;
-            margin: 10px 0;
-            margin: 20px;
-        }
-
-        h5 {
-            width: 400px;
-            font-size: 14px;
-        }
-
-    }
-    .signup {
-        &-text {
-            padding: 0 10px;
-            h3 {
+            width: 100%;
+            
+        
+            h5 {
                 font-size: 18px;
-            }
-
-            p {
-                font-size: 14px;
                 text-align: center;
             }
+           iframe {
+               width: 100%;
+           }
+    
         }
-    }
-
-    .curriculum {
-        display: flex;
-        flex-direction: row;
-        width: 400px;
-
-        &-image {
-            img {
-                width: 60px !important;
+    
+        &-curriculums {
+            .curriculum {
+                display: flex;
+                flex-direction: column;
+                margin: 20px 0;
+                    
+                &-image {
+                    display: flex;
+                    justify-content: center;
+    
+                    a {
+                        &:active, &:hover {
+                            color: $secondary;
+                        }
+                    }
+        
+                    img {
+                        width: 200px;
+                        height: auto;
+        
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+        
+                &-text {
+                    align-self: center;
+    
+                    h5 {
+                        text-align: center;
+                        margin-top: 20px;
+    
+                        &:hover, &:active {
+                            color: $secondary;
+                        }
+                    }
+                }
             }
-        }
-    }
-
-    .signup {
-        &-text {
-            width: 400px;
-        }
-    }
-
-    .media {
-
-        &-logos {
-            display: none;
         }
     }
 }

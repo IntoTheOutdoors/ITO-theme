@@ -1,0 +1,539 @@
+.cta {
+    &-content {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 60px;
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 20px;
+        
+        &-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        h1 {
+
+             /* Hide the text. */
+            text-indent: 100%;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        h2 {
+            font-family: $font-one;
+            font-size: 50px;
+            font-weight: bold;
+            color: $white;
+            text-transform: uppercase;
+            align-self: flex-start;
+        }
+
+        p {
+            width: 540px;
+            font-family: $font-one;
+            font-size: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: $white;
+            align-self: flex-start;
+        }
+
+        a {
+            padding: 20px 60px;
+            border-radius: 40px;
+            color: $white;
+
+            &:hover, &:active {
+                color: $white;
+            }
+        }
+    }
+}
+
+.featured {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+
+    a {
+        text-decoration: none;
+        color: $primary;
+    }
+    
+    h4 {
+        color: $primary;
+        text-transform: uppercase;
+        font-family: $font-one;
+        margin-top: 30px;
+        margin-bottom: 60px;
+        text-decoration: none;
+        
+    }
+
+    &-video {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        .embed-container {
+            width: 100%;
+            height: 400px;
+            // object-fit: cover;
+            // overflow: hidden;
+        }
+
+        .embed-container iframe,
+        .embed-container object,
+        .embed-container embed { 
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+   
+
+    &-curriculums {
+        .curriculum {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 20px;
+    
+            
+            &-image {
+                a {
+                    &:active, &:hover {
+                        color: $secondary;
+                    }
+                }
+    
+                img {
+                    width: 120px;
+                    height: auto;
+    
+                    &:first-child {
+                        margin-top: 0;
+                    }
+                }
+            }
+    
+            &-text {
+                align-self: center;
+
+                h5 {
+                    margin-left: 40px;
+
+                    &:hover, &:active {
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.family {
+    width: 100%;
+    height: auto;
+    margin-top: 80px;
+
+}
+
+.signup {
+    margin-top: 120px;
+
+    &-text {
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+    
+        h3 {
+            font-size: 50px;
+            font-family: $font-one;
+            text-align: center;
+            color: $primary;
+        }
+
+        p {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        a {
+            width: 300px;
+            align-self: center;
+            padding: 20px 40px;
+            border-radius: 40px;
+            color: $white;
+            
+            &:hover, &:active {
+                color: $white;
+            }
+        }
+    }
+}
+
+.media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: $third;
+    padding: 60px 0;
+    
+    &-logos {
+        align-items: center;
+
+        img {
+            padding: 0 20px;
+            width: auto;
+        }
+    }
+
+    &-text {
+        margin-top: 20px;
+        
+        h4 {
+            padding-top: 40px;
+            color: $white;
+        }
+    }
+
+    &-downloads {
+        margin: 40px 0;
+
+        img {
+            padding: 0 40px;
+            width: auto;
+        }
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 1024px) {
+    .cta {
+        h2 {
+            font-size: 26px;
+            align-self: center;
+        }
+
+        p {
+            font-size: 16px;
+        }
+    }
+
+    .featured {
+        .row {
+            display: flex;
+            flex-direction: row;
+        }
+        
+        iframe {
+            width: 500px !important;
+            min-height: auto !important;
+        }
+
+        &-episode, &-curriculums {
+            h4 {
+                margin: 20px 0;
+                margin-bottom: 60px;
+                font-size: 21px;
+            }
+        }
+
+        &-curriculums {
+            h4 {
+                margin-bottom: 36px;
+            }
+        }
+    }
+
+    .curriculum {
+        margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        &-image {
+            img {
+                width: 200px !important;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        &-text {
+
+            h5 {
+                font-size: 14px;
+                margin-top: 6px;
+                margin-left: 0px !important;
+            }
+        }
+    }
+
+    .media {
+        padding: 0;
+        &-logos {
+            padding: 10px 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .cta-content {
+        justify-content: center;
+
+        h2 {
+            align-self: center;
+            justify-content: center;
+        }
+    }
+    .signup {
+        &-text {
+            width: 700px;
+            h3 {
+                font-size: 28px;
+            }
+
+            p {
+                font-size: 21px;
+                text-align: center;
+            }
+        }
+    }
+
+    .featured {
+        iframe {
+            width: 360px !important;
+            min-height: auto !important;
+        }
+
+        &-episode, &-curriculums {
+            h4 {
+                margin: 20px 0;
+                margin-bottom: 60px;
+                font-size: 18px;
+            }
+        }
+
+        &-curriculums {
+            h4 {
+                margin-bottom: 36px;
+            }
+        }
+    }
+
+
+    .media {
+        &-logos {
+            display: flex;
+            
+            img {
+                padding: 0 20px;
+                margin: 20px 0;
+                width: 90px;
+                height: auto;
+            }
+        }
+
+        &-text {
+            h4 {
+                font-size: 18px;
+            }
+        }
+
+        &-downloads {
+            img {
+                padding: 0 10px;
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .featured {
+        .row {
+            flex-direction: column;
+        }
+
+        &-episode {
+            align-items: center;
+            justify-content: center;
+        }
+
+        h4 {
+            font-size: 22px;
+            min-width: 425px;
+            margin: 10px 0;
+            margin: 20px;
+        }
+
+        h5 {
+            width: 400px;
+            font-size: 14px;
+        }
+
+    }
+    .signup {
+        &-text {
+            padding: 0 10px;
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+
+    .curriculum {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+
+        &-image {
+            img {
+                width: 60px !important;
+            }
+        }
+    }
+
+    .signup {
+        &-text {
+            width: 400px;
+        }
+    }
+
+    .media {
+
+        &-logos {
+            display: none;
+        }
+    }
+}
+
+
+
+/////////////////////////////////////////////////
+
+
+
+
+
+
+// second navigation
+.bg-custom-second {
+    background-color: $third;
+    position: relative;
+}
+
+
+.second-logo {
+    img {
+        height: 100px !important;
+        width: auto;
+    }
+}
+
+
+@media only screen and (max-width: 1024px) {
+    .nav {
+
+        &-item {
+            padding: 0 2px;
+        
+            a{
+                color: #fff !important;
+                text-transform: uppercase;
+                font-weight: 600;
+
+                span {
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+
+    .second-logo {
+        img {
+            height: 40px !important;
+            width: auto;
+        }
+    }
+
+    .custom-logo {
+        width: 120px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .custom-toggler .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+      }
+      
+    .custom-toggler.navbar-toggler {
+        border-color: rgb(255,102,203);
+    }
+}
+
+
+
+////////////////// FOOTER
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: $third;
+    height: 100px;
+    
+    ul {
+        display: flex;
+    
+        li {
+            list-style: none;
+            align-self: center;
+            font-size: 18px;
+            color: $white;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 12px;
+        }
+    }
+}
+
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-socialmedia {
+        i {
+            font-size: 30px;
+            padding: 0 5px;
+            color: $white;
+        }
+    }
+}
+
