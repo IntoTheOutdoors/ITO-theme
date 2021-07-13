@@ -175,6 +175,7 @@
     background-color: $third;
     display: flex;
     flex-direction: column;
+    margin-top: -10px;
     
     &-logos {
         display: none;
@@ -383,8 +384,9 @@
             flex-wrap: wrap;
             margin-bottom: 40px;
 
+
             img {
-                margin: 10px 20px;
+                margin: 10px;
             }
         }
 

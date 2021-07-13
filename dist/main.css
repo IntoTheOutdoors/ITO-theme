@@ -251,6 +251,7 @@ header .overlay {
   background-color: #1E3433;
   display: flex;
   flex-direction: column;
+  margin-top: -10px;
 }
 .media-logos {
   display: none;
@@ -407,7 +408,7 @@ header .overlay {
     margin-bottom: 40px;
   }
   .media-logos img {
-    margin: 10px 20px;
+    margin: 10px;
   }
   .media-text {
     margin-bottom: 40px;
