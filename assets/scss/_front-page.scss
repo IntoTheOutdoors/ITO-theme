@@ -61,6 +61,7 @@
     position: relative;
     display: flex;
     justify-content: center;
+    margin: 0 auto;
     
     a {
         text-decoration: none;
@@ -92,6 +93,7 @@
         .curriculum {
             display: flex;
             flex-direction: column;
+            margin: 20px 0;
                 
             &-image {
                 display: flex;
@@ -214,9 +216,11 @@
     }
 
     .featured {   
+        padding: 0 10px;
+
         h4 {
             margin: 20px 0;
-            font-size: 21px;
+            font-size: 22px;
         }
 
         &-episode {
@@ -231,46 +235,35 @@
            iframe {
                width: 100%;
                margin-left: 12px;
+               margin-top: 60px;
            }
     
         }
     
         &-curriculums {
-            .curriculum {
-                display: flex;
-                flex-direction: row;
-                margin: 20px 0;
-                    
-                &-image {
-    
-                    a {
-                        &:active, &:hover {
-                            color: $secondary;
-                        }
-                    }
-        
-                    img {
-                        width: 90px;
-                        height: auto;
-        
-                        &:first-child {
-                            margin-top: 0;
-                        }
-                    }
-                }
-        
-                &-text {
-    
-                    h5 {
-                        font-size: 18px;
-                        text-align: left;
-                        margin-left: 10px;
+            h4 {
+                margin-bottom: 55px;
+            }
+        }
+    }
 
-                        &:hover, &:active {
-                            color: $secondary;
-                        }
-                    }
-                }
+    .curriculum {
+        display: flex;
+        flex-direction: row !important;
+        margin: 10px 0;
+
+        &-image {
+            img {
+                width: 60px !important;
+            }
+        }
+
+        &-text {
+            margin-left: 10px;
+            
+            h5 {
+                align-self: flex-start;
+                text-align: left !important;
             }
         }
     }
@@ -304,5 +297,111 @@
             }
         }
         
+    }
+}
+
+// laptop -> tv
+@media screen and (min-width: 769px) {
+    .cta {
+        &-content {
+            &-text {
+                width: 50%;
+                h2 {
+                    font-size: 32px;
+                }
+                p {
+                    font-size: 22px;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    .featured {
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+        &-episode {
+            h4 {
+                margin-bottom: 80px;
+                text-align: left;
+            }
+
+            iframe {
+                min-height: 100%;
+            }
+        }
+
+        &-curriculums {
+            h4 {
+                margin-bottom: 50px;
+                text-align: left;
+            }
+        }
+    }
+
+    .curriculum {
+        display: flex;
+        flex-direction: row !important;
+        margin: 10px 0;
+
+        &-image {
+            img {
+                width: 60px !important;
+            }
+        }
+
+        &-text {
+            margin-left: 10px;
+            
+            h5 {
+                align-self: flex-start;
+                text-align: left !important;
+            }
+        }
+    }
+
+    .signup {
+        &-text {
+            width: 70%;
+
+            h3 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 22px;
+            }
+        }
+    }
+
+    .media {
+        &-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+
+            img {
+                margin: 10px 20px;
+            }
+        }
+
+        &-text {
+            margin-bottom: 40px;
+        }
+
+        &-downloads {
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: row;
+            align-self: center;
+            width: 60%;
+        }
+    }
+
+    .family {
+        height: 500px !important;
     }
 }

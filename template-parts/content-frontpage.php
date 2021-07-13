@@ -1,5 +1,5 @@
 <!-- CTA -->
-<section class="cta">   
+<section class="cta container">   
     <div class="cta-content">
         <div class="cta-content-text">
             <h1>into the outdoors</h1>
@@ -14,61 +14,63 @@
 </section>
 
 <!-- FEATURED EPISODES -->
-<section class="featured row">
-    <div class="featured-episode col-lg-7 col-md-6 col-sm-12">
-        <h4>Featured Episode</h4>
-        <?php 
-            $args = [
-              'post_type' => 'topics',
-              'posts_per_page' => 1,
-            ];
+<section class="featured container">
+    <div class="row">
+      <div class="featured-episode col-lg-6 col-md-6 col-sm-12">
+          <h4>Featured Episode</h4>
+          <?php 
+              $args = [
+                'post_type' => 'topics',
+                'posts_per_page' => 1,
+              ];
 
-            $query = new WP_Query($args);
-            
-            
-            while($query->have_posts()): $query->the_post();
-            $featured_post = get_field('full_episode');
-            ?>
-            <div class="featured-episode-embed">
-              <?php
-                $featured_video = the_field('youtube_url', $featured_post[0]->ID);
-                if(!empty($featured_video)) {
-                  echo $featured_video;
-                } else {
-                  echo get_field('vimeo_url', $featured_post[0]->ID);
-                }
-            ?>
-            </div>
-            <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
-    </div>
-    <div class="featured-curriculums col-lg-5 col-md-6 col-sm-12">
-        <?php 
-          $curriculums = get_field('curriculum_videos');
-          if($curriculums != ""): ?>
-            <h4>Latest curriculum videos & lesson plans</h4>
-            <?php 
-            foreach($curriculums as $curriculum): ?>
-              <div class="curriculum">
-                <div class="curriculum-image">
-                  <a href="<?echo get_page_link($curriculum->ID); ?>">
-                  <?php 
-                    echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
-                  ?>
-                  </a>
-
-                </div>
-                <div class="curriculum-text">
-                <a href="<?php echo get_page_link($curriculum->ID); ?>"><h5><?php echo get_the_title($curriculum->ID); ?></h5></a>
-                </div>
-              </div>
+              $query = new WP_Query($args);
               
-              <?php
-            endforeach;
-          endif;
-        ?>
-        </div>
-        
-        <?php endwhile; wp_reset_query(); ?>
+              
+              while($query->have_posts()): $query->the_post();
+              $featured_post = get_field('full_episode');
+              ?>
+              <div class="featured-episode-embed">
+                <?php
+                  $featured_video = the_field('youtube_url', $featured_post[0]->ID);
+                  if(!empty($featured_video)) {
+                    echo $featured_video;
+                  } else {
+                    echo get_field('vimeo_url', $featured_post[0]->ID);
+                  }
+              ?>
+              </div>
+              <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
+      </div>
+      <div class="featured-curriculums col-lg-6 col-md-6 col-sm-12">
+        <?php 
+            $curriculums = get_field('curriculum_videos');
+            if($curriculums != ""): ?>
+              <h4>Latest curriculum videos & lesson plans</h4>
+              <?php 
+              foreach($curriculums as $curriculum): ?>
+                <div class="curriculum">
+                  <div class="curriculum-image">
+                    <a href="<?echo get_page_link($curriculum->ID); ?>">
+                    <?php 
+                      echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
+                    ?>
+                    </a>
+
+                  </div>
+                  <div class="curriculum-text">
+                  <a href="<?php echo get_page_link($curriculum->ID); ?>"><h5><?php echo get_the_title($curriculum->ID); ?></h5></a>
+                  </div>
+                </div>
+                
+                <?php
+              endforeach;
+            endif;
+          ?>
+          </div>
+          
+          <?php endwhile; wp_reset_query(); ?>
+      </div>
     </div>
 </section>
 
@@ -77,8 +79,9 @@
     $image = wp_get_attachment_image_src(10757, $size="thumbnail", $icon=false, []);
   ?>
   <section class="family" style="background: url(<?php echo $image[0]; ?>) repeat-x; background-position: bottom; width: 100%; height: 565px; margin: 0 auto;">
-    <!-- SIGNUP (CALL TO ACTION) -->
-    <section class="signup">
+    
+  <!-- SIGNUP (CALL TO ACTION) -->
+    <section class="signup container">
       <div class="signup-text">
         <h3>Join the Adventure!</h3>
         <p>Join our email list to be the first to get the lasts news, 
@@ -103,7 +106,7 @@
   </section>
 
   <section class="media">
-    <div class="media-logos">
+    <div class="media-logos container">
       <?php 
         // query custom post type 'shows'
         $args = [
@@ -123,7 +126,7 @@
         <?php endif; endwhile; wp_reset_query();
       ?>
     </div>
-    <div class="media-text">
+    <div class="media-text container">
           <h4>We are now available on a variety of streaming channels and platforms!</h4>
     </div>
     <?php 
@@ -135,7 +138,7 @@
     ];
 
     ?> 
-    <div class="media-downloads">
+    <div class="media-downloads conntainer">
     
     <?php 
     // QUERY for the app downloads
