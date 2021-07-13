@@ -14,7 +14,7 @@
 </section>
 
 <!-- FEATURED EPISODES -->
-<section class="featured container row">
+<section class="featured row">
     <div class="featured-episode col-lg-7 col-md-6 col-sm-12">
         <h4>Featured Episode</h4>
         <?php 
