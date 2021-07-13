@@ -1,0 +1,228 @@
+.episodes {
+    margin-top: 20px;
+}
+
+.results {
+    &-header {
+        font-family: $font-one;
+        color: $primary;
+        text-transform: uppercase;
+    }
+
+    &-episodes {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &-text {
+            text-transform: uppercase;
+            font-weight: bold;
+            font-family: $font-one;
+            color: $primary;
+            margin-top: 10px;
+        }
+
+        &-container {
+            display: flex;
+            flex-wrap: wrap;
+        }        
+
+        &-loadmore {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            
+        }
+    }
+
+    &-filter {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+.card {
+    width: 200px;
+    margin: 10px 6px;
+    border-radius: 20px !important;
+
+    &-title {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        font-size: 12px;
+    }
+
+    img {
+        border-top-left-radius: 20px;
+        border-top-right-radius: 20px;
+    }
+    
+    a {
+        text-decoration: none;
+        color: black;
+    }
+
+    &:hover, &:active {
+        transform: scale(1.01);
+        animation: fadeIn 5s;
+    }
+}
+
+.btn-secondary {
+    font-size: 12px;
+}
+
+.btn-featured {
+    padding: 8px 10px;
+}
+
+.filter {
+    height: auto;
+    &-form {
+        background-color: $white;
+        border-radius: 20px;
+        margin-bottom: 20px;
+        @include shadow;
+        padding: 4px 40px;
+    }
+
+    &-types {
+        margin-top: 10px;
+        label {
+            text-transform: uppercase;
+            font-weight: bold;
+            margin: 4px 0;
+        }
+
+        &-input {
+            display: flex;
+            justify-content: space-between;
+            text-transform: capitalize;
+
+            input[type="radio"] {
+                margin-right: 10px;
+                display:inline-block;
+                width:20px;
+                height:20px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &-categories {
+        margin-top: 10px;
+        label {
+            text-transform: uppercase;
+            font-weight: bolder;
+        }
+        
+        &-item {
+            margin: 4px 0;
+            label {
+                text-transform: capitalize;
+            }
+
+            input[type="radio"] {
+                display:inline-block;
+                margin-right: 10px;
+                width:20px;
+                height:20px;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    &-grade {
+        margin-top: 10px;
+        &-item {
+            margin: 4px 0;
+        }
+
+        &-label {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        &-select {
+            margin-top: 20px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+            display:inline-block;
+            width:20px;
+            height:20px;
+            vertical-align: middle;
+        }
+    }
+
+    &-submit {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        padding: 10px;
+        
+        input {
+            width: 100%;
+            font-weight: bold;
+            margin: 10px 0;
+            border-radius: 20px;
+            padding: 10px 0;
+        }
+    }
+}
+
+.tab {
+    &-pane {
+        margin-top: 20px;
+    }
+}
+
+.downloads {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    background-color: $primary;
+    
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+
+    h4 {
+        color: $white;
+        text-align: center;
+    }
+
+    img {
+        align-self: center;
+        height: auto;
+        width: 100%;
+        margin: 4px 2px;
+    }
+}
+
+aside {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 60px;
+}
+
+
+#episode-category {
+    margin-top: 20px;
+    width: 100%;
+}
+
+#episode-search {
+    margin: 0;
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 20px;
+    background-color: $grey-one;
+}

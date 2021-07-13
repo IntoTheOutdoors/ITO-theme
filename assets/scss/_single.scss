@@ -1,0 +1,243 @@
+.episode {
+    margin-bottom: 20px;
+
+    &-videos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &-player {
+        
+        iframe {
+            width: 900px;
+            height: 500px;
+        }
+    }
+
+    &-info {
+        display: flex;
+        height: auto;
+        background-color: $white;
+        max-width: 889px;
+        margin-left: 6px;
+        margin-top: -6px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        @include shadow;
+
+        &-title {
+            width: 60%;
+            padding: 20px;
+        }
+
+        &-lessons{
+            padding: 20px 10px;
+            width: 41%;
+            background-color: $seventh;
+            flex-direction: column;
+            display: flex;
+            border-bottom-right-radius: 20px;
+
+            h5 {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 12px;
+            }
+
+            a {
+                align-self: center;
+                width: 180px;
+                border-radius: 20px;
+            }
+        }
+    }
+
+    &-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        &-container {
+            width: 900px;
+        }
+
+        &-lists {
+            display: flex;
+            align-self: flex-start;
+            flex-direction: column;
+            padding: 20px; 
+            width: 400px;
+            height: auto;
+            background-color: $white;
+            margin-left: 20px;
+            border-radius: 20px;
+            @include shadow;
+
+            h5 {
+                color: $primary;
+                text-transform: uppercase;
+                font-family: $font-one;
+                font-weight: bolder;
+                text-align: center;
+                margin-top: 20px;
+            }
+
+            &-curriculum {
+                display: flex;
+                flex-direction: column;
+            }
+
+
+            &-full-item, &-curriculum-item {
+                display: flex;
+                flex-direction: column;
+                padding: 10px;
+
+                img {
+                    width: auto;
+                    height: 60px;
+                }
+
+                p {
+                    color: $dark-two;
+                }
+
+                &:hover, &:active {
+                    background-color: $grey-two;
+                }
+
+                hr {
+                    color: rgb(211, 211, 211);
+                    margin: 0;
+                    padding: 0;
+                    margin-top: 20px;
+                }
+            }
+
+            &-curriculum-item {
+                &:last-child {
+                    margin-bottom: 20px;
+                }
+            }
+        }
+    }
+
+    &-bottom {
+        margin-top: 20px;
+        color: black;
+        display: flex;
+    
+        &-details {
+            min-width: 75%;
+            width: 100%;
+            padding: 20px;
+
+            ul > li a {
+                color: $dark-two !important;
+            }
+        }
+
+        &-related {
+            min-width: 25%;
+            width: 100%;
+            margin-top: 20px;
+
+            h4 {
+                font-family: $font-one;
+                text-transform: uppercase;
+                color: $primary;
+            }
+
+            &-item {
+                padding: 10px 0;
+
+                a {
+                    text-decoration: none;
+                }
+
+                p {
+                    text-align: center;
+                }
+
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+
+.breadcrumb {
+    margin-top: 20px;
+
+    a {
+        color: $primary;
+        text-decoration: none;
+    }
+}
+
+.load-video {
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.dropdown {
+
+    .fa-arrow-circle-down {
+        margin-right: 10px;
+    }
+
+    &-menu {
+        li {
+            width: auto;
+        }
+    }
+}
+
+.resources {
+    &-item {
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &-videos {
+        h6 {
+            margin-top: 20px;
+        }
+
+        a {
+            text-decoration: none;
+            margin: 4px 0;
+        }
+    }
+}
+
+.tab-content {
+    h4 {
+        margin-top: 40px;
+    }
+
+    .resources-videos {
+        i {
+            padding-right: 10px;
+        }
+    }
+}
+.alert {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+
+    &-container {
+        align-self: center;
+    }
+}

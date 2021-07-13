@@ -1,0 +1,124 @@
+.blog {
+    h3 {
+        font-family: $font-one;
+        color: $primary;
+    }
+    &-content {
+        display: flex;
+        
+        
+        &-cards {
+            display: flex;
+            flex-wrap: wrap;
+            width: 70%;
+            
+            a {
+                text-decoration: none;
+            }
+        }
+    }
+    
+    &-item {
+        height: 450px;
+        width: 330px;
+        background-size: cover;
+        margin: 20px;
+      
+        h5 {
+          color: $white;
+          text-align: center;
+          line-height: 2rem;
+          font-weight: bold;
+        }
+
+        &-overlay {
+            background-color: rgba($color: $primary, $alpha: .95);
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            border-radius: 20px;
+            flex-direction: column;
+
+            p {
+                position: absolute;
+                left: 0;
+                bottom: 30px;
+                width: 200px;
+                padding: 10px;
+                text-transform: uppercase;
+                text-align: center;
+                font-size: 21px;
+                font-weight: bold;
+                border-top-right-radius: 20px;
+                border-bottom-right-radius: 20px;
+                background-color: $third;
+                color: $white;
+            }
+            
+            &-new {
+                background-color: $grey-one !important;
+                color: $primary !important;
+            }
+        }
+      }
+
+      &-sidebar {
+          width: 30%;
+          height: 100%;
+          background-color: $grey-three;
+          padding: 0 20px;
+      }
+}
+
+#searchform {
+    margin: 40px 0;
+
+    label {
+        display: none;
+    }
+
+    #s {
+        width: 60%;
+        height: 40px;
+        border: none;
+    }
+
+    #searchsubmit {
+        border: none;
+        width: 38%;
+        height: 40px;
+        text-transform: uppercase;
+        background-color: $primary;
+        color: $white;
+    }
+}
+
+#sidebar {
+    h3 {
+        text-transform: uppercase;
+        font-family: $font-one;
+        color: $primary;
+    }
+
+    ul {
+        list-style: none;
+
+        li {
+            padding: 10px;
+
+            &:hover, &:active {
+                background-color: $grey-four;
+            }
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        ::marker {
+            display: none;
+        }
+    }
+}

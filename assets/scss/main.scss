@@ -1,0 +1,39 @@
+@import "./custom";
+@import "./variables";
+@import "./mixins";
+@import "./header";
+@import "./front-page";
+@import "./slider";
+@import "./episodes-lessons";
+@import "./single";
+@import "./where-to-watch";
+@import "./page";
+@import "./partners";
+@import "./footer";
+@import "./blog";
+@import "./single-blog";
+@import "./about";
+@import "~bootstrap/scss/bootstrap";
+
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: $grey-one;
+}
+
+main {
+    min-height: calc(100vh - 286px);
+    margin: 0;
+    margin-top: 40px;
+}
+  
+.card {
+    border: none;
+}
+
+
+// .video-stream html5-main-video {
+//     width: 889px !important;
+//     height: 500px !important;
+// }
