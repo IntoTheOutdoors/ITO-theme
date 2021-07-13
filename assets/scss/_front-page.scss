@@ -305,13 +305,14 @@ $animationSpeed: 20s;
     }
 
     .curriculum {
-        display: flex;
         margin-top: 20px;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
 
         &-image {
             img {
-                width: 90px;
-                height: auto;
+                width: 200px !important;
 
                 &:first-child {
                     margin-top: 0;
@@ -320,10 +321,11 @@ $animationSpeed: 20s;
         }
 
         &-text {
-            margin-left: 20px;
 
             h5 {
-                font-size: 18px;
+                font-size: 14px;
+                margin-top: 6px;
+                margin-left: 0px !important;
             }
         }
     }
@@ -384,30 +386,6 @@ $animationSpeed: 20s;
         }
     }
 
-    .curriculum {
-        margin-top: 20px;
-        align-items: center;
-        justify-content: center;
-
-        &-image {
-            img {
-                width: 200px !important;
-
-                &:first-child {
-                    margin-top: 0;
-                }
-            }
-        }
-
-        &-text {
-
-            h5 {
-                font-size: 14px;
-                margin-top: 6px;
-                margin-left: 0px !important;
-            }
-        }
-    }
 
     .media {
         &-logos {
@@ -433,6 +411,70 @@ $animationSpeed: 20s;
                 width: 120px;
                 height: auto;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .featured {
+        .row {
+            flex-direction: column;
+        }
+
+        &-episode {
+            align-items: center;
+            justify-content: center;
+        }
+
+        h4 {
+            font-size: 22px;
+            min-width: 425px;
+            margin: 10px 0;
+            margin: 20px;
+        }
+
+        h5 {
+            width: 400px;
+            font-size: 14px;
+        }
+
+    }
+    .signup {
+        &-text {
+            padding: 0 10px;
+            h3 {
+                font-size: 18px;
+            }
+
+            p {
+                font-size: 14px;
+                text-align: center;
+            }
+        }
+    }
+
+    .curriculum {
+        display: flex;
+        flex-direction: row;
+        width: 400px;
+
+        &-image {
+            img {
+                width: 60px !important;
+            }
+        }
+    }
+
+    .signup {
+        &-text {
+            width: 400px;
+        }
+    }
+
+    .media {
+
+        &-logos {
+            display: none;
         }
     }
 }

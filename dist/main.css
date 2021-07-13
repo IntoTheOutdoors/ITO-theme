@@ -367,21 +367,21 @@ header .overlay {
   }
 
   .curriculum {
-    display: flex;
     margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
   }
   .curriculum-image img {
-    width: 90px;
-    height: auto;
+    width: 200px !important;
   }
   .curriculum-image img:first-child {
     margin-top: 0;
   }
-  .curriculum-text {
-    margin-left: 20px;
-  }
   .curriculum-text h5, .curriculum-text .h5 {
-    font-size: 18px;
+    font-size: 14px;
+    margin-top: 6px;
+    margin-left: 0px !important;
   }
 
   .media {
@@ -428,23 +428,6 @@ header .overlay {
     margin-bottom: 36px;
   }
 
-  .curriculum {
-    margin-top: 20px;
-    align-items: center;
-    justify-content: center;
-  }
-  .curriculum-image img {
-    width: 200px !important;
-  }
-  .curriculum-image img:first-child {
-    margin-top: 0;
-  }
-  .curriculum-text h5, .curriculum-text .h5 {
-    font-size: 14px;
-    margin-top: 6px;
-    margin-left: 0px !important;
-  }
-
   .media-logos {
     display: flex;
   }
@@ -461,6 +444,53 @@ header .overlay {
     padding: 0 10px;
     width: 120px;
     height: auto;
+  }
+}
+@media screen and (max-width: 425px) {
+  .featured .row {
+    flex-direction: column;
+  }
+  .featured-episode {
+    align-items: center;
+    justify-content: center;
+  }
+  .featured h4, .featured .h4 {
+    font-size: 22px;
+    min-width: 425px;
+    margin: 10px 0;
+    margin: 20px;
+  }
+  .featured h5, .featured .h5 {
+    width: 400px;
+    font-size: 14px;
+  }
+
+  .signup-text {
+    padding: 0 10px;
+  }
+  .signup-text h3, .signup-text .h3 {
+    font-size: 18px;
+  }
+  .signup-text p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .curriculum {
+    display: flex;
+    flex-direction: row;
+    width: 400px;
+  }
+  .curriculum-image img {
+    width: 60px !important;
+  }
+
+  .signup-text {
+    width: 400px;
+  }
+
+  .media-logos {
+    display: none;
   }
 }
 .episodes {
