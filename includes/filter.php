@@ -81,9 +81,7 @@ function filter_ajax() {
             while($query->have_posts()): $query->the_post();
                 // query episode post types (Full episode / Curriculum Episode)
                 if(!empty($episode_types) && $episode_types == "curriculum_videos"):
-                    $episodes = get_field($episode_types); ?>
-                    
-                    <?php
+                    $episodes = get_field($episode_types); 
                     foreach($episodes as $episode):
                         ?>
                         <div class="results-filter-item card shadow">
@@ -95,8 +93,7 @@ function filter_ajax() {
                             </a>
                         </div>
                         <?php
-                    endforeach; ?>
-                    <?php
+                    endforeach;
                 else:
                     $full_episodes = get_field('full_episode');
                     foreach($full_episodes as $full_episode): ?>
@@ -112,7 +109,8 @@ function filter_ajax() {
                     endforeach;
                 endif;
             endwhile; wp_reset_query();
-        else: ?>
+        else: 
+        ?>
             <h3>Sorry, we couldn't find any results. </h3>
             <?php endif; ?>
         </div>
