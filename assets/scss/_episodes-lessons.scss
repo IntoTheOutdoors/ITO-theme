@@ -76,7 +76,7 @@
             margin: 4px 0;
             label {
                 text-transform: capitalize;
-                font-weight: 100;
+                font-weight: normal;
                 font-size: 12px;
             }
         }
@@ -133,10 +133,6 @@ aside {
 
     .downloads {
         display: none;
-        // display: flex;
-        // flex-direction: column;
-        // padding: 10px;
-        // background-color: $primary;
         
         &-container {
             display: flex;
@@ -172,7 +168,7 @@ aside {
 }
 
 .card {
-    width: 40%;
+    width: 200px;
     height: auto;
     margin: 10px 6px;
     border-radius: 20px !important;
@@ -207,13 +203,95 @@ aside {
 }
 
 .results {
-    &-episodes-container {
+    &-episodes {
         display: flex;
         justify-content: center;
-        flex-wrap: wrap;
+        
+        &-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 0 auto;
+        }
+
+        &-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
     }
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
+    .results {
+        &-episodes {
+            margin-left: 120px;
 
+            &-container {
+                justify-content: left;
+            }
+    
+            &-filter {
+                justify-content: left;
+            }
+        }
+    }
+    .downloads {
+        display: flex !important;
+        background-color: $primary;
+        flex-direction: column;
+        padding: 6px;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+
+            a img {
+                margin: 6px 0;
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
+
+    .card {
+        width: 180px;
+    }
+
+    aside {
+        width: 280px;
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .results {
+        display: flex;
+        &-episodes {
+            &-container {
+                justify-content: left;
+            }
+    
+            &-filter {
+                justify-content: left;
+            }
+        }
+    }
+
+    .downloads {
+        display: flex !important;
+        background-color: $primary;
+        flex-direction: column;
+        padding: 6px;
+
+        &-container {
+            display: flex;
+            flex-direction: column;
+
+            a img {
+                margin: 6px 0;
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
 }
