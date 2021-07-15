@@ -822,7 +822,6 @@ aside .downloads img {
   font-family: "Roboto Slab", serif;
   font-weight: bolder;
   font-size: 14px;
-  text-align: center;
   margin-top: 4px;
 }
 .episode-top-lists-curriculum {
@@ -1057,116 +1056,156 @@ aside .downloads img {
   }
 }
 .watch {
-  margin-top: 20px;
-}
-.watch h3, .watch .h3 {
-  font-family: "Roboto Slab", serif;
-  text-transform: uppercase;
-  color: #1a5458;
-}
-.watch p {
-  margin-top: 20px;
-}
-.watch-media {
-  display: flex;
-  margin-top: 40px;
-}
-.watch-media img {
-  margin: 0 20px;
-  height: 100%;
-}
-.watch-downloads {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-}
-.watch-downloads img {
-  align-self: center;
-  height: auto;
-  width: 100%;
-}
-.watch-downloads a {
-  margin: 0 20px;
-}
-
-.schedule {
-  margin-top: 40px;
-}
-.schedule h3, .schedule .h3 {
-  font-family: "Roboto Slab", serif;
-  text-transform: uppercase;
-  color: #1a5458;
-}
-.schedule-items {
-  margin-top: 40px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-.schedule-item {
-  width: 600px;
-  margin: 10px 0;
-  display: flex;
-  justify-content: space-between;
-}
-.schedule-item-date {
-  display: flex;
-  height: 50%;
-  text-transform: uppercase;
-  font-weight: bold;
-  color: #fff;
-  background-color: #1a5458;
-  padding: 20px 40px;
-  margin-right: 20px;
-  border-radius: 30px;
-}
-.schedule-item-date h5, .schedule-item-date .h5 {
-  align-self: center;
-  text-align: center;
-}
-.schedule-item-info {
   display: flex;
   flex-direction: column;
 }
-.schedule-item-info h5, .schedule-item-info .h5 {
-  color: #1a5458;
-}
-
-.broadcast {
-  margin-top: 40px;
-}
-.broadcast h3, .broadcast .h3 {
+.watch h3, .watch .h3 {
+  font-size: 18px;
   font-family: "Roboto Slab", serif;
   text-transform: uppercase;
   color: #1a5458;
-  margin-top: 40px;
+  text-transform: uppercase;
 }
-.broadcast label {
+.watch p {
+  font-size: 12px;
+}
+.watch-media {
+  display: none;
+}
+.watch-downloads {
   background-color: #1a5458;
-  width: auto;
-  color: #fff;
+  padding: 20px;
 }
-.broadcast-state {
+.watch-downloads h5, .watch-downloads .h5 {
+  color: #fff;
+  text-align: center;
+}
+.watch-downloads-images {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.watch-downloads-images a {
+  align-self: center;
+}
+.watch-downloads-images img {
+  margin: 10px 0;
+  width: 120px;
+  height: auto;
+}
+
+.broadcast h3, .broadcast .h3 {
   margin-top: 20px;
-  width: 300px;
+  font-size: 18px;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
 }
-.broadcast-state .form-select {
-  border: solid 1px #1a5458;
-  padding: 20px 10px;
+.broadcast-state label {
+  font-size: 12px;
 }
-.broadcast-network, .broadcast-pbs {
-  margin-top: 40px;
+.broadcast-items th {
+  font-size: 14px;
 }
-.broadcast-items {
-  margin-bottom: 40px;
+.broadcast-items td {
+  font-size: 12px;
+}
+.broadcast-network h3, .broadcast-network .h3 {
+  font-size: 18px;
+}
+.broadcast-network p {
+  font-size: 12px;
+}
+.broadcast-pbs h3, .broadcast-pbs .h3 {
+  font-size: 18px;
+}
+.broadcast-pbs p {
+  font-size: 12px;
 }
 
-.input-group-text {
+.schedule h3, .schedule .h3 {
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.schedule-item {
+  display: flex;
+  margin: 20px 0;
+}
+.schedule-item-date {
   background-color: #1a5458;
+  padding: 20px;
+  min-width: 80px;
+  height: auto;
+  align-self: flex-start;
+  border-radius: 20px;
+}
+.schedule-item-date h5, .schedule-item-date .h5 {
+  font-size: 14px;
+  text-align: center;
   color: #fff;
 }
+.schedule-item-info {
+  margin-left: 10px;
+}
+.schedule-item-info h5, .schedule-item-info .h5 {
+  font-size: 14px;
+  font-weight: 700;
+}
+.schedule-item-info p {
+  font-size: 12px;
+}
 
+@media screen and (min-width: 768px) {
+  .watch h3, .watch .h3 {
+    font-size: 22px;
+  }
+  .watch p {
+    font-size: 14px;
+  }
+  .watch-downloads-images {
+    flex-direction: row !important;
+  }
+  .watch-downloads-images img {
+    width: 140px;
+    padding: 0 10px;
+    height: auto;
+  }
+
+  .broadcast h3, .broadcast .h3 {
+    font-size: 22px;
+  }
+  .broadcast-state label {
+    font-size: 14px;
+  }
+  .broadcast-items th {
+    font-size: 18px;
+  }
+  .broadcast-items td {
+    font-size: 14px;
+  }
+
+  .schedule h3, .schedule .h3 {
+    font-size: 22px;
+  }
+  .schedule-item-date h5, .schedule-item-date .h5 {
+    font-size: 18px;
+    text-align: center;
+    color: #fff;
+  }
+  .schedule-item-info {
+    margin-left: 10px;
+  }
+  .schedule-item-info h5, .schedule-item-info .h5 {
+    font-size: 14px;
+    font-weight: 700;
+  }
+  .schedule-item-info p {
+    font-size: 12px;
+  }
+}
 .title {
   margin: 20px 0;
 }

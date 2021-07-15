@@ -25,7 +25,7 @@ function network_broadcast_ajax() {
     $networks = new WP_Query($args);
     ?>
 
-    <div class="col-6 broadcast-network">
+    <div class="col-lg-6 col-md-6 col-sm-12 broadcast-network">
         <h3 class="subheader">Broadcast Station</h3>
         <p>List of broadcast and public TV:</p>
         <div class="broadcast-items">
@@ -85,7 +85,7 @@ function network_broadcast_ajax() {
             </div>
         </div>
     </div>
-    <div class="col-6 broadcast-network">
+    <div class="col-6-lg col-6-md col-12-sm broadcast-pbs">
         <h3 class="subheader">PBS Broadcast</h3>
         <p>Check your local PBS Station for time and episodes</p>
         <div class="broadcast-items">
