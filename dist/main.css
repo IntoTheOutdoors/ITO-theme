@@ -653,6 +653,20 @@ aside .downloads img {
   flex-wrap: wrap;
 }
 
+.results {
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+.results-loading .spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+.results p {
+  margin-top: 20px;
+  font-size: 21px;
+}
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .results-episodes {
     margin-left: 120px;
@@ -711,49 +725,69 @@ aside .downloads img {
   }
   .downloads-container a img {
     margin: 6px 0;
-    width: 120px;
+    width: 100px;
     height: auto;
   }
 }
+@media screen and (min-width: 1025px) {
+  .downloads-container {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+}
+.breadcrumb {
+  margin-top: 20px;
+}
+.breadcrumb li {
+  color: #1a5458;
+  text-decoration: none;
+  font-size: 8px;
+}
+.breadcrumb a {
+  text-decoration: none;
+}
+
 .episode {
   margin-bottom: 20px;
 }
-.episode-videos {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.episode-player iframe {
-  width: 900px;
-  height: 500px;
+.episode-videos #player, .episode-videos iframe {
+  width: 100%;
+  height: 300px;
 }
 .episode-info {
   display: flex;
+  flex-direction: column;
   height: auto;
   background-color: #fff;
-  max-width: 889px;
-  margin-left: 6px;
+  width: 100%;
   margin-top: -6px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-info-title {
-  width: 60%;
-  padding: 20px;
+  width: auto;
+  padding: 10px;
+}
+.episode-info-title h5, .episode-info-title .h5 {
+  font-size: 14px;
+}
+.episode-info-title p {
+  font-size: 12px;
+  margin: 0;
 }
 .episode-info-lessons {
-  padding: 20px 10px;
-  width: 41%;
   background-color: #CCE3DE;
   flex-direction: column;
   display: flex;
   border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  padding: 10px 20px;
 }
 .episode-info-lessons h5, .episode-info-lessons .h5 {
   text-align: center;
   text-transform: uppercase;
-  font-size: 18px;
+  font-size: 12px;
 }
 .episode-info-lessons p {
   font-size: 12px;
@@ -762,25 +796,24 @@ aside .downloads img {
   align-self: center;
   width: 180px;
   border-radius: 20px;
+  font-size: 10px;
 }
 .episode-top {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
 }
-.episode-top-container {
-  width: 900px;
-}
 .episode-top-lists {
+  width: 100%;
   display: flex;
-  align-self: flex-start;
+  justify-self: center;
+  align-self: center;
   flex-direction: column;
-  padding: 20px;
-  width: 400px;
   height: auto;
   background-color: #fff;
-  margin-left: 20px;
   border-radius: 20px;
+  margin: 20px 0;
+  padding: 10px;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-top-lists h5, .episode-top-lists .h5 {
@@ -788,8 +821,9 @@ aside .downloads img {
   text-transform: uppercase;
   font-family: "Roboto Slab", serif;
   font-weight: bolder;
+  font-size: 14px;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 4px;
 }
 .episode-top-lists-curriculum {
   display: flex;
@@ -798,7 +832,8 @@ aside .downloads img {
 .episode-top-lists-full-item, .episode-top-lists-curriculum-item {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 4px;
+  margin: 4px 0;
 }
 .episode-top-lists-full-item img, .episode-top-lists-curriculum-item img {
   width: auto;
@@ -806,102 +841,221 @@ aside .downloads img {
 }
 .episode-top-lists-full-item p, .episode-top-lists-curriculum-item p {
   color: #3B3B3B;
+  font-size: 12px;
 }
 .episode-top-lists-full-item:hover, .episode-top-lists-full-item:active, .episode-top-lists-curriculum-item:hover, .episode-top-lists-curriculum-item:active {
   background-color: #F8F9FA;
 }
 .episode-top-lists-full-item hr, .episode-top-lists-curriculum-item hr {
   color: lightgray;
-  margin: 0;
-  padding: 0;
-  margin-top: 20px;
+  margin-top: 6px;
 }
 .episode-top-lists-curriculum-item:last-child {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
-.episode-bottom {
-  margin-top: 20px;
-  color: black;
-  display: flex;
-}
-.episode-bottom-details {
-  min-width: 75%;
-  width: 100%;
-  padding: 20px;
-}
-.episode-bottom-details ul > li a {
-  color: #3B3B3B !important;
+.episode-details-content {
+  padding: 0 10px;
 }
 .episode-bottom-related {
-  min-width: 25%;
-  width: 100%;
-  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: auto;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+  padding: 20px 40px;
 }
 .episode-bottom-related h4, .episode-bottom-related .h4 {
-  font-family: "Roboto Slab", serif;
-  text-transform: uppercase;
-  color: #1a5458;
+  font-size: 21px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 .episode-bottom-related-item {
-  padding: 10px 0;
-}
-.episode-bottom-related-item a {
-  text-decoration: none;
-}
-.episode-bottom-related-item p {
-  text-align: center;
+  justify-self: center;
 }
 .episode-bottom-related-item img {
   width: 100%;
 }
-
-.breadcrumb {
-  margin-top: 20px;
-}
-.breadcrumb a {
-  color: #1a5458;
+.episode-bottom-related-item a {
   text-decoration: none;
-}
-
-.load-video:hover {
-  cursor: pointer;
 }
 
 .dropdown .fa-arrow-circle-down {
   margin-right: 10px;
 }
+.dropdown span {
+  font-size: 12px;
+}
 .dropdown-menu li {
   width: auto;
 }
 
-.resources-item a {
-  text-decoration: none;
+.nav-tabslist-item {
+  padding: 0;
 }
-.resources-videos h6, .resources-videos .h6 {
-  margin-top: 20px;
+.nav-tabslist-link span {
+  color: #1a5458 !important;
+  font-size: 12px;
 }
-.resources-videos a {
-  text-decoration: none;
-  margin: 4px 0;
+.nav-tabslist-link.active {
+  background: none !important;
 }
 
-.tab-content h4, .tab-content .h4 {
-  margin-top: 40px;
+.tab-pane h4, .tab-pane .h4 {
+  font-size: 18px;
+  margin-bottom: 30px;
 }
-.tab-content .resources-videos i {
+.tab-pane p {
+  font-size: 12px;
+}
+
+.resource-links {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+}
+.resource-links h4, .resource-links .h4 {
+  margin: 0;
+  margin-top: 4px;
+  text-align: center;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.resource-links-item {
+  padding: 10px;
+}
+.resource-links-item span {
+  font-size: 14px;
+  color: black;
+  padding-left: 10px;
+}
+.resource-links-item a {
+  text-decoration: none;
+}
+.resource-links-item p {
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+.resource-links-item:hover, .resource-links-item:active {
+  background-color: #F8F9FA;
+}
+.resource-partners {
+  margin-top: 20px;
+  border-radius: 20px;
+  background-color: #fff;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+}
+.resource-partners h4, .resource-partners .h4 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+  text-align: center;
+}
+.resource-partners-items {
+  justify-self: center;
+  flex-wrap: wrap;
+}
+.resource-partners-items img {
+  width: 120px;
+  height: auto;
+}
+.resource-downloads {
+  background-color: #fff;
+  margin: 20px 0;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+}
+.resource-downloads h4, .resource-downloads .h4 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+  text-align: center;
+}
+.resource-downloads h6, .resource-downloads .h6 {
+  margin: 20px 0;
+}
+.resource-downloads-item i {
   padding-right: 10px;
 }
-
-.alert {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 40px;
-}
-.alert-container {
-  align-self: center;
+.resource-downloads-item a {
+  text-decoration: none;
+  font-size: 14px;
 }
 
+@media screen and (min-width: 426px) {
+  .breadcrumb li {
+    font-size: 14px;
+  }
+  .breadcrumb a {
+    text-decoration: none;
+  }
+
+  .episode-videos #player, .episode-videos iframe {
+    height: 600px;
+  }
+  .episode-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .episode-info-title h5, .episode-info-title .h5 {
+    font-size: 22px;
+  }
+  .episode-info-title p {
+    font-size: 18px;
+  }
+  .episode-info-lessons {
+    border-bottom-left-radius: 0px;
+  }
+  .episode-info-lessons h5, .episode-info-lessons .h5 {
+    font-size: 18px !important;
+  }
+  .episode-info-lessons a {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  .episode-top {
+    flex-direction: row;
+  }
+  .episode-top h5, .episode-top .h5 {
+    font-size: 24px;
+  }
+  .episode-top-container {
+    width: 70%;
+  }
+  .episode-top-lists {
+    width: 30%;
+    align-self: flex-start;
+    margin: 0;
+    margin-left: 20px;
+  }
+  .episode-top-lists p {
+    font-size: 18px;
+  }
+  .episode-top .dropdown span {
+    font-size: 14px;
+  }
+  .episode-bottom {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+  }
+  .episode-bottom-details {
+    width: 70%;
+  }
+  .episode-bottom-related {
+    width: 30%;
+    margin-left: 10px;
+  }
+
+  .nav-tabslist-link span {
+    font-size: 18px;
+  }
+}
 .watch {
   margin-top: 20px;
 }

@@ -50,17 +50,16 @@
               <?php 
               foreach($curriculums as $curriculum): ?>
                 <div class="curriculum">
-                  <div class="curriculum-image">
-                    <a href="<?echo get_page_link($curriculum->ID); ?>">
-                    <?php 
-                      echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
-                    ?>
-                    </a>
-
-                  </div>
-                  <div class="curriculum-text">
-                  <a href="<?php echo get_page_link($curriculum->ID); ?>"><h5><?php echo get_the_title($curriculum->ID); ?></h5></a>
-                  </div>
+                  <a href="<?php echo get_page_link($curriculum->ID); ?>">
+                    <div class="curriculum-image">
+                      <?php 
+                        echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
+                      ?>
+                    </div>
+                    <div class="curriculum-text">
+                      <h5><?php echo get_the_title($curriculum->ID); ?></h5>
+                    </div>
+                  </a>
                 </div>
                 
                 <?php

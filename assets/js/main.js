@@ -11,7 +11,7 @@
         success: (result) => {
           $('[data-js-filter=target]').html(
             `
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center results-loading">
               <div class="spinner-border" role="status">
                 <span class="sr-only">Loading...</span>
               </div>
@@ -21,7 +21,7 @@
           );
           setTimeout(function() {
             $('[data-js-filter=target]').html(result);
-          }, 1000);
+          }, 2000);
         },
         error: (result) => {
           console.log(result);

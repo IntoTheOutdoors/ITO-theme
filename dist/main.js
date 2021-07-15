@@ -22,10 +22,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         action: 'filter'
       }
     }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
-      $('[data-js-filter=target]').html("\n            <div class=\"d-flex justify-content-center\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span>\n              </div>\n            </div>\n            <p>Loading...</p>\n            ");
+      $('[data-js-filter=target]').html("\n            <div class=\"d-flex justify-content-center results-loading\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span>\n              </div>\n            </div>\n            <p>Loading...</p>\n            ");
       setTimeout(function () {
         $('[data-js-filter=target]').html(result);
-      }, 1000);
+      }, 2000);
     }), _defineProperty(_$$ajax, "error", function error(result) {
       console.log(result);
     }), _$$ajax));

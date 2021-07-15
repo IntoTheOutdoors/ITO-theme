@@ -2,7 +2,7 @@
     box-shadow: $x $y $z rgba(2, 2, 2, 0.04);
 }
 
-@mixin title() {
+@mixin title {
     font-family: $font-one;        
     text-transform: uppercase;
     color: $primary;

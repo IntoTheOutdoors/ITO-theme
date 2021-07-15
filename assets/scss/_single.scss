@@ -1,48 +1,64 @@
+.breadcrumb {
+    margin-top: 20px;
+
+    li {
+        color: $primary;
+        text-decoration: none;
+        font-size: 8px;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
 .episode {
     margin-bottom: 20px;
 
     &-videos {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    &-player {
-        
-        iframe {
-            width: 900px;
-            height: 500px;
+        #player, iframe {
+            width: 100%;
+            height: 300px;
         }
     }
 
     &-info {
         display: flex;
+        flex-direction: column;
         height: auto;
         background-color: $white;
-        max-width: 889px;
-        margin-left: 6px;
+        width: 100%;
         margin-top: -6px;
         border-bottom-left-radius: 20px;
         border-bottom-right-radius: 20px;
         @include shadow;
 
         &-title {
-            width: 60%;
-            padding: 20px;
+            width: auto;
+            padding: 10px;
+
+            h5 {
+                font-size: 14px;
+            }
+
+            p {
+                font-size: 12px;
+                margin: 0;
+            }
         }
 
         &-lessons{
-            padding: 20px 10px;
-            width: 41%;
             background-color: $seventh;
             flex-direction: column;
             display: flex;
             border-bottom-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            padding: 10px 20px;
 
             h5 {
                 text-align: center;
                 text-transform: uppercase;
-                font-size: 18px;
+                font-size: 12px;
             }
 
             p {
@@ -53,29 +69,27 @@
                 align-self: center;
                 width: 180px;
                 border-radius: 20px;
+                font-size: 10px;
             }
         }
     }
 
     &-top {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
-
-        &-container {
-            width: 900px;
-        }
-
+        
         &-lists {
+            width: 100%;
             display: flex;
-            align-self: flex-start;
+            justify-self: center;
+            align-self: center;
             flex-direction: column;
-            padding: 20px; 
-            width: 400px;
             height: auto;
             background-color: $white;
-            margin-left: 20px;
             border-radius: 20px;
+            margin: 20px 0;
+            padding: 10px;
             @include shadow;
 
             h5 {
@@ -83,8 +97,9 @@
                 text-transform: uppercase;
                 font-family: $font-one;
                 font-weight: bolder;
+                font-size: 14px;
                 text-align: center;
-                margin-top: 20px;
+                margin-top: 4px;
             }
 
             &-curriculum {
@@ -96,7 +111,8 @@
             &-full-item, &-curriculum-item {
                 display: flex;
                 flex-direction: column;
-                padding: 10px;
+                padding: 4px;
+                margin: 4px 0;
 
                 img {
                     width: auto;
@@ -105,6 +121,7 @@
 
                 p {
                     color: $dark-two;
+                    font-size: 12px;;
                 }
 
                 &:hover, &:active {
@@ -113,78 +130,49 @@
 
                 hr {
                     color: rgb(211, 211, 211);
-                    margin: 0;
-                    padding: 0;
-                    margin-top: 20px;
+                    margin-top: 6px;
                 }
             }
 
             &-curriculum-item {
                 &:last-child {
-                    margin-bottom: 20px;
+                    margin-bottom: 10px;
                 }
             }
         }
     }
 
-    &-bottom {
-        margin-top: 20px;
-        color: black;
+    &-details {
+        &-content {
+            padding: 0 10px;
+        }
+    }
+
+    &-bottom-related {
         display: flex;
-    
-        &-details {
-            min-width: 75%;
-            width: 100%;
-            padding: 20px;
+        flex-direction: column;
+        background-color: $white;
+        height: auto;
+        @include shadow;
+        padding: 20px 40px;
 
-            ul > li a {
-                color: $dark-two !important;
-            }
+        h4 {
+            font-size: 21px;
+            text-align: center;
+            margin-bottom: 20px;
         }
 
-        &-related {
-            min-width: 25%;
-            width: 100%;
-            margin-top: 20px;
+        &-item {
+            justify-self: center;
 
-            h4 {
-                font-family: $font-one;
-                text-transform: uppercase;
-                color: $primary;
+            img {
+                width: 100%;
             }
 
-            &-item {
-                padding: 10px 0;
-
-                a {
-                    text-decoration: none;
-                }
-
-                p {
-                    text-align: center;
-                }
-
-                img {
-                    width: 100%;
-                }
+            a {
+                text-decoration: none;
             }
         }
-    }
-}
-
-
-.breadcrumb {
-    margin-top: 20px;
-
-    a {
-        color: $primary;
-        text-decoration: none;
-    }
-}
-
-.load-video {
-    &:hover {
-        cursor: pointer;
     }
 }
 
@@ -194,6 +182,10 @@
         margin-right: 10px;
     }
 
+    span {
+        font-size: 12px;
+    }
+
     &-menu {
         li {
             width: auto;
@@ -201,43 +193,229 @@
     }
 }
 
-.resources {
-    &-item {
-        a {
-            text-decoration: none;
+.nav {
+    &-tabslist {
+   
+        &-item {
+            padding: 0;
+        }
+        
+        &-link {
+            span {
+                color: $primary !important;
+                font-size: 12px;
+            }
+        }
+        
+        &-link.active {
+            background: none !important;
         }
     }
 
-    &-videos {
-        h6 {
-            margin-top: 20px;
-        }
 
-        a {
-            text-decoration: none;
-            margin: 4px 0;
-        }
-    }
+
 }
 
-.tab-content {
+.tab-pane {
     h4 {
-        margin-top: 40px;
+        font-size: 18px;
+        margin-bottom: 30px;
     }
 
-    .resources-videos {
-        i {
-            padding-right: 10px;
+    p {
+        font-size: 12px;
+    }
+}
+
+.resource {
+    &-links {
+        background-color: $white;
+        padding: 10px;
+        border-radius: 20px;
+        @include shadow;
+
+        h4 {
+            margin: 0;
+            margin-top: 4px;
+            text-align: center;
+            @include title;
+        }
+
+        &-item {
+            padding: 10px; 
+
+            span {
+                font-size: 14px;
+                color: black;
+                padding-left: 10px;
+            }
+            
+            a {
+                text-decoration: none;
+            }
+
+            p {
+                font-size: 12px;
+                margin-bottom: 0px;
+            }
+
+            &:hover, &:active {
+                background-color: $grey-two;
+            }
+        }
+    }
+
+    &-partners {
+        margin-top: 20px;
+        border-radius: 20px;
+        background-color: $white;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        @include shadow;
+
+        h4 {
+            @include title;
+            text-align: center;
+        }
+
+        &-items {
+            justify-self: center;
+            flex-wrap: wrap;
+            img {
+                width: 120px;
+                height: auto;
+            }
+        }
+    }
+
+    &-downloads {
+        background-color: $white;
+        margin: 20px 0;
+        border-radius: 20px;
+        padding: 10px;
+        @include shadow;
+
+        h4 {
+            @include title;
+            text-align: center;
+        }
+
+        h6 {
+            margin: 20px 0;
+        }
+
+        &-item {
+            i {
+                padding-right: 10px;
+            }
+
+            a {
+                text-decoration: none;
+                font-size: 14px;
+            }
         }
     }
 }
-.alert {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 40px;
 
-    &-container {
-        align-self: center;
+@media screen and (min-width: 426px) {
+    .breadcrumb {
+        li {
+            font-size: 14px;
+        }
+    
+        a {
+            text-decoration: none;
+        }
+    }
+
+    .episode {
+        &-videos {
+            #player, iframe {
+                height: 600px;
+            }
+        }
+
+        &-info {
+            flex-direction: row;
+            justify-content: space-between;
+
+            &-title {
+                h5 {
+                    font-size: 22px;
+                }
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            &-lessons {
+                border-bottom-left-radius: 0px;
+                h5 {
+                    font-size: 18px !important;
+                }
+
+                a {
+                    padding: 10px 20px;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        &-top {
+            flex-direction: row;
+
+            h5 {
+                font-size: 24px;
+            }
+
+            &-container {
+                width: 70%;
+            }
+            
+            &-lists {
+                width: 30%;
+                align-self: flex-start;
+                margin: 0;
+                margin-left: 20px;
+
+                p {
+                    font-size: 18px;
+                }
+            }
+
+            .dropdown {
+                span {
+                    font-size: 14px;
+                }
+            }
+        }
+        
+        &-bottom {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        &-bottom-details {
+            width: 70%;
+        }
+
+        &-bottom-related {
+            width: 30%;
+            margin-left: 10px;
+        }
+    }    
+
+    .nav {
+        &-tabslist {
+            
+            &-link {
+                span {
+                    font-size: 18px;
+                }
+            }
+        }
     }
 }

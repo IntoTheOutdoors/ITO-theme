@@ -17,7 +17,15 @@
 <body>
 <header id="home-video">
     <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="<?php echo get_template_directory_uri() . '/assets/videos/video-large.mp4'; ?>" type="video/mp4">
+        <source src=
+            "<?php 
+            if(wp_is_mobile()):
+                echo get_template_directory_uri() . '/assets/videos/video-small.mp4';  
+            else:
+                echo get_template_directory_uri() . '/assets/videos/video-large.mp4'; 
+            endif;
+            ?>" 
+            type="video/mp4">
     </video>
     <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
         <div class="container">

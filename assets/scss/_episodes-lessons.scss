@@ -222,6 +222,25 @@ aside {
     }
 }
 
+.results {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    
+    &-loading {
+
+        .spinner-border {
+            width: 3rem;
+            height: 3rem;
+        }
+    }
+
+    p {
+        margin-top: 20px;
+        font-size: 21px;
+    }
+}
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
     .results {
         &-episodes {
@@ -289,9 +308,18 @@ aside {
 
             a img {
                 margin: 6px 0;
-                width: 120px;
+                width: 100px;
                 height: auto;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .downloads {
+        &-container {
+            flex-direction: row;
+            justify-content: space-evenly;
         }
     }
 }
