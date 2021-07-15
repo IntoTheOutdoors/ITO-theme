@@ -51,8 +51,17 @@
     }
 
     &-state {
+        margin-top: 20px;
+        width: 300px;
+
+        .form-select {
+            border: solid 1px $primary;
+            padding: 20px 10px;
+        }
         label {
             font-size: 12px;
+            background-color: $primary;
+            color: $white;
         }
     }
 

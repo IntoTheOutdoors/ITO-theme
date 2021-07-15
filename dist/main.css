@@ -1101,8 +1101,18 @@ aside .downloads img {
   text-transform: uppercase;
   color: #1a5458;
 }
+.broadcast-state {
+  margin-top: 20px;
+  width: 300px;
+}
+.broadcast-state .form-select {
+  border: solid 1px #1a5458;
+  padding: 20px 10px;
+}
 .broadcast-state label {
   font-size: 12px;
+  background-color: #1a5458;
+  color: #fff;
 }
 .broadcast-items th {
   font-size: 14px;
