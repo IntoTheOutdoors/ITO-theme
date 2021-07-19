@@ -1449,38 +1449,28 @@ footer {
     margin: 10px;
   }
 }
-.single {
-  display: flex;
-}
-.single-content {
-  width: 70%;
-  padding-right: 40px;
-}
 .single-content h4, .single-content .h4 {
-  text-transform: uppercase;
-  margin-top: 40px;
-}
-.single-content-item p {
-  position: relative;
-  left: 10px;
-}
-.single-content-item-floated {
-  float: left;
-  overflow: hidden;
+  font-size: 22px;
 }
 .single-content-info {
-  padding: 20px 0;
-  background-color: #dee2e6;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 60px;
-  margin-bottom: 40px;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #dee2e6;
 }
-.single-content-info p {
-  text-transform: capitalize;
-  word-spacing: 2px;
-  margin-bottom: 0;
+.single-sidebar {
+  background-color: #dee2e6;
+  padding: 10px;
+  margin: 10px 0;
+}
+.single-sidebar h3, .single-sidebar .h3 {
+  font-size: 18px;
+}
+.single-sidebar ul li {
+  font-size: 14px;
 }
 
 .social-media {
@@ -1492,6 +1482,19 @@ footer {
   margin: 0 4px;
 }
 
+@media screen and (min-width: 769px) {
+  .single {
+    display: flex;
+  }
+  .single-content {
+    margin-right: 20px;
+    width: 70%;
+  }
+  .single-sidebar {
+    width: 30%;
+    height: 100%;
+  }
+}
 .about {
   margin-top: 40px;
 }
@@ -1501,6 +1504,18 @@ footer {
   font-family: "Roboto Slab", serif;
   color: #1a5458;
   margin-top: 10px;
+}
+
+.blog-sidebar {
+  background-color: #dee2e6;
+  padding: 10px;
+  margin: 10px 0;
+}
+.blog-sidebar h3, .blog-sidebar .h3 {
+  font-size: 18px;
+}
+.blog-sidebar ul li {
+  font-size: 14px;
 }
 
 /*!

@@ -1,124 +1,56 @@
-.watch {
-    margin-top: 20px;
-    h3 {
-        @include title;
-    }
-
-    p {
-        margin-top: 20px;
-    }
-
-    &-media {
-        display: flex;
-        margin-top: 40px;
-        img {
-            margin: 0 20px;
-            height: 100%;
-        }
-    }
-
-    &-downloads {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 40px;
-        
-        img {
-            align-self: center;
-            height: auto;
-            width: 100%;
-        }
-
-        a {
-            margin: 0 20px;
-        }
-    }
-
+.single {
+    display: flex;
     
-}
+    &-content {
+        width: 70%;
+        padding-right: 40px;
 
-.schedule {
-    margin-top: 40px;
-    h3 {
-        @include title;
-    }
-
-    &-items {
-        margin-top: 40px;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    &-item {
-        width: 600px;
-        margin: 10px 0;
-        display: flex;
-        justify-content: space-between;
-
-        &-date {
-            display: flex;
-            height: 50%;
+        h4 {
             text-transform: uppercase;
-            font-weight: bold;
-            color: $white;
-            background-color: $primary;
-            padding: 20px 40px;
-            margin-right: 20px;
-            border-radius: 30px;
+            margin-top: 40px;            
+        }
 
+        &-item {
+       
+            p {
+                position: relative;
+                left: 10px;
+            }
     
-            h5 {
-                align-self: center;
-                text-align: center;
+            &-floated {
+                float: left;
+                overflow: hidden;
             }
         }
+        
+
+
         &-info {
+            padding: 20px 0;
+            background-color: $grey-three;
             display: flex;
-            flex-direction: column;
-    
-            h5 {
-                color: $primary;
+            justify-content: center;
+            align-items: center;
+            margin-top: 60px;
+            margin-bottom: 40px;
+            
+            p {
+                text-transform: capitalize;
+                word-spacing: 2px;
+                margin-bottom: 0;
             }
+
+
         }
     }
 }
 
-.broadcast {
-    margin-top: 40px;
+.social-media {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
 
-    h3 {
-        @include title();
-        margin-top: 40px;
-    }
-
-    label {
-        background-color: $primary;
-        width: auto;
-        color: $white;
-    }
-
-    &-state {
-        margin-top: 20px;
-        width: 300px;
-
-        .form-select {
-            border: solid 1px $primary;
-            padding: 20px 10px;
-        }
-    }
-
-    &-network, &-pbs {
-        margin-top: 40px;
-    }
-
-    &-items {
-        margin-bottom: 40px;
-    }
-}
-
-.input {
-    &-group-text {
-        background-color: $primary;
-        color: $white;
+    a {
+        margin: 0 4px;
     }
 }
