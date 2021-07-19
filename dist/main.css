@@ -1459,7 +1459,10 @@ footer {
   align-items: center;
   margin: 10px 0;
   padding: 10px;
-  background-color: #dee2e6;
+  background-color: #1a5458;
+}
+.single-content-info p {
+  color: #fff;
 }
 .single-sidebar {
   background-color: #dee2e6;
@@ -1482,6 +1485,29 @@ footer {
   margin: 0 4px;
 }
 
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .single {
+    display: flex;
+  }
+  .single-content {
+    width: 60%;
+  }
+  .single-content-item {
+    padding-right: 10px;
+  }
+  .single-content-item p {
+    position: relative;
+    left: 10px;
+  }
+  .single-content-item-floated {
+    float: left;
+    overflow: hidden;
+  }
+  .single-sidebar {
+    width: 40%;
+    margin-left: 10px;
+  }
+}
 @media screen and (min-width: 769px) {
   .single {
     display: flex;
@@ -1489,6 +1515,17 @@ footer {
   .single-content {
     margin-right: 20px;
     width: 70%;
+  }
+  .single-content-item {
+    padding-right: 10px;
+  }
+  .single-content-item p {
+    position: relative;
+    left: 10px;
+  }
+  .single-content-item-floated {
+    float: left;
+    overflow: hidden;
   }
   .single-sidebar {
     width: 30%;
@@ -1518,6 +1555,30 @@ footer {
   font-size: 14px;
 }
 
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .blog-content {
+    display: flex;
+    flex-direction: row;
+  }
+  .blog-content-cards {
+    width: 60%;
+  }
+  .blog-content-item {
+    padding-right: 10px;
+  }
+  .blog-content-item p {
+    position: relative;
+    left: 10px;
+  }
+  .blog-content-item-floated {
+    float: left;
+    overflow: hidden;
+  }
+  .blog-sidebar {
+    width: 40%;
+    margin-left: 10px;
+  }
+}
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors
