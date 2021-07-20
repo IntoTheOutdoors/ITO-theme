@@ -200,8 +200,21 @@
             margin-top: 10px;
             margin-bottom: 10px;
         }
+    }    
+}
+
+.modal {
+    margin-top: 40px;
+    &-body {
+        background-color: $third;
     }
-    
+
+    &-footer {
+        button {
+            color: $white;
+            width: 100%;
+        }
+    }
 }
 
 // TABLET SIZE (768px)
@@ -249,9 +262,13 @@
     }
 
     .curriculum {
-        display: flex;
-        flex-direction: row !important;
         margin: 10px 0;
+
+        a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
 
         &-image {
             img {
@@ -265,6 +282,7 @@
             h5 {
                 align-self: flex-start;
                 text-align: left !important;
+                font-size: 18px;
             }
         }
     }
@@ -343,13 +361,16 @@
     }
 
     .curriculum {
-        display: flex;
-        flex-direction: row !important;
         margin: 10px 0;
+
+        a {
+            display: flex;
+            flex-direction: row;
+        }
 
         &-image {
             img {
-                width: 60px !important;
+                width: 120px !important;
             }
         }
 

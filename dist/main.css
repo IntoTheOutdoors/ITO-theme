@@ -278,6 +278,17 @@ header .overlay {
   margin-bottom: 10px;
 }
 
+.modal {
+  margin-top: 40px;
+}
+.modal-body {
+  background-color: #1E3433;
+}
+.modal-footer button {
+  color: #fff;
+  width: 100%;
+}
+
 @media screen and (min-width: 426px) and (max-width: 768px) {
   .cta-content {
     justify-content: flex-start;
@@ -310,9 +321,12 @@ header .overlay {
   }
 
   .curriculum {
-    display: flex;
-    flex-direction: row !important;
     margin: 10px 0;
+  }
+  .curriculum a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
   .curriculum-image img {
     width: 60px !important;
@@ -323,6 +337,7 @@ header .overlay {
   .curriculum-text h5, .curriculum-text .h5 {
     align-self: flex-start;
     text-align: left !important;
+    font-size: 18px;
   }
 
   .media {
@@ -380,12 +395,14 @@ header .overlay {
   }
 
   .curriculum {
-    display: flex;
-    flex-direction: row !important;
     margin: 10px 0;
   }
+  .curriculum a {
+    display: flex;
+    flex-direction: row;
+  }
   .curriculum-image img {
-    width: 60px !important;
+    width: 120px !important;
   }
   .curriculum-text {
     margin-left: 10px;

@@ -27,7 +27,7 @@
           ?>
         </div>
         <div class="watch-downloads">
-            <h5>Download the app to watch us wherever you go!</h5>
+            <h5>Download the app below to watch us wherever you go!</h5>
             <?php 
             // query custom post type 'shows'
             $args = [
