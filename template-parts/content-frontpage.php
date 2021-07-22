@@ -60,8 +60,7 @@
                       <h5><?php echo get_the_title($curriculum->ID); ?></h5>
                     </div>
                   </a>
-                </div>
-                
+                </div>              
                 <?php
               endforeach;
             endif;
