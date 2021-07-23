@@ -90,6 +90,44 @@
                 ?>
 
                 <?php
+                 // textarea with video
+                if(get_row_layout() == 'text_area_with_video'):
+                    $title = get_sub_field('title');
+                    $video = get_sub_field('video');
+                    $content = get_sub_field('content');
+                    $layout = get_sub_field('layout');
+                    ?>
+
+                    <?php
+                        if($layout == 'left'):
+                    ?>
+                        <div class="row initiative-textAreaWithVideo">
+                            <div class="col-lg-6 col-md-6 col-sm-12 initiative-textAreaWithVideo-item initiative-textAreaWithVideo-two">
+                                <?php echo $video; ?>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12 initiative-textAreaWithVideo-item initiative-textAreaWithVideo-one">
+                                    <h4><?php echo ($title); ?></h4>
+                                    <?php echo $content; ?>        
+                            </div>    
+                        </div>      
+                    <?php
+                        else:
+                    ?>
+                        <div class="row initiative-textAreaWithVideo">
+                            <div class="col-lg-6 col-md-6 col-sm-12 initiative-textAreaWithVideo-item initiative-textAreaWithVideo-one">
+                                <h4><?php echo $title; ?></h4>
+                                <?php echo $content; ?>
+                            </div>    
+                            <div class="col-lg-6 col-md-6 col-sm-12 initiative-textAreaWithVideo-item initiative-textAreaWithVideo-two">
+                                <?php echo $video; ?>
+                            </div>
+                        </div>      
+                    <?php
+                        endif;
+                endif;
+                ?>
+
+                <?php
                 // gallery
                 if(get_row_layout() == 'gallery'):
                 ?>
@@ -169,10 +207,10 @@
                             $text_area = get_sub_field('text_area');
                             $icon = get_sub_field('icon');
                         ?>
-                                <div class="col-lg-4 col-md-4 col-sm-6 initiative-lists-item">
+                                <div class="col-lg-4 col-md-4 col-sm-6 initiative-lists-item initiative-lists-item-one">
                                     <?php echo $icon; ?>
                                 </div>
-                                <div class="col-lg-8 col-md-8 col-sm-6 initiative-lists-item">
+                                <div class="col-lg-8 col-md-8 col-sm-6 initiative-lists-item initiative-lists-item-two">
                                     <h5><?php echo $title; ?></h5>
                                     <p><?php echo $text_area; ?></p>
                                 </div>
@@ -182,9 +220,6 @@
                         </div>
                         <?php
                     endif;
-
-
-                    
                 endif;
             endwhile;
         endif;

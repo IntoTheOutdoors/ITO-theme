@@ -5,11 +5,20 @@
     justify-content: center;
     align-items: center;
     
+    &-intro {
+        h3 {
+            text-transform: uppercase;
+            text-align: center;
+            font-family: $font-one;
+            color: $primary;
+        }
+        p {
+            margin-top: 40px;
+        }
+    }
 
-    h3 {
-        text-transform: uppercase;
-        font-family: $font-one;
-        color: $primary;
+    &-video {
+        margin-top: 40px;
     }
 
     &-results {
@@ -20,6 +29,8 @@
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
+        margin-top: 40px;
+
         &-item {
             padding: 40px;
             margin: 20px;

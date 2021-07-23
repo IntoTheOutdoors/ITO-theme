@@ -32,6 +32,7 @@ main {
   
 .card {
     border: none;
+    @include shadow;
 }
 
 

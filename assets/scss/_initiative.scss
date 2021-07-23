@@ -24,6 +24,10 @@
         }
     }
 
+    &-textarea {
+        margin: 40px 0;
+    }
+
     &-textareaWithImage {
         img {
             width: 100%;
@@ -85,7 +89,7 @@
                 }
                 
                 p {
-                    font-size: 30px;
+                    font-size: 22px;
                     text-align: center;
                 }
             }
@@ -102,7 +106,6 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 22px;
 
             p {
                 padding: 20px;
@@ -133,6 +136,27 @@
                 margin-bottom: 20px;
                 font-weight: 800;
                 text-align: center;
+            }
+        }
+    }
+
+    &-textAreaWithVideo {
+        margin-top: 80px !important;
+
+        &-item {
+            margin: 40px 0;
+        }
+        
+        &-one {
+            h4 {
+                margin-bottom: 40px;
+                text-transform: uppercase;
+            }
+        }
+
+        &-two {
+            iframe {
+                width: 100% !important;
             }
         }
     }

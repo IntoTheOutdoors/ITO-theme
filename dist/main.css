@@ -1249,10 +1249,17 @@ aside .downloads img {
   justify-content: center;
   align-items: center;
 }
-.partners h3, .partners .h3 {
+.partners-intro h3, .partners-intro .h3 {
   text-transform: uppercase;
+  text-align: center;
   font-family: "Roboto Slab", serif;
   color: #1a5458;
+}
+.partners-intro p {
+  margin-top: 40px;
+}
+.partners-video {
+  margin-top: 40px;
 }
 .partners-results {
   margin-top: 40px;
@@ -1261,6 +1268,7 @@ aside .downloads img {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: 40px;
 }
 .partners-links-item {
   padding: 40px;
@@ -1620,6 +1628,9 @@ footer {
 .initiative-image img {
   width: 100%;
 }
+.initiative-textarea {
+  margin: 40px 0;
+}
 .initiative-textareaWithImage img {
   width: 100%;
   height: auto;
@@ -1668,7 +1679,7 @@ footer {
   text-align: center;
 }
 .initiative-textAreaWithImage-one-text p {
-  font-size: 30px;
+  font-size: 22px;
   text-align: center;
 }
 .initiative-textAreaWithImage-one-image img {
@@ -1678,7 +1689,6 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
 }
 .initiative-textAreaWithImage-two p {
   padding: 20px;
@@ -1704,6 +1714,19 @@ footer {
   margin-bottom: 20px;
   font-weight: 800;
   text-align: center;
+}
+.initiative-textAreaWithVideo {
+  margin-top: 80px !important;
+}
+.initiative-textAreaWithVideo-item {
+  margin: 40px 0;
+}
+.initiative-textAreaWithVideo-one h4, .initiative-textAreaWithVideo-one .h4 {
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+.initiative-textAreaWithVideo-two iframe {
+  width: 100% !important;
 }
 
 @media screen and (min-width: 426px) {
@@ -12564,4 +12587,5 @@ main {
 
 .card {
   border: none;
+  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
