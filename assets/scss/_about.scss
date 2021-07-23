@@ -3,9 +3,43 @@
 
     h3 {
         text-transform: uppercase;
+        text-align: center;
         font-weight: bold;
         font-family: $font-one;
         color: $primary;
         margin-top: 10px;
+    }
+
+    &-textAreaWithImage {
+        display: flex;
+        margin-top: 40px !important;
+
+        &-one {
+            position: relative;
+            display: inline-block;
+
+            &-image {
+                img {
+                    width: 100%;
+                }
+            }
+            
+        }
+
+        &-two {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h3 {
+                @include title;
+            }
+
+            p {
+                padding: 20px;
+            }
+        }
+        
     }
 }

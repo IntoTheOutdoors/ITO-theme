@@ -1562,10 +1562,36 @@ footer {
 }
 .about h3, .about .h3 {
   text-transform: uppercase;
+  text-align: center;
   font-weight: bold;
   font-family: "Roboto Slab", serif;
   color: #1a5458;
   margin-top: 10px;
+}
+.about-textAreaWithImage {
+  display: flex;
+  margin-top: 40px !important;
+}
+.about-textAreaWithImage-one {
+  position: relative;
+  display: inline-block;
+}
+.about-textAreaWithImage-one-image img {
+  width: 100%;
+}
+.about-textAreaWithImage-two {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.about-textAreaWithImage-two h3, .about-textAreaWithImage-two .h3 {
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
+}
+.about-textAreaWithImage-two p {
+  padding: 20px;
 }
 
 .blog-sidebar {
