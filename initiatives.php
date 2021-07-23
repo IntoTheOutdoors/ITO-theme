@@ -7,6 +7,13 @@
     get_header('second');
 ?>
     <div class="container initiative">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="<?php echo home_url(); ?>">Home</a></li>
+                <li class="breadcrumb-item"><a href="<?php echo site_url('partners'); ?>">Partners</a></li>
+                <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
+            </ol>
+        </nav>
         <h2><?php echo the_title(); ?></h2>
     <?php
         if(have_rows('contents')):
@@ -154,18 +161,28 @@
                 // bullet list
                 if(get_row_layout() == 'bullet_list'):
                     if(have_rows('bullet_items')):
+                        ?>
+                        <div class="row initiative-lists">
+                        <?php
                         while(have_rows('bullet_items')): the_row();
                             $title = get_sub_field('title');
                             $text_area = get_sub_field('text_area');
                             $icon = get_sub_field('icon');
                         ?>
-                            <?php echo $icon; ?>
-                            <h5><?php echo $title; ?></h5>
-                            <p><?php echo $text_area; ?></p>
-
+                                <div class="col-lg-4 col-md-4 col-sm-6 initiative-lists-item">
+                                    <?php echo $icon; ?>
+                                </div>
+                                <div class="col-lg-8 col-md-8 col-sm-6 initiative-lists-item">
+                                    <h5><?php echo $title; ?></h5>
+                                    <p><?php echo $text_area; ?></p>
+                                </div>
                         <?php
                         endwhile;
+                        ?>
+                        </div>
+                        <?php
                     endif;
+
 
                     
                 endif;

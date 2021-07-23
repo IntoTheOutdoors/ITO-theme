@@ -1615,6 +1615,7 @@ footer {
   text-transform: uppercase;
   color: #1a5458;
   margin: 20px 0;
+  text-align: center;
 }
 .initiative-image img {
   width: 100%;
@@ -1641,7 +1642,7 @@ footer {
 .initiative-video {
   display: flex;
   justify-content: center;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 .initiative-textAreaWithImage {
   display: flex;
@@ -1682,8 +1683,33 @@ footer {
 .initiative-textAreaWithImage-two p {
   padding: 20px;
 }
+.initiative-lists {
+  margin-top: 80px !important;
+}
+.initiative-lists .fas {
+  font-size: 40px;
+  color: #fff;
+  background-color: #1a5458;
+  padding: 40px;
+  border-radius: 80px;
+}
+.initiative-lists-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 40px 0;
+}
+.initiative-lists-item h5, .initiative-lists-item .h5 {
+  margin-bottom: 20px;
+  font-weight: 800;
+  text-align: center;
+}
 
 @media screen and (min-width: 426px) {
+  .initiative h3, .initiative .h3 {
+    text-align: left;
+  }
   .initiative-gallery ul {
     flex-direction: row;
     justify-content: center;

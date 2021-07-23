@@ -14,6 +14,7 @@
         h3 {
             @include title;
             margin: 20px 0;
+            text-align: center;
         }
     }
 
@@ -56,7 +57,7 @@
     &-video {
         display: flex;
         justify-content: center;
-        margin-top: 40px;
+        margin-top: 20px;
     }
 
     &-textAreaWithImage {
@@ -109,10 +110,39 @@
         }
         
     }
+
+    &-lists {
+        margin-top: 80px !important;
+
+        .fas {
+            font-size: 40px;
+            color: $white;
+            background-color: $primary;
+            padding: 40px;
+            border-radius: 80px;
+        }
+
+        &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: 40px 0;
+
+            h5 {
+                margin-bottom: 20px;
+                font-weight: 800;
+                text-align: center;
+            }
+        }
+    }
 }
 
 @media screen and (min-width: 426px) {
     .initiative {
+        h3 {
+            text-align: left;
+        }
         &-gallery {
             ul {
                 flex-direction: row;
