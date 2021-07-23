@@ -44,7 +44,6 @@
                     
                     img {
                         justify-self: center;
-                        width: 100%;
                         height: auto;
                         margin: 10px 0;
                     }
@@ -52,6 +51,63 @@
 
             }
         }
+    }
+
+    &-video {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+
+    &-textAreaWithImage {
+        display: flex;
+        margin-top: 40px !important;
+
+        &-one {
+            position: relative;
+            display: inline-block;
+
+            &-text {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                background-color: rgba($color: #000, $alpha: .7);
+                width: 60%;
+                height: auto;
+                
+                h5 {
+                    font-size: 80px;
+                    text-shadow: 2rem;
+                    text-align: center;
+                }
+                
+                p {
+                    font-size: 30px;
+                    text-align: center;
+                }
+            }
+
+            &-image {
+                img {
+                    width: 100%;
+                }
+            }
+            
+        }
+
+        &-two {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 22px;
+
+            p {
+                padding: 20px;
+            }
+        }
+        
     }
 }
 
@@ -65,7 +121,6 @@
                 li {
                     align-self: center;
                     img {
-                        width: 50%;
                         padding: 0 10px;
                     }
                 }

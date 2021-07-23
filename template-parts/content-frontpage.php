@@ -110,8 +110,8 @@
     </section>
   </section>
 
-  <section class="media">
-    <div class="media-logos container">
+  <section class="shows">
+    <div class="shows-logos container">
       <?php 
         // query custom post type 'shows'
         $args = [
@@ -131,7 +131,7 @@
         <?php endif; endwhile; wp_reset_query();
       ?>
     </div>
-    <div class="media-text container">
+    <div class="shows-text container">
           <h4>We are now available on a variety of streaming channels and platforms!</h4>
     </div>
     <?php 
@@ -143,7 +143,7 @@
     ];
 
     ?> 
-    <div class="media-downloads conntainer">
+    <div class="shows-downloads conntainer">
     
     <?php 
     // QUERY for the app downloads
