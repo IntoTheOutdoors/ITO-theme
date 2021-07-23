@@ -1474,6 +1474,10 @@ footer {
     margin: 10px;
   }
 }
+.single-content {
+  display: flex;
+  flex-direction: column;
+}
 .single-content h4, .single-content .h4 {
   font-size: 22px;
 }
