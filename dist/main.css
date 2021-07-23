@@ -1688,6 +1688,7 @@ footer {
 .initiative-textAreaWithImage-one {
   position: relative;
   display: inline-block;
+  order: 2;
 }
 .initiative-textAreaWithImage-one-text {
   position: absolute;
@@ -1712,6 +1713,7 @@ footer {
   width: 100%;
 }
 .initiative-textAreaWithImage-two {
+  order: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1758,6 +1760,12 @@ footer {
 @media screen and (min-width: 426px) {
   .initiative h3, .initiative .h3 {
     text-align: left;
+  }
+  .initiative-textAreaWithImage-one {
+    order: initial;
+  }
+  .initiative-textAreaWithImage-two {
+    order: initial;
   }
   .initiative-gallery ul {
     flex-direction: row;

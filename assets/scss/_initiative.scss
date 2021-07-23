@@ -71,6 +71,7 @@
         &-one {
             position: relative;
             display: inline-block;
+            order: 2;
 
             &-text {
                 position: absolute;
@@ -101,8 +102,9 @@
             }
             
         }
-
+        
         &-two {
+            order: 1;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -166,6 +168,16 @@
     .initiative {
         h3 {
             text-align: left;
+        }
+
+        &-textAreaWithImage {
+            &-one {
+                order: initial;
+            }
+
+            &-two {
+                order: initial;
+            }
         }
         &-gallery {
             ul {
