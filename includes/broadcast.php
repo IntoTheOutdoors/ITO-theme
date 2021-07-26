@@ -85,7 +85,7 @@ function network_broadcast_ajax() {
             </div>
         </div>
     </div>
-    <div class="col-6-lg col-6-md col-12-sm broadcast-pbs">
+    <div class="col-lg-6 col-6-md col-12-sm broadcast-pbs">
         <h3 class="subheader">PBS Broadcast</h3>
         <p>Check your local PBS Station for time and episodes</p>
         <div class="broadcast-items">

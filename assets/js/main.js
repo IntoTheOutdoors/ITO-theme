@@ -9,19 +9,21 @@
         data: {action: 'filter'}, data,
         type: 'post',
         success: (result) => {
-          $('[data-js-filter=target]').html(
-            `
-            <div class="d-flex justify-content-center results-loading">
-              <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
+          if(result) {
+            $('[data-js-filter=target]').html(
+              `
+              <div class="d-flex justify-content-center results-loading">
+                <div class="spinner-border" role="status">
+                  <span class="sr-only">Loading...</span>
+                </div>
               </div>
-            </div>
-            <p>Loading...</p>
-            `
-          );
-          setTimeout(function() {
-            $('[data-js-filter=target]').html(result);
-          }, 2000);
+              <p>Loading...</p>
+              `
+            );
+            setTimeout(function() {
+              $('[data-js-filter=target]').html(result);
+            }, 2000);
+          }
         },
         error: (result) => {
           console.log(result);

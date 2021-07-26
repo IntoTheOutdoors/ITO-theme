@@ -5,7 +5,7 @@
 <section class="container">
     <div class="watch">
         <h3>Where to watch</h3>
-        <p>We are now available on a variety of streaming channels and platforms. Check out our broadcast guide below to find out when you can catch the show in your neck of the woods. Don’t see your area listed? Watch us– online!</p>
+        <p>Into the Outdoors airs weekly on various broadcast and PBS stations. Check out the broadcast guide below for local listings. Don’t see your area listed? Find Into the Outdoors on all your favorite streaming devices.</p>
         <div class="watch-media">
           <?php 
               // query custom post type 'shows'
@@ -27,7 +27,7 @@
           ?>
         </div>
         <div class="watch-downloads">
-            <h5>Download the app below to watch us wherever you go!</h5>
+            <h5>Download the app and watch us wherever you go!</h5>
             <?php 
             // query custom post type 'shows'
             $args = [
@@ -79,7 +79,7 @@
             $networks = new WP_Query($args);
             ?>
           <fieldset class="input-group mb-3 broadcast-state">
-            <label class="input-group-text" for="broadcast-state">YOU CAN FILTER BY STATE:</label>
+            <label class="input-group-text" for="broadcast-state">FILTER BY STATE:</label>
             <select class="form-select" id="broadcast-state" name="broadcast-state">
               <option selected value="WI">Choose...</option>
                 <?php 
@@ -241,7 +241,8 @@
             <?php
               $args = [
                 'post_type' => 'episode_schedules',
-                'posts_per_page' => -1
+                'posts_per_page' => -1,
+                'order' => 'ASC'
               ];
 
               $schedules = new WP_Query($args);
@@ -254,6 +255,7 @@
                 while($schedules->have_posts()): $schedules->the_post();
                   $start_date = get_field('start_date');
                   $end_date = get_field('end_date');
+                  $url = get_field('topic_url');
               
                   $monthformatstring = "F";
                   $startdateformatString = "j";
@@ -280,7 +282,9 @@
                       <h5><?php echo $current_month; ?><br> <?php echo $current_start_date . '/' . $current_end_date; ?></h5>
                     </div>
                     <div class="schedule-item-info">
-                      <h5><?php the_title(); ?></h5>
+                      <a href="<?php echo $url ?>" target="_blank">
+                        <h5><?php the_title(); ?></h5>
+                      </a>
                       <p><?php the_content(); ?></p>
                     </div>
                   </div>

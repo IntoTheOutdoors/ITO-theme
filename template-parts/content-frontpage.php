@@ -82,9 +82,7 @@
     <section class="signup container">
       <div class="signup-text">
         <h3>Join the Adventure!</h3>
-        <p>Join our email list to be the first to get the lasts news, 
-          new episode notifications, and exclusive contests 
-          conveniently in your inbox!</p>
+        <p>Get updates on new episodes, lesson plans, our education initiatives, and exclusive contests straight to your inbox!</p>
         <!-- Button trigger modal -->
         <a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
           Signup

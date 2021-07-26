@@ -5,7 +5,7 @@ $password = get_field('password');
 <main>
 <div class="partners container">
   <div class="partners-intro">
-    <h3>Our Education Initiatives</h3>
+    <h3>PARTNER WITH US</h3>
     <p>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus voluptates ratione nisi beatae quidem eveniet optio, 
       suscipit perspiciatis fugiat voluptas reprehenderit eaque tenetur illum quas! Ratione repudiandae molestiae iusto asperiores. 

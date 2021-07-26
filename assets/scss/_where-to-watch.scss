@@ -123,7 +123,15 @@
 
         &-info {
             margin-left: 10px;
+            
+            a {
+                text-decoration: none;
 
+                &:hover {
+                    color: $secondary;
+                }
+            }
+            
             h5 {
                 font-size: 14px;
                 font-weight: 700;
@@ -138,13 +146,14 @@
 
 @media screen and (min-width: 768px) {
     .watch {
+        margin-bottom: 40px;
 
         h3 {
             font-size: 22px;
         }
 
         p {
-            font-size: 14px;
+            font-size: 16px;
         }
 
         &-downloads {
@@ -162,6 +171,7 @@
     }
 
     .broadcast {
+
         h3 {
             font-size: 22px;
         }

@@ -6,13 +6,14 @@
 
     <!-- Episode Types -->
     <fieldset id="types" class="filter-types">
+        <p>Below you can watch episodes as seen on PBS and explore video lesson plans made for classroom or at-home learning and adventure.</p>
         <label for="episode-types">Search episodes by type:</label>
         <div class="filter-types-input">
           <div id="episode-types">
               <input class="submit" checked  type="radio" value="full_episode" name="episode-types"><span>Episodes</span></input>
           </div>
           <div id="episode-types">
-              <input class="submit" type="radio" value="curriculum_videos" name="episode-types"><span>Classroom Videos</span></input>
+              <input class="submit" type="radio" value="curriculum_videos" name="episode-types"><span>Video Lesson Plans</span></input>
           </div>
         </div>
     </fieldset>
@@ -39,15 +40,31 @@
       <?php
       $grade_levels = get_terms( array(
           'taxonomy' => 'grade_level',
-          'hide_empty' => false,  
-      ) );
+      ));
 
       ?>
       <div>
-        <?php foreach($grade_levels as $grade_level) : ?>
+        <?php 
+          $newterms = [];
+          foreach($grade_levels as $grade_level) : 
+            $order = get_field('order', $grade_level);
+
+            $newterms[$order] = (object) [
+              'name' => $grade_level->name,
+              'slug' => $grade_level->slug,
+              'term_id' => $grade_level->term_id
+            ];
+          
+          endforeach; 
+
+          ksort($newterms, SORT_NUMERIC);
+
+          foreach($newterms as $newterm):
+        ?>
         <div class="filter-grade-item">
-          <input class="submit" type="checkbox" id="<?= $grade_level->term_id; ?>" name="episode-grade-level[]" value="<?= $grade_level->term_id; ?>"><label for="<?= $grade_level->name; ?>"><?= $grade_level->name; ?></label>
+          <input class="submit" type="checkbox" id="<?= $newterm->term_id; ?>" name="episode-grade-level[]" value="<?= $newterm->term_id; ?>"><label for="<?= $newterm->name; ?>"><?= $newterm->name; ?></label>
         </div>
+
         <?php endforeach; ?>
       </div>
     </fieldset>
