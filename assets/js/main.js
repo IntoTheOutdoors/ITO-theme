@@ -93,22 +93,18 @@
   });
 })(jQuery);
 
-/** PARTNERS */
-(function($){
-  $(document).on('submit', '#passwordProtected', function (e) {
-    e.preventDefault();
-    let data = $(this).serialize();
-    
-    $.ajax({
-      url: wpAjax.ajaxUrl,
-      data: data,
-      type: 'post',
-      success: (result) => {
-        $('.password-results').html(result);
-      },
-      error: (result) => {
-        console.log(result)
-      }
+// testing modal
+(function($) {
+  $(document).ready(function () {
+    $('.external-link').click(function (e) {
+        e.preventDefault();
+      
+        // let link = $(e.currentTarget).attr('href');
+        // console.log('this is the link', link);
+        document.getElementById( "btnContinue" ).setAttribute( "onClick", (       "javascript:window.location.href=\"" + $(e.currentTarget).attr('href') + "\"") );
+
+
+        $('#myModal').modal('show');
     });
-  });
+});
 })(jQuery);

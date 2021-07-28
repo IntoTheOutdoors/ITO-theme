@@ -486,6 +486,10 @@ header .overlay {
   width: 250px;
 }
 
+.episodes h5, .episodes .h5 {
+  text-align: center;
+  margin-bottom: 40px;
+}
 .episodes-sidebar aside {
   padding: 0 10px;
 }
@@ -739,11 +743,11 @@ aside .downloads img {
   }
   .downloads-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column !important;
   }
   .downloads-container a img {
     margin: 6px 0;
-    width: 100px;
+    width: 200px;
     height: auto;
   }
 }
@@ -753,6 +757,48 @@ aside .downloads img {
     justify-content: space-evenly;
   }
 }
+div#speedbump {
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #eeeeee;
+}
+
+#speedbump h4.modal-title, #speedbump .modal-title.h4 {
+  text-align: center;
+  text-transform: uppercase;
+  color: #004795;
+  font-size: 2.5em;
+}
+
+.modal-body p {
+  text-align: center;
+  font-size: 1em;
+}
+
+button.btn-modal:hover {
+  cursor: pointer;
+}
+
+button.btn-modal.btn-continue {
+  background-color: #8bc63e;
+  border: 0px;
+  margin: 1% 0;
+}
+
+button.btn-modal.btn-close {
+  background-color: inherit;
+  border: 1px solid #030000;
+  color: #030000;
+  font-weight: 400;
+}
+
+.modal-header .close {
+  font-size: 3.5em;
+}
+
 .breadcrumb {
   margin-top: 20px;
 }
@@ -831,7 +877,7 @@ aside .downloads img {
   background-color: #fff;
   border-radius: 20px;
   margin: 20px 0;
-  padding: 10px;
+  padding: 20px;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-top-lists h5, .episode-top-lists .h5 {
@@ -876,15 +922,18 @@ aside .downloads img {
 .episode-bottom-related {
   display: flex;
   flex-direction: column;
-  background-color: #fff;
+  background-color: #E6EBCD;
   height: auto;
-  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
   padding: 20px 40px;
+  margin-top: 40px;
 }
 .episode-bottom-related h4, .episode-bottom-related .h4 {
   font-size: 21px;
   text-align: center;
   margin-bottom: 20px;
+  font-family: "Roboto Slab", serif;
+  text-transform: uppercase;
+  color: #1a5458;
 }
 .episode-bottom-related-item {
   justify-self: center;
@@ -925,12 +974,6 @@ aside .downloads img {
   font-size: 12px;
 }
 
-.resource-links {
-  background-color: #fff;
-  padding: 10px;
-  border-radius: 20px;
-  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
-}
 .resource-links h4, .resource-links .h4 {
   margin: 0;
   margin-top: 4px;
@@ -958,13 +1001,9 @@ aside .downloads img {
   background-color: #F8F9FA;
 }
 .resource-partners {
-  margin-top: 20px;
-  border-radius: 20px;
-  background-color: #fff;
   padding: 10px;
   display: flex;
   flex-direction: column;
-  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .resource-partners h4, .resource-partners .h4 {
   font-family: "Roboto Slab", serif;
@@ -979,13 +1018,6 @@ aside .downloads img {
 .resource-partners-items img {
   width: 120px;
   height: auto;
-}
-.resource-downloads {
-  background-color: #fff;
-  margin: 20px 0;
-  border-radius: 20px;
-  padding: 10px;
-  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .resource-downloads h4, .resource-downloads .h4 {
   font-family: "Roboto Slab", serif;
@@ -1792,6 +1824,28 @@ footer {
     padding: 0 10px;
   }
 }
+#myModal .modal-content {
+  background-color: #F8F9FA !important;
+}
+#myModal .modal-header {
+  background-color: #F8F9FA !important;
+}
+#myModal .modal-header h5, #myModal .modal-header .h5 {
+  font-size: 28px;
+}
+#myModal .modal-body {
+  background-color: #F8F9FA !important;
+  padding: 60px;
+}
+#myModal .button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 80px;
+}
+#myModal .button-container button {
+  margin: 0 40px;
+}
+
 /*!
  * Bootstrap v5.0.0-beta3 (https://getbootstrap.com/)
  * Copyright 2011-2021 The Bootstrap Authors

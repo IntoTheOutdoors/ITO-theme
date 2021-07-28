@@ -6,7 +6,6 @@
 
     <!-- Episode Types -->
     <fieldset id="types" class="filter-types">
-        <p>Below you can watch episodes as seen on PBS and explore video lesson plans made for classroom or at-home learning and adventure.</p>
         <label for="episode-types">Search episodes by type:</label>
         <div class="filter-types-input">
           <div id="episode-types">

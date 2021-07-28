@@ -32,8 +32,6 @@
                             <p><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="episode-info-lessons">
-                            <h5>All Lesson Plans for this Episode</h5>
-
                             <?php
                                 $topics = get_posts([
                                     'post_type' => 'topics',
@@ -50,10 +48,15 @@
                                     foreach( $topics as $topic ): 
                                         $files = get_field('download_all_curriculum', $topic->ID); 
                                         if(!empty($files)):  ?>
+                                            <h5>All Lesson Plans for this Episode</h5>
                                             <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
                                         <?php
                                         endif;
                                     endforeach;
+                                else:
+                            ?>
+                                <h5>No Lesson Plans to download</h5>
+                            <?php
                                 endif;                                    
                             ?> 
                         </div>

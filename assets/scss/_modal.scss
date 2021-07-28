@@ -1,0 +1,32 @@
+#myModal {
+    
+    .modal {
+        
+        &-content {
+            background-color: $grey-two !important;
+        }
+
+        &-header {
+            background-color: $grey-two !important;
+
+            h5 {
+                font-size: 28px;
+            }
+        }
+
+        &-body {
+            background-color: $grey-two !important;
+            padding: 60px;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center;
+        margin-top: 80px;
+
+        button {
+            margin: 0 40px;
+        }
+    }
+}

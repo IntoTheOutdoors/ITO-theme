@@ -89,24 +89,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   $('.form-select').on('change', function () {
     $('#broadcastForm').submit();
   });
-})(jQuery);
-/** PARTNERS */
+})(jQuery); // testing modal
 
 
 (function ($) {
-  $(document).on('submit', '#passwordProtected', function (e) {
-    e.preventDefault();
-    var data = $(this).serialize();
-    $.ajax({
-      url: wpAjax.ajaxUrl,
-      data: data,
-      type: 'post',
-      success: function success(result) {
-        $('.password-results').html(result);
-      },
-      error: function error(result) {
-        console.log(result);
-      }
+  $(document).ready(function () {
+    $('.external-link').click(function (e) {
+      e.preventDefault(); // let link = $(e.currentTarget).attr('href');
+      // console.log('this is the link', link);
+
+      document.getElementById("btnContinue").setAttribute("onClick", "javascript:window.location.href=\"" + $(e.currentTarget).attr('href') + "\"");
+      $('#myModal').modal('show');
     });
   });
 })(jQuery);

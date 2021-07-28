@@ -41,12 +41,16 @@
                             <p><?php echo get_the_date(); ?></p>
                         </div>
                         <div class="episode-info-lessons">
-                            <h5>All Lesson Plans for this Episode</h5>
                             <?php
                                 $files = get_field('download_all_curriculum'); 
                                 if(!empty($files)):  ?>
+                                    <h5>All Lesson Plans for this Episode</h5>
                                     <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
                             <?php 
+                                else:
+                            ?>
+                                    <h5>No Lesson Plans to download</h5>
+                            <?php
                                 endif; 
                             ?> 
                         </div>

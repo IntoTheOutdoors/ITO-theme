@@ -89,7 +89,7 @@
             background-color: $white;
             border-radius: 20px;
             margin: 20px 0;
-            padding: 10px;
+            padding: 20px;
             @include shadow;
 
             h5 {
@@ -150,15 +150,16 @@
     &-bottom-related {
         display: flex;
         flex-direction: column;
-        background-color: $white;
+        background-color: $fourth;
         height: auto;
-        @include shadow;
         padding: 20px 40px;
+        margin-top: 40px;
 
         h4 {
             font-size: 21px;
             text-align: center;
             margin-bottom: 20px;
+            @include title;
         }
 
         &-item {
@@ -228,11 +229,6 @@
 
 .resource {
     &-links {
-        background-color: $white;
-        padding: 10px;
-        border-radius: 20px;
-        @include shadow;
-
         h4 {
             margin: 0;
             margin-top: 4px;
@@ -265,13 +261,9 @@
     }
 
     &-partners {
-        margin-top: 20px;
-        border-radius: 20px;
-        background-color: $white;
         padding: 10px;
         display: flex;
         flex-direction: column;
-        @include shadow;
 
         h4 {
             @include title;
@@ -289,11 +281,6 @@
     }
 
     &-downloads {
-        background-color: $white;
-        margin: 20px 0;
-        border-radius: 20px;
-        padding: 10px;
-        @include shadow;
 
         h4 {
             @include title;

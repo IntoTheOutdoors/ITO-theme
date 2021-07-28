@@ -6,8 +6,9 @@
 
     $args = [
         'post_type' => 'topics',
-        'posts_per_page' => 3,
+        'posts_per_page' => 5,
         'post__not_in' => [$topic_id],
+        'orderby' => 'rand',
         'tax_query' => [
             [
                 'taxonomy' => 'topic_categories',
@@ -26,20 +27,22 @@
     if($related->have_posts()):
         while($related->have_posts()): $related->the_post();
             $full_episodes = get_field('full_episode', get_the_id());
-            
-            foreach($full_episodes as $full_episode):
-                // setup_postdata($post);
-                $image = wp_get_attachment_image_src( get_post_thumbnail_id( $curriculum_video->ID ), 'medium' );
-                ?>
-                <div class="episode-bottom-related-item">
-                    <a href="<?php the_permalink(); ?>">
-                        <img src="<?php echo $image[0]; ?>" alt="">
-                        <p><?php the_title(); ?></p>
-                    </a>
-                </div>
 
-                <?php
-            endforeach;
+            if(!empty($full_episodes)):
+                foreach($full_episodes as $full_episode):
+                    // setup_postdata($post);
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $curriculum_video->ID ), 'medium' );
+                    ?>
+                    <div class="episode-bottom-related-item">
+                        <a href="<?php the_permalink(); ?>">
+                            <img src="<?php echo $image[0]; ?>" alt="">
+                            <p><?php the_title(); ?></p>
+                        </a>
+                    </div>
+
+                    <?php
+                endforeach;
+            endif;
         endwhile; 
         // wp_reset_postdata(); 
         wp_reset_query();

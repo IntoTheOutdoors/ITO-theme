@@ -130,7 +130,7 @@
       ?>
     </div>
     <div class="shows-text container">
-          <h4>We are now available on a variety of streaming channels and platforms!</h4>
+          <h4>Download the app to watch us wherever you go!</h4>
     </div>
     <?php 
     // query custom post type 'shows'
