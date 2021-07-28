@@ -874,11 +874,9 @@ button.btn-modal.btn-close {
   align-self: center;
   flex-direction: column;
   height: auto;
-  background-color: #fff;
-  border-radius: 20px;
+  background-color: #f3f5ea;
   margin: 20px 0;
   padding: 20px;
-  box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }
 .episode-top-lists h5, .episode-top-lists .h5 {
   color: #1a5458;
@@ -895,19 +893,20 @@ button.btn-modal.btn-close {
 .episode-top-lists-full-item, .episode-top-lists-curriculum-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 4px;
   margin: 4px 0;
-}
-.episode-top-lists-full-item img, .episode-top-lists-curriculum-item img {
-  width: auto;
-  height: 60px;
 }
 .episode-top-lists-full-item p, .episode-top-lists-curriculum-item p {
   color: #3B3B3B;
   font-size: 12px;
+  padding: 0;
+  margin: 0;
 }
 .episode-top-lists-full-item:hover, .episode-top-lists-full-item:active, .episode-top-lists-curriculum-item:hover, .episode-top-lists-curriculum-item:active {
-  background-color: #F8F9FA;
+  background-color: #E6EBCD;
+  cursor: pointer;
 }
 .episode-top-lists-full-item hr, .episode-top-lists-curriculum-item hr {
   color: lightgray;
@@ -922,9 +921,9 @@ button.btn-modal.btn-close {
 .episode-bottom-related {
   display: flex;
   flex-direction: column;
-  background-color: #E6EBCD;
-  height: auto;
-  padding: 20px 40px;
+  background-color: #f3f5ea;
+  min-height: 100%;
+  padding: 20px;
   margin-top: 40px;
 }
 .episode-bottom-related h4, .episode-bottom-related .h4 {
@@ -936,13 +935,23 @@ button.btn-modal.btn-close {
   color: #1a5458;
 }
 .episode-bottom-related-item {
-  justify-self: center;
+  padding: 20px;
 }
 .episode-bottom-related-item img {
-  width: 100%;
+  width: 120px;
+  height: auto;
+}
+.episode-bottom-related-item p {
+  align-self: center;
+  margin-top: 10px;
+  margin-left: 10px;
 }
 .episode-bottom-related-item a {
   text-decoration: none;
+  display: flex;
+}
+.episode-bottom-related-item:hover, .episode-bottom-related-item:active {
+  background-color: #E6EBCD;
 }
 
 .dropdown .fa-arrow-circle-down {
@@ -1036,7 +1045,7 @@ button.btn-modal.btn-close {
   font-size: 14px;
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
   .breadcrumb li {
     font-size: 14px;
   }
@@ -1045,17 +1054,17 @@ button.btn-modal.btn-close {
   }
 
   .episode-videos #player, .episode-videos iframe {
-    height: 600px;
+    height: 300px;
   }
   .episode-info {
     flex-direction: row;
     justify-content: space-between;
   }
   .episode-info-title h5, .episode-info-title .h5 {
-    font-size: 22px;
+    font-size: 18px;
   }
   .episode-info-title p {
-    font-size: 18px;
+    font-size: 14px;
   }
   .episode-info-lessons {
     border-bottom-left-radius: 0px;
@@ -1070,9 +1079,6 @@ button.btn-modal.btn-close {
   .episode-top {
     flex-direction: row;
   }
-  .episode-top h5, .episode-top .h5 {
-    font-size: 24px;
-  }
   .episode-top-container {
     width: 70%;
   }
@@ -1082,11 +1088,17 @@ button.btn-modal.btn-close {
     margin: 0;
     margin-left: 20px;
   }
+  .episode-top-lists h5, .episode-top-lists .h5 {
+    font-size: 20px;
+  }
   .episode-top-lists p {
-    font-size: 18px;
+    font-size: 14px;
   }
   .episode-top .dropdown span {
     font-size: 14px;
+  }
+  .episode-details-content p {
+    font-size: 12px;
   }
   .episode-bottom {
     margin-top: 20px;
@@ -1098,11 +1110,112 @@ button.btn-modal.btn-close {
   }
   .episode-bottom-related {
     width: 30%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
     margin-left: 10px;
+  }
+  .episode-bottom-related h4, .episode-bottom-related .h4 {
+    margin-top: 10px;
+  }
+  .episode-bottom-related img {
+    width: 160px;
+  }
+  .episode-bottom-related p {
+    padding: 0;
+    margin: 0;
+  }
+  .episode-bottom-related a {
+    display: flex;
+    flex-direction: column;
   }
 
   .nav-tabslist-link span {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 769px) {
+  .breadcrumb li {
     font-size: 18px;
+  }
+
+  .episode-videos #player, .episode-videos iframe {
+    height: 600px;
+  }
+  .episode-info {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  .episode-info-title {
+    padding: 20px;
+  }
+  .episode-info-title h5, .episode-info-title .h5 {
+    font-size: 20px !important;
+  }
+  .episode-info-title p {
+    font-size: 18px;
+    margin: 0;
+  }
+  .episode-info-lessons {
+    border-bottom-left-radius: 0px;
+    padding: 20px;
+  }
+  .episode-info-lessons h5, .episode-info-lessons .h5 {
+    font-size: 20px;
+  }
+  .episode-info-lessons p {
+    font-size: 16px;
+  }
+  .episode-info-lessons a {
+    font-size: 16px;
+  }
+  .episode-top {
+    flex-direction: row;
+  }
+  .episode-top-container {
+    width: 70%;
+  }
+  .episode-top-lists {
+    width: 30%;
+    align-self: flex-start;
+    margin: 0;
+    margin-left: 10px;
+  }
+  .episode-top-lists h5, .episode-top-lists .h5 {
+    font-size: 20px;
+  }
+  .episode-top-lists-curriculum {
+    display: flex;
+    flex-direction: column;
+  }
+  .episode-top-lists-full-item, .episode-top-lists-curriculum-item {
+    padding: 20px;
+    margin: 4px 0;
+  }
+  .episode-top-lists-full-item p, .episode-top-lists-curriculum-item p {
+    font-size: 16px;
+  }
+  .episode-top-lists-full-item-curriculum-item:last-child, .episode-top-lists-curriculum-item-curriculum-item:last-child {
+    margin-bottom: 10px;
+  }
+  .episode-bottom {
+    display: flex;
+  }
+  .episode-bottom-details {
+    width: 70%;
+  }
+  .episode-bottom-related {
+    width: 30%;
+    margin-left: 10px;
+  }
+
+  .nav-tabslist-item span {
+    font-size: 18px;
+  }
+
+  .tab-pane p {
+    font-size: 16px;
   }
 }
 .watch {

@@ -31,7 +31,7 @@
             if(!empty($full_episodes)):
                 foreach($full_episodes as $full_episode):
                     // setup_postdata($post);
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $curriculum_video->ID ), 'medium' );
+                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $curriculum_video->ID ), 'thumbnail' );
                     ?>
                     <div class="episode-bottom-related-item">
                         <a href="<?php the_permalink(); ?>">

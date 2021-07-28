@@ -86,11 +86,9 @@
             align-self: center;
             flex-direction: column;
             height: auto;
-            background-color: $white;
-            border-radius: 20px;
+            background-color: $eight;
             margin: 20px 0;
             padding: 20px;
-            @include shadow;
 
             h5 {
                 color: $primary;
@@ -110,21 +108,21 @@
             &-full-item, &-curriculum-item {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 padding: 4px;
                 margin: 4px 0;
 
-                img {
-                    width: auto;
-                    height: 60px;
-                }
-
                 p {
                     color: $dark-two;
-                    font-size: 12px;;
+                    font-size: 12px;
+                    padding: 0;
+                    margin: 0;
                 }
 
                 &:hover, &:active {
-                    background-color: $grey-two;
+                    background-color: $fourth;
+                    cursor: pointer;
                 }
 
                 hr {
@@ -150,9 +148,9 @@
     &-bottom-related {
         display: flex;
         flex-direction: column;
-        background-color: $fourth;
-        height: auto;
-        padding: 20px 40px;
+        background-color: $eight;
+        min-height: 100%;
+        padding: 20px;
         margin-top: 40px;
 
         h4 {
@@ -163,14 +161,26 @@
         }
 
         &-item {
-            justify-self: center;
+            padding: 20px;
 
             img {
-                width: 100%;
+                width: 120px;
+                height: auto;
+            }
+            
+            p {
+                align-self: center;
+                margin-top: 10px;
+                margin-left: 10px;
             }
 
             a {
                 text-decoration: none;
+                display: flex;
+            }
+
+            &:hover, &:active {
+                background-color: $fourth;
             }
         }
     }
@@ -304,7 +314,7 @@
     }
 }
 
-@media screen and (min-width: 426px) {
+@media screen and (min-width: 426px) and (max-width: 768px) {
     .breadcrumb {
         li {
             font-size: 14px;
@@ -318,7 +328,7 @@
     .episode {
         &-videos {
             #player, iframe {
-                height: 600px;
+                height: 300px;
             }
         }
 
@@ -328,11 +338,11 @@
 
             &-title {
                 h5 {
-                    font-size: 22px;
+                    font-size: 18px;
                 }
 
                 p {
-                    font-size: 18px;
+                    font-size: 14px;
                 }
             }
 
@@ -352,10 +362,6 @@
         &-top {
             flex-direction: row;
 
-            h5 {
-                font-size: 24px;
-            }
-
             &-container {
                 width: 70%;
             }
@@ -366,14 +372,26 @@
                 margin: 0;
                 margin-left: 20px;
 
+                h5 {
+                    font-size: 20px;
+                }
+
                 p {
-                    font-size: 18px;
+                    font-size: 14px;
                 }
             }
 
             .dropdown {
                 span {
                     font-size: 14px;
+                }
+            }
+        }
+
+        &-details {
+            &-content {
+                p {
+                    font-size: 12px;
                 }
             }
         }
@@ -390,7 +408,28 @@
 
         &-bottom-related {
             width: 30%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
             margin-left: 10px;
+
+            h4 {
+                margin-top: 10px;
+            }
+
+            img {
+                width: 160px;
+            }
+
+            p {
+                padding: 0;
+                margin: 0;
+            }
+            
+            a {
+                display: flex;
+                flex-direction: column;
+            }
         }
     }    
 
@@ -399,9 +438,131 @@
             
             &-link {
                 span {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+    .breadcrumb {
+        li {
+            font-size: 18px;
+        }
+    }
+
+    .episode {
+        &-videos {
+            #player, iframe {
+                height: 600px;
+            }
+        }
+    
+        &-info {
+            flex-direction: row;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            
+            
+            &-title {
+                padding: 20px;
+                h5 {
+                    font-size: 20px !important;
+                }
+    
+                p {
+                    font-size: 18px;
+                    margin: 0;
+                }
+            }
+    
+            &-lessons{
+                border-bottom-left-radius: 0px;
+                padding: 20px;
+    
+                h5 {
+                    font-size: 20px;
+                }
+    
+                p {
+                    font-size: 16px;
+                }
+    
+                a {
+                    font-size: 16px;
+                }
+            }
+        }
+    
+        &-top {
+            flex-direction: row;
+
+            &-container {
+                width: 70%;
+            }
+            
+            &-lists {
+                width: 30%;
+                align-self: flex-start;
+                margin: 0;
+                margin-left: 10px;
+    
+                h5 {
+                    font-size: 20px;
+                }
+    
+                &-curriculum {
+                    display: flex;
+                    flex-direction: column;
+                }
+    
+    
+                &-full-item, &-curriculum-item {
+                    padding: 20px;
+                    margin: 4px 0;
+    
+                    p {
+                        font-size: 16px;
+                    }
+    
+                    &-curriculum-item {
+                        &:last-child {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        &-bottom {
+            display: flex;
+
+            &-details {
+                width: 70%;
+            }
+
+            &-related {
+                width: 30%;
+                margin-left: 10px;
+            }
+        }
+    }
+
+    .nav {
+        &-tabslist {
+
+            &-item {                
+                span {
                     font-size: 18px;
                 }
             }
+        }
+    }
+
+    .tab-pane {
+        p {
+            font-size: 16px;
         }
     }
 }
