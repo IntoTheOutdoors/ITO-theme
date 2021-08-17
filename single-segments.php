@@ -117,7 +117,7 @@
                                     <!-- Lesson Plans here -->
                                     <?php  
                                         get_template_part('template-parts/single-episode', 'lessons', [
-                                            'curriculum_id' => $full_episodes[0]->ID,
+                                            'video_id' => $full_episodes[0]->ID,
                                             'fullepisode' => true
                                         ]); 
                                     ?>
@@ -155,7 +155,7 @@
                                         
                                             <!-- Lesson Plans here -->    
                                             <?php  get_template_part('template-parts/single-episode', 'lessons', [
-                                                'curriculum_id' => $curriculum_video->ID
+                                                'video_id' => $curriculum_video->ID
                                             ]); ?>
                                             <?php 
                                             if ($index != key(array_slice($curriculum_videos, -1, 1, true))):

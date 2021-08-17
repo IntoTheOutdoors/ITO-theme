@@ -3,7 +3,7 @@
 
     <div class="results-episodes-container">
     <?php
-      $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+      // $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
       $args = [
         'post_type' => ['topics'],
         'posts_per_page' => -1,

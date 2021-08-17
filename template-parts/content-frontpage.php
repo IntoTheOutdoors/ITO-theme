@@ -24,8 +24,7 @@
                 'posts_per_page' => 1,
               ];
 
-              $query = new WP_Query($args);
-              
+              $query = new WP_Query($args);             
               
               while($query->have_posts()): $query->the_post();
               $featured_post = get_field('full_episode');
@@ -76,7 +75,7 @@
   <?php 
     $image = wp_get_attachment_image_src(10757, $size="thumbnail", $icon=false, []);
   ?>
-  <section class="family" style="background: url(<?php echo $image[0]; ?>) repeat-x; background-position: bottom; width: 100%; height: 565px; margin: 0 auto;">
+  <section class="family" style="background: url(<?php echo $image[0]; ?>) repeat-x center center; width: 100%; height: 565px; margin: 0 auto;">
     
   <!-- SIGNUP (CALL TO ACTION) -->
     <section class="signup container">
@@ -115,8 +114,9 @@
         $args = [
           'post_type' => 'shows',
           'posts_per_page' => -1,
-          'order' => 'ASC'
+          'order' => 'ASC',
         ];
+        
         $query = new WP_Query($args);
         
       while($query->have_posts()): $query->the_post();
@@ -139,7 +139,6 @@
       'posts_per_page' => -1,
       'order' => 'DESC'
     ];
-
     ?> 
     <div class="shows-downloads conntainer">
     
@@ -159,22 +158,27 @@
   </section>
 
   <section class="slider">
-    <div class="slide-track">
-      <?php 
-        $args = [
-          'post_type' => 'partners',
-          'post_per_page' => -1,
-          'order' => 'ASC'
-        ];
+    <?php 
+      $args = [
+        'post_type' => 'partners',
+        'posts_per_page' => -1,
+        'order' => 'ASC',
+        'meta_key' => 'current_partner',
+        'meta_value' => true
+      ];
 
-        $partner_logos = new WP_Query($args);
+      $partner_logos = new WP_Query($args);
+      ?>
+    <div class="slide-track" style="width: calc(50px * <?php echo $partner_logos->post_count; ?>);" >
+      <?php
         while($partner_logos->have_posts()): $partner_logos->the_post(); ?>
           <div class="slide">
             <a href="<?php echo the_field('header_url');  ?>" target="_blank">
               <img src="<?php echo the_field('header_image'); ?>">
             </a>
           </div>
-        <?php endwhile; 
+          <?php 
+        endwhile; wp_reset_query();
       ?>
     </div>
   </section>

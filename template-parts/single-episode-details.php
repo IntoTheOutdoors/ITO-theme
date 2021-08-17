@@ -132,7 +132,6 @@
                         <?php
                             if(!empty($download_curriculums)):
                         ?>
-                            <h4>Resource Downloads</h4>
                             <h6>Curriculum Episode</h6>
                         <?php
                                 foreach($download_curriculums as $post): setup_postdata($post);

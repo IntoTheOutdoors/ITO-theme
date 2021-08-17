@@ -1,4 +1,4 @@
-<?php get_header('second'); ?>
+    <?php get_header('second'); ?>
 <main>
 <div class="episode container">
     <nav aria-label="breadcrumb">
@@ -43,9 +43,10 @@
                         <div class="episode-info-lessons">
                             <?php
                                 $files = get_field('download_all_curriculum'); 
-                                if(!empty($files)):  ?>
+                                if(!empty($files)):  
+                            ?>
                                     <h5>All Lesson Plans for this Episode</h5>
-                                    <a href="<?php echo $files['link']; ?>" class="btn btn-primary" target="_blank">Download</a>
+                                    <a href="<?php echo $files['url']; ?>" class="btn btn-primary" target="_blank">Download</a>
                             <?php 
                                 else:
                             ?>
@@ -83,7 +84,7 @@
                             <!-- Lesson Plans here -->
                             <?php  
                                 get_template_part('template-parts/single-episode', 'lessons', [
-                                    'curriculum_id' => $full_video[0]->ID,
+                                    'video_id' => $full_video[0]->ID,
                                     'fullepisode' => true
                                 ]); 
                             ?>
@@ -97,7 +98,7 @@
                             $curriculum_videos = get_field('curriculum_videos');
                             if(is_array($curriculum_videos) || is_object($curriculum_videos)):
                             foreach($curriculum_videos as $index => $curriculum_video): 
-                                $get_url = get_field('vimeo_url', $curriculum_video->ID);
+                                $get_url = get_field('youtube_url', $curriculum_video->ID);
                                 $updated_url = customize_iframe($get_url);
                                 
                                 // make a the html as a variable
@@ -116,12 +117,11 @@
                                     </div>
                                     <!-- Lesson Plans here -->    
                                     <?php  get_template_part('template-parts/single-episode', 'lessons', [
-                                        'curriculum_id' => $curriculum_video->ID
+                                        'video_id' => $curriculum_video->ID
                                     ]); ?>
                                     <?php 
                                         if ($index != key(array_slice($curriculum_videos, -1, 1, true))):
                                     ?>  
-                                    <hr>
                                     <?php 
                                         endif; 
                                     ?>

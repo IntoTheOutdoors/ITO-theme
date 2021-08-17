@@ -69,9 +69,11 @@ function filter_ajax() {
                 ]
             ];
         endif;
-    endif;
 
-    $query = new WP_Query($args); ?>
+    endif;
+    
+    $query = new WP_Query($args); 
+?>
 
     <!-- <h3 class="results-header">Results</h3> -->
     <div class="results-episodes">
