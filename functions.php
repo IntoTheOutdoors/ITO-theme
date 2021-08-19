@@ -7,7 +7,8 @@ require_once(trailingslashit( get_template_directory()) . 'functions/helpers.php
 require_once('includes/filter.php');
 require_once('includes/reset.php');
 require_once('includes/broadcast.php');
-require_once('includes/details.php');
+require_once('includes/overview.php');
+require_once('includes/additional_resources.php');
 
 function load_files() {
     /** CSS */

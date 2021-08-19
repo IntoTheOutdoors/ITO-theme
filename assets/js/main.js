@@ -11,22 +11,23 @@
       data: { action: "filter" },
       data,
       type: "post",
-      success: (result) => {
-        if (result) {
-          $("[data-js-filter=target]").html(
-            `
-              <div class="d-flex justify-content-center results-loading">
-                <div class="spinner-border" role="status">
-                  <span class="sr-only">Loading...</span>
-                </div>
+      beforeSend: function () {
+        $("[data-js-filter=target]").html(
+          `
+            <div class="d-flex justify-content-center results-loading">
+              <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span><br>
               </div>
               <p>Loading...</p>
-              `
-          );
-          setTimeout(function () {
-            $("[data-js-filter=target]").html(result);
-          }, 2000);
-        }
+            </div>
+          `
+        );
+      },
+      complete: function () {
+        $(".results-loading").hide();
+      },
+      success: (result) => {
+        $("[data-js-filter=target]").html(result);
       },
       error: (result) => {
         console.log(result);
@@ -82,10 +83,28 @@
 
     $.ajax({
       url: wpAjax.ajaxUrl,
-      data: { action: "details", video_id },
+      data: { action: "overview", video_id },
       type: "post",
       success: (result) => {
         $("#home").html(result);
+      },
+      error: (result) => {
+        console.log(result);
+      },
+    });
+  });
+
+  $(".load-resources").on("click", function (e) {
+    e.preventDefault();
+
+    let video_id = $(this).attr("data-video-id");
+
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: { action: "additional_resources", video_id },
+      type: "post",
+      success: (result) => {
+        $("#resources").html(result);
       },
       error: (result) => {
         console.log(result);
@@ -136,6 +155,28 @@
         );
 
       $("#myModal").modal("show");
+    });
+  });
+})(jQuery);
+
+// testing modal
+(function ($) {
+  $(document).ready(function () {
+    $("#singupModal").click(function (e) {
+      e.preventDefault();
+
+      // let link = $(e.currentTarget).attr('href');
+      // console.log('this is the link', link);
+      document
+        .getElementById("btnContinue")
+        .setAttribute(
+          "onClick",
+          'javascript:window.location.href="' +
+            $(e.currentTarget).attr("href") +
+            '"'
+        );
+
+      $("#singupModal").modal("show");
     });
   });
 })(jQuery);

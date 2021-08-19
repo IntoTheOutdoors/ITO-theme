@@ -15,60 +15,7 @@
 
 <!-- FEATURED EPISODES -->
 <section class="featured container">
-    <div class="row">
-      <div class="featured-episode col-lg-6 col-md-6 col-sm-12">
-          <h4>Featured Episode</h4>
-          <?php 
-              $args = [
-                'post_type' => 'topics',
-                'posts_per_page' => 1,
-              ];
-
-              $query = new WP_Query($args);             
-              
-              while($query->have_posts()): $query->the_post();
-              $featured_post = get_field('full_episode');
-              ?>
-              <div class="featured-episode-embed">
-                <?php
-                  $featured_video = the_field('youtube_url', $featured_post[0]->ID);
-                  if(!empty($featured_video)) {
-                    echo $featured_video;
-                  } else {
-                    echo get_field('vimeo_url', $featured_post[0]->ID);
-                  }
-              ?>
-              </div>
-              <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>
-      </div>
-      <div class="featured-curriculums col-lg-6 col-md-6 col-sm-12">
-        <?php 
-            $curriculums = get_field('curriculum_videos');
-            if($curriculums != ""): ?>
-              <h4>Latest curriculum videos & lesson plans</h4>
-              <?php 
-              foreach($curriculums as $curriculum): ?>
-                <div class="curriculum">
-                  <a href="<?php echo get_page_link($curriculum->ID); ?>">
-                    <div class="curriculum-image">
-                      <?php 
-                        echo get_the_post_thumbnail( $curriculum->ID, 'thumbnail');
-                      ?>
-                    </div>
-                    <div class="curriculum-text">
-                      <h5><?php echo get_the_title($curriculum->ID); ?></h5>
-                    </div>
-                  </a>
-                </div>              
-                <?php
-              endforeach;
-            endif;
-          ?>
-          </div>
-          
-          <?php endwhile; wp_reset_query(); ?>
-      </div>
-    </div>
+  <?php get_template_part('template-parts/frontpage', 'featured'); ?>
 </section>
 
   <!-- FAMILY BACKGROUND SVG -->
@@ -83,24 +30,23 @@
         <h3>Join the Adventure!</h3>
         <p>Get updates on new episodes, lesson plans, our education initiatives, and exclusive contests straight to your inbox!</p>
         <!-- Button trigger modal -->
-        <a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <a type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#singupModal">
           Signup
         </a>
-        <!-- Modal -->
-          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-body">
-                  <!-- Begin Constant Contact Inline Form Code -->
-                  <div class="ctct-inline-form" data-form-id="215a7c57-cdb5-43cb-b987-bde5f816e4c8"></div>
-                  <!-- End Constant Contact Inline Form Code -->
+        <!-- Modal -->         
+          <div id="singupModal" class="modal fade" tabindex="-1" aria-labelledby="singupModal" aria-hidden="true">
+              <div class="modal-dialog">
+                  <div class="modal-content">
+                      <div class="modal-header">
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                          <!-- Begin Constant Contact Inline Form Code -->
+                          <div class="ctct-inline-form" data-form-id="215a7c57-cdb5-43cb-b987-bde5f816e4c8"></div>
+                          <!-- End Constant Contact Inline Form Code -->
+                      </div>
                   </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                </div>
               </div>
-            </div>
           </div>
         </div>
       </div>

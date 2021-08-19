@@ -22,13 +22,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       data: {
         action: "filter"
       }
-    }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", "post"), _defineProperty(_$$ajax, "success", function success(result) {
-      if (result) {
-        $("[data-js-filter=target]").html("\n              <div class=\"d-flex justify-content-center results-loading\">\n                <div class=\"spinner-border\" role=\"status\">\n                  <span class=\"sr-only\">Loading...</span>\n                </div>\n              </div>\n              <p>Loading...</p>\n              ");
-        setTimeout(function () {
-          $("[data-js-filter=target]").html(result);
-        }, 2000);
-      }
+    }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", "post"), _defineProperty(_$$ajax, "beforeSend", function beforeSend() {
+      $("[data-js-filter=target]").html("\n            <div class=\"d-flex justify-content-center results-loading\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span><br>\n              </div>\n              <p>Loading...</p>\n            </div>\n          ");
+    }), _defineProperty(_$$ajax, "complete", function complete() {
+      $(".results-loading").hide();
+    }), _defineProperty(_$$ajax, "success", function success(result) {
+      $("[data-js-filter=target]").html(result);
     }), _defineProperty(_$$ajax, "error", function error(result) {
       console.log(result);
     }), _$$ajax));
@@ -78,12 +77,30 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: {
-        action: "details",
+        action: "overview",
         video_id: video_id
       },
       type: "post",
       success: function success(result) {
         $("#home").html(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  });
+  $(".load-resources").on("click", function (e) {
+    e.preventDefault();
+    var video_id = $(this).attr("data-video-id");
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: {
+        action: "additional_resources",
+        video_id: video_id
+      },
+      type: "post",
+      success: function success(result) {
+        $("#resources").html(result);
       },
       error: function error(result) {
         console.log(result);
@@ -124,6 +141,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       document.getElementById("btnContinue").setAttribute("onClick", 'javascript:window.location.href="' + $(e.currentTarget).attr("href") + '"');
       $("#myModal").modal("show");
+    });
+  });
+})(jQuery); // testing modal
+
+
+(function ($) {
+  $(document).ready(function () {
+    $("#singupModal").click(function (e) {
+      e.preventDefault(); // let link = $(e.currentTarget).attr('href');
+      // console.log('this is the link', link);
+
+      document.getElementById("btnContinue").setAttribute("onClick", 'javascript:window.location.href="' + $(e.currentTarget).attr("href") + '"');
+      $("#singupModal").modal("show");
     });
   });
 })(jQuery);

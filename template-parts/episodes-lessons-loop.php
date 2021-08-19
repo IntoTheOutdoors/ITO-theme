@@ -28,8 +28,7 @@
         <?php 
           endforeach; 
           endif; ?>
-      <?php endwhile;?>
-      <?php wp_reset_query(); ?>
+      <?php endwhile; wp_reset_query(); ?>
     </div>
     
     <?php else : ?>

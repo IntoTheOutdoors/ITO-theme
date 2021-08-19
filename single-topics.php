@@ -80,7 +80,7 @@
                             <?php $iframe = ob_get_clean(); ?>
 
                         <!-- AJAX call -->
-                        <div class="episode-top-lists-full-item load-video load-details" 
+                        <div class="episode-top-lists-full-item load-video load-details load-resources" 
                             data-episode-title="<?php echo get_the_title($full_video->ID); ?>" 
                             data-video-embed="<?php echo htmlspecialchars($iframe); ?>"
                             data-video-id="<?php echo htmlspecialchars(get_the_ID()); ?>"     
@@ -116,7 +116,7 @@
                                 ?>
                                 <!-- Once the element is clicked -> check main.js to change the html -->
                                 <div class="episode-top-lists-curriculum-item">
-                                    <div class="load-video load-details" 
+                                    <div class="load-video load-details load-resources" 
                                         data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
                                         data-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
                                         data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
