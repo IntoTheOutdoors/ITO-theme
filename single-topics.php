@@ -78,7 +78,13 @@
                             ob_start(); ?>
                             <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
                             <?php $iframe = ob_get_clean(); ?>
-                        <div class="episode-top-lists-full-item load-video" data-episode-title="<?php echo get_the_title($full_video->ID); ?>" data-video-embed="<?php echo htmlspecialchars($iframe); ?>">
+
+                        <!-- AJAX call -->
+                        <div class="episode-top-lists-full-item load-video load-details" 
+                            data-episode-title="<?php echo get_the_title($full_video->ID); ?>" 
+                            data-video-embed="<?php echo htmlspecialchars($iframe); ?>"
+                            data-video-id="<?php echo htmlspecialchars(get_the_ID()); ?>"     
+                        >
                             <p><?php the_title(); ?></p>
 
                             <!-- Lesson Plans here -->
@@ -95,6 +101,7 @@
                     <h5>Classroom Videos</h5>
                     <div class="episode-top-lists-curriculum">
                         <?php 
+                            // loop through curriculum videos under the episode post
                             $curriculum_videos = get_field('curriculum_videos');
                             if(is_array($curriculum_videos) || is_object($curriculum_videos)):
                             foreach($curriculum_videos as $index => $curriculum_video): 
@@ -107,10 +114,12 @@
                                 <?php 
                                     $iframe = ob_get_clean(); 
                                 ?>
+                                <!-- Once the element is clicked -> check main.js to change the html -->
                                 <div class="episode-top-lists-curriculum-item">
-                                    <div class="load-video" 
+                                    <div class="load-video load-details" 
                                         data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
-                                        data-episode-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"
+                                        data-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
+                                        data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
                                     >
                                         <p><?php echo get_the_title($curriculum_video->ID); ?></p>
                                     
@@ -120,14 +129,16 @@
                                         'video_id' => $curriculum_video->ID
                                     ]); ?>
                                     <?php 
+                                        // inserting <hr> element here if needed
                                         if ($index != key(array_slice($curriculum_videos, -1, 1, true))):
-                                    ?>  
-                                    <?php 
+                                    ?>
+                                        <hr>
+                                    <?php
                                         endif; 
                                     ?>
                                 </div>
                             <?php 
-                            endforeach;
+                            endforeach; wp_reset_postdata();
                             else: 
                             ?>
                                 <p class="no-content"><?php echo "No Curriculum Video(s) Available"; ?></p>

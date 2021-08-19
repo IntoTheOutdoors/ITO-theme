@@ -35,7 +35,7 @@
         
     <!-- Tab panes -->
     <div class="tab-content episode-details-content">
-        <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab">
+        <div class="tab-pane active episode-info-description" id="home" role="tabpanel" aria-labelledby="home-tab">
             <p>
                 <?php echo (!empty($topic)) ? apply_filters( 'the_content', get_the_content(null, false, $topic->ID)) : the_content() ?>
             </p>
@@ -68,7 +68,7 @@
                                     <p><?php echo $text; ?></p>
                                 </div>
                     <?php 
-                            endwhile;
+                            endwhile; wp_reset_postdata();
                         else:
                     ?>
                             <div></div>

@@ -10,8 +10,9 @@
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 // JQUERY
+// episode search form
 (function ($) {
-  $(document).on('submit', '#itoForm', function (e) {
+  $(document).on("submit", "#itoForm", function (e) {
     var _$$ajax;
 
     e.preventDefault();
@@ -19,87 +20,110 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     $.ajax((_$$ajax = {
       url: wpAjax.ajaxUrl,
       data: {
-        action: 'filter'
+        action: "filter"
       }
-    }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", 'post'), _defineProperty(_$$ajax, "success", function success(result) {
+    }, _defineProperty(_$$ajax, "data", data), _defineProperty(_$$ajax, "type", "post"), _defineProperty(_$$ajax, "success", function success(result) {
       if (result) {
-        $('[data-js-filter=target]').html("\n              <div class=\"d-flex justify-content-center results-loading\">\n                <div class=\"spinner-border\" role=\"status\">\n                  <span class=\"sr-only\">Loading...</span>\n                </div>\n              </div>\n              <p>Loading...</p>\n              ");
+        $("[data-js-filter=target]").html("\n              <div class=\"d-flex justify-content-center results-loading\">\n                <div class=\"spinner-border\" role=\"status\">\n                  <span class=\"sr-only\">Loading...</span>\n                </div>\n              </div>\n              <p>Loading...</p>\n              ");
         setTimeout(function () {
-          $('[data-js-filter=target]').html(result);
+          $("[data-js-filter=target]").html(result);
         }, 2000);
       }
     }), _defineProperty(_$$ajax, "error", function error(result) {
       console.log(result);
     }), _$$ajax));
   });
-  $('#itoReset').on('click', function (e) {
+  $("#itoReset").on("click", function (e) {
     e.preventDefault();
     var data = $(this).val();
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: {
-        action: 'reset',
+        action: "reset",
         data: data
       },
-      type: 'post',
+      type: "post",
       success: function success(result) {
-        $('[data-js-filter=target]').html(result);
+        $("[data-js-filter=target]").html(result);
       },
       error: function error(result) {
-        console.log('erorr occured somewhere', result);
+        console.log("erorr occured somewhere", result);
       }
     });
-    $('#itoForm')[0].reset();
+    $("#itoForm")[0].reset();
   });
-  $('.load-video').on('click', function () {
-    $('.episode-player').html($(this).data('video-embed'));
-    $('.episode-info-title h5').html($(this).data('episode-title'));
-  });
-  $('#itoForm').on('click', function () {
-    $('#itoForm').submit();
-  });
-  $('#episode-category :selected').on('click', function () {
-    $('#itoForm').submit();
-  });
-  $('#myTab a').on('click', function (e) {
-    e.preventDefault();
-    $(this).tab('show');
-  });
-})(jQuery);
-/** WHERE TO WATCH */
+})(jQuery); // single topics page
 
 
 (function ($) {
-  /** WHERE TO WATCH */
-  $(document).on('submit', '#broadcastForm', function (e) {
+  $(".load-video").on("click", function (e) {
+    e.stopPropagation();
+    $(".episode-player").html($(this).data("video-embed"));
+    $(".episode-info-title h5").html($(this).data("title"));
+    $(".episode-info-title h5").html($(this).data("episode-title"));
+  });
+  $("#itoForm").on("click", function () {
+    $("#itoForm").submit();
+  });
+  $("#episode-category :selected").on("click", function () {
+    $("#itoForm").submit();
+  });
+  $("#myTab a").on("click", function (e) {
     e.preventDefault();
-    var data = $(this).serialize();
+    $(this).tab("show");
+  });
+  $(".load-details").on("click", function (e) {
+    e.preventDefault();
+    var video_id = $(this).attr("data-video-id");
     $.ajax({
       url: wpAjax.ajaxUrl,
-      data: data,
-      type: 'post',
+      data: {
+        action: "details",
+        video_id: video_id
+      },
+      type: "post",
       success: function success(result) {
-        $('.broadcast-results').html(result);
+        $("#home").html(result);
       },
       error: function error(result) {
         console.log(result);
       }
     });
   });
-  $('.form-select').on('change', function () {
-    $('#broadcastForm').submit();
+})(jQuery);
+/** WHERE TO WATCH */
+
+
+(function ($) {
+  $(document).on("submit", "#broadcastForm", function (e) {
+    e.preventDefault();
+    var data = $(this).serialize();
+    $.ajax({
+      url: wpAjax.ajaxUrl,
+      data: data,
+      type: "post",
+      success: function success(result) {
+        $(".broadcast-results").html(result);
+      },
+      error: function error(result) {
+        console.log(result);
+      }
+    });
+  });
+  $(".form-select").on("change", function () {
+    $("#broadcastForm").submit();
   });
 })(jQuery); // testing modal
 
 
 (function ($) {
   $(document).ready(function () {
-    $('.external-link').click(function (e) {
+    $(".external-link").click(function (e) {
       e.preventDefault(); // let link = $(e.currentTarget).attr('href');
       // console.log('this is the link', link);
 
-      document.getElementById("btnContinue").setAttribute("onClick", "javascript:window.location.href=\"" + $(e.currentTarget).attr('href') + "\"");
-      $('#myModal').modal('show');
+      document.getElementById("btnContinue").setAttribute("onClick", 'javascript:window.location.href="' + $(e.currentTarget).attr("href") + '"');
+      $("#myModal").modal("show");
     });
   });
 })(jQuery);
@@ -173,7 +197,8 @@ __webpack_require__.r(__webpack_exports__);
 /******/ 				}
 /******/ 				if(fulfilled) {
 /******/ 					deferred.splice(i--, 1)
-/******/ 					result = fn();
+/******/ 					var r = fn();
+/******/ 					if (r !== undefined) result = r;
 /******/ 				}
 /******/ 			}
 /******/ 			return result;

@@ -7,6 +7,7 @@ require_once(trailingslashit( get_template_directory()) . 'functions/helpers.php
 require_once('includes/filter.php');
 require_once('includes/reset.php');
 require_once('includes/broadcast.php');
+require_once('includes/details.php');
 
 function load_files() {
     /** CSS */
@@ -62,7 +63,7 @@ function theme_setup() {
     }
     
 
-        // Register Menus
+    // Register Menus
     register_nav_menus([
         'primary' => __('Primary Menu', 'ito-theme'),
         'secondary' => __('Secondary Menu', 'ito-theme')
