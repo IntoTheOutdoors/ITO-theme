@@ -1,7 +1,8 @@
-<div class="row">
+<div class="row container">
     <div class="featured-episode col-lg-6 col-md-6 col-sm-12">
         <h4>Featured Episode</h4>
         <?php 
+            // query topics and get the latest posts
             $args = [
             'post_type' => 'topics',
             'posts_per_page' => 1,
@@ -15,11 +16,7 @@
             <div class="featured-episode-embed">
             <?php
                 $featured_video = the_field('youtube_url', $featured_post[0]->ID);
-                if(!empty($featured_video)) {
                 echo $featured_video;
-                } else {
-                echo get_field('vimeo_url', $featured_post[0]->ID);
-                }
             ?>
             </div>
             <a href="<?php the_permalink($featured_video); ?>"><h5>WATCH: <?php the_title(); ?> </h5></a>

@@ -1,432 +1,445 @@
 .wrapper {
-    width: 100%;
+  width: 100%;
 }
 
 .cta {
-    &-content {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 60px;
-        min-width: 100%;
-        
-        &-text {
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: center;
+  &-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    min-width: 100%;
 
-            h1 {
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
 
-                /* Hide the text. */
-               text-indent: 100%;
-               white-space: nowrap;
-               overflow: hidden;
-           }
-   
-           h2 {
-               font-family: $font-one;
-               font-size: 24px;
-               font-weight: bold;
-               color: $white;
-               text-transform: uppercase;
-               align-self: center;
-           }
-   
-           p {
-               font-family: $font-one;
-               font-size: 12px;
-               font-weight: bold;
-               text-align: center;
-               color: $white;
-               width: 90%;
-           }
-   
-           a {
-               padding: 10px 30px;
-               border-radius: 40px;
-               color: $white;
-   
-               &:hover, &:active {
-                   color: $white;
-               }
-           }
+      h1 {
+        /* Hide the text. */
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      h2 {
+        font-family: $font-one;
+        font-size: 24px;
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        align-self: center;
+      }
+
+      p {
+        font-family: $font-one;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        color: $white;
+        width: 90%;
+      }
+
+      a {
+        padding: 10px 30px;
+        border-radius: 40px;
+        color: $white;
+
+        &:hover,
+        &:active {
+          color: $white;
         }
-
-        
+      }
     }
+  }
 }
 
 .featured {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    
-    a {
-        text-decoration: none;
-        color: $primary;
-    }
-    
-    h4 {
-        color: $primary;
-        text-transform: uppercase;
-        font-family: $font-one;
-        margin: 40px 0;
-        margin-left: 10px;
-        text-decoration: none;
-        text-align: center;
-    }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
 
-    &-episode {
-       iframe {
-           width: 100%;
-       }
+  a {
+    text-decoration: none;
+    color: $primary;
+  }
 
-       h5 {
-           font-size: 18px;
-           text-align: center;
-       }
+  h4 {
+    color: $primary;
+    text-transform: uppercase;
+    font-family: $font-one;
+    margin: 10px 0;
+    margin-left: 10px;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  &-episode {
+    iframe {
+      height: auto;
+      width: 100%;
     }
 
-    &-curriculums {
-        .curriculum {
-            display: flex;
-            flex-direction: column;
-            margin: 20px 0;
-                
-            &-image {
-                display: flex;
-                justify-content: center;
-
-                a {
-                    &:active, &:hover {
-                        color: $secondary;
-                    }
-                }
-    
-                img {
-                    width: 200px;
-                    height: auto;
-    
-                    &:first-child {
-                        margin-top: 0;
-                    }
-                }
-            }
-    
-            &-text {
-                align-self: center;
-
-                h5 {
-                    text-align: center;
-                    margin-top: 20px;
-
-                    &:hover, &:active {
-                        color: $secondary;
-                    }
-                }
-            }
-        }
+    h5 {
+      font-size: 18px;
+      text-align: center;
     }
-}
+  }
 
-.family {
-    width: 100%;
-    height: 300px !important;
-}
+  &-curriculums {
+    .curriculum {
+      display: flex;
+      flex-direction: column;
+      margin: 20px 0;
 
-.signup {
-    margin-top: 20px;
-
-    &-text {
+      &-image {
         display: flex;
-        flex-direction: column;
-    
-        h3 {
-            font-size: 24px;
-            font-family: $font-one;
-            text-align: center;
-            color: $primary;
-        }
-
-        p {
-            font-size: 14px;
-            text-align: center;
-            width: 90%;
-            align-self: center;
-        }
-
-        a {
-            width: 200px;
-            align-self: center;
-            padding: 10px 20px;
-            border-radius: 40px;
-            color: $white;
-            
-            &:hover, &:active {
-                color: $white;
-            }
-        }
-    }
-}
-
-.shows {
-    background-color: $third;
-    display: flex;
-    flex-direction: column;
-    margin-top: -10px;
-    
-    &-logos {
-        display: none;
-    }
-    
-    &-text {
-        padding: 0 10px;
-        
-        h4 {
-            color: $white;
-            text-align: center;
-        }
-    }
-
-    &-downloads {
-        display: flex;
-        flex-direction: column;
         justify-content: center;
 
         a {
-            margin: 0 auto;
-            margin-top: 10px;
-            margin-bottom: 10px;
+          &:active,
+          &:hover {
+            color: $secondary;
+          }
         }
-    }    
+
+        img {
+          width: 200px;
+          height: auto;
+
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+
+      &-text {
+        align-self: center;
+
+        h5 {
+          text-align: center;
+          margin-top: 20px;
+
+          &:hover,
+          &:active {
+            color: $secondary;
+          }
+        }
+      }
+    }
+  }
+}
+
+.family {
+  min-width: 100%;
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.signup {
+  margin-top: 20px;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 24px;
+      font-family: $font-one;
+      text-align: center;
+      color: $primary;
+    }
+
+    p {
+      font-size: 14px;
+      text-align: center;
+      width: 90%;
+      align-self: center;
+    }
+
+    a {
+      width: 200px;
+      align-self: center;
+      padding: 10px 20px;
+      border-radius: 40px;
+      color: $white;
+
+      &:hover,
+      &:active {
+        color: $white;
+      }
+    }
+  }
+}
+
+.shows {
+  background-color: $third;
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+
+  &-logos {
+    display: none;
+  }
+
+  &-text {
+    padding: 0 10px;
+
+    h4 {
+      color: $white;
+      text-align: center;
+    }
+  }
+
+  &-downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }
 
 .modal {
-    margin-top: 20px;
-    &-body {
-        background-color: $third;
-    }
+  margin-top: 20px;
+  &-body {
+    background-color: $third;
+  }
 
-    &-footer {
-        button {
-            color: $white;
-            width: 100%;
-        }
+  &-footer {
+    button {
+      color: $white;
+      width: 100%;
     }
+  }
+}
+
+.slider {
+  position: relative;
 }
 
 // TABLET SIZE (768px)
 @media screen and (min-width: 426px) and (max-width: 768px) {
-    .cta {
-        &-content {
-            justify-content: flex-start;
-            
-            &-text {
-                width: 60%;
-            }
-        }
+  .cta {
+    &-content {
+      justify-content: flex-start;
+
+      &-text {
+        width: 60%;
+      }
+    }
+  }
+
+  .featured {
+    padding: 0 10px;
+
+    h4 {
+      margin: 20px 0;
+      font-size: 22px;
     }
 
-    .featured {   
-        padding: 0 10px;
+    &-episode {
+      width: 100%;
 
-        h4 {
-            margin: 20px 0;
-            font-size: 22px;
-        }
+      h5 {
+        font-size: 18px;
+        text-align: center;
+      }
 
-        &-episode {
-            width: 100%;
-            
-        
-            h5 {
-                font-size: 18px;
-                text-align: center;
-            }
-
-           iframe {
-               width: 100%;
-               margin-left: 12px;
-               margin-top: 60px;
-           }
-    
-        }
-    
-        &-curriculums {
-            h4 {
-                margin-bottom: 55px;
-            }
-        }
+      iframe {
+        width: 100%;
+        margin-left: 12px;
+        margin-top: 60px;
+      }
     }
 
-    .curriculum {
-        margin: 10px 0;
+    &-curriculums {
+      h4 {
+        margin-bottom: 55px;
+      }
+    }
+  }
 
-        a {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-        }
+  .curriculum {
+    margin: 10px 0;
 
-        &-image {
-            img {
-                width: 60px !important;
-            }
-        }
-
-        &-text {
-            margin-left: 10px;
-            
-            h5 {
-                align-self: flex-start;
-                text-align: left !important;
-                font-size: 18px;
-            }
-        }
+    a {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
     }
 
-    .shows {
-        background-color: $third;
-        display: flex;
-        flex-direction: column;
-        
-        &-text {
-            padding: 0 10px;
-            margin-bottom: 40px;
-            
-            h4 {
-                color: $white;
-                text-align: center;
-            }
-        }
-    
-        &-downloads {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            margin: 20px 0;
-    
-            a {
-                margin: 0 auto;
-                margin-top: 10px;
-                margin-bottom: 10px;
-            }
-        }
-        
+    &-image {
+      img {
+        width: 60px !important;
+      }
     }
+
+    &-text {
+      margin-left: 10px;
+
+      h5 {
+        align-self: flex-start;
+        text-align: left !important;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .shows {
+    background-color: $third;
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      padding: 0 10px;
+      margin-bottom: 40px;
+
+      h4 {
+        color: $white;
+        text-align: center;
+      }
+    }
+
+    &-downloads {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+
+      a {
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
 }
 
 // laptop -> tv
 @media screen and (min-width: 769px) {
-    .cta {
-        &-content {
-            &-text {
-                width: 50%;
-                h2 {
-                    font-size: 32px;
-                }
-                p {
-                    font-size: 22px;
-                    font-weight: 400;
-                }
-            }
+  .cta {
+    &-content {
+      &-text {
+        width: 50%;
+        h2 {
+          font-size: 32px;
         }
+        p {
+          font-size: 22px;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+
+  .featured {
+    .row {
+      display: flex;
+      justify-content: center;
     }
 
-    .featured {
-        .row {
-            display: flex;
-            justify-content: center;
-        }
-        &-episode {
-            h4 {
-                margin-bottom: 80px;
-                text-align: left;
-            }
+    &-episode {
+      h4 {
+        margin-bottom: 80px;
+        text-align: left;
+      }
 
-            iframe {
-                min-height: 100%;
-            }
-        }
-
-        &-curriculums {
-            h4 {
-                margin-bottom: 50px;
-                text-align: left;
-            }
-        }
+      iframe {
+        height: 390px !important;
+        width: 100% !important;
+      }
     }
 
-    .curriculum {
-        margin: 10px 0;
+    &-curriculums {
+      h4 {
+        margin-bottom: 50px;
+        text-align: left;
+      }
+    }
+  }
 
-        a {
-            display: flex;
-            flex-direction: row;
-        }
+  .curriculum {
+    margin: 10px 0;
 
-        &-image {
-            img {
-                width: 120px !important;
-            }
-        }
-
-        &-text {
-            margin-left: 10px;
-            
-            h5 {
-                align-self: flex-start;
-                text-align: left !important;
-            }
-        }
+    a {
+      display: flex;
+      flex-direction: row;
     }
 
-    .signup {
-        &-text {
-            width: 70%;
-            margin-top: 120px;
-
-            h3 {
-                font-size: 32px;
-            }
-
-            p {
-                font-size: 22px;
-            }
-        }
+    &-image {
+      img {
+        width: 120px !important;
+      }
     }
 
-    .shows {
-        &-logos {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            margin-bottom: 40px;
+    &-text {
+      margin-left: 10px;
 
+      h5 {
+        align-self: flex-start;
+        text-align: left !important;
+      }
+    }
+  }
 
-            img {
-                margin: 10px;
-            }
-        }
+  .family {
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
 
-        &-text {
-            margin-bottom: 40px;
-        }
+  .signup {
+    &-text {
+      h3 {
+        font-size: 32px;
+      }
 
-        &-downloads {
-            margin-bottom: 40px;
-            display: flex;
-            flex-direction: row;
-            align-self: center;
-            width: 60%;
-        }
+      p {
+        font-size: 22px;
+      }
+
+      a {
+        margin-bottom: 40px;
+      }
+    }
+  }
+
+  .shows {
+    &-logos {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+
+      img {
+        margin: 10px;
+      }
     }
 
-    .family {
-        height: 500px !important;
+    &-text {
+      margin-bottom: 40px;
     }
+
+    &-downloads {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      width: 60%;
+    }
+  }
+
+  .family {
+    height: 500px !important;
+  }
 }
