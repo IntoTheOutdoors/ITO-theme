@@ -1,0 +1,61 @@
+.episode {
+  &-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &-list {
+      width: 100%;
+      display: flex;
+      justify-self: center;
+      align-self: center;
+      flex-direction: column;
+      height: auto;
+      background-color: $white;
+      padding: 1rem;
+      margin: 1.6rem 0;
+
+      h5 {
+        color: $primary;
+        text-transform: uppercase;
+        font-family: $font-one;
+        font-weight: bolder;
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+.list-item {
+  margin: 1rem 0;
+  padding: 1rem;
+
+  &:hover,
+  &:active {
+    background-color: $grey-two;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .episode {
+    &-video {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      &-player {
+        width: 70%;
+      }
+
+      &-list {
+        width: 30%;
+        margin: 0;
+        align-self: flex-start;
+      }
+    }
+  }
+}

@@ -1,4 +1,5 @@
 <?php 
+    //  This is for the blog template
     get_header('second'); 
 
     while(have_posts()) {

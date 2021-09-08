@@ -59,8 +59,8 @@
   $(".load-video").on("click", function (e) {
     e.stopPropagation();
     $(".episode-player").html($(this).data("video-embed"));
-    $(".episode-info-title h5").html($(this).data("title"));
     $(".episode-info-title h5").html($(this).data("episode-title"));
+    $(".episode-info-title h5").html($(this).data("curriculum-title"));
   });
 
   $("#itoForm").on("click", function () {

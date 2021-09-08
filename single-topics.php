@@ -1,4 +1,8 @@
-    <?php get_header('second'); ?>
+<?php 
+    get_header('second');
+    $topic_id = get_the_ID(); 
+?> 
+
 <main>
 <div class="episode container">
     <nav aria-label="breadcrumb">
@@ -9,162 +13,38 @@
         </ol>
     </nav>
     
-    <section class="episode-videos">
+    <section class="episode-video">
         <!-- EPISODE PLAYER HERE -->
-            <div class="episode-top">
-                <div class="episode-top-container">
-                    <div class="episode-player">
-                        <?php 
-                             $full_episodes = get_field('full_episode'); 
-
-                            if(!empty($full_episodes)):
-                             foreach($full_episodes as $full_episode):
-                                $get_youtube_url = get_field('youtube_url', $full_episode->ID);
-                                $get_vimeo_url = get_field('vimeo_url', $full_episode->ID);
-                                
-                                $updated_url;
-                                if(!empty($get_youtube_url)):
-                                    $updated_url = customize_iframe($get_youtube_url); 
-                                else:
-                                    $updated_url = customize_iframe($get_vimeo_url);
-                                endif;
-                                ?>
-                                <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
-                                <?php
-                             endforeach;
-                            endif;              
-                        ?>
-                    </div>
-                    <div class="episode-info">
-                        <div class="episode-info-title">
-                            <h5><?php echo the_title(); ?> </h5>
-                            <p><?php echo get_the_date(); ?></p>
-                        </div>
-                        <div class="episode-info-lessons">
-                            <?php
-                                $files = get_field('download_all_curriculum'); 
-                                if(!empty($files)):  
-                            ?>
-                                    <h5>All Lesson Plans for this Episode</h5>
-                                    <a href="<?php echo $files['url']; ?>" class="btn btn-primary" target="_blank">Download</a>
-                            <?php 
-                                else:
-                            ?>
-                                    <h5>No Lesson Plans to download</h5>
-                            <?php
-                                endif; 
-                            ?> 
-                        </div>
-                    </div>
-                </div>
-                <!-- EPISODE LISTS HERE -->
-                <div class="episode-top-lists">
-                    <h5>Full Episode</h5>
-                    <div class="episode-top-lists-full">
-                        <?php 
-                            $full_video = get_field('full_episode');
-
-                            if(!empty($full_video)):
-                                $get_youtube_url = get_field('youtube_url', $full_video[0]->ID);
-                                $get_vimeo_url = get_field('vimeo_url', $full_video[0]->ID);
-                                $updated_url;
-                                if(!empty($get_youtube_url)):
-                                    $updated_url = customize_iframe($get_youtube_url); 
-                                else:
-                                    $updated_url = customize_iframe($get_vimeo_url);
-                                endif;
-                            endif;
-
-                            ob_start(); ?>
-                            <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
-                            <?php $iframe = ob_get_clean(); ?>
-
-                        <!-- AJAX call -->
-                        <div class="episode-top-lists-full-item load-video load-details load-resources" 
-                            data-episode-title="<?php echo get_the_title($full_video->ID); ?>" 
-                            data-video-embed="<?php echo htmlspecialchars($iframe); ?>"
-                            data-video-id="<?php echo htmlspecialchars(get_the_ID()); ?>"     
-                        >
-                            <p><?php the_title(); ?></p>
-
-                            <!-- Lesson Plans here -->
-                            <?php  
-                                get_template_part('template-parts/single-episode', 'lessons', [
-                                    'video_id' => $full_video[0]->ID,
-                                    'fullepisode' => true
-                                ]); 
-                            ?>
-                        </div>
-
-                    </div>
-
-                    <h5>Classroom Videos</h5>
-                    <div class="episode-top-lists-curriculum">
-                        <?php 
-                            // loop through curriculum videos under the episode post
-                            $curriculum_videos = get_field('curriculum_videos');
-                            if(is_array($curriculum_videos) || is_object($curriculum_videos)):
-                            foreach($curriculum_videos as $index => $curriculum_video): 
-                                $get_url = get_field('youtube_url', $curriculum_video->ID);
-                                $updated_url = customize_iframe($get_url);
-                                
-                                // make a the html as a variable
-                                ob_start(); ?>
-                                <iframe src=<?php echo $updated_url; ?>  frameborder="0" allow="autoplay"></iframe>
-                                <?php 
-                                    $iframe = ob_get_clean(); 
-                                ?>
-                                <!-- Once the element is clicked -> check main.js to change the html -->
-                                <div class="episode-top-lists-curriculum-item">
-                                    <div class="load-video load-details load-resources" 
-                                        data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
-                                        data-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
-                                        data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
-                                    >
-                                        <p><?php echo get_the_title($curriculum_video->ID); ?></p>
-                                    
-                                    </div>
-                                    <!-- Lesson Plans here -->    
-                                    <?php  get_template_part('template-parts/single-episode', 'lessons', [
-                                        'video_id' => $curriculum_video->ID
-                                    ]); ?>
-                                    <?php 
-                                        // inserting <hr> element here if needed
-                                        if ($index != key(array_slice($curriculum_videos, -1, 1, true))):
-                                    ?>
-                                        <hr>
-                                    <?php
-                                        endif; 
-                                    ?>
-                                </div>
-                            <?php 
-                            endforeach; wp_reset_postdata();
-                            else: 
-                            ?>
-                                <p class="no-content"><?php echo "No Curriculum Video(s) Available"; ?></p>
-                            <?php
-                            endif;
-                            ?>
-                    </div>
-                </div>
+            <div class="episode-video-player">    
+                <?php 
+                    get_template_part( 'template-parts/single', 'episode-player', [
+                        'topic_id' => $topic_id
+                    ]);
+                ?>
             </div>
-       
-       
-            <!-- END OF EPISODE LIST -->
-            <div class="episode-bottom">
-                <div class="episode-bottom-details">
-                    <?php get_template_part('template-parts/single-episode', 'details'); ?>
-                </div>
-                <div class="episode-bottom-related">
-                    <?php 
-                        $topic = get_the_ID(); 
-                    ?>
-                    <?php get_template_part('template-parts/single-episode', 'related', [
-                        'topic_id' => $topic
-                    ]); ?>
-                </div>
-            </div>  
+            <div class="episode-video-list">
+                <?php 
+                    get_template_part( 'template-parts/single', 'episode-lists', [
+                        'topic_id' => $topic_id
+                    ]);
+                ?>
+            </div>
     </section>
+       
+    <!-- END OF EPISODE LIST -->
+    <section class="episode-details">
+        <div class="episode-details-tabs">
+            <?php get_template_part('template-parts/single-episode', 'details', [
+                'topic_id' => $topic_id
+            ]); ?>
+        </div>
+        <div class="episode-details-related">
+            <?php get_template_part('template-parts/single-episode', 'related', [
+                'topic_id' => $topic_id
+            ]); ?>
+        </div>
+    </section>  
+    
 </div>    
 </main>
 

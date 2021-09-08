@@ -1,0 +1,94 @@
+.tab-pane {
+  h4 {
+    font-size: 1.8rem;
+    margin-bottom: 3rem;
+  }
+
+  p {
+    font-size: 12px;
+  }
+}
+
+.details-info {
+  p {
+    font-size: 1.2rem;
+  }
+}
+
+.resource {
+  &-links {
+    margin: 2rem 0;
+    h4 {
+      margin: 0;
+      margin-top: 1rem 0;
+      @include title;
+    }
+
+    &-item {
+      padding: 10px;
+
+      span {
+        font-size: 1.4rem;
+        color: black;
+        padding-left: 10px;
+      }
+
+      a {
+        text-decoration: none;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin-bottom: 0px;
+      }
+
+      &:hover,
+      &:active {
+        background-color: $grey-two;
+      }
+    }
+  }
+
+  &-partners {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+
+    h4 {
+      margin: 10px 0;
+      @include title;
+    }
+
+    &-items {
+      justify-self: center;
+      flex-wrap: wrap;
+      img {
+        width: 120px;
+        height: auto;
+      }
+    }
+  }
+
+  &-downloads {
+    margin: 20px 0;
+
+    h4 {
+      @include title;
+    }
+
+    h6 {
+      margin: 10px 0;
+    }
+
+    &-item {
+      i {
+        padding-right: 10px;
+      }
+
+      a {
+        text-decoration: none;
+        font-size: 14px;
+      }
+    }
+  }
+}

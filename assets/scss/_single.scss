@@ -1,606 +1,119 @@
 .breadcrumb {
-    margin-top: 20px;
+  margin-top: 20px;
 
-    li {
-        color: $primary;
-        text-decoration: none;
-        font-size: 8px;
-    }
+  li {
+    color: $primary;
+    text-decoration: none;
+    font-size: 8px;
+  }
 
-    a {
-        text-decoration: none;
-    }
+  a {
+    text-decoration: none;
+  }
 }
 
 .episode {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 
-    &-videos {
-        #player, iframe {
-            width: 100%;
-            height: 300px;
-        }
+  #player,
+  iframe {
+    width: 100%;
+    height: 300px;
+  }
+
+  &-info {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    background-color: $white;
+    width: 100%;
+    margin-top: -6px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    @include shadow;
+
+    &-title {
+      width: auto;
+      padding: 10px;
+
+      h5 {
+        font-size: 1.4rem;
+      }
+
+      p {
+        font-size: 1.2rem;
+        margin: 0;
+      }
     }
 
-    &-info {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        background-color: $white;
-        width: 100%;
-        margin-top: -6px;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-        @include shadow;
+    &-lessons {
+      background-color: $seventh;
+      flex-direction: column;
+      display: flex;
+      border-bottom-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      padding: 10px 20px;
 
-        &-title {
-            width: auto;
-            padding: 10px;
+      h5 {
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+      }
 
-            h5 {
-                font-size: 14px;
-            }
+      p {
+        font-size: 1.2rem;
+      }
 
-            p {
-                font-size: 12px;
-                margin: 0;
-            }
-        }
-
-        &-labels {
-            margin-top: 20px;
-            p {
-                font-size: 14px !important;
-                text-transform: uppercase;
-            }
-            span {
-                margin: 0 4px;
-                font-size: 12px;
-            }
-        }
-
-        &-lessons{
-            background-color: $seventh;
-            flex-direction: column;
-            display: flex;
-            border-bottom-right-radius: 20px;
-            border-bottom-left-radius: 20px;
-            padding: 10px 20px;
-
-            h5 {
-                text-align: center;
-                text-transform: uppercase;
-                font-size: 12px;
-            }
-
-            p {
-                font-size: 12px;
-            }
-
-            a {
-                align-self: center;
-                width: 180px;
-                border-radius: 20px;
-                font-size: 10px;
-            }
-        }
+      a {
+        align-self: center;
+        width: 180px;
+        border-radius: 20px;
+        font-size: 1rem;
+      }
     }
-
-    &-top {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        
-        &-lists {
-            width: 100%;
-            display: flex;
-            justify-self: center;
-            align-self: center;
-            flex-direction: column;
-            height: auto;
-            background-color: $eight;
-            margin: 20px 0;
-            padding: 20px;
-
-            h5 {
-                color: $primary;
-                text-transform: uppercase;
-                font-family: $font-one;
-                font-weight: bolder;
-                font-size: 14px;
-                margin-top: 4px;
-            }
-
-            &-curriculum {
-                display: flex;
-                flex-direction: column;
-            }
-
-
-            &-full-item, &-curriculum-item {
-                display: flex;
-                flex-direction: column;
-
-                p {
-                    color: $dark-two;
-                    font-size: 12px;
-                    padding: 0;
-                    margin: 0;
-                }
-
-                &:hover, &:active {
-                    background-color: $fourth;
-                    cursor: pointer;
-                }
-            }
-
-            &-curriculum-item {
-                &:last-child {
-                    margin-bottom: 10px;
-                }
-            }
-        }
-    }
-
-    &-details {
-        &-content {
-            padding: 0 10px;
-        }
-    }
-
-    &-bottom-related {
-        display: flex;
-        flex-direction: column;
-        background-color: $eight;
-        min-height: 100%;
-        padding: 20px;
-        margin-top: 40px;
-
-        h4 {
-            font-size: 21px;
-            text-align: center;
-            margin-bottom: 20px;
-            @include title;
-        }
-
-        &-item {
-            padding: 20px;
-
-            img {
-                width: 120px;
-                height: auto;
-            }
-            
-            p {
-                align-self: center;
-                margin-top: 10px;
-                margin-left: 10px;
-            }
-
-            a {
-                text-decoration: none;
-                display: flex;
-            }
-
-            &:hover, &:active {
-                background-color: $fourth;
-            }
-        }
-    }
+  }
 }
 
 .dropdown {
-    span {
-        font-size: 10px !important;
+  span {
+    font-size: 1rem !important;
+  }
+
+  &-menu {
+    h4 {
+      font-size: 1.8rem;
+      text-align: center;
     }
 
-    &-menu {
+    li {
+      width: auto;
 
-        h4 {
-            font-size: 18px;
-            text-align: center;
-        }
+      i {
+        margin-right: 10px;
+      }
 
-        li {
-            width: auto;
-
-            i {
-                margin-right: 10px;
-            }
-
-            a {
-                font-size: 12px;
-            }
-        }
+      a {
+        font-size: 1.2rem;
+      }
     }
+  }
 }
 
 .nav {
-    &-tabslist {
-   
-        &-item {
-            padding: 0;
-        }
-        
-        &-link {
-            span {
-                color: $primary !important;
-                font-size: 12px;
-            }
-        }
-        
-        &-link.active {
-            background: none !important;
-        }
+  &-tabslist {
+    &-item {
+      padding: 0;
     }
 
-
-
-}
-
-.tab-pane {
-    h4 {
-        font-size: 18px;
-        margin-bottom: 30px;
+    &-link {
+      span {
+        color: $primary !important;
+        font-size: 1.2rem;
+      }
     }
 
-    p {
-        font-size: 12px;
+    &-link.active {
+      background: none !important;
     }
-}
-
-.resource {
-    &-links {
-        margin: 20px 0;
-        h4 {
-            margin: 0;
-            margin-top: 10px 0;
-            @include title;
-        }
-
-        &-item {
-            padding: 10px; 
-
-            span {
-                font-size: 14px;
-                color: black;
-                padding-left: 10px;
-            }
-            
-            a {
-                text-decoration: none;
-            }
-
-            p {
-                font-size: 12px;
-                margin-bottom: 0px;
-            }
-
-            &:hover, &:active {
-                background-color: $grey-two;
-            }
-        }
-    }
-
-    &-partners {
-        margin: 20px 0;
-        display: flex;
-        flex-direction: column;
-
-        h4 {
-            margin: 10px 0;
-            @include title;
-        }
-
-        &-items {
-            justify-self: center;
-            flex-wrap: wrap;
-            img {
-                width: 120px;
-                height: auto;
-            }
-        }
-    }
-
-    &-downloads {
-        margin: 20px 0;
-
-        h4 {
-            @include title;
-        }
-
-        h6 {
-            margin: 10px 0;
-        }
-
-        &-item {
-            i {
-                padding-right: 10px;
-            }
-
-            a {
-                text-decoration: none;
-                font-size: 14px;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 426px) and (max-width: 768px) {
-    .breadcrumb {
-        li {
-            font-size: 14px;
-        }
-    
-        a {
-            text-decoration: none;
-        }
-    }
-
-    .episode {
-        &-videos {
-            #player, iframe {
-                height: 300px;
-            }
-        }
-
-        &-info {
-            flex-direction: row;
-            justify-content: space-between;
-
-            &-title {
-                h5 {
-                    font-size: 18px;
-                }
-
-                p {
-                    font-size: 14px;
-                }
-            }
-
-            &-labels {
-                margin-top: 20px;
-                p {
-                    font-size: 14px !important;
-                    text-transform: uppercase;
-                }
-                span {
-                    margin: 0 4px;
-                    font-size: 12px;
-                }
-            }
-
-            &-lessons {
-                border-bottom-left-radius: 0px;
-                h5 {
-                    font-size: 18px !important;
-                }
-
-                a {
-                    padding: 10px 20px;
-                    font-size: 14px;
-                }
-            }
-        }
-
-        &-top {
-            flex-direction: row;
-
-            &-container {
-                width: 70%;
-            }
-            
-            &-lists {
-                width: 30%;
-                align-self: flex-start;
-                margin: 0;
-                margin-left: 20px;
-
-                h5 {
-                    font-size: 20px;
-                }
-
-                p {
-                    font-size: 14px;
-                }
-            }
-
-            .dropdown {
-                span {
-                    font-size: 14px;
-                }
-            }
-        }
-
-        &-details {
-            &-content {
-                p {
-                    font-size: 12px;
-                }
-            }
-        }
-        
-        &-bottom {
-            margin-top: 20px;
-            display: flex;
-            flex-direction: row;
-        }
-
-        &-bottom-details {
-            width: 70%;
-        }
-
-        &-bottom-related {
-            width: 30%;
-            height: 100%;
-            padding: 0;
-            margin: 0;
-            margin-left: 10px;
-
-            h4 {
-                margin-top: 10px;
-            }
-
-            img {
-                width: 160px;
-            }
-
-            p {
-                padding: 0;
-                margin: 0;
-            }
-            
-            a {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-    }    
-
-    .nav {
-        &-tabslist {
-            
-            &-link {
-                span {
-                    font-size: 14px;
-                }
-            }
-        }
-    }
-
-    .dropdown {
-        span {
-            font-size: 12px !important;
-        }
-    }
-}
-
-@media screen and (min-width: 769px) {
-    .breadcrumb {
-        li {
-            font-size: 18px;
-        }
-    }
-
-    .episode {
-        &-videos {
-            #player, iframe {
-                height: 600px;
-            }
-        }
-    
-        &-info {
-            flex-direction: row;
-            justify-content: space-between;
-            margin-bottom: 20px;
-            
-            
-            &-title {
-                padding: 20px;
-                h5 {
-                    font-size: 20px !important;
-                }
-    
-                p {
-                    font-size: 18px;
-                    margin: 0;
-                }
-            }
-    
-            &-lessons{
-                border-bottom-left-radius: 0px;
-                padding: 20px;
-    
-                h5 {
-                    font-size: 20px;
-                }
-    
-                p {
-                    font-size: 16px;
-                }
-    
-                a {
-                    font-size: 16px;
-                }
-            }
-        }
-    
-        &-top {
-            flex-direction: row;
-
-            &-container {
-                width: 70%;
-            }
-            
-            &-lists {
-                width: 30%;
-                align-self: flex-start;
-                margin: 0;
-                margin-left: 10px;
-    
-                h5 {
-                    font-size: 20px;
-                }
-    
-                &-curriculum {
-                    display: flex;
-                    flex-direction: column;
-                }
-    
-    
-                &-full-item, &-curriculum-item {
-                    
-                    padding: 10px;
-                    margin: 0;
-    
-                    p {
-                        font-size: 16px;
-                    }
-    
-                    &-curriculum-item {
-                        &:last-child {
-                            margin-bottom: 10px;
-                        }
-                    }
-                }
-            }
-        }
-
-        &-bottom {
-            display: flex;
-
-            &-details {
-                width: 70%;
-            }
-
-            &-related {
-                width: 30%;
-                height: 100%;
-                margin-left: 10px;
-            }
-        }
-    }
-
-    .nav {
-        &-tabslist {
-
-            &-item {                
-                span {
-                    font-size: 18px;
-                }
-            }
-        }
-    }
-
-    .tab-pane {
-        p {
-            font-size: 16px;
-        }
-    }
-
-    .dropdown {
-        span {
-            font-size: 14px !important;
-        }
-    }
+  }
 }

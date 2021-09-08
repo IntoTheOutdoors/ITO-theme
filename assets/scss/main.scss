@@ -6,6 +6,8 @@
 @import "./slider";
 @import "./episodes-lessons";
 @import "./single";
+@import "./single-player";
+@import "./single_details";
 @import "./where-to-watch";
 @import "./page";
 @import "./partners";
@@ -18,25 +20,25 @@
 @import "./modal";
 @import "~bootstrap/scss/bootstrap";
 
-html, body {
-    padding: 0;
-    margin: 0;
-    font-family: 'Noto Sans', sans-serif;
-    background-color: $grey-one;
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Noto Sans", sans-serif;
+  background-color: $grey-one;
+  font-size: 62.5%;
 }
 
 main {
-    min-height: calc(100vh - 286px);
-    margin: 0;
-    margin-top: 40px;
+  min-height: calc(100vh - 286px);
+  margin: 0;
+  margin-top: 40px;
 }
-  
+
 .card {
-    border: none;
-    @include shadow;
+  border: none;
+  @include shadow;
 }
-
-
 
 // .video-stream html5-main-video {
 //     width: 889px !important;
