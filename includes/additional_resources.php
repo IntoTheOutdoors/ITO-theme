@@ -4,8 +4,9 @@ add_action( 'wp_ajax_additional_resources', 'additional_resources_ajax' );
 
 function additional_resources_ajax() {
     $video_id = $_POST['video_id'];
+    $topic_id = $_POST['topic_id'];
+    
     global $post;
-
     $post = get_post($video_id, OBJECT);
 
     ?>
@@ -28,7 +29,7 @@ function additional_resources_ajax() {
                             <p><?php echo $text; ?></p>
                         </div>
             <?php 
-                    endwhile; wp_reset_postdata();
+                    endwhile;
                 else:
             ?>
                     <div></div>
@@ -51,20 +52,23 @@ function additional_resources_ajax() {
                     ?>
                             <a class="external-link" href="<?php echo esc_html(get_field('header_url')); ?>" target="_blank"><img src="<?php echo esc_html($image); ?>" /></a>
                             <?php 
-                    endforeach; wp_reset_postdata();
+                    endforeach;
                 else:
                 ?>
                     <div></div>
                 <?php
-                endif;
+                endif;  wp_reset_postdata();
                 ?>
                 </div>    
         </div>
         <div class="resource-downloads">
             <?php
-                if(!empty($topic)):
-                    $download_episode = get_field('full_episode', $topic->ID);
-                    $download_curriculums = get_field('curriculum_videos', $topic->ID);
+                 global $post;
+                $post = get_post($topic_id, OBJECT);
+
+                if(!empty($post)):
+                    $download_episode = get_field('full_episode', $post->ID);
+                    $download_curriculums = get_field('curriculum_videos', $post->ID);
                 else:
                     $download_curriculums = get_field('curriculum_videos');
                     $download_episode = get_field('full_episode');
@@ -82,7 +86,7 @@ function additional_resources_ajax() {
                                 <a class="external-link" href="<?php echo esc_html($url); ?>" target="_blank"><i class="fas fa-arrow-circle-down"></i><span><?php the_title(); ?></span></a>
                             </div>
                             <?php
-                        endforeach;wp_reset_postdata();
+                        endforeach;
                     else:
                 ?>
                     <div></div>
@@ -101,7 +105,7 @@ function additional_resources_ajax() {
                                 <a class="external-link" href="<?php echo esc_html($url); ?>" target="_blank"><i class="fas fa-arrow-circle-down"></i><span><?php the_title(); ?></span></a>
                             </div>
                             <?php 
-                        endforeach; wp_reset_postdata();
+                        endforeach;
                     else:
                 ?>
                     <div></div>

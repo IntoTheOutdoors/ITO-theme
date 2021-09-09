@@ -81,6 +81,9 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         video_id: video_id
       },
       type: "post",
+      beforeSend: function beforeSend() {
+        $("#home").html("\n            <div class=\"d-flex justify-content-center results-loading\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span><br>\n              </div>\n              <p>Loading...</p>\n            </div>\n          ");
+      },
       success: function success(result) {
         $("#home").html(result);
       },
@@ -92,13 +95,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   $(".load-resources").on("click", function (e) {
     e.preventDefault();
     var video_id = $(this).attr("data-video-id");
+    var topic_id = $(this).attr("data-topic-id");
     $.ajax({
       url: wpAjax.ajaxUrl,
       data: {
         action: "additional_resources",
-        video_id: video_id
+        video_id: video_id,
+        topic_id: topic_id
       },
       type: "post",
+      beforeSend: function beforeSend() {
+        $("#resources").html("\n            <div class=\"d-flex justify-content-center results-loading\">\n              <div class=\"spinner-border\" role=\"status\">\n                <span class=\"sr-only\">Loading...</span><br>\n              </div>\n              <p>Loading...</p>\n            </div>\n          ");
+      },
       success: function success(result) {
         $("#resources").html(result);
       },
@@ -130,20 +138,20 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
   $(".form-select").on("change", function () {
     $("#broadcastForm").submit();
   });
-})(jQuery); // testing modal
+})(jQuery); // Modal Click
 
 
 (function ($) {
   $(document).ready(function () {
-    $(".external-link").click(function (e) {
-      e.preventDefault(); // let link = $(e.currentTarget).attr('href');
-      // console.log('this is the link', link);
+    $(".external-link").on("click", function (e) {
+      e.preventDefault();
+      $("#myModal").modal("show"); // let link = $(e.currentTarget).attr("href");
+      // console.log("this is the link", link);
 
       document.getElementById("btnContinue").setAttribute("onClick", 'javascript:window.location.href="' + $(e.currentTarget).attr("href") + '"');
-      $("#myModal").modal("show");
     });
   });
-})(jQuery); // testing modal
+})(jQuery); // Singnup modal
 
 
 (function ($) {

@@ -7,7 +7,6 @@
 
         if(!empty($full_video)):
             $get_youtube_url = get_field('youtube_url', $full_video[0]->ID);
-            $get_vimeo_url = get_field('vimeo_url', $full_video[0]->ID);
             $updated_url;
             if(!empty($get_youtube_url)):
                 $updated_url = customize_iframe($get_youtube_url); 
@@ -22,7 +21,8 @@
     <div class="load-video load-details load-resources list-item" 
         data-episode-title="<?php echo get_the_title($full_video[0]->ID); ?>" 
         data-video-embed="<?php echo htmlspecialchars($iframe); ?>"
-        data-video-id="<?php echo htmlspecialchars($full_video[0]->ID); ?>"     
+        data-video-id="<?php echo htmlspecialchars($full_video[0]->ID); ?>"
+        data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
     >
         <p><?php echo get_the_title($topic); ?></p>
 
@@ -57,6 +57,7 @@
                 data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
                 data-curriculum-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
                 data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
+                data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
             >
                 <p><?php echo get_the_title($curriculum_video->ID); ?></p>
             

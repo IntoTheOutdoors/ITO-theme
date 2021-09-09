@@ -820,7 +820,7 @@ button.btn-modal.btn-close {
 .breadcrumb li {
   color: #1a5458;
   text-decoration: none;
-  font-size: 8px;
+  font-size: 1rem;
 }
 .breadcrumb a {
   text-decoration: none;
@@ -907,6 +907,22 @@ button.btn-modal.btn-close {
   background: none !important;
 }
 
+@media screen and (min-width: 426px) {
+  .breadcrumb li {
+    font-size: 1.2rem;
+  }
+
+  .episode-details {
+    display: flex;
+    flex-direction: row;
+  }
+  .episode-details-tabs {
+    width: 75%;
+  }
+  .episode-details-related {
+    width: 25%;
+  }
+}
 .episode-video {
   display: flex;
   flex-direction: column;
@@ -949,14 +965,48 @@ button.btn-modal.btn-close {
     flex-wrap: wrap;
   }
   .episode-video-player {
-    width: 70%;
+    width: 65%;
   }
   .episode-video-list {
     width: 30%;
     margin: 0;
+    margin-left: 1rem;
     align-self: flex-start;
   }
 }
+@media screen and (min-width: 769px) {
+  .episode-video {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .episode-video .iframe-container {
+    overflow: hidden;
+    padding-top: 56.25%;
+    /* 16:9*/
+    position: relative;
+  }
+  .episode-video .iframe-container iframe {
+    border: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+  .episode-video-player {
+    width: 65%;
+  }
+  .episode-video-list {
+    width: 30%;
+    align-self: flex-start;
+    margin: 0;
+    margin-left: 1.4rem;
+  }
+}
+.episode-details-tabs {
+  margin-top: 1.6rem;
+}
+
 .tab-pane h4, .tab-pane .h4 {
   font-size: 1.8rem;
   margin-bottom: 3rem;
@@ -966,7 +1016,7 @@ button.btn-modal.btn-close {
 }
 
 .details-info p {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .resource-links {

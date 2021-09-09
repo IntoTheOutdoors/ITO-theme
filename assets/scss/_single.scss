@@ -4,7 +4,7 @@
   li {
     color: $primary;
     text-decoration: none;
-    font-size: 8px;
+    font-size: 1rem;
   }
 
   a {
@@ -114,6 +114,29 @@
 
     &-link.active {
       background: none !important;
+    }
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .breadcrumb {
+    li {
+      font-size: 1.2rem;
+    }
+  }
+
+  .episode {
+    &-details {
+      display: flex;
+      flex-direction: row;
+
+      &-tabs {
+        width: 75%;
+      }
+
+      &-related {
+        width: 25%;
+      }
     }
   }
 }

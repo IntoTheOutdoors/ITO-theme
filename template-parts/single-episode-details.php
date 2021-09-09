@@ -2,6 +2,9 @@
     $topic = $args['topic_id'];
     $full_episode = get_field('full_episode', $topic->ID);
 
+    global $post;
+    $post = get_post($full_episode[0]->ID, OBJECT);
+
     get_template_part( 'template-parts/single', 'episode-breadcrumbs');
     get_template_part('template-parts/single', 'episode-modal');
 ?>
@@ -34,7 +37,7 @@
                                     <p><?php echo $text; ?></p>
                                 </div>
                     <?php 
-                            endwhile; wp_reset_postdata();
+                            endwhile;
                         else:
                     ?>
                             <div></div>
@@ -45,6 +48,7 @@
                 <div class="resource-partners">
                     <?php 
                         $partners = get_field('resource_partners');
+
                         ?>
                         <div class="resource-partners-items">
                             <?php
@@ -57,12 +61,12 @@
                             ?>
                                     <a class="external-link" href="<?php echo esc_html(get_field('header_url')); ?>" target="_blank"><img src="<?php echo esc_html($image); ?>" /></a>
                                     <?php 
-                            endforeach; wp_reset_postdata();
+                            endforeach; 
                         else:
                         ?>
                             <div></div>
                         <?php
-                        endif;
+                        endif; wp_reset_postdata();
                         ?>
                         </div>    
                 </div>
@@ -88,7 +92,7 @@
                                         <a class="external-link" href="<?php echo esc_html($url); ?>" target="_blank"><i class="fas fa-arrow-circle-down"></i><span><?php the_title(); ?></span></a>
                                     </div>
                                     <?php
-                                endforeach;wp_reset_postdata();
+                                endforeach;
                             else:
                         ?>
                             <div></div>
