@@ -1,6 +1,6 @@
 <?php 
     get_header('second');
-    $topic_id = get_the_ID();
+    // $topic_id = get_the_ID();
     $topic = get_posts([
         'post_type' => 'topics',
         'meta_query' => [
@@ -11,6 +11,8 @@
             ]
         ]
     ]);
+
+    $curriculum_id = $post->ID;
     $topic_id = $topic[0]->ID;
 ?> 
 
@@ -28,9 +30,16 @@
         <!-- EPISODE PLAYER HERE -->
             <div class="episode-video-player">    
                 <?php 
-                    get_template_part( 'template-parts/single', 'episode-player', [
-                        'topic_id' => $topic_id
-                    ]);
+                    if(get_post_type() == "segments") {
+                        get_template_part( 'template-parts/single', 'episode-player', [
+                            'topic_id' => $curriculum_id
+                        ]);
+                    }
+                    if (get_post_type() == "topics") {
+                        get_template_part( 'template-parts/single', 'episode-player', [
+                            'topic_id' => $topic_id
+                        ]);
+                    }
                 ?>
             </div>
             <div class="episode-video-list">

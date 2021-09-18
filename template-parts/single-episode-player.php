@@ -4,22 +4,39 @@
         // Get full episode and then auto play the video 
         $topic = $args['topic_id'];
 
-        $full_episodes = get_field('full_episode', $topic); 
-
-        if(!empty($full_episodes)):
-        foreach($full_episodes as $full_episode):
-            $get_youtube_url = get_field('youtube_url', $full_episode->ID);
-            
-            $updated_url;
-
-            if(!empty($get_youtube_url)):
-                $updated_url = customize_iframe($get_youtube_url); 
-            endif;
-            ?>
-            <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
+        if(get_post_type() == "segments") {
+            $full_episodes = get_field('curriculum_videos', $topic);
+            $get_youtube_url = get_field('youtube_url', $topic->ID);
+                    
+                    $updated_url;
+        
+                    if(!empty($get_youtube_url)):
+                        $updated_url = customize_iframe($get_youtube_url); 
+                    endif;
+                    ?>
+                    <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
             <?php
-        endforeach;
-        endif;              
+        }
+        if(get_post_type() == "topics") {
+            $full_episodes = get_field('full_episode', $topic);
+
+            if(!empty($full_episodes)):
+                foreach($full_episodes as $full_episode):
+                    $get_youtube_url = get_field('youtube_url', $full_episode->ID);
+                    
+                    $updated_url;
+        
+                    if(!empty($get_youtube_url)):
+                        $updated_url = customize_iframe($get_youtube_url); 
+                    endif;
+                    ?>
+                    <iframe src=<?php echo $updated_url; ?> frameborder="0" allow="autoplay"></iframe>
+                    <?php
+                endforeach;
+            endif;              
+        }
+
+
     ?>
 </div>
 <div class="episode-info">

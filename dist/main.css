@@ -85,8 +85,8 @@ header .overlay {
   text-align: center;
 }
 
-.navbar {
-  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(52, 52, 52, 0.8) 100%);
+.navbar-header {
+  background: linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -114,144 +114,6 @@ header .overlay {
 }
 .wrapper {
   width: 100%;
-}
-
-.cta-content {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 60px;
-  min-width: 100%;
-}
-.cta-content-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-}
-.cta-content-text h1, .cta-content-text .h1 {
-  /* Hide the text. */
-  text-indent: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-}
-.cta-content-text h2, .cta-content-text .h2 {
-  font-family: "Roboto Slab", serif;
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-  text-transform: uppercase;
-  align-self: center;
-}
-.cta-content-text p {
-  font-family: "Roboto Slab", serif;
-  font-size: 12px;
-  font-weight: bold;
-  text-align: center;
-  color: #fff;
-  width: 90%;
-}
-.cta-content-text a {
-  padding: 10px 30px;
-  border-radius: 40px;
-  color: #fff;
-}
-.cta-content-text a:hover, .cta-content-text a:active {
-  color: #fff;
-}
-
-.featured {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
-}
-.featured a {
-  text-decoration: none;
-  color: #1a5458;
-}
-.featured h4, .featured .h4 {
-  color: #1a5458;
-  text-transform: uppercase;
-  font-family: "Roboto Slab", serif;
-  margin: 10px 0;
-  margin-left: 10px;
-  text-decoration: none;
-  text-align: center;
-}
-.featured-episode iframe {
-  height: auto;
-  width: 100%;
-}
-.featured-episode h5, .featured-episode .h5 {
-  font-size: 18px;
-  text-align: center;
-}
-.featured-curriculums .curriculum {
-  display: flex;
-  flex-direction: column;
-  margin: 20px 0;
-}
-.featured-curriculums .curriculum-image {
-  display: flex;
-  justify-content: center;
-}
-.featured-curriculums .curriculum-image a:active, .featured-curriculums .curriculum-image a:hover {
-  color: #f48822;
-}
-.featured-curriculums .curriculum-image img {
-  width: 200px;
-  height: auto;
-}
-.featured-curriculums .curriculum-image img:first-child {
-  margin-top: 0;
-}
-.featured-curriculums .curriculum-text {
-  align-self: center;
-}
-.featured-curriculums .curriculum-text h5, .featured-curriculums .curriculum-text .h5 {
-  text-align: center;
-  margin-top: 20px;
-}
-.featured-curriculums .curriculum-text h5:hover, .featured-curriculums .curriculum-text .h5:hover, .featured-curriculums .curriculum-text h5:active, .featured-curriculums .curriculum-text .h5:active {
-  color: #f48822;
-}
-
-.family {
-  min-width: 100%;
-  margin-top: 20px;
-  height: auto;
-  width: 100%;
-}
-
-.signup {
-  margin-top: 20px;
-}
-.signup-text {
-  display: flex;
-  flex-direction: column;
-}
-.signup-text h3, .signup-text .h3 {
-  font-size: 24px;
-  font-family: "Roboto Slab", serif;
-  text-align: center;
-  color: #1a5458;
-}
-.signup-text p {
-  font-size: 14px;
-  text-align: center;
-  width: 90%;
-  align-self: center;
-}
-.signup-text a {
-  width: 200px;
-  align-self: center;
-  padding: 10px 20px;
-  border-radius: 40px;
-  color: #fff;
-}
-.signup-text a:hover, .signup-text a:active {
-  color: #fff;
 }
 
 .shows {
@@ -297,56 +159,6 @@ header .overlay {
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
-  .cta-content {
-    justify-content: flex-start;
-  }
-  .cta-content-text {
-    width: 60%;
-  }
-
-  .featured {
-    padding: 0 10px;
-  }
-  .featured h4, .featured .h4 {
-    margin: 20px 0;
-    font-size: 22px;
-  }
-  .featured-episode {
-    width: 100%;
-  }
-  .featured-episode h5, .featured-episode .h5 {
-    font-size: 18px;
-    text-align: center;
-  }
-  .featured-episode iframe {
-    width: 100%;
-    margin-left: 12px;
-    margin-top: 60px;
-  }
-  .featured-curriculums h4, .featured-curriculums .h4 {
-    margin-bottom: 55px;
-  }
-
-  .curriculum {
-    margin: 10px 0;
-  }
-  .curriculum a {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-  }
-  .curriculum-image img {
-    width: 60px !important;
-  }
-  .curriculum-text {
-    margin-left: 10px;
-  }
-  .curriculum-text h5, .curriculum-text .h5 {
-    align-self: flex-start;
-    text-align: left !important;
-    font-size: 18px;
-  }
-
   .shows {
     background-color: #1E3433;
     display: flex;
@@ -374,70 +186,6 @@ header .overlay {
   }
 }
 @media screen and (min-width: 769px) {
-  .cta-content-text {
-    width: 50%;
-  }
-  .cta-content-text h2, .cta-content-text .h2 {
-    font-size: 32px;
-  }
-  .cta-content-text p {
-    font-size: 22px;
-    font-weight: 400;
-  }
-
-  .featured .row {
-    display: flex;
-    justify-content: center;
-  }
-  .featured-episode h4, .featured-episode .h4 {
-    margin-bottom: 80px;
-    text-align: left;
-  }
-  .featured-episode iframe {
-    height: 390px !important;
-    width: 100% !important;
-  }
-  .featured-curriculums h4, .featured-curriculums .h4 {
-    margin-bottom: 50px;
-    text-align: left;
-  }
-
-  .curriculum {
-    margin: 10px 0;
-  }
-  .curriculum a {
-    display: flex;
-    flex-direction: row;
-  }
-  .curriculum-image img {
-    width: 120px !important;
-  }
-  .curriculum-text {
-    margin-left: 10px;
-  }
-  .curriculum-text h5, .curriculum-text .h5 {
-    align-self: flex-start;
-    text-align: left !important;
-  }
-
-  .family {
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center top;
-       object-position: center top;
-  }
-
-  .signup-text h3, .signup-text .h3 {
-    font-size: 32px;
-  }
-  .signup-text p {
-    font-size: 22px;
-  }
-  .signup-text a {
-    margin-bottom: 40px;
-  }
-
   .shows-logos {
     display: flex;
     justify-content: center;
@@ -461,6 +209,184 @@ header .overlay {
 
   .family {
     height: 500px !important;
+  }
+}
+.cta-content {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 60px;
+  min-width: 100%;
+}
+.cta-content-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+.cta-content-text h1, .cta-content-text .h1 {
+  /* Hide the text. */
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cta-content-text h2, .cta-content-text .h2 {
+  font-family: "Roboto Slab", serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+  align-self: center;
+}
+.cta-content-text p {
+  font-family: "Roboto Slab", serif;
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  width: 90%;
+}
+.cta-content-text a {
+  padding: 10px 30px;
+  border-radius: 40px;
+  color: #fff;
+}
+.cta-content-text a:hover, .cta-content-text a:active {
+  color: #fff;
+}
+
+@media screen and (min-width: 426px) {
+  .cta-content {
+    justify-content: flex-start;
+  }
+  .cta-content-text {
+    width: 60%;
+  }
+}
+.featured-episode h2, .featured-episode .h2, .featured-curriculums h2, .featured-curriculums .h2 {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.featured-curriculums {
+  margin-top: 2rem !important;
+}
+
+.featured-item {
+  display: flex;
+  align-items: center;
+}
+.featured-item:hover, .featured-item:focus {
+  background-color: #f3f5ea;
+}
+.featured-item-image img {
+  height: 4rem;
+  width: auto;
+}
+.featured-item-text {
+  margin-left: 1.4rem;
+}
+.featured-item-text p {
+  font-size: 1.2rem;
+}
+
+.curriculum-item {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+.curriculum-item:hover, .curriculum-item:focus {
+  background-color: #f3f5ea;
+}
+.curriculum-image img {
+  height: 4rem;
+  width: auto;
+}
+.curriculum-text {
+  margin-left: 1.4rem;
+}
+.curriculum-text p {
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 426px) {
+  .featured-curriculums {
+    margin: 0 !important;
+  }
+
+  .featured-item-image img {
+    height: 10rem;
+    width: auto;
+  }
+
+  .curriculum-image img {
+    height: 8rem;
+    width: auto;
+  }
+}
+.family {
+  min-width: 100%;
+  margin-top: 20px;
+  height: auto;
+  width: 100%;
+}
+
+.signup {
+  margin-top: 20px;
+}
+.signup-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.signup-info {
+  display: flex;
+  flex-direction: column;
+}
+.signup-info h3, .signup-info .h3 {
+  font-size: 24px;
+  font-family: "Roboto Slab", serif;
+  text-align: center;
+  color: #1a5458;
+}
+.signup-info p {
+  font-size: 14px;
+  text-align: center;
+  width: 90%;
+  align-self: center;
+}
+.signup-info a {
+  width: 200px;
+  align-self: center;
+  padding: 10px 20px;
+  border-radius: 40px;
+  color: #fff;
+}
+.signup-info a:hover, .signup-info a:active {
+  color: #fff;
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .family {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center top;
+       object-position: center top;
+  }
+
+  .signup-item {
+    width: 40%;
+    position: absolute;
+    margin-top: 0;
+    left: 10rem;
+  }
+}
+@media screen and (min-width: 769px) {
+  .signup-item {
+    width: 40%;
+    position: absolute;
+    margin-top: 10rem;
+    left: 16rem;
   }
 }
 .slider {
@@ -648,7 +574,6 @@ aside .downloads img {
   width: 200px;
   height: auto;
   margin: 10px 6px;
-  border-radius: 20px !important;
 }
 .card-body {
   padding: 2px;
@@ -13110,7 +13035,50 @@ main {
   margin-top: 40px;
 }
 
+h1, .h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  color: #1a5458;
+}
+
+h1, .h1 {
+  font-size: 2rem;
+}
+
+h2, .h2 {
+  font-size: 1.8rem;
+}
+
+h3, .h3 {
+  font-size: 1.6rem;
+}
+
+h4, .h4 {
+  font-size: 1.4rem;
+}
+
+h5, .h5 {
+  font-size: 1.2rem;
+}
+
+h6, .h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 .card {
   border: none;
+  border-radius: 1rem;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
 }

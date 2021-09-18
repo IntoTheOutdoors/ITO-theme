@@ -1,0 +1,64 @@
+.cta {
+  &-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 60px;
+    min-width: 100%;
+
+    &-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+
+      h1 {
+        /* Hide the text. */
+        text-indent: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+
+      h2 {
+        font-family: $font-one;
+        font-size: 24px;
+        font-weight: bold;
+        color: $white;
+        text-transform: uppercase;
+        align-self: center;
+      }
+
+      p {
+        font-family: $font-one;
+        font-size: 12px;
+        font-weight: bold;
+        text-align: center;
+        color: $white;
+        width: 90%;
+      }
+
+      a {
+        padding: 10px 30px;
+        border-radius: 40px;
+        color: $white;
+
+        &:hover,
+        &:active {
+          color: $white;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 426px) {
+  .cta {
+    &-content {
+      justify-content: flex-start;
+
+      &-text {
+        width: 60%;
+      }
+    }
+  }
+}

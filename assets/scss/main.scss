@@ -2,7 +2,10 @@
 @import "./variables";
 @import "./mixins";
 @import "./header";
-@import "./front-page";
+@import "./frontpage";
+@import "./frontpage-cta";
+@import "./frontpage-featured";
+@import "./frontpage-signup";
 @import "./slider";
 @import "./episodes-lessons";
 @import "./single";
@@ -35,8 +38,46 @@ main {
   margin-top: 40px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $primary;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 .card {
   border: none;
+  border-radius: 1rem;
   @include shadow;
 }
 

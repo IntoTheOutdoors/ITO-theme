@@ -27,7 +27,7 @@
             ?>" 
             type="video/mp4">
     </video>
-    <nav class="navbar navbar-expand-lg navbar-light" role="navigation">
+    <nav class="navbar navbar-header navbar-expand-lg navbar-light" role="navigation">
         <div class="container">
             <div class="logo">
                 <a class="navbar-brand" href="<?php bloginfo( "url" ) ?>">
