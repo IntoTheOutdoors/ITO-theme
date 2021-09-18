@@ -2,6 +2,7 @@
 $video_id = $args['video_id'];
 $lesson_plans = get_field('lesson_plans', $video_id);
 
+// Get all lesson plans and push them into one array 'list'
 $lesson_plans_lists = [];
 if(!empty($lesson_plans)):
     foreach($lesson_plans as $lesson_plan):
@@ -9,6 +10,7 @@ if(!empty($lesson_plans)):
     endforeach;
 endif;
 
+// query the lesson plan list and filter them by grade
 $elementary_query = [
     'post_type' => 'lesson_plans',
     'post__in' => $lesson_plans_lists,
@@ -90,11 +92,11 @@ if(!empty($lesson_plans)): ?>
     </a>
 
     <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-    <?php 
-        if($elementary->have_posts()): 
-    ?>
-            <h4> Elementary </h4>
+        <?php 
+            if($elementary->have_posts()): 
+        ?>
             <hr>
+            <h4> Elementary </h4>
         <?php
             while($elementary->have_posts()): $elementary->the_post();
                 $lesson_file = get_field('file_upload', $elementary->ID);
@@ -110,8 +112,8 @@ if(!empty($lesson_plans)): ?>
 
         if($middle_school->have_posts()): 
             ?>
-            <h4> Middle School </h4>
             <hr>
+            <h4> Middle School </h4>
         <?php
             while($middle_school->have_posts()): $middle_school->the_post();
                 $lesson_file = get_field('file_upload', $middle_school->ID);
@@ -127,8 +129,8 @@ if(!empty($lesson_plans)): ?>
 
         if($high_school->have_posts()): 
             ?>
-            <h4> High School </h4>
             <hr>
+            <h4> High School </h4>
         <?php
             while($high_school->have_posts()): $high_school->the_post();
                 $lesson_file = get_field('file_upload', $high_school->ID);

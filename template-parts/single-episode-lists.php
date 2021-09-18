@@ -10,7 +10,7 @@
             $updated_url;
             if(!empty($get_youtube_url)):
                 $updated_url = customize_iframe($get_youtube_url); 
-            endif;
+            endif ;
         endif;
 
         ob_start(); ?>
@@ -45,34 +45,46 @@
         foreach($curriculum_videos as $index => $curriculum_video): 
             $get_url = get_field('youtube_url', $curriculum_video->ID);
             $updated_url = customize_iframe($get_url);
-            
+
             // make a the html as a variable
             ob_start(); ?>
             <iframe src=<?php echo $updated_url; ?>  frameborder="0" allow="autoplay"></iframe>
             <?php 
                 $iframe = ob_get_clean(); 
             ?>
-            <!-- Once the element is clicked -> check main.js to change the html -->
-            <div class="load-video load-details load-resources list-item" 
-                data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
-                data-curriculum-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
-                data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
-                data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
-            >
-                <p><?php echo get_the_title($curriculum_video->ID); ?></p>
-            
-                <!-- Lesson Plans here -->    
-                <?php  get_template_part('template-parts/single-episode', 'lessons', [
-                    'video_id' => $curriculum_video->ID
-                ]); ?>
-                <?php 
-                    // inserting <hr> element here if needed
-                    if ($index != key(array_slice($curriculum_videos, -1, 1, true))):
-                ?>
-                    <hr>
-                <?php
-                    endif; 
-                ?>
+            <div class="accordion" id="accordion<?php echo $index; ?>">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading<?php echo $index; ?>">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse<?php echo $index; ?>" aria-expanded="true" aria-controls="collapse<?php echo $index; ?>">
+                        <?php echo $index + 1; ?>: <?php echo get_the_title($curriculum_video->ID); ?>
+                    </button>
+                    </h2>
+                    <div id="collapse<?php echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="heading<?php echo $index; ?>" data-bs-parent="#accordion<?php echo $index; ?>">
+                    <div class="accordion-body">
+                         <!-- Once the element is clicked -> check main.js to change the html -->
+                        <div class="load-video load-details load-resources list-item" 
+                            data-video-embed="<?php echo htmlspecialchars($iframe); ?>" 
+                            data-curriculum-title="<?php echo htmlspecialchars(get_the_title($curriculum_video->ID)); ?>"  
+                            data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
+                            data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
+                        >
+                            <span><i class="fas fa-play-circle"></i> <strong>Video</strong></span>
+                        </div>
+                        <div class="list-item lesson-plan-item">
+                            <!-- Lesson Plans here -->    
+                            <?php  get_template_part('template-parts/single-episode', 'lessons', [
+                                'video_id' => $curriculum_video->ID
+                            ]); ?>
+                            <?php 
+                                // inserting <hr> element here if needed
+                                if ($index != key(array_slice($curriculum_videos, -1, 1, true))):
+                            ?>
+                            <?php
+                                endif; 
+                            ?>
+                        </div>
+                    </div>
+                </div>       
             </div>
         <?php 
         endforeach; wp_reset_postdata();
