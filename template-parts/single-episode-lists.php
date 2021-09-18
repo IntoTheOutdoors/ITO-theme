@@ -1,8 +1,12 @@
  <!-- EPISODE LISTS HERE -->
+ <?php
+    $topic = $args['topic_id'];
+    global $post;
+    $post = get_post($topic, OBJECT); 
+ ?>
 <div class="list-full">
     <h5>Full Episode</h5>
     <?php 
-        $topic = $args['topic_id'];
         $full_video = get_field('full_episode', $topic);
 
         if(!empty($full_video)):
@@ -68,6 +72,7 @@
                             data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
                             data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
                         >
+                            <p><?php echo get_the_title($curriculum_video->ID); ?></p>
                             <span><i class="fas fa-play-circle"></i> <strong>Video</strong></span>
                         </div>
                         <div class="list-item lesson-plan-item">
@@ -93,5 +98,6 @@
         <p class="no-content"><?php echo "No Curriculum Video(s) Available"; ?></p>
     <?php
     endif;
+    wp_reset_postdata();
     ?>
 </div>
