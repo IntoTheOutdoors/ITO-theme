@@ -63,10 +63,17 @@
 }
 
 @media screen and (min-width: 769px) {
+  .family {
+    margin-bottom: -10rem;
+    margin-top: 0;
+  }
+
   .signup-item {
     width: 40%;
     position: absolute;
     margin-top: 10rem;
     left: 16rem;
   }
+
+  
 }

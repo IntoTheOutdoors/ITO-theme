@@ -40,8 +40,8 @@
   overflow: hidden;
 }
 #home-video video {
-  -o-object-fit: cover;
-     object-fit: cover;
+  -o-object-fit: fill;
+     object-fit: fill;
   filter: brightness(80%);
   position: absolute;
   top: 50%;
@@ -191,13 +191,15 @@ header .overlay {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 40px;
   }
   .shows-logos img {
     margin: 10px;
   }
   .shows-text {
     margin-bottom: 40px;
+  }
+  .shows-text h4, .shows-text .h4 {
+    margin-top: 4rem;
   }
   .shows-downloads {
     margin-bottom: 40px;
@@ -382,6 +384,11 @@ header .overlay {
   }
 }
 @media screen and (min-width: 769px) {
+  .family {
+    margin-bottom: -10rem;
+    margin-top: 0;
+  }
+
   .signup-item {
     width: 40%;
     position: absolute;
@@ -427,10 +434,32 @@ header .overlay {
   margin: 0 40px;
 }
 
-.episodes h5, .episodes .h5 {
+.episodes h3, .episodes .h3 {
   text-align: center;
-  margin-bottom: 40px;
+  font-weight: 800;
+  margin-bottom: 2rem;
 }
+.episodes-results {
+  padding: 0 !important;
+}
+
+.tab-pane {
+  margin-top: 20px;
+}
+
+#episode-category {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#episode-search {
+  margin: 0;
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  background-color: #FAFAFA;
+}
+
 .episodes-sidebar aside {
   padding: 0 10px;
 }
@@ -443,26 +472,29 @@ header .overlay {
 .filter {
   height: auto;
 }
+.filter-search input {
+  padding: 1rem;
+}
 .filter-form {
   background-color: #fff;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  border-radius: 1.4rem;
+  margin-bottom: 2rem;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
-  padding: 20px 40px;
+  padding: 2rem 4rem;
 }
 .filter-types-input {
   display: flex;
   flex-direction: column;
 }
 .filter-types-input input[type=radio] {
-  margin-right: 10px;
+  margin-right: 1rem;
   display: inline-block;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   vertical-align: middle;
 }
 .filter-types-input span {
-  font-size: 12px;
+  font-size: 1.2rem;
 }
 .filter-categories {
   margin-top: 10px;
@@ -527,8 +559,10 @@ header .overlay {
   padding: 10px 0;
 }
 
-.tab-pane {
-  margin-top: 20px;
+.filter-types-item,
+.filter-categories-item,
+.filter-grade-item {
+  margin: 0.4rem 0;
 }
 
 aside {
@@ -542,72 +576,55 @@ aside {
 aside .downloads {
   display: none;
 }
-aside .downloads-container {
-  display: flex;
-  align-items: center;
-}
-aside .downloads h4, aside .downloads .h4 {
-  color: #fff;
-  text-align: center;
-}
-aside .downloads img {
-  align-self: center;
-  height: auto;
-  width: 100%;
-  margin: 4px 2px;
-}
 
-#episode-category {
-  margin-top: 20px;
-  width: 100%;
-}
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  #itoForm {
+    padding: 1.8rem;
+  }
 
-#episode-search {
-  margin: 0;
-  margin-top: 20px;
-  width: 100%;
-  border-radius: 20px;
-  background-color: #FAFAFA;
+  aside {
+    width: 20rem;
+  }
+  aside .downloads {
+    display: block;
+    background-color: #1a5458;
+    flex-direction: column;
+    padding: 0.6rem;
+  }
+  aside .downloads h4, aside .downloads .h4 {
+    color: #fff;
+    text-align: center;
+    margin: 0.6rem 0;
+  }
+  aside .downloads-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  aside .downloads-container a {
+    margin: 0 auto;
+  }
 }
-
-.card {
-  width: 200px;
-  height: auto;
-  margin: 10px 6px;
-}
-.card-body {
-  padding: 2px;
-}
-.card-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 12px;
-  margin: 0 !important;
-}
-.card img {
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-.card a {
-  text-decoration: none;
-  color: black;
-}
-.card:hover, .card:active {
-  transform: scale(1.01);
-  -webkit-animation: fadeIn 5s;
-          animation: fadeIn 5s;
-}
-
-.results {
-  display: flex;
-  justify-content: center;
-  margin: 40px 0;
-}
-.results-episodes {
-  display: flex;
-  justify-content: center;
+@media screen and (min-width: 769px) {
+  aside .downloads {
+    display: block;
+    background-color: #1a5458;
+    flex-direction: column;
+    padding: 0.6rem;
+  }
+  aside .downloads h4, aside .downloads .h4 {
+    color: #fff;
+    text-align: center;
+    margin: 0.6rem 0;
+  }
+  aside .downloads-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  aside .downloads-container a {
+    margin: 0 auto;
+  }
 }
 .results-episodes-container {
   display: flex;
@@ -620,6 +637,18 @@ aside .downloads img {
   justify-content: center;
   flex-wrap: wrap;
 }
+.results-item img {
+  height: 16rem;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 1.6rem;
+  border-top-right-radius: 1.6rem;
+}
+.results-item-body h4, .results-item-body .h4 {
+  padding: 1rem 0;
+  text-align: center;
+}
 .results-loading .spinner-border {
   width: 3rem;
   height: 3rem;
@@ -630,38 +659,11 @@ aside .downloads img {
 }
 
 @media screen and (min-width: 426px) and (max-width: 768px) {
-  .results-episodes {
-    margin-left: 120px;
-  }
   .results-episodes-container {
-    justify-content: left;
+    justify-content: center;
   }
   .results-episodes-filter {
     justify-content: left;
-  }
-
-  .downloads {
-    display: flex !important;
-    background-color: #1a5458;
-    flex-direction: column;
-    padding: 6px;
-  }
-  .downloads-container {
-    display: flex;
-    flex-direction: column;
-  }
-  .downloads-container a img {
-    margin: 6px 0;
-    width: 120px;
-    height: auto;
-  }
-
-  .card {
-    width: 180px;
-  }
-
-  aside {
-    width: 280px;
   }
 }
 @media screen and (min-width: 769px) {
@@ -674,71 +676,7 @@ aside .downloads img {
   .results-episodes-filter {
     justify-content: left;
   }
-
-  .downloads {
-    display: flex !important;
-    background-color: #1a5458;
-    flex-direction: column;
-    padding: 6px;
-  }
-  .downloads-container {
-    display: flex;
-    flex-direction: column !important;
-  }
-  .downloads-container a img {
-    margin: 6px 0;
-    width: 200px;
-    height: auto;
-  }
 }
-@media screen and (min-width: 1025px) {
-  .downloads-container {
-    flex-direction: row;
-    justify-content: space-evenly;
-  }
-}
-div#speedbump {
-  display: none;
-  z-index: 9999;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: #eeeeee;
-}
-
-#speedbump h4.modal-title, #speedbump .modal-title.h4 {
-  text-align: center;
-  text-transform: uppercase;
-  color: #004795;
-  font-size: 2.5em;
-}
-
-.modal-body p {
-  text-align: center;
-  font-size: 1em;
-}
-
-button.btn-modal:hover {
-  cursor: pointer;
-}
-
-button.btn-modal.btn-continue {
-  background-color: #8bc63e;
-  border: 0px;
-  margin: 1% 0;
-}
-
-button.btn-modal.btn-close {
-  background-color: inherit;
-  border: 1px solid #030000;
-  color: #030000;
-  font-weight: 400;
-}
-
-.modal-header .close {
-  font-size: 3.5em;
-}
-
 .breadcrumb {
   margin-top: 20px;
 }
@@ -13079,6 +13017,14 @@ a {
 
 .card {
   border: none;
-  border-radius: 1rem;
+  border-radius: 1.6rem;
   box-shadow: 6px 6px 6px rgba(2, 2, 2, 0.04);
+  width: 20rem;
+  height: auto;
+  margin: 0.6rem;
+}
+.card:hover, .card:active {
+  transform: scale(1.01);
+  -webkit-animation: fadeIn 5s;
+          animation: fadeIn 5s;
 }

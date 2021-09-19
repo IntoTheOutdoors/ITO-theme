@@ -8,6 +8,8 @@
 @import "./frontpage-signup";
 @import "./slider";
 @import "./episodes-lessons";
+@import "./episodes-lessons-sidebar";
+@import "./episodes-lessons-results";
 @import "./single";
 @import "./single-player";
 @import "./single_details";
@@ -77,8 +79,18 @@ a {
 
 .card {
   border: none;
-  border-radius: 1rem;
+  border-radius: 1.6rem;
   @include shadow;
+
+  width: 20rem;
+  height: auto;
+  margin: 0.6rem;
+
+  &:hover,
+  &:active {
+    transform: scale(1.01);
+    animation: fadeIn 5s;
+  }
 }
 
 // .video-stream html5-main-video {

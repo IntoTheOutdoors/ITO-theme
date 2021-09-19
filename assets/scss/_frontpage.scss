@@ -93,7 +93,6 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      margin-bottom: 40px;
 
       img {
         margin: 10px;
@@ -102,6 +101,10 @@
 
     &-text {
       margin-bottom: 40px;
+
+      h4 {
+        margin-top: 4rem;
+      }
     }
 
     &-downloads {

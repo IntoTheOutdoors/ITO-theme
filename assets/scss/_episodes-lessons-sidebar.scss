@@ -1,0 +1,215 @@
+#episode-category {
+  margin-top: 20px;
+  width: 100%;
+}
+
+#episode-search {
+  margin: 0;
+  margin-top: 1rem;
+  width: 100%;
+  border-radius: 1.6rem;
+  background-color: $grey-one;
+}
+
+.episodes {
+  &-sidebar {
+    aside {
+      padding: 0 10px;
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.filter {
+  height: auto;
+
+  &-search {
+    input {
+      padding: 1rem;
+    }
+  }
+
+  &-form {
+    background-color: $white;
+    border-radius: 1.4rem;
+    margin-bottom: 2rem;
+    @include shadow;
+    padding: 2rem 4rem;
+  }
+
+  &-types {
+    &-input {
+      display: flex;
+      flex-direction: column;
+
+      input[type="radio"] {
+        margin-right: 1rem;
+        display: inline-block;
+        width: 2rem;
+        height: 2rem;
+        vertical-align: middle;
+      }
+
+      span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &-categories {
+    margin-top: 10px;
+
+    span {
+      font-size: 12px;
+    }
+
+    label {
+      text-transform: uppercase;
+      font-weight: bolder;
+    }
+
+    &-item {
+      margin: 4px 0;
+      label {
+        text-transform: capitalize;
+      }
+
+      input[type="radio"] {
+        display: inline-block;
+        margin-right: 10px;
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  &-grade {
+    margin-top: 10px;
+    &-item {
+      margin: 4px 0;
+      label {
+        text-transform: capitalize;
+        font-weight: normal;
+        font-size: 12px;
+      }
+    }
+
+    &-label {
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+
+    &-select {
+      margin-top: 20px;
+    }
+
+    input[type="checkbox"] {
+      margin-right: 10px;
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      vertical-align: middle;
+    }
+  }
+
+  &-submit {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    padding: 10px;
+
+    input {
+      width: 100%;
+      font-weight: bold;
+      margin: 10px 0;
+      border-radius: 20px;
+      padding: 10px 0;
+    }
+  }
+}
+
+.filter-types-item,
+.filter-categories-item,
+.filter-grade-item {
+  margin: 0.4rem 0;
+}
+
+aside {
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 60px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+  .downloads {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  #itoForm {
+    padding: 1.8rem;
+  }
+
+  aside {
+    width: 20rem;
+
+    .downloads {
+      display: block;
+      background-color: $primary;
+      flex-direction: column;
+      padding: 0.6rem;
+
+      h4 {
+        color: $white;
+        text-align: center;
+        margin: 0.6rem 0;
+      }
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  aside {
+    .downloads {
+      display: block;
+      background-color: $primary;
+      flex-direction: column;
+      padding: 0.6rem;
+
+      h4 {
+        color: $white;
+        text-align: center;
+        margin: 0.6rem 0;
+      }
+
+      &-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        a {
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}

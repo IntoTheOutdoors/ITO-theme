@@ -1,0 +1,74 @@
+.results {
+  &-episodes {
+    &-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 0 auto;
+    }
+
+    &-filter {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  }
+
+  &-item {
+    img {
+      height: 16rem;
+      width: 100%;
+      object-fit: cover;
+      border-top-left-radius: 1.6rem;
+      border-top-right-radius: 1.6rem;
+    }
+
+    &-body {
+      h4 {
+        padding: 1rem 0;
+        text-align: center;
+      }
+    }
+  }
+
+  &-loading {
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+  }
+
+  p {
+    margin-top: 20px;
+    font-size: 21px;
+  }
+}
+
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .results {
+    &-episodes {
+      &-container {
+        justify-content: center;
+      }
+
+      &-filter {
+        justify-content: left;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .results {
+    display: flex;
+    &-episodes {
+      &-container {
+        justify-content: left;
+      }
+
+      &-filter {
+        justify-content: left;
+      }
+    }
+  }
+}

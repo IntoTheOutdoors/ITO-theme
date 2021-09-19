@@ -17,11 +17,11 @@
 
         if(is_array($topics) || is_object($topics)):
           foreach($topics as $topic): ?>
-            <div class="results-episodes-item card shadow">
+            <div class="results-item card shadow">
               <a href="<?php the_permalink(); ?>">
               <img src="<?php echo get_the_post_thumbnail_url($topic->ID); ?>" class="card-img-top"/>
-              <div class="card-body">
-                <h5 class="card-title"><?php esc_html(the_title());?></h5>
+              <div class="card-body results-item-body">
+                <h4 class="card-title"><?php esc_html(the_title());?></h4>
               </div>
               </a>
             </div>
