@@ -86,6 +86,27 @@ if(!empty($lesson_plans)): ?>
         else:
         ?>
             <span>Lesson Plan</span>
+            <?php 
+                if($elementary->have_posts()): 
+            ?> 
+                    <span class="badge bg-primary">E</span> 
+            <?php 
+                endif;
+            ?>
+            <?php
+                if($middle_school->have_posts()):
+            ?>
+                    <span class="badge bg-secondary">M</span>
+            <?php
+                endif;
+            ?>
+            <?php
+                if($high_school->have_posts()):
+            ?>
+                    <span class="badge bg-warning">H</span>
+            <?php
+                endif;
+            ?>
         <?php
         endif;
         ?>

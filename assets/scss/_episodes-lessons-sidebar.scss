@@ -179,6 +179,11 @@ aside {
         flex-direction: column;
         justify-content: center;
 
+        img {
+          height: 4rem;
+          width: auto;
+        }
+
         a {
           margin: 0 auto;
         }

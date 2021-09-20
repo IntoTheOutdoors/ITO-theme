@@ -21,7 +21,7 @@
     $related = new WP_Query($args);
 
     ?>
-    <h4>Related Episode</h4>
+    <h2>Related Episode</h2>
     <!-- this should be by category related episode -->
     <?php
     if($related->have_posts()):
@@ -33,7 +33,7 @@
                     // setup_postdata($post);
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $full_episode->ID ), 'thumbnail' );
                     ?>
-                    <div class="episode-bottom-related-item">
+                    <div class="related-item">
                         <a href="<?php the_permalink(); ?>">
                             <img src="<?php echo $image[0]; ?>" alt="">
                             <p><?php the_title(); ?></p>

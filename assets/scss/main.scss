@@ -12,8 +12,10 @@
 @import "./episodes-lessons-results";
 @import "./single";
 @import "./single-player";
-@import "./single_details";
-@import "./where-to-watch";
+@import "./single-details";
+@import "./single-breadcrumbs";
+@import "./single-related";
+@import "./broadcast-guide";
 @import "./page";
 @import "./partners";
 @import "./footer";
@@ -23,6 +25,7 @@
 @import "./archived";
 @import "./initiative";
 @import "./modal";
+@import "./spinner";
 @import "~bootstrap/scss/bootstrap";
 
 html,
@@ -47,6 +50,9 @@ h4,
 h5,
 h6 {
   color: $primary;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-family: "Roboto Slab", serif;
 }
 
 h1 {
@@ -73,8 +79,16 @@ h6 {
   font-size: 1rem;
 }
 
+li {
+  font-size: 1.2rem;
+}
+
 a {
   text-decoration: none;
+}
+
+p {
+  font-size: 1.4rem;
 }
 
 .card {
@@ -86,6 +100,21 @@ a {
   height: auto;
   margin: 0.6rem;
 
+  img {
+    height: 16rem;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 1.6rem;
+    border-top-right-radius: 1.6rem;
+  }
+
+  &-body {
+    h4 {
+      padding: 1rem 0;
+      text-align: center;
+    }
+  }
+
   &:hover,
   &:active {
     transform: scale(1.01);
@@ -93,7 +122,7 @@ a {
   }
 }
 
-// .video-stream html5-main-video {
-//     width: 889px !important;
-//     height: 500px !important;
-// }
+.video-stream html5-main-video {
+  width: 889px !important;
+  height: 500px !important;
+}

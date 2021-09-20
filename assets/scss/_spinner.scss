@@ -1,0 +1,25 @@
+.results {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &-loading {
+    color: $primary;
+    font-size: 2rem;
+    margin-top: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: $primary;
+      font-size: 1.6rem;
+    }
+
+    p {
+      margin-top: 1.6rem;
+    }
+  }
+}

@@ -13,7 +13,7 @@
                     <li class="breadcrumb-item active" aria-current="page"><?php the_title(); ?></li>
                 </ol>
             </nav>
-            <h4><?php the_title(); ?></h4>
+            <h2><?php the_title(); ?></h2>
             <div class="single-content-item">
                 <div class="single-content-item-floated">
                     <img src="<?php echo get_the_post_thumbnail_url( $post->ID, "medium" ); ?>" alt="thumbnail post">

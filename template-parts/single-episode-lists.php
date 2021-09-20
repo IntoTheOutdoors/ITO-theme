@@ -72,8 +72,7 @@
                             data-video-id="<?php echo htmlspecialchars($curriculum_video->ID); ?>"         
                             data-topic-id="<?php echo htmlspecialchars($topic) ?>"     
                         >
-                            <p><?php echo get_the_title($curriculum_video->ID); ?></p>
-                            <span><i class="fas fa-play-circle"></i> <strong>Video</strong></span>
+                            <p><span><i class="fas fa-play-circle"></i> Video: </span><?php echo get_the_title($curriculum_video->ID); ?></p>
                         </div>
                         <div class="list-item lesson-plan-item">
                             <!-- Lesson Plans here -->    

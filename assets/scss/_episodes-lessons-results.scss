@@ -14,23 +14,6 @@
     }
   }
 
-  &-item {
-    img {
-      height: 16rem;
-      width: 100%;
-      object-fit: cover;
-      border-top-left-radius: 1.6rem;
-      border-top-right-radius: 1.6rem;
-    }
-
-    &-body {
-      h4 {
-        padding: 1rem 0;
-        text-align: center;
-      }
-    }
-  }
-
   &-loading {
     .spinner-border {
       width: 3rem;

@@ -279,11 +279,11 @@
                   ?>
                   <div class="schedule-item">
                     <div class="schedule-item-date">
-                      <h5><?php echo $current_month; ?><br> <?php echo $current_start_date . '/' . $current_end_date; ?></h5>
+                      <h6><?php echo $current_month; ?><br> <?php echo $current_start_date . '/' . $current_end_date; ?></h6>
                     </div>
                     <div class="schedule-item-info">
                       <a href="<?php echo $url ?>" target="_blank">
-                        <h5><?php the_title(); ?></h5>
+                        <h6><?php the_title(); ?></h6>
                       </a>
                       <p><?php the_content(); ?></p>
                     </div>

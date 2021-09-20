@@ -1,170 +1,170 @@
 .blog {
-    h3 {
-        font-size: 22px;
-        @include title;
-    }
-    &-content {
-        display: flex;
-        flex-direction: column;;
-        
-        
-        &-cards {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            
-            a {
-                text-decoration: none;
-            }
-        }
-    }
-    
-    &-item {
-        height: 400px;
-        width: 300px;
-        background-size: cover;
-        margin: 20px;
-      
-        h5 {
-          color: $white;
-          text-align: center;
-          line-height: 2rem;
-          font-weight: bold;
-        }
+  min-height: calc(100vh - 240px) !important;
 
-        &-overlay {
-            background-color: rgba($color: $primary, $alpha: .95);
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            border-radius: 20px;
-            flex-direction: column;
+  h3 {
+    font-size: 22px;
+    @include title;
+  }
+  &-content {
+    display: flex;
+    flex-direction: column;
 
-            p {
-                position: absolute;
-                left: 0;
-                bottom: 30px;
-                width: 200px;
-                padding: 10px;
-                text-transform: uppercase;
-                text-align: center;
-                font-size: 21px;
-                font-weight: bold;
-                border-top-right-radius: 20px;
-                border-bottom-right-radius: 20px;
-                background-color: $third;
-                color: $white;
-            }
-            
-            &-new {
-                background-color: $grey-one !important;
-                color: $primary !important;
-            }
-        }
+    &-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &-item {
+    height: 400px;
+    width: 30rem !important;
+    background-size: cover;
+    margin: 20px;
+
+    h5 {
+      color: $white;
+      text-align: center;
+      line-height: 2rem;
+      font-weight: bold;
+    }
+
+    &-overlay {
+      background-color: rgba($color: $primary, $alpha: 0.95);
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      border-radius: 20px;
+      flex-direction: column;
+
+      p {
+        position: absolute;
+        left: 0;
+        bottom: 30px;
+        width: 200px;
+        padding: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: bold;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: $third;
+        color: $white;
       }
 
-      &-sidebar {
-          width: 100%;
-          height: auto;
-          background-color: $grey-three;
-          padding: 0 20px;
-          margin-bottom: 20px;
+      &-new {
+        background-color: $grey-one !important;
+        color: $primary !important;
       }
+    }
+  }
+
+  &-sidebar {
+    width: 100%;
+    height: auto;
+    background-color: $grey-three;
+    margin-bottom: 20px;
+  }
 }
 
 #searchform {
-    margin: 40px 0;
+  margin: 40px 0;
 
-    label {
-        display: none;
-    }
+  label {
+    display: none;
+  }
 
-    #s {
-        width: 60%;
-        height: 40px;
-        border: none;
-    }
+  #s {
+    width: 60%;
+    height: 40px;
+    border: none;
+  }
 
-    #searchsubmit {
-        border: none;
-        width: 38%;
-        height: 40px;
-        text-transform: uppercase;
-        background-color: $primary;
-        color: $white;
-    }
+  #searchsubmit {
+    border: none;
+    width: 38%;
+    height: 40px;
+    text-transform: uppercase;
+    background-color: $primary;
+    color: $white;
+  }
 }
 
 #sidebar {
-    h3 {
-        text-transform: uppercase;
-        font-family: $font-one;
-        color: $primary;
+  h3 {
+    text-transform: uppercase;
+    font-family: $font-one;
+    color: $primary;
+  }
+
+  ul {
+    list-style: none;
+
+    li {
+      padding: 10px;
+
+      &:hover,
+      &:active {
+        background-color: $grey-four;
+      }
     }
 
-    ul {
-        list-style: none;
-
-        li {
-            padding: 10px;
-
-            &:hover, &:active {
-                background-color: $grey-four;
-            }
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        ::marker {
-            display: none;
-        }
+    a {
+      text-decoration: none;
     }
+
+    ::marker {
+      display: none;
+    }
+  }
 }
 
 @media screen and (min-width: 768px) {
-    .blog {
-        &-content {
-            
-            &-cards {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-        }
-
-        &-sidebar {
-            margin-top: 20px;
-        }
+  .blog {
+    &-content {
+      &-cards {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
     }
+
+    &-sidebar {
+      margin-top: 20px;
+    }
+  }
 }
 
 @media screen and (min-width: 1023px) {
-    .blog {
-        &-content {
-            display: flex;
-            flex-direction: row;
-            &-cards {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: flex-start;
-                width: 65%;
-                margin: 0;
-                padding: 0;
-            }
-        }
-
-        &-sidebar {
-            width: 35%;
-            height: 100%;
-        }
-
-        &-item {
-            width: 250px;
-            margin: 10px;
-        }
+  .blog {
+    &-content {
+      display: flex;
+      flex-direction: row;
+      &-cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        width: 65%;
+        margin: 0;
+        padding: 0;
+      }
     }
+
+    &-sidebar {
+      width: 35%;
+      height: 100%;
+    }
+
+    &-item {
+      width: 250px;
+      margin: 10px;
+    }
+  }
 }

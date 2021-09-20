@@ -38,28 +38,22 @@ function additional_resources_ajax() {
             ?>
         </div>
         <div class="resource-partners">
+            <h3>Resource Partners</h3>
+            <div class="resource-partners-item">
             <?php 
                 $partners = get_field('resource_partners');
                 ?>
-                <div class="resource-partners-items">
                     <?php
                 if($partners):
-                ?>
-                    <h4>Resource Partners</h4>
-                <?php
                     foreach($partners as $post): setup_postdata($post);
                     $image = get_field('header_image');
                     ?>
                             <a class="external-link" href="<?php echo esc_html(get_field('header_url')); ?>" target="_blank"><img src="<?php echo esc_html($image); ?>" /></a>
                             <?php 
                     endforeach;
-                else:
-                ?>
-                    <div></div>
-                <?php
                 endif;  wp_reset_postdata();
                 ?>
-                </div>    
+            </div>    
         </div>
         <div class="resource-downloads">
             <?php
@@ -76,8 +70,8 @@ function additional_resources_ajax() {
 
                 if(!empty($download_episode)):
                 ?>
-                    <h4>Resource Downloads</h4>
-                    <h6>Full Episode</h6>
+                    <h3>Resource Downloads</h3>
+                    <h5>Full Episode</h5>
                 <?php 
                         foreach($download_episode as $post): setup_postdata($post);
                             $url = get_field('vimeo_download_url');
@@ -96,7 +90,7 @@ function additional_resources_ajax() {
                 <?php
                     if(!empty($download_curriculums)):
                 ?>
-                    <h6>Curriculum Episode</h6>
+                    <h5>Curriculum Episode</h5>
                 <?php
                         foreach($download_curriculums as $post): setup_postdata($post);
                             $url = get_field('vimeo_download_url');
