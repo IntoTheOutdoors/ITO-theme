@@ -1503,12 +1503,12 @@ footer {
   margin-top: 2rem;
   margin-bottom: 4rem;
 }
-.single-content h2, .single-content .h2 {
-  font-size: 3rem;
-  text-align: center;
-  margin-bottom: 4rem;
+.single-content > h2, .single-content > .h2 {
+  font-size: 3rem !important;
+  text-align: center !important;
+  margin-bottom: 4rem !important;
 }
-.single-content iframe {
+.single-content > iframe {
   width: 100% !important;
   height: 300px !important;
 }
@@ -1550,6 +1550,7 @@ footer {
   }
   .single-content iframe {
     height: 600px !important;
+    width: 100% !important;
   }
   .single-sidebar {
     width: 24%;
