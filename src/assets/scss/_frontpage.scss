@@ -1,0 +1,124 @@
+.wrapper {
+  width: 100%;
+}
+
+.shows {
+  background-color: $third;
+  display: flex;
+  flex-direction: column;
+  margin-top: -10px;
+
+  &-logos {
+    display: none;
+  }
+
+  &-text {
+    padding: 0 10px;
+
+    h2 {
+      color: $white !important;
+      text-align: center;
+      margin-top: 2rem;
+    }
+  }
+
+  &-downloads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    a {
+      margin: 0 auto;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.modal {
+  margin-top: 20px;
+  &-body {
+    background-color: $third;
+  }
+
+  &-footer {
+    button {
+      color: $white;
+      width: 100%;
+    }
+  }
+}
+
+.slider {
+  position: relative;
+}
+
+// TABLET SIZE (768px)
+@media screen and (min-width: 426px) and (max-width: 768px) {
+  .shows {
+    background-color: $third;
+    display: flex;
+    flex-direction: column;
+
+    &-text {
+      padding: 0 10px;
+      margin-bottom: 40px;
+
+      h4 {
+        color: $white;
+        text-align: center;
+      }
+    }
+
+    &-downloads {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin: 20px 0;
+
+      a {
+        margin: 0 auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// laptop -> tv
+@media screen and (min-width: 769px) {
+  .shows {
+    &-logos {
+      margin-top: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+
+      img {
+        margin: 10px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 40px;
+
+      h4 {
+        margin-top: 4rem;
+      }
+    }
+
+    &-downloads {
+      margin-bottom: 40px;
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      width: 60%;
+    }
+  }
+
+  .family {
+    height: 500px !important;
+  }
+}

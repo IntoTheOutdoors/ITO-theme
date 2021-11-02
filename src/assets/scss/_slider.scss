@@ -1,0 +1,49 @@
+$animationSpeed: 30s;
+
+// Styling
+.slider {
+	background: white;
+	box-shadow: 0 10px 20px -5px rgba(0, 0, 0, .125);
+	height: 200px;
+	overflow:hidden;
+	position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+	
+	&::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 200px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	}
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
+
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll $animationSpeed linear infinite;
+		display: flex;
+	}
+	
+	.slide {
+
+        img {
+            height: 70px;
+			width: auto;
+			margin: 0 40px;
+        }
+	}
+}
