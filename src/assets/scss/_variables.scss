@@ -1,0 +1,46 @@
+// colors
+
+
+$third: #1E3433;
+$fourth: #E6EBCD;
+$fifth: #63784B;
+$sixth: #F3B725;
+$seventh: #CCE3DE;
+$eight: #f3f5ea;
+
+$white: #fff;
+
+$grey-one: #FAFAFA;
+$grey-two: #F8F9FA;
+$grey-three: #dee2e6;
+$grey-four: #ced4da;
+$grey-five: #adb5bd;
+
+$dark-one: #1E3433;
+$dark-two: #3B3B3B;
+
+
+// font
+$font-one: 'Roboto Slab', serif;
+$font-two: 'Noto Sans', sans-serif;
+
+.btn {
+  padding: 20px 80px;
+  border-radius: 30px;
+  text-transform: uppercase;
+  
+  &-primary {
+    background-color: $secondary;
+    border: none;
+
+    
+  }
+
+  &-secondary {
+    background-color: $primary;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+
+  }
+}

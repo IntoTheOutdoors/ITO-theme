@@ -1,0 +1,220 @@
+.watch {
+  display: flex;
+  flex-direction: column;
+  h3 {
+    font-size: 18px;
+    @include title;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 12px;
+  }
+
+  &-media {
+    display: none;
+  }
+
+  &-downloads {
+    background-color: $primary;
+    padding: 20px;
+
+    h5 {
+      color: $white;
+      text-align: center;
+    }
+
+    &-images {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      a {
+        align-self: center;
+      }
+
+      img {
+        margin: 10px 0;
+        width: 120px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.broadcast {
+  h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    @include title;
+  }
+
+  &-state {
+    margin-top: 20px;
+    width: 300px;
+
+    .form-select {
+      border: solid 1px $primary;
+      padding: 20px 10px;
+    }
+    label {
+      font-size: 12px;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+
+  &-items {
+    th {
+      font-size: 14px;
+    }
+
+    td {
+      font-size: 12px;
+    }
+  }
+
+  &-network {
+    h3 {
+      font-size: 18px;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+
+  &-pbs {
+    h3 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+
+.schedule {
+  h3 {
+    font-size: 18px;
+    margin-top: 20px;
+    @include title;
+  }
+
+  &-item {
+    display: flex;
+    margin: 20px 0;
+
+    &-date {
+      background-color: $primary;
+      padding: 20px;
+      min-width: 10rem;
+      height: auto;
+      align-self: flex-start;
+      border-radius: 20px;
+
+      h6 {
+        text-align: center;
+        color: $white;
+      }
+    }
+
+    &-info {
+      margin-left: 10px;
+
+      a {
+        text-decoration: none;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
+
+      h5 {
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      p {
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .watch {
+    margin-bottom: 40px;
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      font-size: 16px;
+    }
+
+    &-downloads {
+      &-images {
+        flex-direction: row !important;
+
+        img {
+          width: 140px;
+          padding: 0 10px;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  .broadcast {
+    h3 {
+      font-size: 22px;
+    }
+
+    &-state {
+      label {
+        font-size: 14px;
+      }
+    }
+
+    &-items {
+      th {
+        font-size: 18px;
+      }
+
+      td {
+        font-size: 14px;
+      }
+    }
+  }
+
+  .schedule {
+    h3 {
+      font-size: 22px;
+    }
+
+    &-item {
+      &-date {
+        h5 {
+          font-size: 18px;
+          text-align: center;
+          color: $white;
+        }
+      }
+
+      &-info {
+        margin-left: 10px;
+
+        h5 {
+          font-size: 14px;
+          font-weight: 700;
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
